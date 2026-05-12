@@ -1,0 +1,73 @@
+/** CRM pipeline slug used for lead rows only (not ClickUp listing workflow). */
+export type ListingStatus = 'active' | 'pending' | 'sold' | 'inactive'
+
+export type Owner = {
+  id: string
+  name: string
+  phone?: string
+  email?: string
+  notes?: string
+}
+
+export type AssocPerson = { name: string }
+
+/** Optional per-listing engagement (wire to GHL + Meta APIs later). Scores are typically 0–100. */
+export type ListingEngagement = {
+  /** GoHighLevel: contacts engaging with property-related content */
+  ghlScore?: number | null
+  /** Facebook / paid social interactions on property ads */
+  socialScore?: number | null
+}
+
+/** Listing document row: optional `url` opens the file (e.g. OM PDF from katalystteam.com). */
+export type ListingDocument = {
+  name: string
+  status?: 'Verified' | 'Pending' | 'In progress'
+  url?: string
+}
+
+export type ListingAssoc = {
+  owners: Array<{ id: string; name: string }>
+  lawyers: Array<{ name: string; firm?: string }>
+  agents: Array<{ name: string; role?: string }>
+  leads: Array<{ name: string; status?: 'Hot' | 'Warm' | 'Cold' }>
+  transactions: Array<{ desc: string; amount?: string; date?: string }>
+  documents: ListingDocument[]
+  engagement?: ListingEngagement
+}
+
+export type Listing = {
+  id: string
+  /** ClickUp task name — property title. */
+  name: string
+  address: string
+  /**
+   * ClickUp workflow status (exact string from workspace: Closed, lysted, due diligence, …).
+   */
+  status: string
+  /** Export cohort / list year (Properties 2026, etc.). */
+  datasetYear?: number
+  /** ClickUp `Date Updated` */
+  dateUpdated?: string
+  /** ClickUp `Created By` */
+  createdBy?: string
+  abstracting?: string
+  /** Primary listing agent (drop-down). */
+  agent?: string
+  buyer?: string
+  closingAttorneyBuyer?: string
+  lenderBuyer?: string
+  seller?: string
+  titleOpinion?: string
+  imageUrl?: string
+  listingUrl?: string
+  price?: string
+  type?: string
+  sqm?: string
+  assoc: ListingAssoc
+}
+
+export type DashboardData = {
+  owners: Owner[]
+  listings: Listing[]
+}

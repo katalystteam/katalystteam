@@ -1,0 +1,44 @@
+{
+  "name": "real-estate-crm-dashboard-react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "fetch:katalyst-html": "curl -sL -A \"Mozilla/5.0\" --max-time 60 \"https://katalystteam.com/current-lystings/\" -o ../current_lystings.html && curl -sL -A \"Mozilla/5.0\" --max-time 60 \"https://katalystteam.com/sold-lystings/\" -o ../sold_lystings.html",
+    "extract:site-images": "tsx scripts/extract-site-images.ts",
+    "sync:site-images": "npm run fetch:katalyst-html && npm run extract:site-images",
+    "extract:katalyst-documents": "tsx scripts/extract-katalyst-documents.ts",
+    "sync:katalyst-documents": "npm run fetch:katalyst-html && npm run extract:katalyst-documents",
+    "sync:ghl-engagement": "tsx scripts/sync-ghl-engagement.ts",
+    "sync:clickup": "tsx scripts/sync-clickup-transactions.ts",
+    "import:clickup": "tsx scripts/import-clickup-csv.ts",
+    "migrate:listings": "tsx scripts/migrate-dashboard-listings.ts"
+  },
+  "dependencies": {
+    "papaparse": "^5.5.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.15.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.2",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "dotenv": "^17.4.2",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.10"
+  }
+}
