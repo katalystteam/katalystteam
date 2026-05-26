@@ -17,11 +17,12 @@ import dotenv from 'dotenv'
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') })
 dotenv.config()
 import type { DashboardData, Listing, ListingAssoc, Owner } from '../src/types.ts'
+import { addressKey } from '../src/lib/addressKey.ts'
+import { pickFieldByBaseName, pickFieldIncluding, type ClickUpCustomField } from '../src/lib/clickUpCustomFields.ts'
+import { pickCanonicalListing } from '../src/lib/listingDedupe.ts'
 import { normalizeAttorneyLine, splitPartyNames } from '../src/lib/parsePartyNames.ts'
 
 const API = 'https://api.clickup.com/api/v2'
-
-type CuCustomField = { id: string; name: string; type: string; value?: unknown }
 
 type CuTask = {
   id: string
@@ -30,7 +31,7 @@ type CuTask = {
   date_updated?: string
   date_created?: string
   creator?: { username?: string; email?: string }
-  custom_fields?: CuCustomField[]
+  custom_fields?: ClickUpCustomField[]
 }
 
 function envOptional(name: string): string | undefined {
@@ -76,68 +77,13 @@ async function cuFetch<T>(token: string, path: string): Promise<T> {
   return JSON.parse(text) as T
 }
 
-function formatCfValue(f: CuCustomField): string {
-  const v = f.value
-  if (v == null || v === '') return ''
-  if (typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean') return String(v)
-  if (Array.isArray(v)) {
-    return v
-      .map((x) => (typeof x === 'object' && x && 'name' in x ? String((x as { name: string }).name) : String(x)))
-      .filter(Boolean)
-      .join(', ')
-  }
-  if (typeof v === 'object' && v !== null && 'name' in v && typeof (v as { name: string }).name === 'string') {
-    return (v as { name: string }).name
-  }
-  return ''
+function pickBuyerShort(fields: ClickUpCustomField[] | undefined): string {
+  return pickFieldByBaseName(fields, 'buyer') || pickFieldIncluding(fields, 'buyer', ['lender', '1031', 'closing attorney'])
 }
 
-function pickCustomField(fields: CuCustomField[] | undefined, mustInclude: string): string {
-  if (!fields?.length) return ''
-  const needle = mustInclude.toLowerCase()
-  for (const f of fields) {
-    if (f.name.toLowerCase().includes(needle)) {
-      const val = formatCfValue(f)
-      if (val) return val
-    }
-  }
-  return ''
-}
-
-function pickBuyerShort(fields: CuCustomField[] | undefined): string {
-  if (!fields?.length) return ''
-  for (const f of fields) {
-    if (/^buyer\s*\(/i.test(f.name)) {
-      const val = formatCfValue(f)
-      if (val) return val
-    }
-  }
-  for (const f of fields) {
-    const n = f.name.toLowerCase()
-    if (n.includes('buyer') && !n.includes('lender') && !n.includes('1031') && !n.includes('closing attorney')) {
-      const val = formatCfValue(f)
-      if (val) return val
-    }
-  }
-  return ''
-}
-
-function pickSellerPrimary(fields: CuCustomField[] | undefined): string {
-  if (!fields?.length) return ''
-  for (const f of fields) {
-    if (/^seller\s*\(/i.test(f.name)) {
-      const val = formatCfValue(f)
-      if (val) return val
-    }
-  }
-  for (const f of fields) {
-    const n = f.name.toLowerCase()
-    if (n.includes('seller') && !n.includes('1031')) {
-      const val = formatCfValue(f)
-      if (val) return val
-    }
-  }
-  return ''
+/** ClickUp “Seller” → dashboard owners (not closing attorney fields). */
+function pickSellerPrimary(fields: ClickUpCustomField[] | undefined): string {
+  return pickFieldByBaseName(fields, 'seller')
 }
 
 function formatTimestamp(ms: string | undefined): string {
@@ -190,17 +136,22 @@ function taskToListing(task: CuTask, datasetYear: number | undefined, ctx: { ens
   const statusRaw = task.status?.status?.trim() || '—'
   const seller = pickSellerPrimary(task.custom_fields)
   const buyer = pickBuyerShort(task.custom_fields)
-  const closingBuyer = pickCustomField(task.custom_fields, 'closing attorney - buyer')
-  const lenderBuyer = pickCustomField(task.custom_fields, 'lender - buyer')
-  const agentName = pickCustomField(task.custom_fields, 'agent')
+  const closingBuyer = pickFieldIncluding(task.custom_fields, 'closing attorney - buyer')
+  const closingSeller = pickFieldIncluding(task.custom_fields, 'closing attorney - seller')
+  const lenderBuyer = pickFieldIncluding(task.custom_fields, 'lender - buyer')
+  const agentName = pickFieldByBaseName(task.custom_fields, 'agent')
 
   const ownersAssoc = splitPartyNames(seller)
     .map((n) => ctx.ensureOwner(n))
     .filter(Boolean)
     .map((o) => ({ id: o!.id, name: o!.name }))
 
-  const attorney = normalizeAttorneyLine(closingBuyer)
-  const lawyers = attorney ? [{ name: attorney }] : []
+  const lawyers: ListingAssoc['lawyers'] = []
+  const attBuyer = normalizeAttorneyLine(closingBuyer)
+  const attSeller = normalizeAttorneyLine(closingSeller)
+  if (attBuyer) lawyers.push({ name: attBuyer })
+  if (attSeller) lawyers.push({ name: attSeller })
+
   const agents = agentName ? [{ name: agentName, role: 'Agent' as const }] : []
 
   const assoc: ListingAssoc = {
@@ -220,13 +171,14 @@ function taskToListing(task: CuTask, datasetYear: number | undefined, ctx: { ens
     datasetYear,
     dateUpdated: formatTimestamp(task.date_updated),
     createdBy: task.creator?.username || task.creator?.email || '',
-    abstracting: pickCustomField(task.custom_fields, 'abstracting'),
+    abstracting: pickFieldIncluding(task.custom_fields, 'abstracting'),
     agent: agentName || undefined,
     buyer: buyer || undefined,
     closingAttorneyBuyer: closingBuyer || undefined,
+    closingAttorneySeller: closingSeller || undefined,
     lenderBuyer: lenderBuyer || undefined,
     seller: seller || undefined,
-    titleOpinion: pickCustomField(task.custom_fields, 'title opinion'),
+    titleOpinion: pickFieldIncluding(task.custom_fields, 'title opinion'),
     assoc,
   }
 }
@@ -283,8 +235,21 @@ async function main() {
     }
   }
 
-  const listings = Array.from(listingById.values())
-  const owners: Owner[] = Array.from(ownerByName.values()).sort((a, b) => a.id.localeCompare(b.id))
+  const allListings = Array.from(listingById.values())
+
+  // One row per property address — prefer newest year / latest ClickUp update (e.g. 2026 LOST over 2025 lysted).
+  const byAddress = new Map<string, Listing>()
+  for (const li of allListings) {
+    const k = addressKey(li.address)
+    const prev = byAddress.get(k)
+    byAddress.set(k, prev ? pickCanonicalListing(prev, li) : li)
+  }
+  const listings = [...byAddress.values()]
+
+  const ownerIdsUsed = new Set(listings.flatMap((l) => l.assoc.owners.map((o) => o.id)))
+  const owners: Owner[] = Array.from(ownerByName.values())
+    .filter((o) => ownerIdsUsed.has(o.id))
+    .sort((a, b) => a.id.localeCompare(b.id))
 
   const data: DashboardData = { owners, listings }
   const outPath = path.join(process.cwd(), 'src', 'data', 'generated', 'dashboardData.ts')

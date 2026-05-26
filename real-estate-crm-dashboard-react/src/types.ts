@@ -56,6 +56,7 @@ export type Listing = {
   agent?: string
   buyer?: string
   closingAttorneyBuyer?: string
+  closingAttorneySeller?: string
   lenderBuyer?: string
   seller?: string
   titleOpinion?: string

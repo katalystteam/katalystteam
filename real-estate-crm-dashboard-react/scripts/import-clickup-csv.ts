@@ -70,8 +70,13 @@ function buildListingFromRow(
     .filter(Boolean)
     .map((o) => ({ id: o!.id, name: o!.name }))
 
-  const attorney = normalizeAttorneyLine(get(r, 'Closing Attorney - Buyer (text)'))
-  const lawyers = attorney ? [{ name: attorney }] : []
+  const attBuyer = normalizeAttorneyLine(get(r, 'Closing Attorney - Buyer (text)'))
+  const attSeller = normalizeAttorneyLine(
+    get(r, 'Closing Attorney - Seller (text)') || get(r, 'Closing Attorney - Seller'),
+  )
+  const lawyers: Listing['assoc']['lawyers'] = []
+  if (attBuyer) lawyers.push({ name: attBuyer })
+  if (attSeller) lawyers.push({ name: attSeller })
 
   const agent = get(r, 'Agent (drop down)')
   const agents = agent ? [{ name: agent, role: 'Agent' as const }] : []
@@ -91,6 +96,8 @@ function buildListingFromRow(
     agent: agent || undefined,
     buyer: buyer || undefined,
     closingAttorneyBuyer: get(r, 'Closing Attorney - Buyer (text)') || undefined,
+    closingAttorneySeller:
+      get(r, 'Closing Attorney - Seller (text)') || get(r, 'Closing Attorney - Seller') || undefined,
     lenderBuyer: get(r, 'Lender - Buyer (text)') || undefined,
     seller: seller || undefined,
     titleOpinion: get(r, 'Title Opinion (text)') || undefined,

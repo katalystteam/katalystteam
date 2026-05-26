@@ -7,163 +7,43 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_10",
-      "name": "Charlie's Properties LLC and/or Assigns - Bob Charleston"
-    },
-    {
-      "id": "o_100",
-      "name": "Higher Ground Investment Group LLC - Teddy Mohlman"
-    },
-    {
-      "id": "o_101",
-      "name": "O'Shea"
-    },
-    {
-      "id": "o_102",
-      "name": "PC Hiawatha"
-    },
-    {
-      "id": "o_103",
-      "name": "IA - 319.632.3640"
-    },
-    {
-      "id": "o_104",
-      "name": "Alex Peterson"
-    },
-    {
-      "id": "o_105",
-      "name": "Fred Anderson"
-    },
-    {
-      "id": "o_106",
-      "name": "Cory French"
-    },
-    {
-      "id": "o_107",
-      "name": "Ian Schwickert"
-    },
-    {
-      "id": "o_108",
-      "name": "Alex Knutson"
-    },
-    {
-      "id": "o_109",
-      "name": "Kevin Bryan"
-    },
-    {
-      "id": "o_11",
-      "name": "Ben Latusek"
-    },
-    {
-      "id": "o_110",
-      "name": "Closing Coordinator: Jill Hansen - jill.hansen@amesrmx.com"
-    },
-    {
-      "id": "o_111",
-      "name": "Steve Lee (Agent: Steve Bock - steve@bockrealestate.com)"
-    },
-    {
-      "id": "o_112",
-      "name": "Matt Blickenderfer"
-    },
-    {
-      "id": "o_113",
-      "name": "Bond Shymansky - bond@skogman.com | Prospect View LLC"
-    },
-    {
-      "id": "o_114",
-      "name": "Misty Korthas"
-    },
-    {
-      "id": "o_115",
-      "name": "West Bank in Coralville - Ryan Murphy - 319-351-4121"
-    },
-    {
-      "id": "o_116",
-      "name": "Matt DeBoth"
-    },
-    {
-      "id": "o_117",
-      "name": "Kimberly Kleinhans"
-    },
-    {
-      "id": "o_118",
-      "name": "Keith Kleinhans"
-    },
-    {
-      "id": "o_119",
-      "name": "terrance@thevareco.com"
-    },
-    {
-      "id": "o_12",
-      "name": "Teddy Molhman"
-    },
-    {
-      "id": "o_120",
-      "name": "Matt Blickenderfer | Black Hawk Real Estate"
-    },
-    {
-      "id": "o_121",
-      "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
-    },
-    {
-      "id": "o_122",
-      "name": "Bond Shymansky - bond@skogman.com | Prospect View LLC - 319-930-8441 - PO Box 177 Gilbertville Ia 50634"
-    },
-    {
-      "id": "o_123",
-      "name": "Samantha Murray (Wilson"
-    },
-    {
-      "id": "o_124",
-      "name": "Egge)\n(515) 369-2502\nsam@wilsonlawfirmpc.com\n222 NW Sunrise Drive"
-    },
-    {
-      "id": "o_125",
-      "name": "Waukee"
-    },
-    {
-      "id": "o_126",
-      "name": "IA"
-    },
-    {
-      "id": "o_127",
-      "name": "Durachem LLC | Gravis Alger"
-    },
-    {
-      "id": "o_128",
-      "name": "Marco Andes"
-    },
-    {
-      "id": "o_129",
-      "name": "Rashid"
-    },
-    {
-      "id": "o_13",
-      "name": "Javier Bazeos"
-    },
-    {
-      "id": "o_14",
       "name": "Paul Peters"
     },
     {
-      "id": "o_15",
+      "id": "o_11",
       "name": "Shane Isley"
     },
     {
-      "id": "o_16",
+      "id": "o_12",
       "name": "Bob Sweeney"
     },
     {
-      "id": "o_17",
+      "id": "o_13",
       "name": "Richard Hutsell"
     },
     {
-      "id": "o_18",
+      "id": "o_14",
       "name": "Britt Randall"
     },
     {
-      "id": "o_19",
+      "id": "o_15",
       "name": "Wash Iowa LLC - Nic"
+    },
+    {
+      "id": "o_16",
+      "name": "Monica Runkel"
+    },
+    {
+      "id": "o_17",
+      "name": "Baltimore LLC - Tyler Rasmussen"
+    },
+    {
+      "id": "o_18",
+      "name": "Kim"
+    },
+    {
+      "id": "o_19",
+      "name": "Jeffrey Slaymaker"
     },
     {
       "id": "o_2",
@@ -171,43 +51,43 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_20",
-      "name": "Monica Runkel"
+      "name": "Cash Flow Iowa LLC (Zach Clayton & Lynda Clayton)"
     },
     {
       "id": "o_21",
-      "name": "Roberts"
+      "name": "JRB Solutions LLC (Jack Brundell)"
     },
     {
       "id": "o_22",
-      "name": "Eddy - Andy Hauber"
+      "name": "Collins Community Credit Union"
     },
     {
       "id": "o_23",
-      "name": "Kim"
+      "name": "Aquib Ali"
     },
     {
       "id": "o_24",
-      "name": "Jeffrey Slaymaker"
+      "name": "David Barker"
     },
     {
       "id": "o_25",
-      "name": "Lindsay Miller"
+      "name": "Bill Skinner"
     },
     {
       "id": "o_26",
-      "name": "O'Brien Closings - Dan O'Brien"
+      "name": "Misty Carver"
     },
     {
       "id": "o_27",
-      "name": "Nick Lakhani"
+      "name": "Steve Ames"
     },
     {
       "id": "o_28",
-      "name": "Hopkins"
+      "name": "IDC Ankeny LLC - Laura Meyers"
     },
     {
       "id": "o_29",
-      "name": "Huebner - Adam"
+      "name": "Weston Rose - Rose Capital Partners LLC"
     },
     {
       "id": "o_3",
@@ -215,307 +95,215 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_30",
-      "name": "River Ridge Escrow - Melissa Sabin - msabin@therrec.com"
-    },
-    {
-      "id": "o_31",
-      "name": "RentCF"
-    },
-    {
-      "id": "o_32",
-      "name": "LLC (Tyler Rasmussen"
-    },
-    {
-      "id": "o_33",
-      "name": "Adam Hunemiller)"
-    },
-    {
-      "id": "o_34",
-      "name": "Tiffany Belekevich - tiffanyb@skogman.com"
-    },
-    {
-      "id": "o_35",
-      "name": "Rent CF"
-    },
-    {
-      "id": "o_36",
-      "name": "Adam Hunemuller)"
-    },
-    {
-      "id": "o_37",
-      "name": "Aquib Ali"
-    },
-    {
-      "id": "o_38",
-      "name": "David Barker"
-    },
-    {
-      "id": "o_39",
-      "name": "Bill Skinner"
-    },
-    {
-      "id": "o_4",
-      "name": "Mohamad Chehab (phone: (602) 687-0996 | His regional manager: Mike ; phone number: (812) 664-5449"
-    },
-    {
-      "id": "o_40",
-      "name": "Wilson"
-    },
-    {
-      "id": "o_41",
-      "name": "Egge"
-    },
-    {
-      "id": "o_42",
-      "name": "Stanbrough Residential LLC - Jeff Stanbrough"
-    },
-    {
-      "id": "o_43",
-      "name": "Steve Ames"
-    },
-    {
-      "id": "o_44",
-      "name": "Wasker"
-    },
-    {
-      "id": "o_45",
-      "name": "Dorr"
-    },
-    {
-      "id": "o_46",
-      "name": "Wimmer"
-    },
-    {
-      "id": "o_47",
-      "name": "Marcouiller - Mary Aronson"
-    },
-    {
-      "id": "o_48",
-      "name": "IowaComputerGurus"
-    },
-    {
-      "id": "o_49",
-      "name": "Inc - Mitch Sellers"
-    },
-    {
-      "id": "o_5",
-      "name": "Ryan Winter"
-    },
-    {
-      "id": "o_50",
-      "name": "Weston Rose - Rose Capital Partners LLC"
-    },
-    {
-      "id": "o_51",
       "name": "Ed Behrman"
     },
     {
-      "id": "o_52",
+      "id": "o_31",
       "name": "Aaron Bernard"
     },
     {
-      "id": "o_53",
+      "id": "o_32",
       "name": "Adam Metzker"
     },
     {
-      "id": "o_54",
-      "name": "Happe Homes and/or Assigns"
-    },
-    {
-      "id": "o_55",
+      "id": "o_33",
       "name": "Pivot LLC | Reece Satre (reece.satre@gmail.com)"
     },
     {
-      "id": "o_56",
+      "id": "o_34",
       "name": "Tyler Rasmussen"
     },
     {
-      "id": "o_57",
+      "id": "o_35",
       "name": "Adam Hunemuller"
     },
     {
-      "id": "o_58",
-      "name": "Bradley"
+      "id": "o_36",
+      "name": "ARVO LLC - Zebediah Grimm"
     },
     {
-      "id": "o_59",
-      "name": "Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com"
+      "id": "o_37",
+      "name": "Justin Madsen"
     },
     {
-      "id": "o_6",
-      "name": "Kyle Kruidener"
+      "id": "o_38",
+      "name": "John Lassaux"
     },
     {
-      "id": "o_60",
-      "name": "S"
+      "id": "o_39",
+      "name": "Gerry Manning - Manning Real Estate LLC"
     },
     {
-      "id": "o_61",
-      "name": "S Capital Group LLC"
+      "id": "o_4",
+      "name": "Ryan Winter"
     },
     {
-      "id": "o_62",
-      "name": "Washington State Bank - Ryan Shields - rshields@washsb.com"
+      "id": "o_40",
+      "name": "Manning"
     },
     {
-      "id": "o_63",
-      "name": "Hyper Energy Bar LLC - Jenny Drake"
+      "id": "o_41",
+      "name": "Associates Inc"
     },
     {
-      "id": "o_64",
-      "name": "Ryan Winter and/or Assigns"
+      "id": "o_42",
+      "name": "Manning Properties LLC"
     },
     {
-      "id": "o_65",
-      "name": "Dentons Davis Brown - Bob Douglas"
+      "id": "o_43",
+      "name": "AL3 Properties LLC - Aquib Ali"
     },
     {
-      "id": "o_66",
-      "name": "Balmanainvestment LLC - Sushil Gajmer"
-    },
-    {
-      "id": "o_67",
-      "name": "David Elkin"
-    },
-    {
-      "id": "o_68",
-      "name": "Weston Rose"
-    },
-    {
-      "id": "o_69",
-      "name": "Gerry Manning"
-    },
-    {
-      "id": "o_7",
-      "name": "Teddy Mohlman"
-    },
-    {
-      "id": "o_70",
-      "name": "Chase Gochnauer"
-    },
-    {
-      "id": "o_71",
-      "name": "Jeffrey Boardman"
-    },
-    {
-      "id": "o_72",
-      "name": "Jeff Schachtner"
-    },
-    {
-      "id": "o_73",
+      "id": "o_44",
       "name": "Prabhjot Singh"
     },
     {
-      "id": "o_74",
-      "name": "N/A - Cash Purchase"
+      "id": "o_45",
+      "name": "Weston Rose"
     },
     {
-      "id": "o_75",
+      "id": "o_47",
+      "name": "Jeffrey Boardman"
+    },
+    {
+      "id": "o_48",
+      "name": "Roger Langpaul"
+    },
+    {
+      "id": "o_49",
       "name": "Bruce McCann"
     },
     {
-      "id": "o_76",
-      "name": "Hastings"
+      "id": "o_5",
+      "name": "Teddy Mohlman"
     },
     {
-      "id": "o_77",
-      "name": "Gartin"
+      "id": "o_50",
+      "name": "Fish Creek Coop Inc - Aaron Bernard"
     },
     {
-      "id": "o_78",
-      "name": "Boettger - Tim Gartin"
+      "id": "o_51",
+      "name": "Marco Miranda - Brickstone Apartments LLC"
     },
     {
-      "id": "o_79",
-      "name": "Fish Creek Coop Inc - Teddy Mohlman"
-    },
-    {
-      "id": "o_8",
-      "name": "Javier Baez"
-    },
-    {
-      "id": "o_80",
-      "name": "Javier Baeza"
-    },
-    {
-      "id": "o_81",
-      "name": "Learned"
-    },
-    {
-      "id": "o_82",
-      "name": "Associates - Chad Learned"
-    },
-    {
-      "id": "o_83",
-      "name": "Daniels Asset Management LLC - Eric Daniels"
-    },
-    {
-      "id": "o_84",
+      "id": "o_52",
       "name": "Norwalk JV22"
     },
     {
-      "id": "o_85",
+      "id": "o_53",
       "name": "LLC"
     },
     {
-      "id": "o_86",
-      "name": "Jared Husmann and/or Assigns"
+      "id": "o_54",
+      "name": "Craig Anfinson"
     },
     {
-      "id": "o_87",
-      "name": "Jonathon Schroeder - jschroeder@fredlaw.com"
-    },
-    {
-      "id": "o_88",
-      "name": "Tom Fawcett"
-    },
-    {
-      "id": "o_89",
-      "name": "Ken Wick"
-    },
-    {
-      "id": "o_9",
-      "name": "J&J Family Limited Partnership"
-    },
-    {
-      "id": "o_90",
+      "id": "o_55",
       "name": "Zineta"
     },
     {
-      "id": "o_91",
+      "id": "o_56",
       "name": "Kemal Imamovic"
     },
     {
-      "id": "o_92",
-      "name": "Paul Davis"
+      "id": "o_57",
+      "name": "Eric McCormick"
     },
     {
-      "id": "o_93",
-      "name": "Grant Lewis"
+      "id": "o_59",
+      "name": "BGC LLC - Becky Hiu"
     },
     {
-      "id": "o_94",
-      "name": "Wilson Law Firm - Samantha"
+      "id": "o_6",
+      "name": "Javier Baez"
     },
     {
-      "id": "o_95",
-      "name": "Matt Forsum"
+      "id": "o_61",
+      "name": "Eric Himmelsbach"
     },
     {
-      "id": "o_96",
-      "name": "Ed Pagliai"
+      "id": "o_62",
+      "name": "Cory French"
     },
     {
-      "id": "o_97",
-      "name": "David Elkin - dave@elkin-law.com"
+      "id": "o_63",
+      "name": "Ian Schwickert"
     },
     {
-      "id": "o_98",
-      "name": "Ian Schwickert - KSI Holdings LLC"
+      "id": "o_64",
+      "name": "Alex Knutson"
     },
     {
-      "id": "o_99",
-      "name": "MKibben Settlement - Michele McKibben - 515.971.5254 - michele@mckibbensettlement.com"
+      "id": "o_65",
+      "name": "Kevin Bryan"
+    },
+    {
+      "id": "o_66",
+      "name": "Jared Althoff"
+    },
+    {
+      "id": "o_67",
+      "name": "John Althoff | Maryville Family LTD"
+    },
+    {
+      "id": "o_69",
+      "name": "Tyler Hogue"
+    },
+    {
+      "id": "o_7",
+      "name": "J&J Family Limited Partnership"
+    },
+    {
+      "id": "o_70",
+      "name": "Josh Hogue"
+    },
+    {
+      "id": "o_71",
+      "name": "Levi Walker"
+    },
+    {
+      "id": "o_72",
+      "name": "Matt DeBoth"
+    },
+    {
+      "id": "o_73",
+      "name": "Kimberly Kleinhans"
+    },
+    {
+      "id": "o_74",
+      "name": "Keith Kleinhans"
+    },
+    {
+      "id": "o_75",
+      "name": "terrance@thevareco.com"
+    },
+    {
+      "id": "o_76",
+      "name": "Andrew Howard"
+    },
+    {
+      "id": "o_77",
+      "name": "Georgia Howard"
+    },
+    {
+      "id": "o_78",
+      "name": "Matt Blickenderfer | Black Hawk Real Estate"
+    },
+    {
+      "id": "o_79",
+      "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+    },
+    {
+      "id": "o_8",
+      "name": "Teddy Molhman"
+    },
+    {
+      "id": "o_80",
+      "name": "Marco Andes"
+    },
+    {
+      "id": "o_9",
+      "name": "Javier Bazeos"
     }
   ],
   "listings": [
@@ -528,7 +316,7 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Nov 6, 2024, 1:34 AM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Brad Houser",
       "titleOpinion": "",
       "assoc": {
@@ -541,7 +329,7 @@ export const dashboardData: DashboardData = {
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -597,10 +385,10 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Nov 28, 2025, 4:04 AM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Mohamad Chehab (phone: (602) 687-0996 | His regional manager: Mike ; phone number: (812) 664-5449",
-      "closingAttorneyBuyer": "Bradley Sloter (Noah, Smith, Sloter & Ellingson PLC ; Address is 200 North Johnson Street Charles City, IA  50616.  Phone is 641-228-4533)\n\n",
-      "lenderBuyer": "Doug Krabbe - CUSB Bank\n",
+      "closingAttorneyBuyer": "Bradley Sloter (Noah, Smith, Sloter & Ellingson PLC ; Address is 200 North Johnson Street Charles City, IA  50616.  Phone is 641-228-4533)",
+      "lenderBuyer": "Doug Krabbe - CUSB Bank",
       "seller": "Arlen and Nina Near",
       "titleOpinion": "",
       "assoc": {
@@ -612,32 +400,16 @@ export const dashboardData: DashboardData = {
           {
             "id": "o_3",
             "name": "Nina Near"
-          },
-          {
-            "id": "o_4",
-            "name": "Mohamad Chehab (phone: (602) 687-0996 | His regional manager: Mike ; phone number: (812) 664-5449"
           }
         ],
         "lawyers": [
           {
-            "name": "Bradley Sloter (Noah"
-          },
-          {
-            "name": "Smith"
-          },
-          {
-            "name": "Sloter"
-          },
-          {
-            "name": "Ellingson PLC ; Address is 200 North Johnson Street Charles City"
-          },
-          {
-            "name": "IA  50616.  Phone is 641-228-4533)"
+            "name": "Bradley Sloter (Noah, Smith, Sloter & Ellingson PLC ; Address is 200 North Johnson Street Charles City, IA  50616.  Phone is 641-228-4533)"
           }
         ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -655,26 +427,22 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Dec 2, 2024, 11:29 PM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Kyle Kruidener",
-      "lenderBuyer": "Erik Moen - Bank Iowa\n\n",
+      "lenderBuyer": "Erik Moen - Bank Iowa",
       "seller": "Ryan Winter",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_5",
+            "id": "o_4",
             "name": "Ryan Winter"
-          },
-          {
-            "id": "o_6",
-            "name": "Kyle Kruidener"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -692,24 +460,24 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Dec 10, 2024, 3:17 AM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Teddy Mohlman & Javier Baez",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_7",
+            "id": "o_5",
             "name": "Teddy Mohlman"
           },
           {
-            "id": "o_8",
+            "id": "o_6",
             "name": "Javier Baez"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -727,25 +495,21 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 5, 2024, 10:26 PM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Charlie's Properties LLC and/or Assigns - Bob Charleston",
       "seller": "J&J Family Limited Partnership",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_9",
+            "id": "o_7",
             "name": "J&J Family Limited Partnership"
-          },
-          {
-            "id": "o_10",
-            "name": "Charlie's Properties LLC and/or Assigns - Bob Charleston"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -763,20 +527,15 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 8, 2025, 1:10 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Ben Latusek",
       "titleOpinion": "",
       "assoc": {
-        "owners": [
-          {
-            "id": "o_11",
-            "name": "Ben Latusek"
-          }
-        ],
+        "owners": [],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -794,24 +553,24 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Nov 9, 2024, 12:49 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Teddy Molhman & Javier Bazeos",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_12",
+            "id": "o_8",
             "name": "Teddy Molhman"
           },
           {
-            "id": "o_13",
+            "id": "o_9",
             "name": "Javier Bazeos"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -821,28 +580,28 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86a3p5z1a",
+      "id": "86ae6xeyb",
       "name": "Chiropractor Building - Madrid, IA",
       "address": "Chiropractor Building - Madrid, IA",
       "status": "opportunity",
-      "datasetYear": 2024,
-      "dateUpdated": "Jul 9, 2024, 12:20 AM",
-      "createdBy": "Administration",
+      "datasetYear": 2026,
+      "dateUpdated": "Jan 2, 2026, 1:54 PM",
+      "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Paul Peters",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_14",
+            "id": "o_10",
             "name": "Paul Peters"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -852,28 +611,28 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86a3p5v80",
+      "id": "86ae6xext",
       "name": "4600 Park Ave - Des Moines, IA",
       "address": "4600 Park Ave - Des Moines, IA",
       "status": "opportunity",
-      "datasetYear": 2024,
-      "dateUpdated": "Jul 9, 2024, 3:06 AM",
-      "createdBy": "Administration",
+      "datasetYear": 2026,
+      "dateUpdated": "Jan 2, 2026, 1:54 PM",
+      "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Shane Isley",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_15",
+            "id": "o_11",
             "name": "Shane Isley"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -891,20 +650,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Nov 9, 2024, 12:47 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Bob Sweeney",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_16",
+            "id": "o_12",
             "name": "Bob Sweeney"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -922,20 +681,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jun 6, 2024, 2:13 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Richard Hutsell",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_17",
+            "id": "o_13",
             "name": "Richard Hutsell"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -945,28 +704,28 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86a3p5tct",
+      "id": "86ae6xexn",
       "name": "1000 24th St - Des Moines, IA",
       "address": "1000 24th St - Des Moines, IA",
       "status": "opportunity",
-      "datasetYear": 2024,
-      "dateUpdated": "Jun 6, 2024, 2:12 AM",
-      "createdBy": "Administration",
+      "datasetYear": 2026,
+      "dateUpdated": "Jan 2, 2026, 1:54 PM",
+      "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Britt Randall",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_18",
+            "id": "o_14",
             "name": "Britt Randall"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -976,32 +735,32 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86a3nkyw3",
+      "id": "86a6rb0qm",
       "name": "2101 University Ave - Des Moines, IA",
       "address": "2101 University Ave - Des Moines, IA",
-      "status": "lysted",
-      "datasetYear": 2024,
-      "dateUpdated": "Jul 2, 2024, 10:40 PM",
-      "createdBy": "Administration",
+      "status": "Closed",
+      "datasetYear": 2025,
+      "dateUpdated": "Mar 12, 2025, 10:00 PM",
+      "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Wash Iowa LLC - Nic & Monica Runkel",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_19",
+            "id": "o_15",
             "name": "Wash Iowa LLC - Nic"
           },
           {
-            "id": "o_20",
+            "id": "o_16",
             "name": "Monica Runkel"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1019,20 +778,21 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jul 17, 2024, 12:14 AM",
       "createdBy": "Administration",
       "abstracting": "Title Services in Waterloo",
-      "seller": "Roberts & Eddy - Andy Hauber\n",
+      "closingAttorneySeller": "Roberts & Eddy - Andy Hauber",
+      "seller": "Baltimore LLC - Tyler Rasmussen",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_21",
-            "name": "Roberts"
-          },
-          {
-            "id": "o_22",
-            "name": "Eddy - Andy Hauber"
+            "id": "o_17",
+            "name": "Baltimore LLC - Tyler Rasmussen"
           }
         ],
-        "lawyers": [],
+        "lawyers": [
+          {
+            "name": "Roberts & Eddy - Andy Hauber"
+          }
+        ],
         "agents": [],
         "leads": [],
         "transactions": [],
@@ -1049,22 +809,18 @@ export const dashboardData: DashboardData = {
       "createdBy": "Administration",
       "abstracting": "",
       "buyer": "Lindsay Miller",
-      "lenderBuyer": "Residential Mortgage Network - April Holden\napril@rmniowa.com\n",
+      "lenderBuyer": "Residential Mortgage Network - April Holden\napril@rmniowa.com",
       "seller": "Kim & Jeffrey Slaymaker",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_23",
+            "id": "o_18",
             "name": "Kim"
           },
           {
-            "id": "o_24",
+            "id": "o_19",
             "name": "Jeffrey Slaymaker"
-          },
-          {
-            "id": "o_25",
-            "name": "Lindsay Miller"
           }
         ],
         "lawyers": [],
@@ -1083,26 +839,27 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jul 10, 2024, 1:29 AM",
       "createdBy": "Administration",
       "abstracting": "American Abstract",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Nick Lakhani",
-      "lenderBuyer": "First Interstate Bank\n",
-      "seller": "O'Brien Closings - Dan O'Brien\n",
+      "closingAttorneySeller": "O'Brien Closings - Dan O'Brien",
+      "lenderBuyer": "First Interstate Bank",
+      "seller": "Ryan Winter",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_26",
-            "name": "O'Brien Closings - Dan O'Brien"
-          },
-          {
-            "id": "o_27",
-            "name": "Nick Lakhani"
+            "id": "o_4",
+            "name": "Ryan Winter"
           }
         ],
-        "lawyers": [],
+        "lawyers": [
+          {
+            "name": "O'Brien Closings - Dan O'Brien"
+          }
+        ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1112,32 +869,38 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86a2y1y5x",
+      "id": "86a6rb0kc",
       "name": "149 S Chestnut Ave - Earlham, IA",
       "address": "149 S Chestnut Ave - Earlham, IA",
-      "status": "lysted",
-      "datasetYear": 2024,
-      "dateUpdated": "Aug 8, 2025, 1:10 AM",
-      "createdBy": "Administration",
+      "status": "Closed",
+      "datasetYear": 2025,
+      "dateUpdated": "Sep 12, 2025, 12:54 AM",
+      "createdBy": "Chloe Ting",
       "abstracting": "Madison County Abstract - Abstract held here now",
-      "agent": "0",
-      "seller": "Hopkins & Huebner - Adam\n",
+      "agent": "Jared Husmann",
+      "buyer": "Misty Korthas",
+      "closingAttorneyBuyer": "Wasker, Dorr, Wimmer and Marcouiller, P.C. out of WDM -- Dave Pulliam | Banker: Quinn.Weber@earlhambank.com",
+      "closingAttorneySeller": "Hopkins & Huebner - Adam",
+      "seller": "Cash Flow Iowa LLC (Zach Clayton & Lynda Clayton)",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_28",
-            "name": "Hopkins"
-          },
-          {
-            "id": "o_29",
-            "name": "Huebner - Adam"
+            "id": "o_20",
+            "name": "Cash Flow Iowa LLC (Zach Clayton & Lynda Clayton)"
           }
         ],
-        "lawyers": [],
+        "lawyers": [
+          {
+            "name": "Wasker, Dorr, Wimmer and Marcouiller, P.C. out of WDM"
+          },
+          {
+            "name": "Hopkins & Huebner - Adam"
+          }
+        ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1156,38 +919,24 @@ export const dashboardData: DashboardData = {
       "createdBy": "Administration",
       "abstracting": "Iowa Title",
       "buyer": "RentCF, LLC (Tyler Rasmussen & Adam Hunemiller)",
-      "closingAttorneyBuyer": "Roberts & Eddy - realestate@robertseddy.com & mmcintyre@robertseddy.com\n\n",
-      "lenderBuyer": "Bank Iowa - Bryan Palmer - bryan.palmer@bankiowa.com\n",
-      "seller": "River Ridge Escrow - Melissa Sabin - msabin@therrec.com\n\n",
-      "titleOpinion": "Roberts & Eddy\n\n",
+      "closingAttorneyBuyer": "Roberts & Eddy - realestate@robertseddy.com & mmcintyre@robertseddy.com",
+      "closingAttorneySeller": "River Ridge Escrow - Melissa Sabin - msabin@therrec.com",
+      "lenderBuyer": "Bank Iowa - Bryan Palmer - bryan.palmer@bankiowa.com",
+      "seller": "JRB Solutions LLC (Jack Brundell)",
+      "titleOpinion": "Roberts & Eddy",
       "assoc": {
         "owners": [
           {
-            "id": "o_30",
-            "name": "River Ridge Escrow - Melissa Sabin - msabin@therrec.com"
-          },
-          {
-            "id": "o_31",
-            "name": "RentCF"
-          },
-          {
-            "id": "o_32",
-            "name": "LLC (Tyler Rasmussen"
-          },
-          {
-            "id": "o_33",
-            "name": "Adam Hunemiller)"
+            "id": "o_21",
+            "name": "JRB Solutions LLC (Jack Brundell)"
           }
         ],
         "lawyers": [
           {
-            "name": "Roberts"
+            "name": "Roberts & Eddy - realestate@robertseddy.com & mmcintyre@robertseddy.com"
           },
           {
-            "name": "Eddy - realestate@robertseddy.com"
-          },
-          {
-            "name": "mmcintyre@robertseddy.com"
+            "name": "River Ridge Escrow - Melissa Sabin - msabin@therrec.com"
           }
         ],
         "agents": [],
@@ -1206,35 +955,24 @@ export const dashboardData: DashboardData = {
       "createdBy": "Administration",
       "abstracting": "Iowa Title",
       "buyer": "Rent CF, LLC (Tyler Rasmussen & Adam Hunemuller)",
-      "closingAttorneyBuyer": "Roberts & Eddy - realestate@roberseddy.com\n\n",
-      "lenderBuyer": "Bank Iowa - Bryan Palmer - bryan.palmer@bankiowa.com\n",
-      "seller": "Tiffany Belekevich - tiffanyb@skogman.com\n",
-      "titleOpinion": "Roberts & Eddy - realestate@robertseddy.com\n",
+      "closingAttorneyBuyer": "Roberts & Eddy - realestate@roberseddy.com",
+      "closingAttorneySeller": "Tiffany Belekevich - tiffanyb@skogman.com",
+      "lenderBuyer": "Bank Iowa - Bryan Palmer - bryan.palmer@bankiowa.com",
+      "seller": "Collins Community Credit Union",
+      "titleOpinion": "Roberts & Eddy - realestate@robertseddy.com",
       "assoc": {
         "owners": [
           {
-            "id": "o_34",
-            "name": "Tiffany Belekevich - tiffanyb@skogman.com"
-          },
-          {
-            "id": "o_35",
-            "name": "Rent CF"
-          },
-          {
-            "id": "o_32",
-            "name": "LLC (Tyler Rasmussen"
-          },
-          {
-            "id": "o_36",
-            "name": "Adam Hunemuller)"
+            "id": "o_22",
+            "name": "Collins Community Credit Union"
           }
         ],
         "lawyers": [
           {
-            "name": "Roberts"
+            "name": "Roberts & Eddy - realestate@roberseddy.com"
           },
           {
-            "name": "Eddy - realestate@roberseddy.com"
+            "name": "Tiffany Belekevich - tiffanyb@skogman.com"
           }
         ],
         "agents": [],
@@ -1244,28 +982,28 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86a2rhv4y",
+      "id": "86ae6xeye",
       "name": "3703 & 3707 Hubbell Ave - Des Moines, IA",
       "address": "3703 & 3707 Hubbell Ave - Des Moines, IA",
       "status": "lysted",
-      "datasetYear": 2024,
-      "dateUpdated": "Apr 18, 2024, 12:02 AM",
+      "datasetYear": 2026,
+      "dateUpdated": "Jan 2, 2026, 9:13 PM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Aquib Ali",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_37",
+            "id": "o_23",
             "name": "Aquib Ali"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1283,20 +1021,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Feb 3, 2024, 4:01 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "David Barker",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_24",
             "name": "David Barker"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1314,20 +1052,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 2, 2024, 11:11 PM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Bill Skinner",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_39",
+            "id": "o_25",
             "name": "Bill Skinner"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1345,35 +1083,31 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 8, 2025, 1:08 AM",
       "createdBy": "Administration",
       "abstracting": "American Abstract",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Stanbrough Residential LLC - Jeff Stanbrough",
-      "closingAttorneyBuyer": "Wasker - Cosby\n",
-      "lenderBuyer": "First National Bank\n",
-      "seller": "Wilson & Egge\n",
-      "titleOpinion": "Wasker - Cosby\n",
+      "closingAttorneyBuyer": "Wasker - Cosby",
+      "closingAttorneySeller": "Wilson & Egge",
+      "lenderBuyer": "First National Bank",
+      "seller": "Misty Carver",
+      "titleOpinion": "Wasker - Cosby",
       "assoc": {
         "owners": [
           {
-            "id": "o_40",
-            "name": "Wilson"
-          },
-          {
-            "id": "o_41",
-            "name": "Egge"
-          },
-          {
-            "id": "o_42",
-            "name": "Stanbrough Residential LLC - Jeff Stanbrough"
+            "id": "o_26",
+            "name": "Misty Carver"
           }
         ],
         "lawyers": [
           {
             "name": "Wasker - Cosby"
+          },
+          {
+            "name": "Wilson & Egge"
           }
         ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1391,20 +1125,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jan 23, 2024, 3:44 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Steve Ames",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_43",
+            "id": "o_27",
             "name": "Steve Ames"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1422,47 +1156,31 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 8, 2025, 1:08 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "IowaComputerGurus, Inc - Mitch Sellers",
-      "closingAttorneyBuyer": "Takekawa - Dawn Takekawa - 515.964.2000\n",
-      "lenderBuyer": "Availa Bank - Pat Romig - promig@availa.bank\n",
-      "seller": "Wasker, Dorr, Wimmer & Marcouiller - Mary Aronson\n\n",
-      "titleOpinion": "Dawn Takekawa\n",
+      "closingAttorneyBuyer": "Takekawa - Dawn Takekawa - 515.964.2000",
+      "closingAttorneySeller": "Wasker, Dorr, Wimmer & Marcouiller - Mary Aronson",
+      "lenderBuyer": "Availa Bank - Pat Romig - promig@availa.bank",
+      "seller": "IDC Ankeny LLC - Laura Meyers",
+      "titleOpinion": "Dawn Takekawa",
       "assoc": {
         "owners": [
           {
-            "id": "o_44",
-            "name": "Wasker"
-          },
-          {
-            "id": "o_45",
-            "name": "Dorr"
-          },
-          {
-            "id": "o_46",
-            "name": "Wimmer"
-          },
-          {
-            "id": "o_47",
-            "name": "Marcouiller - Mary Aronson"
-          },
-          {
-            "id": "o_48",
-            "name": "IowaComputerGurus"
-          },
-          {
-            "id": "o_49",
-            "name": "Inc - Mitch Sellers"
+            "id": "o_28",
+            "name": "IDC Ankeny LLC - Laura Meyers"
           }
         ],
         "lawyers": [
           {
             "name": "Takekawa - Dawn Takekawa - 515.964.2000"
+          },
+          {
+            "name": "Wasker, Dorr, Wimmer & Marcouiller - Mary Aronson"
           }
         ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1472,28 +1190,28 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86a1qgja8",
+      "id": "86ae6xexw",
       "name": "4719 Toronto St - Ames, IA",
       "address": "4719 Toronto St - Ames, IA",
       "status": "parked",
-      "datasetYear": 2024,
-      "dateUpdated": "Oct 29, 2024, 11:35 PM",
-      "createdBy": "Administration",
+      "datasetYear": 2026,
+      "dateUpdated": "Jan 2, 2026, 1:54 PM",
+      "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Weston Rose - Rose Capital Partners LLC",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_50",
+            "id": "o_29",
             "name": "Weston Rose - Rose Capital Partners LLC"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1503,28 +1221,28 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86a1qgj9p",
+      "id": "86ae6xey9",
       "name": "Behrman Portfolio - Des Moines, IA",
       "address": "Behrman Portfolio - Des Moines, IA",
       "status": "opportunity",
-      "datasetYear": 2024,
-      "dateUpdated": "Dec 20, 2023, 12:46 AM",
-      "createdBy": "Administration",
+      "datasetYear": 2026,
+      "dateUpdated": "Jan 2, 2026, 1:54 PM",
+      "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Ed Behrman",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_51",
+            "id": "o_30",
             "name": "Ed Behrman"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1542,20 +1260,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Apr 22, 2024, 10:31 PM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Aaron Bernard",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_52",
+            "id": "o_31",
             "name": "Aaron Bernard"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1573,25 +1291,21 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Apr 18, 2024, 2:29 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Happe Homes and/or Assigns",
       "seller": "Adam Metzker",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_53",
+            "id": "o_32",
             "name": "Adam Metzker"
-          },
-          {
-            "id": "o_54",
-            "name": "Happe Homes and/or Assigns"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1614,7 +1328,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_55",
+            "id": "o_33",
             "name": "Pivot LLC | Reece Satre (reece.satre@gmail.com)"
           }
         ],
@@ -1634,20 +1348,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Apr 22, 2024, 10:32 PM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Aaron Bernard",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_52",
+            "id": "o_31",
             "name": "Aaron Bernard"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1665,20 +1379,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jan 23, 2024, 3:42 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Aaron Bernard",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_52",
+            "id": "o_31",
             "name": "Aaron Bernard"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1696,24 +1410,24 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Apr 22, 2024, 10:32 PM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Tyler Rasmussen & Adam Hunemuller",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_56",
+            "id": "o_34",
             "name": "Tyler Rasmussen"
           },
           {
-            "id": "o_57",
+            "id": "o_35",
             "name": "Adam Hunemuller"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1732,32 +1446,24 @@ export const dashboardData: DashboardData = {
       "createdBy": "Administration",
       "abstracting": "",
       "buyer": "S & S Capital Group LLC",
-      "closingAttorneyBuyer": "Gregg Epping - gepping@tewlaw.net\n",
-      "lenderBuyer": "Hills Bank - Amy Miller - amy_miller@hillsbank.com\n",
-      "seller": "Bradley & Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com",
-      "titleOpinion": "Gregg Epping - gepping@tewlaw.net\n",
+      "closingAttorneyBuyer": "Gregg Epping - gepping@tewlaw.net",
+      "closingAttorneySeller": "Bradley & Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com",
+      "lenderBuyer": "Hills Bank - Amy Miller - amy_miller@hillsbank.com",
+      "seller": "ARVO LLC - Zebediah Grimm",
+      "titleOpinion": "Gregg Epping - gepping@tewlaw.net",
       "assoc": {
         "owners": [
           {
-            "id": "o_58",
-            "name": "Bradley"
-          },
-          {
-            "id": "o_59",
-            "name": "Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com"
-          },
-          {
-            "id": "o_60",
-            "name": "S"
-          },
-          {
-            "id": "o_61",
-            "name": "S Capital Group LLC"
+            "id": "o_36",
+            "name": "ARVO LLC - Zebediah Grimm"
           }
         ],
         "lawyers": [
           {
             "name": "Gregg Epping - gepping@tewlaw.net"
+          },
+          {
+            "name": "Bradley & Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com"
           }
         ],
         "agents": [],
@@ -1775,20 +1481,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jan 23, 2024, 3:42 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Aaron Bernard",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_52",
+            "id": "o_31",
             "name": "Aaron Bernard"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1806,20 +1512,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jan 23, 2024, 3:42 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Aaron Bernard",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_52",
+            "id": "o_31",
             "name": "Aaron Bernard"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1837,36 +1543,30 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "May 28, 2024, 10:52 PM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Hyper Energy Bar LLC - Jenny Drake",
       "closingAttorneyBuyer": "Whitfield & Eddy - John Fatina & Marlene Baustian",
-      "seller": "Washington State Bank - Ryan Shields - rshields@washsb.com",
+      "seller": "Justin Madsen & John Lassaux",
       "titleOpinion": "Whitfield & Eddy - John Fatino",
       "assoc": {
         "owners": [
           {
-            "id": "o_62",
-            "name": "Washington State Bank - Ryan Shields - rshields@washsb.com"
+            "id": "o_37",
+            "name": "Justin Madsen"
           },
           {
-            "id": "o_63",
-            "name": "Hyper Energy Bar LLC - Jenny Drake"
+            "id": "o_38",
+            "name": "John Lassaux"
           }
         ],
         "lawyers": [
           {
-            "name": "Whitfield"
-          },
-          {
-            "name": "Eddy - John Fatina"
-          },
-          {
-            "name": "Marlene Baustian"
+            "name": "Whitfield & Eddy - John Fatina & Marlene Baustian"
           }
         ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1884,20 +1584,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Apr 22, 2024, 10:32 PM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Aaron Bernard",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_52",
+            "id": "o_31",
             "name": "Aaron Bernard"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1915,20 +1615,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jan 23, 2024, 3:41 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Aaron Bernard",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_52",
+            "id": "o_31",
             "name": "Aaron Bernard"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1946,20 +1646,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Apr 22, 2024, 10:32 PM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Aaron Bernard",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_52",
+            "id": "o_31",
             "name": "Aaron Bernard"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -1977,35 +1677,43 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jul 19, 2024, 9:38 PM",
       "createdBy": "Administration",
       "abstracting": "American Abstract",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Ryan Winter and/or Assigns",
-      "closingAttorneyBuyer": "O'Brien Settlement Services - Don O'Brien\n",
-      "lenderBuyer": "Community Business Lenders - Garrett Reynolds / Julie Hahn\n",
-      "seller": "Wilson & Egge\n",
-      "titleOpinion": "Lamberti, Murphy & Strong - William Strong\n",
+      "closingAttorneyBuyer": "O'Brien Settlement Services - Don O'Brien",
+      "closingAttorneySeller": "Wilson & Egge",
+      "lenderBuyer": "Community Business Lenders - Garrett Reynolds / Julie Hahn",
+      "seller": "Gerry Manning - Manning Real Estate LLC, Manning & Associates Inc, Manning Properties LLC",
+      "titleOpinion": "Lamberti, Murphy & Strong - William Strong",
       "assoc": {
         "owners": [
           {
+            "id": "o_39",
+            "name": "Gerry Manning - Manning Real Estate LLC"
+          },
+          {
             "id": "o_40",
-            "name": "Wilson"
+            "name": "Manning"
           },
           {
             "id": "o_41",
-            "name": "Egge"
+            "name": "Associates Inc"
           },
           {
-            "id": "o_64",
-            "name": "Ryan Winter and/or Assigns"
+            "id": "o_42",
+            "name": "Manning Properties LLC"
           }
         ],
         "lawyers": [
           {
             "name": "O'Brien Settlement Services - Don O'Brien"
+          },
+          {
+            "name": "Wilson & Egge"
           }
         ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2023,31 +1731,35 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 8, 2025, 1:09 AM",
       "createdBy": "Administration",
       "abstracting": "People's Abstract",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Balmanainvestment LLC - Sushil Gajmer",
-      "closingAttorneyBuyer": "Ogle Law Office - Loyd Ogle\n",
-      "lenderBuyer": "First Interstate Bank - Joseph Beedon - joseph.beedon@fib.com\n",
-      "seller": "Dentons Davis Brown - Bob Douglas\n",
-      "titleOpinion": "Ogle Law Office - Loyd Ogle\n",
+      "closingAttorneyBuyer": "Ogle Law Office - Loyd Ogle",
+      "closingAttorneySeller": "Dentons Davis Brown - Bob Douglas",
+      "lenderBuyer": "First Interstate Bank - Joseph Beedon - joseph.beedon@fib.com",
+      "seller": "AL3 Properties LLC - Aquib Ali and Prabhjot Singh",
+      "titleOpinion": "Ogle Law Office - Loyd Ogle",
       "assoc": {
         "owners": [
           {
-            "id": "o_65",
-            "name": "Dentons Davis Brown - Bob Douglas"
+            "id": "o_43",
+            "name": "AL3 Properties LLC - Aquib Ali"
           },
           {
-            "id": "o_66",
-            "name": "Balmanainvestment LLC - Sushil Gajmer"
+            "id": "o_44",
+            "name": "Prabhjot Singh"
           }
         ],
         "lawyers": [
           {
             "name": "Ogle Law Office - Loyd Ogle"
+          },
+          {
+            "name": "Dentons Davis Brown - Bob Douglas"
           }
         ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2065,62 +1777,28 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jan 24, 2024, 12:39 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
-      "seller": "David Elkin",
+      "agent": "Jared Husmann",
+      "closingAttorneySeller": "David Elkin",
+      "seller": "Adam Metzker",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_67",
+            "id": "o_32",
+            "name": "Adam Metzker"
+          }
+        ],
+        "lawyers": [
+          {
             "name": "David Elkin"
           }
         ],
-        "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a1qfh2x",
-      "name": "A Ave Portfolio - Cedar Rapids, IA",
-      "address": "A Ave Portfolio - Cedar Rapids, IA",
-      "status": "due diligence",
-      "datasetYear": 2023,
-      "dateUpdated": "Dec 20, 2023, 12:32 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "buyer": "S & S Capital Group LLC",
-      "lenderBuyer": "Hills Bank - Amy Miller - amy_miller@hillsbank.com\n",
-      "seller": "Bradley & Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_58",
-            "name": "Bradley"
-          },
-          {
-            "id": "o_59",
-            "name": "Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com"
-          },
-          {
-            "id": "o_60",
-            "name": "S"
-          },
-          {
-            "id": "o_61",
-            "name": "S Capital Group LLC"
-          }
-        ],
-        "lawyers": [],
-        "agents": [],
         "leads": [],
         "transactions": [],
         "documents": []
@@ -2135,20 +1813,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Dec 12, 2023, 12:48 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Weston Rose",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_68",
+            "id": "o_45",
             "name": "Weston Rose"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2177,42 +1855,6 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86a199z4w",
-      "name": "Valley Junction Portfolio - West Des Moines, IA",
-      "address": "Valley Junction Portfolio - West Des Moines, IA",
-      "status": "opportunity",
-      "datasetYear": 2023,
-      "dateUpdated": "Nov 8, 2023, 1:32 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "buyer": "Chase Gochnauer",
-      "seller": "Gerry Manning",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_69",
-            "name": "Gerry Manning"
-          },
-          {
-            "id": "o_70",
-            "name": "Chase Gochnauer"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
       "id": "86a0wd13r",
       "name": "1170 Martin Luther King Jr Pkwy - Des Moines, IA",
       "address": "1170 Martin Luther King Jr Pkwy - Des Moines, IA",
@@ -2221,56 +1863,21 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Oct 18, 2023, 2:27 AM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Jeff Schachtner",
       "seller": "Jeffrey Boardman",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_71",
+            "id": "o_47",
             "name": "Jeffrey Boardman"
-          },
-          {
-            "id": "o_72",
-            "name": "Jeff Schachtner"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a0q8ng2",
-      "name": "1710 Oakland Ave, Des Moines, IA 50314",
-      "address": "1710 Oakland Ave, Des Moines, IA 50314",
-      "status": "lysted",
-      "datasetYear": 2023,
-      "dateUpdated": "Nov 8, 2023, 11:26 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "David Elkin",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_67",
-            "name": "David Elkin"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2288,24 +1895,24 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Nov 14, 2023, 11:12 PM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Aquib Ali and Prabhjot Singh",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_37",
+            "id": "o_23",
             "name": "Aquib Ali"
           },
           {
-            "id": "o_73",
+            "id": "o_44",
             "name": "Prabhjot Singh"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2323,28 +1930,25 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Dec 7, 2023, 1:28 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "closingAttorneyBuyer": "Wilson & Egge - Samantha",
-      "seller": "N/A - Cash Purchase",
+      "seller": "Roger Langpaul",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_74",
-            "name": "N/A - Cash Purchase"
+            "id": "o_48",
+            "name": "Roger Langpaul"
           }
         ],
         "lawyers": [
           {
-            "name": "Wilson"
-          },
-          {
-            "name": "Egge - Samantha"
+            "name": "Wilson & Egge - Samantha"
           }
         ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2362,20 +1966,20 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Oct 31, 2023, 2:02 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Bruce McCann",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_75",
+            "id": "o_49",
             "name": "Bruce McCann"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2393,43 +1997,31 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 8, 2023, 12:02 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Fish Creek Coop Inc - Teddy Mohlman & Javier Baeza",
       "closingAttorneyBuyer": "First Security Bank",
+      "closingAttorneySeller": "Hastings, Gartin & Boettger - Tim Gartin",
       "lenderBuyer": "1st Security Bank - Jeff Badger",
-      "seller": "Hastings, Gartin & Boettger - Tim Gartin",
+      "seller": "Fish Creek Coop Inc - Aaron Bernard",
       "titleOpinion": "Wilson & Egge",
       "assoc": {
         "owners": [
           {
-            "id": "o_76",
-            "name": "Hastings"
-          },
-          {
-            "id": "o_77",
-            "name": "Gartin"
-          },
-          {
-            "id": "o_78",
-            "name": "Boettger - Tim Gartin"
-          },
-          {
-            "id": "o_79",
-            "name": "Fish Creek Coop Inc - Teddy Mohlman"
-          },
-          {
-            "id": "o_80",
-            "name": "Javier Baeza"
+            "id": "o_50",
+            "name": "Fish Creek Coop Inc - Aaron Bernard"
           }
         ],
         "lawyers": [
           {
             "name": "First Security Bank"
+          },
+          {
+            "name": "Hastings, Gartin & Boettger - Tim Gartin"
           }
         ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2447,100 +2039,30 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 8, 2023, 12:01 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Daniels Asset Management LLC - Eric Daniels",
       "closingAttorneyBuyer": "Spring Law Firm - Jason Springer",
-      "seller": "Learned & Associates - Chad Learned",
+      "closingAttorneySeller": "Learned & Associates - Chad Learned",
+      "seller": "Marco Miranda - Brickstone Apartments LLC",
       "titleOpinion": "Springer Law Firm - Jason Springer",
       "assoc": {
         "owners": [
           {
-            "id": "o_81",
-            "name": "Learned"
-          },
-          {
-            "id": "o_82",
-            "name": "Associates - Chad Learned"
-          },
-          {
-            "id": "o_83",
-            "name": "Daniels Asset Management LLC - Eric Daniels"
+            "id": "o_51",
+            "name": "Marco Miranda - Brickstone Apartments LLC"
           }
         ],
         "lawyers": [
           {
             "name": "Spring Law Firm - Jason Springer"
-          }
-        ],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "867866mwq",
-      "name": "1047, 1125, 1153 & 1211 Langley Road - Waterloo, IA",
-      "address": "1047, 1125, 1153 & 1211 Langley Road - Waterloo, IA",
-      "status": "lysted",
-      "datasetYear": 2023,
-      "dateUpdated": "Sep 26, 2023, 2:11 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Tyler Rasmussen & Adam Hunemuller",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_56",
-            "name": "Tyler Rasmussen"
           },
           {
-            "id": "o_57",
-            "name": "Adam Hunemuller"
+            "name": "Learned & Associates - Chad Learned"
           }
         ],
-        "lawyers": [],
         "agents": [
           {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "867866mtq",
-      "name": "Behrman Portfolio - Des Moines, IA",
-      "address": "Behrman Portfolio - Des Moines, IA",
-      "status": "opportunity",
-      "datasetYear": 2023,
-      "dateUpdated": "Nov 8, 2023, 1:32 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Ed Behrman",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_51",
-            "name": "Ed Behrman"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2558,153 +2080,25 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Nov 8, 2023, 1:29 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Jared Husmann and/or Assigns",
       "seller": "Norwalk JV22, LLC",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_84",
+            "id": "o_52",
             "name": "Norwalk JV22"
           },
           {
-            "id": "o_85",
+            "id": "o_53",
             "name": "LLC"
-          },
-          {
-            "id": "o_86",
-            "name": "Jared Husmann and/or Assigns"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781rwmy",
-      "name": "1016 Stevens Street - Iowa Falls, IA",
-      "address": "1016 Stevens Street - Iowa Falls, IA",
-      "status": "opportunity",
-      "datasetYear": 2023,
-      "dateUpdated": "Aug 9, 2023, 12:28 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Aaron Bernard",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_52",
-            "name": "Aaron Bernard"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781rwk2",
-      "name": "912 River St - Iowa Falls, IA",
-      "address": "912 River St - Iowa Falls, IA",
-      "status": "opportunity",
-      "datasetYear": 2023,
-      "dateUpdated": "May 27, 2023, 12:01 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Aaron Bernard",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_52",
-            "name": "Aaron Bernard"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781rwh1",
-      "name": "717 Depot St - Iowa Falls, IA",
-      "address": "717 Depot St - Iowa Falls, IA",
-      "status": "opportunity",
-      "datasetYear": 2023,
-      "dateUpdated": "May 27, 2023, 12:01 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Aaron Bernard",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_52",
-            "name": "Aaron Bernard"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781r7u3",
-      "name": "710 Washington Ave - Iowa Falls, IA",
-      "address": "710 Washington Ave - Iowa Falls, IA",
-      "status": "opportunity",
-      "datasetYear": 2023,
-      "dateUpdated": "May 27, 2023, 12:01 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Aaron Bernard",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_52",
-            "name": "Aaron Bernard"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2722,35 +2116,31 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 8, 2023, 12:03 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Tom Fawcett & Ken Wick",
       "closingAttorneyBuyer": "Wasker - Lauren Rieck",
+      "closingAttorneySeller": "Jonathon Schroeder - jschroeder@fredlaw.com",
       "lenderBuyer": "Financial Federal Bank - Battle Williford - 615.864.1546 (Mortgage Broker)",
-      "seller": "Jonathon Schroeder - jschroeder@fredlaw.com",
+      "seller": "Craig Anfinson",
       "titleOpinion": "Wasker - Nicole Ayers",
       "assoc": {
         "owners": [
           {
-            "id": "o_87",
-            "name": "Jonathon Schroeder - jschroeder@fredlaw.com"
-          },
-          {
-            "id": "o_88",
-            "name": "Tom Fawcett"
-          },
-          {
-            "id": "o_89",
-            "name": "Ken Wick"
+            "id": "o_54",
+            "name": "Craig Anfinson"
           }
         ],
         "lawyers": [
           {
             "name": "Wasker - Lauren Rieck"
+          },
+          {
+            "name": "Jonathon Schroeder - jschroeder@fredlaw.com"
           }
         ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2768,7 +2158,7 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 8, 2023, 12:01 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Paul Davis & Grant Lewis",
       "closingAttorneyBuyer": "Chris Watkins - Raccoon Valley Bank - Closing & Dispursement",
       "lenderBuyer": "Raccoon Valley Bank - Chris Watkins",
@@ -2777,33 +2167,22 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_90",
+            "id": "o_55",
             "name": "Zineta"
           },
           {
-            "id": "o_91",
+            "id": "o_56",
             "name": "Kemal Imamovic"
-          },
-          {
-            "id": "o_92",
-            "name": "Paul Davis"
-          },
-          {
-            "id": "o_93",
-            "name": "Grant Lewis"
           }
         ],
         "lawyers": [
           {
-            "name": "Chris Watkins - Raccoon Valley Bank - Closing"
-          },
-          {
-            "name": "Dispursement"
+            "name": "Chris Watkins - Raccoon Valley Bank - Closing & Dispursement"
           }
         ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2821,81 +2200,30 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 8, 2023, 12:04 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Matt Forsum",
       "closingAttorneyBuyer": "Sean Raisch - Dentons - 515.288.2500",
-      "seller": "Wilson Law Firm - Samantha",
+      "closingAttorneySeller": "Wilson Law Firm - Samantha",
+      "seller": "Eric McCormick",
       "titleOpinion": "Sean Raisch - Dentons - 515.288.2500",
       "assoc": {
         "owners": [
           {
-            "id": "o_94",
-            "name": "Wilson Law Firm - Samantha"
-          },
-          {
-            "id": "o_95",
-            "name": "Matt Forsum"
+            "id": "o_57",
+            "name": "Eric McCormick"
           }
         ],
         "lawyers": [
           {
             "name": "Sean Raisch - Dentons - 515.288.2500"
+          },
+          {
+            "name": "Wilson Law Firm - Samantha"
           }
         ],
         "agents": [
           {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781kpqb",
-      "name": "2220 E Ovid Ave - Des Moines, IA",
-      "address": "2220 E Ovid Ave - Des Moines, IA",
-      "status": "Closed",
-      "datasetYear": 2023,
-      "dateUpdated": "Jun 2, 2023, 11:47 PM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "buyer": "Ryan Winter",
-      "closingAttorneyBuyer": "S - Midwest Law Group - Brett Osborn & Shawnda Behr\nB - Wilson & Egge - Bryan Loya & Samantha",
-      "lenderBuyer": "S - Heartland Bank\nB - N/A",
-      "seller": "Ed Pagliai",
-      "titleOpinion": "Wilson & Egge - Bryan Loya",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_96",
-            "name": "Ed Pagliai"
-          },
-          {
-            "id": "o_5",
-            "name": "Ryan Winter"
-          }
-        ],
-        "lawyers": [
-          {
-            "name": "S - Midwest Law Group - Brett Osborn"
-          },
-          {
-            "name": "Shawnda Behr\nB - Wilson"
-          },
-          {
-            "name": "Egge - Bryan Loya"
-          },
-          {
-            "name": "Samantha"
-          }
-        ],
-        "agents": [
-          {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -2913,257 +2241,31 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 8, 2023, 12:01 AM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Ian Schwickert - KSI Holdings LLC",
       "closingAttorneyBuyer": "Sullivan & Ward - Kyle Kruidenier - Closing & Dispursement",
+      "closingAttorneySeller": "David Elkin - dave@elkin-law.com",
       "lenderBuyer": "Raccoon Valley Bank - Erik Moen - emoen@raccoonvalleybank.com",
-      "seller": "David Elkin - dave@elkin-law.com",
+      "seller": "BGC LLC - Becky Hiu",
       "titleOpinion": "Sullivan & Ward - Kyle Kruidenier - kkruidenier@sullivan-ward.com",
       "assoc": {
         "owners": [
           {
-            "id": "o_97",
+            "id": "o_59",
+            "name": "BGC LLC - Becky Hiu"
+          }
+        ],
+        "lawyers": [
+          {
+            "name": "Sullivan & Ward - Kyle Kruidenier - Closing & Dispursement"
+          },
+          {
             "name": "David Elkin - dave@elkin-law.com"
-          },
-          {
-            "id": "o_98",
-            "name": "Ian Schwickert - KSI Holdings LLC"
-          }
-        ],
-        "lawyers": [
-          {
-            "name": "Sullivan"
-          },
-          {
-            "name": "Ward - Kyle Kruidenier - Closing"
-          },
-          {
-            "name": "Dispursement"
           }
         ],
         "agents": [
           {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781knkg",
-      "name": "125 NW Aurora Ave - Des Moines, IA",
-      "address": "125 NW Aurora Ave - Des Moines, IA",
-      "status": "Closed",
-      "datasetYear": 2023,
-      "dateUpdated": "Sep 21, 2023, 11:20 PM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "buyer": "Higher Ground Investment Group LLC - Teddy Mohlman & Javier Baeza",
-      "closingAttorneyBuyer": "Wilson & Egge - Samantha",
-      "lenderBuyer": "Cash Purchase",
-      "seller": "MKibben Settlement - Michele McKibben - 515.971.5254 - michele@mckibbensettlement.com",
-      "titleOpinion": "Wilson & Egge - Samantha",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_99",
-            "name": "MKibben Settlement - Michele McKibben - 515.971.5254 - michele@mckibbensettlement.com"
-          },
-          {
-            "id": "o_100",
-            "name": "Higher Ground Investment Group LLC - Teddy Mohlman"
-          },
-          {
-            "id": "o_80",
-            "name": "Javier Baeza"
-          }
-        ],
-        "lawyers": [
-          {
-            "name": "Wilson"
-          },
-          {
-            "name": "Egge - Samantha"
-          }
-        ],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781knhw",
-      "name": "1103 Broadway St - Webster City, IA",
-      "address": "1103 Broadway St - Webster City, IA",
-      "status": "lysted",
-      "datasetYear": 2023,
-      "dateUpdated": "Jul 11, 2023, 4:13 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Aaron Bernard",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_52",
-            "name": "Aaron Bernard"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781kndn",
-      "name": "1705 River St - Webster City, IA",
-      "address": "1705 River St - Webster City, IA",
-      "status": "lysted",
-      "datasetYear": 2023,
-      "dateUpdated": "Nov 8, 2023, 1:46 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Aaron Bernard",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_52",
-            "name": "Aaron Bernard"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781knbu",
-      "name": "522 Division St - Webster City, IA",
-      "address": "522 Division St - Webster City, IA",
-      "status": "lysted",
-      "datasetYear": 2023,
-      "dateUpdated": "Jul 11, 2023, 4:13 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Aaron Bernard",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_52",
-            "name": "Aaron Bernard"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781kn6g",
-      "name": "620 Park Ave - Webster City, IA",
-      "address": "620 Park Ave - Webster City, IA",
-      "status": "lysted",
-      "datasetYear": 2023,
-      "dateUpdated": "Jul 11, 2023, 4:13 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Aaron Bernard",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_52",
-            "name": "Aaron Bernard"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781kn3m",
-      "name": "1101 S Ankeny Blvd - Ankeny, IA",
-      "address": "1101 S Ankeny Blvd - Ankeny, IA",
-      "status": "due diligence",
-      "datasetYear": 2023,
-      "dateUpdated": "Dec 19, 2023, 11:45 PM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "buyer": "Hyper Energy Bar LLC - Jenny Drake",
-      "closingAttorneyBuyer": "Whitfield & Eddy - John Fatina & Marlene Baustian",
-      "seller": "Washington State Bank - Ryan Shields - rshields@washsb.com",
-      "titleOpinion": "Whitfield & Eddy - John Fatino",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_62",
-            "name": "Washington State Bank - Ryan Shields - rshields@washsb.com"
-          },
-          {
-            "id": "o_63",
-            "name": "Hyper Energy Bar LLC - Jenny Drake"
-          }
-        ],
-        "lawyers": [
-          {
-            "name": "Whitfield"
-          },
-          {
-            "name": "Eddy - John Fatina"
-          },
-          {
-            "name": "Marlene Baustian"
-          }
-        ],
-        "agents": [
-          {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -3181,79 +2283,31 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Aug 7, 2023, 11:55 PM",
       "createdBy": "Administration",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Alex Peterson",
       "closingAttorneyBuyer": "American Escrow - Jill Voss - jill@americanescrowinc.com",
+      "closingAttorneySeller": "O'Shea & O'Shea, PC Hiawatha, IA - 319.632.3640",
       "lenderBuyer": "First Federal Credit Union - Nancy Wymore - 319.449.1096 - nancy.wymore@firstfedcu.com",
-      "seller": "O'Shea & O'Shea, PC Hiawatha, IA - 319.632.3640",
+      "seller": "Eric Himmelsbach",
       "titleOpinion": "Brianna Reynolds Law Firm - 2252 Blairs Ferry Rd NW Hiawatha, IA 52233",
       "assoc": {
         "owners": [
           {
-            "id": "o_101",
-            "name": "O'Shea"
-          },
-          {
-            "id": "o_101",
-            "name": "O'Shea"
-          },
-          {
-            "id": "o_102",
-            "name": "PC Hiawatha"
-          },
-          {
-            "id": "o_103",
-            "name": "IA - 319.632.3640"
-          },
-          {
-            "id": "o_104",
-            "name": "Alex Peterson"
+            "id": "o_61",
+            "name": "Eric Himmelsbach"
           }
         ],
         "lawyers": [
           {
             "name": "American Escrow - Jill Voss - jill@americanescrowinc.com"
-          }
-        ],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86781kk8a",
-      "name": "Bondurant Land Parcel - Bondurant, IA",
-      "address": "Bondurant Land Parcel - Bondurant, IA",
-      "status": "due diligence",
-      "datasetYear": 2023,
-      "dateUpdated": "Nov 10, 2023, 12:23 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "buyer": "Happe Homes and/or Assigns",
-      "seller": "Adam Metzker",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_53",
-            "name": "Adam Metzker"
           },
           {
-            "id": "o_54",
-            "name": "Happe Homes and/or Assigns"
+            "name": "O'Shea & O'Shea, PC Hiawatha, IA - 319.632.3640"
           }
         ],
-        "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -3263,771 +2317,28 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86adc5bkv",
+      "id": "86ae6xexu",
       "name": "200 E. Arlington St. Waterloo, IA",
       "address": "200 E. Arlington St. Waterloo, IA",
-      "status": "marketing prep",
-      "datasetYear": 2025,
-      "dateUpdated": "Nov 20, 2025, 1:05 AM",
+      "status": "lost",
+      "datasetYear": 2026,
+      "dateUpdated": "May 21, 2026, 3:10 AM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "seller": "Richard Hutsell",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_17",
+            "id": "o_13",
             "name": "Richard Hutsell"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ad30b3g",
-      "name": "811 16th St. Des Moines, IA",
-      "address": "811 16th St. Des Moines, IA",
-      "status": "lysted",
-      "datasetYear": 2025,
-      "dateUpdated": "Nov 28, 2025, 3:21 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "Luana Savings bank holds the note.",
-      "agent": "0",
-      "seller": "Fred Anderson\n",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_105",
-            "name": "Fred Anderson"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ad13877",
-      "name": "2020 SE 44th Ct. Grimes, IA",
-      "address": "2020 SE 44th Ct. Grimes, IA",
-      "status": "lysted",
-      "datasetYear": 2025,
-      "dateUpdated": "Nov 8, 2025, 1:32 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Cory French",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_106",
-            "name": "Cory French"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86abqx3g3",
-      "name": "600 8th St. SE, Altoona, IA",
-      "address": "600 8th St. SE, Altoona, IA",
-      "status": "lysted",
-      "datasetYear": 2025,
-      "dateUpdated": "Sep 12, 2025, 1:01 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [],
-        "lawyers": [],
-        "agents": [],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86abqx35x",
-      "name": "2411 Welbeck Rd., Des Moines, IA",
-      "address": "2411 Welbeck Rd., Des Moines, IA",
-      "status": "lysted",
-      "datasetYear": 2025,
-      "dateUpdated": "Nov 28, 2025, 3:44 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Ian Schwickert, Alex Knutson, and Kevin Bryan",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_107",
-            "name": "Ian Schwickert"
-          },
-          {
-            "id": "o_108",
-            "name": "Alex Knutson"
-          },
-          {
-            "id": "o_109",
-            "name": "Kevin Bryan"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86aaq96d1",
-      "name": "1513 N. Ankeny Blvd., Ankeny, IA",
-      "address": "1513 N. Ankeny Blvd., Ankeny, IA",
-      "status": "Closed",
-      "datasetYear": 2025,
-      "dateUpdated": "Dec 23, 2025, 2:52 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "Iowa Title",
-      "agent": "0",
-      "buyer": "Steve Lee (Agent: Steve Bock - steve@bockrealestate.com)",
-      "closingAttorneyBuyer": "Brett Olson; Osborn, \nJacobs & Hartung 974 73rd St. #16 \nWest Des Moines, IA \n515-223-6000 \n",
-      "lenderBuyer": "Steven Bakken \nVP - Bankers Trust \n3725 Stange Rd. \nAmes, IA \n515-232-3404\n",
-      "seller": "Closing Coordinator: Jill Hansen - jill.hansen@amesrmx.com\n",
-      "titleOpinion": "Brett T. Osborn (Osborn Jacobs & Hartung PLC)\n",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_110",
-            "name": "Closing Coordinator: Jill Hansen - jill.hansen@amesrmx.com"
-          },
-          {
-            "id": "o_111",
-            "name": "Steve Lee (Agent: Steve Bock - steve@bockrealestate.com)"
-          }
-        ],
-        "lawyers": [
-          {
-            "name": "Brett Olson; Osborn"
-          },
-          {
-            "name": "Jacobs"
-          },
-          {
-            "name": "Hartung 974 73rd St. #16 \nWest Des Moines"
-          },
-          {
-            "name": "IA \n515-223-6000"
-          }
-        ],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86aaae1y2",
-      "name": "104 Arden St., Waterloo, IA",
-      "address": "104 Arden St., Waterloo, IA",
-      "status": "due diligence",
-      "datasetYear": 2025,
-      "dateUpdated": "Nov 28, 2025, 3:18 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "Title services in waterloo -- As per the seller",
-      "agent": "0",
-      "buyer": "Bond Shymansky - bond@skogman.com | Prospect View LLC",
-      "closingAttorneyBuyer": "Escrow Services of Iowa, Inc. (ESI), Tiffany Belekevich | tiffanyb@skogman.com\n",
-      "lenderBuyer": "Hills Bank in Iowa City and the commercial loan director is Brandon Keese.\n",
-      "seller": "Matt Blickenderfer",
-      "titleOpinion": "Eric Johnson at Beecher Law in Waterloo -- AS PER BUYER \n",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_112",
-            "name": "Matt Blickenderfer"
-          },
-          {
-            "id": "o_113",
-            "name": "Bond Shymansky - bond@skogman.com | Prospect View LLC"
-          }
-        ],
-        "lawyers": [
-          {
-            "name": "Escrow Services of Iowa"
-          },
-          {
-            "name": "Inc. (ESI)"
-          },
-          {
-            "name": "Tiffany Belekevich | tiffanyb@skogman.com"
-          }
-        ],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a6rb0wf",
-      "name": "4600 Park Ave - Des Moines, IA",
-      "address": "4600 Park Ave - Des Moines, IA",
-      "status": "opportunity",
-      "datasetYear": 2025,
-      "dateUpdated": "Feb 15, 2025, 3:39 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Shane Isley",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_15",
-            "name": "Shane Isley"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a6rb0wc",
-      "name": "3703 & 3707 Hubbell Ave - Des Moines, IA",
-      "address": "3703 & 3707 Hubbell Ave - Des Moines, IA",
-      "status": "lysted",
-      "datasetYear": 2025,
-      "dateUpdated": "Feb 15, 2025, 3:39 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Aquib Ali",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_37",
-            "name": "Aquib Ali"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a6rb0uq",
-      "name": "Chiropractor Building - Madrid, IA",
-      "address": "Chiropractor Building - Madrid, IA",
-      "status": "opportunity",
-      "datasetYear": 2025,
-      "dateUpdated": "Feb 15, 2025, 3:39 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Paul Peters",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_14",
-            "name": "Paul Peters"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a6rb0t9",
-      "name": "4719 Toronto St - Ames, IA",
-      "address": "4719 Toronto St - Ames, IA",
-      "status": "parked",
-      "datasetYear": 2025,
-      "dateUpdated": "Feb 15, 2025, 3:39 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Weston Rose - Rose Capital Partners LLC",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_50",
-            "name": "Weston Rose - Rose Capital Partners LLC"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a6rb0qm",
-      "name": "2101 University Ave - Des Moines, IA",
-      "address": "2101 University Ave - Des Moines, IA",
-      "status": "Closed",
-      "datasetYear": 2025,
-      "dateUpdated": "Mar 12, 2025, 10:00 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Wash Iowa LLC - Nic & Monica Runkel",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_19",
-            "name": "Wash Iowa LLC - Nic"
-          },
-          {
-            "id": "o_20",
-            "name": "Monica Runkel"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a6rb0ma",
-      "name": "Behrman Portfolio - Des Moines, IA",
-      "address": "Behrman Portfolio - Des Moines, IA",
-      "status": "opportunity",
-      "datasetYear": 2025,
-      "dateUpdated": "Feb 15, 2025, 3:39 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Ed Behrman",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_51",
-            "name": "Ed Behrman"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a6rb0kt",
-      "name": "1000 24th St - Des Moines, IA",
-      "address": "1000 24th St - Des Moines, IA",
-      "status": "opportunity",
-      "datasetYear": 2025,
-      "dateUpdated": "Feb 15, 2025, 3:39 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Britt Randall",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_18",
-            "name": "Britt Randall"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a6rb0kc",
-      "name": "149 S Chestnut Ave - Earlham, IA",
-      "address": "149 S Chestnut Ave - Earlham, IA",
-      "status": "Closed",
-      "datasetYear": 2025,
-      "dateUpdated": "Sep 12, 2025, 12:54 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "Madison County Abstract - Abstract held here now",
-      "agent": "0",
-      "buyer": "Misty Korthas",
-      "closingAttorneyBuyer": "Wasker, Dorr, Wimmer and Marcouiller, P.C. out of WDM -- Dave Pulliam | Banker: Quinn.Weber@earlhambank.com\n",
-      "seller": "Hopkins & Huebner - Adam\n",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_28",
-            "name": "Hopkins"
-          },
-          {
-            "id": "o_29",
-            "name": "Huebner - Adam"
-          },
-          {
-            "id": "o_114",
-            "name": "Misty Korthas"
-          }
-        ],
-        "lawyers": [
-          {
-            "name": "Wasker"
-          },
-          {
-            "name": "Dorr"
-          },
-          {
-            "name": "Wimmer"
-          },
-          {
-            "name": "Marcouiller"
-          },
-          {
-            "name": "P.C. out of WDM -- Dave Pulliam | Banker: Quinn.Weber@earlhambank.com"
-          }
-        ],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a4hbck9",
-      "name": "405 N. Davis St., Anamosa, IA",
-      "address": "405 N. Davis St., Anamosa, IA",
-      "status": "lysted",
-      "datasetYear": 2025,
-      "dateUpdated": "Nov 28, 2025, 3:46 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "West Bank in Coralville - Ryan Murphy - 319-351-4121\n",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_115",
-            "name": "West Bank in Coralville - Ryan Murphy - 319-351-4121"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86a31zbey",
-      "name": "1805 Arlington Ave - Des Moines, IA",
-      "address": "1805 Arlington Ave - Des Moines, IA",
-      "status": "lysted",
-      "datasetYear": 2025,
-      "dateUpdated": "May 9, 2025, 2:22 AM",
-      "createdBy": "Administration",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Matt DeBoth",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_116",
-            "name": "Matt DeBoth"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86aghgnvj",
-      "name": "1137 26th St. Des Moines, IA",
-      "address": "1137 26th St. Des Moines, IA",
-      "status": "lysted",
-      "datasetYear": 2026,
-      "dateUpdated": "Mar 30, 2026, 10:48 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86agdd1b5",
-      "name": "3821 Juniper Trace, Unit 203, Austin, TX",
-      "address": "3821 Juniper Trace, Unit 203, Austin, TX",
-      "status": "lysted",
-      "datasetYear": 2026,
-      "dateUpdated": "Mar 24, 2026, 10:29 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Kimberly Kleinhans & Keith Kleinhans",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_117",
-            "name": "Kimberly Kleinhans"
-          },
-          {
-            "id": "o_118",
-            "name": "Keith Kleinhans"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86agdcyuv",
-      "name": "2733-2897 Boston Ave. Des Moines, IA",
-      "address": "2733-2897 Boston Ave. Des Moines, IA",
-      "status": "lysted",
-      "datasetYear": 2026,
-      "dateUpdated": "Mar 24, 2026, 10:27 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "terrance@thevareco.com",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_119",
-            "name": "terrance@thevareco.com"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ae6xeye",
-      "name": "3703 & 3707 Hubbell Ave - Des Moines, IA",
-      "address": "3703 & 3707 Hubbell Ave - Des Moines, IA",
-      "status": "lysted",
-      "datasetYear": 2026,
-      "dateUpdated": "Jan 2, 2026, 9:13 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Aquib Ali",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_37",
-            "name": "Aquib Ali"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ae6xeyb",
-      "name": "Chiropractor Building - Madrid, IA",
-      "address": "Chiropractor Building - Madrid, IA",
-      "status": "opportunity",
-      "datasetYear": 2026,
-      "dateUpdated": "Jan 2, 2026, 1:54 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Paul Peters",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_14",
-            "name": "Paul Peters"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ae6xey9",
-      "name": "Behrman Portfolio - Des Moines, IA",
-      "address": "Behrman Portfolio - Des Moines, IA",
-      "status": "opportunity",
-      "datasetYear": 2026,
-      "dateUpdated": "Jan 2, 2026, 1:54 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Ed Behrman",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_51",
-            "name": "Ed Behrman"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -4045,134 +2356,29 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Jan 2, 2026, 2:08 PM",
       "createdBy": "Chloe Ting",
       "abstracting": "Luana Savings bank holds the note.",
-      "agent": "0",
-      "seller": "Fred Anderson\n",
+      "agent": "Jared Husmann",
+      "closingAttorneySeller": "Fred Anderson",
+      "seller": "Andrew Howard and Georgia Howard",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_105",
-            "name": "Fred Anderson"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ae6xey6",
-      "name": "104 Arden St., Waterloo, IA",
-      "address": "104 Arden St., Waterloo, IA",
-      "status": "Closed",
-      "datasetYear": 2026,
-      "dateUpdated": "Feb 14, 2026, 1:48 AM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "Title services in waterloo -- As per the seller",
-      "agent": "0",
-      "buyer": "Bond Shymansky - bond@skogman.com | Prospect View LLC - 319-930-8441 - PO Box 177 Gilbertville Ia 50634",
-      "closingAttorneyBuyer": "Escrow Services of Iowa, Inc. (ESI), Tiffany Belekevich | tiffanyb@skogman.com\n",
-      "lenderBuyer": "Hills Bank in Iowa City and the commercial loan director is Brandon Keese.\n",
-      "seller": "Matt Blickenderfer | Black Hawk Real Estate, LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921",
-      "titleOpinion": "Eric Johnson at Beecher Law in Waterloo -- AS PER BUYER \n",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_120",
-            "name": "Matt Blickenderfer | Black Hawk Real Estate"
+            "id": "o_76",
+            "name": "Andrew Howard"
           },
           {
-            "id": "o_121",
-            "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
-          },
-          {
-            "id": "o_122",
-            "name": "Bond Shymansky - bond@skogman.com | Prospect View LLC - 319-930-8441 - PO Box 177 Gilbertville Ia 50634"
+            "id": "o_77",
+            "name": "Georgia Howard"
           }
         ],
         "lawyers": [
           {
-            "name": "Escrow Services of Iowa"
-          },
-          {
-            "name": "Inc. (ESI)"
-          },
-          {
-            "name": "Tiffany Belekevich | tiffanyb@skogman.com"
+            "name": "Fred Anderson"
           }
         ],
         "agents": [
           {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ae6xey5",
-      "name": "405 N. Davis St., Anamosa, IA",
-      "address": "405 N. Davis St., Anamosa, IA",
-      "status": "lysted",
-      "datasetYear": 2026,
-      "dateUpdated": "Jan 2, 2026, 1:54 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "West Bank in Coralville - Ryan Murphy - 319-351-4121\n",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_115",
-            "name": "West Bank in Coralville - Ryan Murphy - 319-351-4121"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ae6xey2",
-      "name": "1805 Arlington Ave - Des Moines, IA",
-      "address": "1805 Arlington Ave - Des Moines, IA",
-      "status": "lysted",
-      "datasetYear": 2026,
-      "dateUpdated": "Jan 2, 2026, 1:54 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Matt DeBoth",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_116",
-            "name": "Matt DeBoth"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -4190,37 +2396,26 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Feb 27, 2026, 12:30 AM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Durachem LLC | Gravis Alger",
-      "seller": "Samantha Murray (Wilson and Egge)\n(515) 369-2502\nsam@wilsonlawfirmpc.com\n222 NW Sunrise Drive, Waukee, IA\n",
+      "closingAttorneySeller": "Samantha Murray (Wilson and Egge)\n(515) 369-2502\nsam@wilsonlawfirmpc.com\n222 NW Sunrise Drive, Waukee, IA",
+      "seller": "Cory French",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_123",
-            "name": "Samantha Murray (Wilson"
-          },
-          {
-            "id": "o_124",
-            "name": "Egge)\n(515) 369-2502\nsam@wilsonlawfirmpc.com\n222 NW Sunrise Drive"
-          },
-          {
-            "id": "o_125",
-            "name": "Waukee"
-          },
-          {
-            "id": "o_126",
-            "name": "IA"
-          },
-          {
-            "id": "o_127",
-            "name": "Durachem LLC | Gravis Alger"
+            "id": "o_62",
+            "name": "Cory French"
           }
         ],
-        "lawyers": [],
+        "lawyers": [
+          {
+            "name": "Samantha Murray (Wilson and Egge)\n(515) 369-2502\nsam@wilsonlawfirmpc.com\n222 NW Sunrise Drive, Waukee, IA"
+          }
+        ],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -4243,105 +2438,12 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_128",
+            "id": "o_80",
             "name": "Marco Andes"
           }
         ],
         "lawyers": [],
         "agents": [],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ae6xexw",
-      "name": "4719 Toronto St - Ames, IA",
-      "address": "4719 Toronto St - Ames, IA",
-      "status": "parked",
-      "datasetYear": 2026,
-      "dateUpdated": "Jan 2, 2026, 1:54 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Weston Rose - Rose Capital Partners LLC",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_50",
-            "name": "Weston Rose - Rose Capital Partners LLC"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ae6xexu",
-      "name": "200 E. Arlington St. Waterloo, IA",
-      "address": "200 E. Arlington St. Waterloo, IA",
-      "status": "lysted",
-      "datasetYear": 2026,
-      "dateUpdated": "Jan 2, 2026, 2:05 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Richard Hutsell",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_17",
-            "name": "Richard Hutsell"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
-        "leads": [],
-        "transactions": [],
-        "documents": []
-      }
-    },
-    {
-      "id": "86ae6xext",
-      "name": "4600 Park Ave - Des Moines, IA",
-      "address": "4600 Park Ave - Des Moines, IA",
-      "status": "opportunity",
-      "datasetYear": 2026,
-      "dateUpdated": "Jan 2, 2026, 1:54 PM",
-      "createdBy": "Chloe Ting",
-      "abstracting": "",
-      "agent": "0",
-      "seller": "Shane Isley",
-      "titleOpinion": "",
-      "assoc": {
-        "owners": [
-          {
-            "id": "o_15",
-            "name": "Shane Isley"
-          }
-        ],
-        "lawyers": [],
-        "agents": [
-          {
-            "name": "0",
-            "role": "Agent"
-          }
-        ],
         "leads": [],
         "transactions": [],
         "documents": []
@@ -4356,33 +2458,29 @@ export const dashboardData: DashboardData = {
       "dateUpdated": "Feb 16, 2026, 11:05 PM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
+      "agent": "Jared Husmann",
       "buyer": "Rashid",
       "seller": "Ian Schwickert, Alex Knutson, and Kevin Bryan",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_107",
+            "id": "o_63",
             "name": "Ian Schwickert"
           },
           {
-            "id": "o_108",
+            "id": "o_64",
             "name": "Alex Knutson"
           },
           {
-            "id": "o_109",
+            "id": "o_65",
             "name": "Kevin Bryan"
-          },
-          {
-            "id": "o_129",
-            "name": "Rashid"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],
@@ -4392,28 +2490,246 @@ export const dashboardData: DashboardData = {
       }
     },
     {
-      "id": "86ae6xexn",
-      "name": "1000 24th St - Des Moines, IA",
-      "address": "1000 24th St - Des Moines, IA",
-      "status": "opportunity",
+      "id": "86aaq96d1",
+      "name": "1513 N. Ankeny Blvd., Ankeny, IA",
+      "address": "1513 N. Ankeny Blvd., Ankeny, IA",
+      "status": "Closed",
+      "datasetYear": 2025,
+      "dateUpdated": "Dec 23, 2025, 2:52 AM",
+      "createdBy": "Chloe Ting",
+      "abstracting": "Iowa Title",
+      "agent": "Jared Husmann",
+      "buyer": "Steve Lee (Agent: Steve Bock - steve@bockrealestate.com)",
+      "closingAttorneyBuyer": "Brett Olson; Osborn, \nJacobs & Hartung 974 73rd St. #16 \nWest Des Moines, IA \n515-223-6000",
+      "closingAttorneySeller": "Closing Coordinator: Jill Hansen - jill.hansen@amesrmx.com",
+      "lenderBuyer": "Steven Bakken \nVP - Bankers Trust \n3725 Stange Rd. \nAmes, IA \n515-232-3404",
+      "seller": "Jared Althoff and John Althoff | Maryville Family LTD",
+      "titleOpinion": "Brett T. Osborn (Osborn Jacobs & Hartung PLC)",
+      "assoc": {
+        "owners": [
+          {
+            "id": "o_66",
+            "name": "Jared Althoff"
+          },
+          {
+            "id": "o_67",
+            "name": "John Althoff | Maryville Family LTD"
+          }
+        ],
+        "lawyers": [
+          {
+            "name": "Brett Olson; Osborn, \nJacobs & Hartung 974 73rd St. #16 \nWest Des Moines, IA \n515-223-6000"
+          },
+          {
+            "name": "Closing Coordinator: Jill Hansen - jill.hansen@amesrmx.com"
+          }
+        ],
+        "agents": [
+          {
+            "name": "Jared Husmann",
+            "role": "Agent"
+          }
+        ],
+        "leads": [],
+        "transactions": [],
+        "documents": []
+      }
+    },
+    {
+      "id": "86ae6xey6",
+      "name": "104 Arden St., Waterloo, IA",
+      "address": "104 Arden St., Waterloo, IA",
+      "status": "Closed",
+      "datasetYear": 2026,
+      "dateUpdated": "Feb 14, 2026, 1:48 AM",
+      "createdBy": "Chloe Ting",
+      "abstracting": "Title services in waterloo -- As per the seller",
+      "agent": "Jared Husmann",
+      "buyer": "Bond Shymansky - bond@skogman.com | Prospect View LLC - 319-930-8441 - PO Box 177 Gilbertville Ia 50634",
+      "closingAttorneyBuyer": "Escrow Services of Iowa, Inc. (ESI), Tiffany Belekevich | tiffanyb@skogman.com",
+      "lenderBuyer": "Hills Bank in Iowa City and the commercial loan director is Brandon Keese.",
+      "seller": "Matt Blickenderfer | Black Hawk Real Estate, LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921",
+      "titleOpinion": "Eric Johnson at Beecher Law in Waterloo -- AS PER BUYER",
+      "assoc": {
+        "owners": [
+          {
+            "id": "o_78",
+            "name": "Matt Blickenderfer | Black Hawk Real Estate"
+          },
+          {
+            "id": "o_79",
+            "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+          }
+        ],
+        "lawyers": [
+          {
+            "name": "Escrow Services of Iowa, Inc. (ESI), Tiffany Belekevich | tiffanyb@skogman.com"
+          }
+        ],
+        "agents": [
+          {
+            "name": "Jared Husmann",
+            "role": "Agent"
+          }
+        ],
+        "leads": [],
+        "transactions": [],
+        "documents": []
+      }
+    },
+    {
+      "id": "86ae6xey5",
+      "name": "405 N. Davis St., Anamosa, IA",
+      "address": "405 N. Davis St., Anamosa, IA",
+      "status": "lysted",
       "datasetYear": 2026,
       "dateUpdated": "Jan 2, 2026, 1:54 PM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
-      "agent": "0",
-      "seller": "Britt Randall",
+      "agent": "Jared Husmann",
+      "seller": "Tyler Hogue, Josh Hogue, and Levi Walker",
       "titleOpinion": "",
       "assoc": {
         "owners": [
           {
-            "id": "o_18",
-            "name": "Britt Randall"
+            "id": "o_69",
+            "name": "Tyler Hogue"
+          },
+          {
+            "id": "o_70",
+            "name": "Josh Hogue"
+          },
+          {
+            "id": "o_71",
+            "name": "Levi Walker"
           }
         ],
         "lawyers": [],
         "agents": [
           {
-            "name": "0",
+            "name": "Jared Husmann",
+            "role": "Agent"
+          }
+        ],
+        "leads": [],
+        "transactions": [],
+        "documents": []
+      }
+    },
+    {
+      "id": "86ae6xey2",
+      "name": "1805 Arlington Ave - Des Moines, IA",
+      "address": "1805 Arlington Ave - Des Moines, IA",
+      "status": "lysted",
+      "datasetYear": 2026,
+      "dateUpdated": "Jan 2, 2026, 1:54 PM",
+      "createdBy": "Chloe Ting",
+      "abstracting": "",
+      "agent": "Jared Husmann",
+      "seller": "Matt DeBoth",
+      "titleOpinion": "",
+      "assoc": {
+        "owners": [
+          {
+            "id": "o_72",
+            "name": "Matt DeBoth"
+          }
+        ],
+        "lawyers": [],
+        "agents": [
+          {
+            "name": "Jared Husmann",
+            "role": "Agent"
+          }
+        ],
+        "leads": [],
+        "transactions": [],
+        "documents": []
+      }
+    },
+    {
+      "id": "86aghgnvj",
+      "name": "1137 26th St. Des Moines, IA",
+      "address": "1137 26th St. Des Moines, IA",
+      "status": "lysted",
+      "datasetYear": 2026,
+      "dateUpdated": "Mar 30, 2026, 10:48 PM",
+      "createdBy": "Chloe Ting",
+      "abstracting": "",
+      "agent": "Jared Husmann",
+      "titleOpinion": "",
+      "assoc": {
+        "owners": [],
+        "lawyers": [],
+        "agents": [
+          {
+            "name": "Jared Husmann",
+            "role": "Agent"
+          }
+        ],
+        "leads": [],
+        "transactions": [],
+        "documents": []
+      }
+    },
+    {
+      "id": "86agdd1b5",
+      "name": "3821 Juniper Trace, Unit 203, Austin, TX",
+      "address": "3821 Juniper Trace, Unit 203, Austin, TX",
+      "status": "lysted",
+      "datasetYear": 2026,
+      "dateUpdated": "Mar 24, 2026, 10:29 PM",
+      "createdBy": "Chloe Ting",
+      "abstracting": "",
+      "agent": "Jared Husmann",
+      "seller": "Kimberly Kleinhans & Keith Kleinhans",
+      "titleOpinion": "",
+      "assoc": {
+        "owners": [
+          {
+            "id": "o_73",
+            "name": "Kimberly Kleinhans"
+          },
+          {
+            "id": "o_74",
+            "name": "Keith Kleinhans"
+          }
+        ],
+        "lawyers": [],
+        "agents": [
+          {
+            "name": "Jared Husmann",
+            "role": "Agent"
+          }
+        ],
+        "leads": [],
+        "transactions": [],
+        "documents": []
+      }
+    },
+    {
+      "id": "86agdcyuv",
+      "name": "2733-2897 Boston Ave. Des Moines, IA",
+      "address": "2733-2897 Boston Ave. Des Moines, IA",
+      "status": "lysted",
+      "datasetYear": 2026,
+      "dateUpdated": "Mar 24, 2026, 10:27 PM",
+      "createdBy": "Chloe Ting",
+      "abstracting": "",
+      "agent": "Jared Husmann",
+      "seller": "terrance@thevareco.com",
+      "titleOpinion": "",
+      "assoc": {
+        "owners": [
+          {
+            "id": "o_75",
+            "name": "terrance@thevareco.com"
+          }
+        ],
+        "lawyers": [],
+        "agents": [
+          {
+            "name": "Jared Husmann",
             "role": "Agent"
           }
         ],

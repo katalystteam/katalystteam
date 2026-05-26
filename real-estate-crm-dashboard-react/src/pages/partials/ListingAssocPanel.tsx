@@ -62,8 +62,9 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
           <DetailRow label="Agent" value={listing.agent} />
           <DetailRow label="Buyer" value={listing.buyer} />
           <DetailRow label="Closing attorney — buyer" value={listing.closingAttorneyBuyer} />
+          <DetailRow label="Closing attorney — seller" value={listing.closingAttorneySeller} />
           <DetailRow label="Lender — buyer" value={listing.lenderBuyer} />
-          <DetailRow label="Seller" value={listing.seller} />
+          <DetailRow label="Seller (ClickUp)" value={listing.seller} />
           <DetailRow label="Title opinion" value={listing.titleOpinion} />
         </div>
       </div>
@@ -88,10 +89,12 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
         {a.lawyers.map((x, idx) => (
           <div className="assoc-item" key={`${x.name}-${idx}`}>
             <div className="assoc-item-left">
-              <Avatar name={x.name} kind="lawyer" />
+              <Avatar name={x.name.split(/\n/)[0] ?? x.name} kind="lawyer" />
               <div>
-                <div className="assoc-name">{x.name}</div>
-                <div className="assoc-sub">{x.firm ?? ''}</div>
+                <div className="assoc-name" style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+                  {x.name}
+                </div>
+                {x.firm ? <div className="assoc-sub">{x.firm}</div> : null}
               </div>
             </div>
           </div>
