@@ -68,7 +68,7 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
         </div>
       </div>
 
-      <Section label="Owners">
+      <Section label="Sellers" empty="No seller on file">
         {a.owners.map((o) => (
           <div className="assoc-item" key={o.id}>
             <div className="assoc-item-left">

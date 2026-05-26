@@ -1,0 +1,7 @@
+# This folder is the full Katalyst workspace (scripts, exports, site HTML, etc.).
+# GitHub only tracks the CRM dashboard — keep everything else local.
+
+/*
+!/.gitignore
+!/README.md
+!/real-estate-crm-dashboard-react/

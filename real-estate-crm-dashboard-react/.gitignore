@@ -9,6 +9,9 @@ lerna-debug.log*
 
 node_modules
 dist
+
+# Accidental nested clone of the parent repo (not used by the app)
+katalystteam/
 dist-ssr
 *.local
 

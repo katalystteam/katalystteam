@@ -17,6 +17,7 @@ import dotenv from 'dotenv'
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') })
 dotenv.config()
 import type { DashboardData, Listing, ListingAssoc, Owner } from '../src/types.ts'
+import { normalizeAttorneyLine, splitPartyNames } from '../src/lib/parsePartyNames.ts'
 
 const API = 'https://api.clickup.com/api/v2'
 
@@ -157,17 +158,6 @@ function inferYearFromListName(name: string): number | undefined {
   return y >= 2000 && y <= 2100 ? y : undefined
 }
 
-function splitPeople(s: string) {
-  const v = (s ?? '').trim()
-  if (!v) return []
-  return v
-    .replace(/\s+&\s+/g, ',')
-    .replace(/\s+and\s+/gi, ',')
-    .split(',')
-    .map((x) => x.trim())
-    .filter(Boolean)
-}
-
 function norm(s: string) {
   return (s ?? '')
     .toLowerCase()
@@ -204,13 +194,13 @@ function taskToListing(task: CuTask, datasetYear: number | undefined, ctx: { ens
   const lenderBuyer = pickCustomField(task.custom_fields, 'lender - buyer')
   const agentName = pickCustomField(task.custom_fields, 'agent')
 
-  const ownerNames = [...splitPeople(seller), ...splitPeople(buyer)]
-  const ownersAssoc = ownerNames
+  const ownersAssoc = splitPartyNames(seller)
     .map((n) => ctx.ensureOwner(n))
     .filter(Boolean)
     .map((o) => ({ id: o!.id, name: o!.name }))
 
-  const lawyers = splitPeople(closingBuyer).map((name) => ({ name }))
+  const attorney = normalizeAttorneyLine(closingBuyer)
+  const lawyers = attorney ? [{ name: attorney }] : []
   const agents = agentName ? [{ name: agentName, role: 'Agent' as const }] : []
 
   const assoc: ListingAssoc = {

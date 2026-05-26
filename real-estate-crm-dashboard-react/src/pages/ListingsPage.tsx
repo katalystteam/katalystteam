@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useDashboardData } from '../data/useDashboardData'
 import type { Listing } from '../types'
 import { CLICKUP_STATUS_TAB_ORDER, clickUpStatusBadgeClass, normClickUpStatusKey } from '../lib/clickUpStatus'
+import { dedupeListingsByAddress } from '../lib/listingDedupe'
 import { ListingAssocPanel } from './partials/ListingAssocPanel'
 
 /** Year cohort: `all` or calendar year from Properties export / ClickUp list name. */
@@ -135,7 +136,10 @@ export function ListingsPage() {
 
   const listings = useMemo(() => {
     const cuKey = cuNorm && cuNorm !== 'all' ? cuNorm : null
-    return data.listings.filter((l) => listingMatches(l, yearFilter, cuKey, q))
+    const filtered = data.listings.filter((l) => listingMatches(l, yearFilter, cuKey, q))
+    // Same property often has a task in 2024, 2025, and 2026 — show one card on “All”.
+    if (yearFilter === 'all') return dedupeListingsByAddress(filtered)
+    return filtered
   }, [data.listings, yearFilter, cuNorm, q])
 
   const activeListing = useMemo(

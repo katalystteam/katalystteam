@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import Papa from 'papaparse'
 import type { DashboardData, Listing, Owner } from '../src/types.ts'
+import { normalizeAttorneyLine, splitPartyNames } from '../src/lib/parsePartyNames.ts'
 
 type Row = Record<string, string>
 
@@ -20,17 +21,6 @@ function norm(s: string) {
 
 function get(row: Row, key: string) {
   return (row[key] ?? '').trim()
-}
-
-function splitPeople(s: string) {
-  const v = (s ?? '').trim()
-  if (!v) return []
-  return v
-    .replace(/\s+&\s+/g, ',')
-    .replace(/\s+and\s+/gi, ',')
-    .split(',')
-    .map((x) => x.trim())
-    .filter(Boolean)
 }
 
 export function inferDatasetYearFromFilename(filePath: string): number | undefined {
@@ -75,14 +65,13 @@ function buildListingFromRow(
 
   const seller = get(r, 'Seller (short text)')
   const buyer = get(r, 'Buyer (short text)')
-  const ownerNames = [...splitPeople(seller), ...splitPeople(buyer)]
-  const ownersAssoc = ownerNames
+  const ownersAssoc = splitPartyNames(seller)
     .map((n) => ctx.ensureOwner(n))
     .filter(Boolean)
     .map((o) => ({ id: o!.id, name: o!.name }))
 
-  const lawyersBuyer = splitPeople(get(r, 'Closing Attorney - Buyer (text)'))
-  const lawyers = lawyersBuyer.map((name) => ({ name }))
+  const attorney = normalizeAttorneyLine(get(r, 'Closing Attorney - Buyer (text)'))
+  const lawyers = attorney ? [{ name: attorney }] : []
 
   const agent = get(r, 'Agent (drop down)')
   const agents = agent ? [{ name: agent, role: 'Agent' as const }] : []
