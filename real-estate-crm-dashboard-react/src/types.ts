@@ -58,10 +58,30 @@ export type Listing = {
   closingAttorneyBuyer?: string
   closingAttorneySeller?: string
   lenderBuyer?: string
+  lenderSeller?: string
   seller?: string
   titleOpinion?: string
+  /** ClickUp task description (text_content). */
+  notes?: string
+  lystingPrice?: string
+  purchasePrice?: string
+  unitCount?: string
+  appraisalCompany?: string
+  appraisalDate?: string
+  closingCredit?: string
+  closingDate?: string
+  commissionAmount?: string
+  commissionRate?: string
+  doubleSide?: string
+  dueDiligenceEnd?: string
+  earnestMoney?: string
+  inspectionDate?: string
+  exchange1031Buyer?: string
+  exchange1031Seller?: string
+  tags?: string
   imageUrl?: string
   listingUrl?: string
+  /** Card display — LYSTing price, else purchase price. */
   price?: string
   type?: string
   sqm?: string

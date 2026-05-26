@@ -88,6 +88,8 @@ body{font-family:var(--font-sans);font-size:14px;color:var(--color-text-primary)
 .engagement-score-muted{font-size:12px;font-weight:500;color:var(--color-text-tertiary)}
 .assoc-doc-link{display:block;font-size:12px;font-weight:500;color:var(--color-brand-700);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
 .assoc-doc-link:hover{text-decoration:underline;color:var(--color-brand-900)}
+.assoc-doc-placeholder{cursor:default;text-decoration:none;opacity:.9}
+.assoc-doc-placeholder:hover{text-decoration:none;color:var(--color-brand-700)}
 .empty-state{text-align:center;padding:40px 20px;color:var(--color-text-tertiary);font-size:13px}
 .empty-icon{width:40px;height:40px;margin:0 auto 10px;opacity:.3}
 .owner-page{padding:20px}

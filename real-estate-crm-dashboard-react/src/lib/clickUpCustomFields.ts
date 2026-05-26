@@ -10,9 +10,42 @@ export type ClickUpCustomField = {
   }
 }
 
+function formatCurrencyValue(v: unknown, currency = 'USD'): string {
+  const n = Number(v)
+  if (!Number.isFinite(n)) return ''
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 0 }).format(n)
+}
+
+function formatDateValue(v: unknown): string {
+  const n = Number(v)
+  if (!Number.isFinite(n)) return ''
+  try {
+    return new Date(n).toLocaleDateString('en-US', { dateStyle: 'medium' })
+  } catch {
+    return ''
+  }
+}
+
 export function formatClickUpCustomField(f: ClickUpCustomField): string {
   const v = f.value
   if (v == null || v === '') return ''
+
+  if (f.type === 'currency') {
+    const cfg = f.type_config as { currency_type?: string } | undefined
+    return formatCurrencyValue(v, cfg?.currency_type ?? 'USD')
+  }
+
+  if (f.type === 'date') {
+    return formatDateValue(v)
+  }
+
+  if (f.type === 'number') {
+    const n = Number(v)
+    if (!Number.isFinite(n)) return ''
+    const name = f.name.toLowerCase()
+    if (name.includes('rate') || name.includes('%')) return `${n}%`
+    return String(n)
+  }
 
   if (f.type === 'drop_down') {
     const opts = f.type_config?.options ?? []

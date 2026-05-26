@@ -20,6 +20,7 @@ import type { DashboardData, Listing, ListingAssoc, Owner } from '../src/types.t
 import { addressKey } from '../src/lib/addressKey.ts'
 import { pickFieldByBaseName, pickFieldIncluding, type ClickUpCustomField } from '../src/lib/clickUpCustomFields.ts'
 import { pickCanonicalListing } from '../src/lib/listingDedupe.ts'
+import { DROPBOX_LINK_PLACEHOLDER } from '../src/lib/listingDetails.ts'
 import { normalizeAttorneyLine, splitPartyNames } from '../src/lib/parsePartyNames.ts'
 
 const API = 'https://api.clickup.com/api/v2'
@@ -30,8 +31,28 @@ type CuTask = {
   status?: { status?: string }
   date_updated?: string
   date_created?: string
+  text_content?: string
+  description?: string
+  tags?: Array<{ name?: string } | string>
   creator?: { username?: string; email?: string }
   custom_fields?: ClickUpCustomField[]
+}
+
+function optField(fields: ClickUpCustomField[] | undefined, baseOrInclude: string, mode: 'base' | 'include' = 'base'): string | undefined {
+  const v = mode === 'base' ? pickFieldByBaseName(fields, baseOrInclude) : pickFieldIncluding(fields, baseOrInclude)
+  return v || undefined
+}
+
+function taskNotes(task: CuTask): string | undefined {
+  const notes = (task.text_content ?? task.description ?? '').trim()
+  return notes || undefined
+}
+
+function taskTags(task: CuTask): string | undefined {
+  const names = (task.tags ?? [])
+    .map((t) => (typeof t === 'string' ? t : t?.name))
+    .filter(Boolean) as string[]
+  return names.length ? names.join(', ') : undefined
 }
 
 function envOptional(name: string): string | undefined {
@@ -154,13 +175,17 @@ function taskToListing(task: CuTask, datasetYear: number | undefined, ctx: { ens
 
   const agents = agentName ? [{ name: agentName, role: 'Agent' as const }] : []
 
+  const lystingPrice = optField(task.custom_fields, 'lysting price', 'include')
+  const purchasePrice = optField(task.custom_fields, 'purchase price', 'include')
+  const unitCount = optField(task.custom_fields, '# of units')
+
   const assoc: ListingAssoc = {
     owners: ownersAssoc,
     lawyers,
     agents,
     leads: [],
     transactions: [],
-    documents: [],
+    documents: [{ name: DROPBOX_LINK_PLACEHOLDER }],
   }
 
   return {
@@ -171,14 +196,35 @@ function taskToListing(task: CuTask, datasetYear: number | undefined, ctx: { ens
     datasetYear,
     dateUpdated: formatTimestamp(task.date_updated),
     createdBy: task.creator?.username || task.creator?.email || '',
-    abstracting: pickFieldIncluding(task.custom_fields, 'abstracting'),
+    notes: taskNotes(task),
+    abstracting: optField(task.custom_fields, 'abstracting', 'include'),
     agent: agentName || undefined,
     buyer: buyer || undefined,
     closingAttorneyBuyer: closingBuyer || undefined,
     closingAttorneySeller: closingSeller || undefined,
     lenderBuyer: lenderBuyer || undefined,
+    lenderSeller: optField(task.custom_fields, 'lender - seller', 'include'),
     seller: seller || undefined,
-    titleOpinion: pickFieldIncluding(task.custom_fields, 'title opinion'),
+    titleOpinion: optField(task.custom_fields, 'title opinion', 'include'),
+    lystingPrice,
+    purchasePrice,
+    unitCount,
+    appraisalCompany: optField(task.custom_fields, 'appraisal company', 'include'),
+    appraisalDate: optField(task.custom_fields, 'appraisal', 'include'),
+    closingCredit: optField(task.custom_fields, 'closing credit', 'include'),
+    closingDate: optField(task.custom_fields, 'closing date', 'include'),
+    commissionAmount: optField(task.custom_fields, 'commission amount', 'include'),
+    commissionRate: optField(task.custom_fields, 'commission rate', 'include'),
+    doubleSide: optField(task.custom_fields, 'double side'),
+    dueDiligenceEnd: optField(task.custom_fields, 'due diligence', 'include'),
+    earnestMoney: optField(task.custom_fields, 'earnest money', 'include'),
+    inspectionDate: optField(task.custom_fields, 'inspection', 'include'),
+    exchange1031Buyer: optField(task.custom_fields, '1031 exchange - buyer', 'include'),
+    exchange1031Seller: optField(task.custom_fields, '1031 exchange - seller', 'include'),
+    tags: taskTags(task),
+    price: lystingPrice || purchasePrice,
+    type: unitCount ? 'Multifamily' : undefined,
+    sqm: unitCount ? `${unitCount} units` : undefined,
     assoc,
   }
 }

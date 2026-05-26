@@ -4,6 +4,7 @@ import { useDashboardData } from '../data/useDashboardData'
 import type { Listing } from '../types'
 import { CLICKUP_STATUS_TAB_ORDER, clickUpStatusBadgeClass, normClickUpStatusKey } from '../lib/clickUpStatus'
 import { sortListings, type ListingSortKey, type SortDir } from '../lib/listingSort'
+import { listingDisplayPrice } from '../lib/listingDetails'
 import { ListingAssocPanel } from './partials/ListingAssocPanel'
 
 /** Year cohort: `all` or calendar year from Properties export / ClickUp list name. */
@@ -89,7 +90,7 @@ function ListingCard({ listing, active, onSelect }: { listing: Listing; active: 
       <div className="listing-name">{listing.name}</div>
       <div className="listing-address">{listing.address}</div>
       <div className="listing-meta">
-        <div className="listing-price">{listing.price ?? '—'}</div>
+        <div className="listing-price">{listingDisplayPrice(listing)}</div>
         <span className={clickUpStatusBadgeClass(listing.status)}>{listing.status}</span>
       </div>
       <div style={{ marginTop: 8, fontSize: 11, color: 'var(--color-text-tertiary)' }}>

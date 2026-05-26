@@ -2,26 +2,17 @@ import { Link } from 'react-router-dom'
 import type { Listing } from '../../types'
 import { Avatar } from '../../components/Avatar'
 import { clickUpStatusBadgeClass } from '../../lib/clickUpStatus'
+import { DROPBOX_LINK_PLACEHOLDER, listingDetailFields } from '../../lib/listingDetails'
 
 function formatEngagementScore(value: number | null | undefined): string | null {
   if (typeof value === 'number' && !Number.isNaN(value)) return String(Math.round(Math.min(100, Math.max(0, value))))
   return null
 }
 
-function DetailRow({ label, value }: { label: string; value?: string }) {
-  const v = value?.trim()
-  if (!v) return null
-  return (
-    <div style={{ marginBottom: 10 }}>
-      <div style={{ fontSize: 10, fontWeight: 600, color: 'var(--color-text-tertiary)', marginBottom: 3 }}>{label}</div>
-      <div style={{ fontSize: 12, whiteSpace: 'pre-wrap', wordBreak: 'break-word', lineHeight: 1.45 }}>{v}</div>
-    </div>
-  )
-}
-
 export function ListingAssocPanel({ listing }: { listing: Listing }) {
   const a = listing.assoc
   const eng = a.engagement
+  const detailRows = listingDetailFields(listing)
 
   const Section = ({
     label,
@@ -56,17 +47,43 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
       <div className="assoc-section">
         <div className="assoc-section-label">Property details</div>
         <div style={{ padding: '4px 0' }}>
-          <DetailRow label="Date updated" value={listing.dateUpdated} />
-          <DetailRow label="Created by" value={listing.createdBy} />
-          <DetailRow label="Abstracting" value={listing.abstracting} />
-          <DetailRow label="Agent" value={listing.agent} />
-          <DetailRow label="Buyer" value={listing.buyer} />
-          <DetailRow label="Closing attorney — buyer" value={listing.closingAttorneyBuyer} />
-          <DetailRow label="Closing attorney — seller" value={listing.closingAttorneySeller} />
-          <DetailRow label="Lender — buyer" value={listing.lenderBuyer} />
-          <DetailRow label="Seller (ClickUp)" value={listing.seller} />
-          <DetailRow label="Title opinion" value={listing.titleOpinion} />
+          {detailRows.length ? (
+            detailRows.map((row) => (
+              <div key={row.label} style={{ marginBottom: 10 }}>
+                <div style={{ fontSize: 10, fontWeight: 600, color: 'var(--color-text-tertiary)', marginBottom: 3 }}>
+                  {row.label}
+                </div>
+                <div style={{ fontSize: 12, whiteSpace: 'pre-wrap', wordBreak: 'break-word', lineHeight: 1.45 }}>{row.value}</div>
+              </div>
+            ))
+          ) : (
+            <div style={{ fontSize: 11, color: 'var(--color-text-tertiary)', padding: '4px 0' }}>No ClickUp fields filled in.</div>
+          )}
         </div>
+      </div>
+
+      <div className="assoc-section">
+        <div className="assoc-section-label">Notes</div>
+        {listing.notes?.trim() ? (
+          <div
+            style={{
+              fontSize: 12,
+              whiteSpace: 'pre-wrap',
+              wordBreak: 'break-word',
+              lineHeight: 1.5,
+              padding: '8px 10px',
+              borderRadius: 'var(--border-radius-md)',
+              border: '1px solid var(--color-border-tertiary)',
+              background: 'var(--color-background-primary)',
+            }}
+          >
+            {listing.notes}
+          </div>
+        ) : (
+          <div style={{ fontSize: 11, color: 'var(--color-text-tertiary)', padding: '4px 0' }}>
+            No description in ClickUp for this property.
+          </div>
+        )}
       </div>
 
       <Section label="Owners">
@@ -204,12 +221,14 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
         ))}
       </Section>
 
-      <Section label="Documents">
+      <Section label="Documents" empty="None added">
         {a.documents.map((x, idx) => (
           <div className="assoc-item" key={`${x.name}-${idx}`}>
             <div className="assoc-item-left" style={{ flex: 1, minWidth: 0 }}>
               <div style={{ minWidth: 0 }}>
-                {x.url ? (
+                {x.name === DROPBOX_LINK_PLACEHOLDER && !x.url ? (
+                  <span className="assoc-doc-link assoc-doc-placeholder">{DROPBOX_LINK_PLACEHOLDER}</span>
+                ) : x.url ? (
                   <a className="assoc-doc-link" href={x.url} target="_blank" rel="noopener noreferrer" title={x.url}>
                     {x.name}
                   </a>
@@ -218,7 +237,9 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
                 )}
               </div>
             </div>
-            {x.status ? (
+            {x.name === DROPBOX_LINK_PLACEHOLDER && !x.url ? (
+              <span style={{ fontSize: 10, color: 'var(--color-text-tertiary)' }}>Pending</span>
+            ) : x.status ? (
               <span
                 style={{
                   fontSize: 10,
