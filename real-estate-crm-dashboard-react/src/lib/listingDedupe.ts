@@ -1,7 +1,7 @@
 import type { Listing } from '../types'
 import { addressKey } from './addressKey'
 
-function parseUpdatedMs(s: string | undefined): number {
+export function parseUpdatedMs(s: string | undefined): number {
   if (!s) return 0
   const t = Date.parse(s)
   return Number.isFinite(t) ? t : 0

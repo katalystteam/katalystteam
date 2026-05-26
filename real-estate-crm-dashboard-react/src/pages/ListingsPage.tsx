@@ -4,6 +4,7 @@ import { useDashboardData } from '../data/useDashboardData'
 import type { Listing } from '../types'
 import { CLICKUP_STATUS_TAB_ORDER, clickUpStatusBadgeClass, normClickUpStatusKey } from '../lib/clickUpStatus'
 import { dedupeListingsByAddress } from '../lib/listingDedupe'
+import { sortListings, type ListingSortKey, type SortDir } from '../lib/listingSort'
 import { ListingAssocPanel } from './partials/ListingAssocPanel'
 
 /** Year cohort: `all` or calendar year from Properties export / ClickUp list name. */
@@ -13,6 +14,19 @@ function parseYearParam(v: string | null): YearFilter {
   if (!v || v === 'all') return 'all'
   const n = Number(v)
   return Number.isFinite(n) ? n : 'all'
+}
+
+function parseSortKey(v: string | null): ListingSortKey {
+  return v === 'name' ? 'name' : 'updated'
+}
+
+function parseSortDir(v: string | null, key: ListingSortKey): SortDir {
+  if (v === 'asc' || v === 'desc') return v
+  return key === 'name' ? 'asc' : 'desc'
+}
+
+function sortArrow(dir: SortDir): string {
+  return dir === 'asc' ? '↑' : '↓'
 }
 
 /** Builds status pills for a year: preferred order first, then other statuses present (sorted). */
@@ -99,6 +113,8 @@ export function ListingsPage() {
   const yearFilter = parseYearParam(params.get('year'))
   const cuNorm = params.get('cu')
   const activeListingId = params.get('listing')
+  const sortKey = parseSortKey(params.get('sort'))
+  const sortDir = parseSortDir(params.get('dir'), sortKey)
 
   const yearsInData = useMemo(() => {
     const s = new Set<number>()
@@ -134,13 +150,27 @@ export function ListingsPage() {
     setParams(next, { replace: true })
   }
 
+  const setSort = (key: ListingSortKey) => {
+    const next = new URLSearchParams(params)
+    const currentKey = parseSortKey(params.get('sort'))
+    const currentDir = parseSortDir(params.get('dir'), currentKey)
+    if (currentKey === key) {
+      next.set('sort', key)
+      next.set('dir', currentDir === 'asc' ? 'desc' : 'asc')
+    } else {
+      next.set('sort', key)
+      next.set('dir', key === 'name' ? 'asc' : 'desc')
+    }
+    setParams(next, { replace: true })
+  }
+
   const listings = useMemo(() => {
     const cuKey = cuNorm && cuNorm !== 'all' ? cuNorm : null
     const filtered = data.listings.filter((l) => listingMatches(l, yearFilter, cuKey, q))
     // Same property often has a task in 2024, 2025, and 2026 — show one card on “All”.
-    if (yearFilter === 'all') return dedupeListingsByAddress(filtered)
-    return filtered
-  }, [data.listings, yearFilter, cuNorm, q])
+    const base = yearFilter === 'all' ? dedupeListingsByAddress(filtered) : filtered
+    return sortListings(base, sortKey, sortDir)
+  }, [data.listings, yearFilter, cuNorm, q, sortKey, sortDir])
 
   const activeListing = useMemo(
     () => data.listings.find((l) => l.id === activeListingId) ?? null,
@@ -201,6 +231,34 @@ export function ListingsPage() {
                 })}
               </div>
             ) : null}
+
+            <div className="filters" role="group" aria-label="Sort listings">
+              <span className="filter-label">Sort</span>
+              <button
+                type="button"
+                className={`filter-pill${sortKey === 'name' ? ' active' : ''}`}
+                onClick={() => setSort('name')}
+                aria-pressed={sortKey === 'name'}
+                title={sortKey === 'name' ? (sortDir === 'asc' ? 'A–Z (click to reverse)' : 'Z–A (click to reverse)') : 'Sort by property name'}
+              >
+                Name {sortKey === 'name' ? sortArrow(sortDir) : ''}
+              </button>
+              <button
+                type="button"
+                className={`filter-pill${sortKey === 'updated' ? ' active' : ''}`}
+                onClick={() => setSort('updated')}
+                aria-pressed={sortKey === 'updated'}
+                title={
+                  sortKey === 'updated'
+                    ? sortDir === 'desc'
+                      ? 'Newest first (click to reverse)'
+                      : 'Oldest first (click to reverse)'
+                    : 'Sort by date updated'
+                }
+              >
+                Updated {sortKey === 'updated' ? sortArrow(sortDir) : ''}
+              </button>
+            </div>
           </div>
         </div>
 
