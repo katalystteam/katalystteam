@@ -7,43 +7,163 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_10",
-      "name": "Paul Peters"
+      "name": "Charlie's Properties LLC and/or Assigns - Bob Charleston"
+    },
+    {
+      "id": "o_100",
+      "name": "Higher Ground Investment Group LLC - Teddy Mohlman"
+    },
+    {
+      "id": "o_101",
+      "name": "O'Shea"
+    },
+    {
+      "id": "o_102",
+      "name": "PC Hiawatha"
+    },
+    {
+      "id": "o_103",
+      "name": "IA - 319.632.3640"
+    },
+    {
+      "id": "o_104",
+      "name": "Alex Peterson"
+    },
+    {
+      "id": "o_105",
+      "name": "Fred Anderson"
+    },
+    {
+      "id": "o_106",
+      "name": "Cory French"
+    },
+    {
+      "id": "o_107",
+      "name": "Ian Schwickert"
+    },
+    {
+      "id": "o_108",
+      "name": "Alex Knutson"
+    },
+    {
+      "id": "o_109",
+      "name": "Kevin Bryan"
     },
     {
       "id": "o_11",
-      "name": "Shane Isley"
+      "name": "Ben Latusek"
+    },
+    {
+      "id": "o_110",
+      "name": "Closing Coordinator: Jill Hansen - jill.hansen@amesrmx.com"
+    },
+    {
+      "id": "o_111",
+      "name": "Steve Lee (Agent: Steve Bock - steve@bockrealestate.com)"
+    },
+    {
+      "id": "o_112",
+      "name": "Matt Blickenderfer"
+    },
+    {
+      "id": "o_113",
+      "name": "Bond Shymansky - bond@skogman.com | Prospect View LLC"
+    },
+    {
+      "id": "o_114",
+      "name": "Misty Korthas"
+    },
+    {
+      "id": "o_115",
+      "name": "West Bank in Coralville - Ryan Murphy - 319-351-4121"
+    },
+    {
+      "id": "o_116",
+      "name": "Matt DeBoth"
+    },
+    {
+      "id": "o_117",
+      "name": "Kimberly Kleinhans"
+    },
+    {
+      "id": "o_118",
+      "name": "Keith Kleinhans"
+    },
+    {
+      "id": "o_119",
+      "name": "terrance@thevareco.com"
     },
     {
       "id": "o_12",
-      "name": "Bob Sweeney"
+      "name": "Teddy Molhman"
+    },
+    {
+      "id": "o_120",
+      "name": "Matt Blickenderfer | Black Hawk Real Estate"
+    },
+    {
+      "id": "o_121",
+      "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+    },
+    {
+      "id": "o_122",
+      "name": "Bond Shymansky - bond@skogman.com | Prospect View LLC - 319-930-8441 - PO Box 177 Gilbertville Ia 50634"
+    },
+    {
+      "id": "o_123",
+      "name": "Samantha Murray (Wilson"
+    },
+    {
+      "id": "o_124",
+      "name": "Egge)\n(515) 369-2502\nsam@wilsonlawfirmpc.com\n222 NW Sunrise Drive"
+    },
+    {
+      "id": "o_125",
+      "name": "Waukee"
+    },
+    {
+      "id": "o_126",
+      "name": "IA"
+    },
+    {
+      "id": "o_127",
+      "name": "Durachem LLC | Gravis Alger"
+    },
+    {
+      "id": "o_128",
+      "name": "Marco Andes"
+    },
+    {
+      "id": "o_129",
+      "name": "Rashid"
     },
     {
       "id": "o_13",
-      "name": "Richard Hutsell"
+      "name": "Javier Bazeos"
     },
     {
       "id": "o_14",
-      "name": "Britt Randall"
+      "name": "Paul Peters"
     },
     {
       "id": "o_15",
-      "name": "Wash Iowa LLC - Nic"
+      "name": "Shane Isley"
     },
     {
       "id": "o_16",
-      "name": "Monica Runkel"
+      "name": "Bob Sweeney"
     },
     {
       "id": "o_17",
-      "name": "Roberts"
+      "name": "Richard Hutsell"
     },
     {
       "id": "o_18",
-      "name": "Eddy - Andy Hauber"
+      "name": "Britt Randall"
     },
     {
       "id": "o_19",
-      "name": "Kim"
+      "name": "Wash Iowa LLC - Nic"
     },
     {
       "id": "o_2",
@@ -51,43 +171,43 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_20",
-      "name": "Jeffrey Slaymaker"
+      "name": "Monica Runkel"
     },
     {
       "id": "o_21",
-      "name": "O'Brien Closings - Dan O'Brien"
+      "name": "Roberts"
     },
     {
       "id": "o_22",
-      "name": "Hopkins"
+      "name": "Eddy - Andy Hauber"
     },
     {
       "id": "o_23",
-      "name": "Huebner - Adam"
+      "name": "Kim"
     },
     {
       "id": "o_24",
-      "name": "River Ridge Escrow - Melissa Sabin - msabin@therrec.com"
+      "name": "Jeffrey Slaymaker"
     },
     {
       "id": "o_25",
-      "name": "Tiffany Belekevich - tiffanyb@skogman.com"
+      "name": "Lindsay Miller"
     },
     {
       "id": "o_26",
-      "name": "Aquib Ali"
+      "name": "O'Brien Closings - Dan O'Brien"
     },
     {
       "id": "o_27",
-      "name": "David Barker"
+      "name": "Nick Lakhani"
     },
     {
       "id": "o_28",
-      "name": "Bill Skinner"
+      "name": "Hopkins"
     },
     {
       "id": "o_29",
-      "name": "Wilson"
+      "name": "Huebner - Adam"
     },
     {
       "id": "o_3",
@@ -95,263 +215,307 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_30",
-      "name": "Egge"
+      "name": "River Ridge Escrow - Melissa Sabin - msabin@therrec.com"
     },
     {
       "id": "o_31",
-      "name": "Steve Ames"
+      "name": "RentCF"
     },
     {
       "id": "o_32",
-      "name": "Wasker"
+      "name": "LLC (Tyler Rasmussen"
     },
     {
       "id": "o_33",
-      "name": "Dorr"
+      "name": "Adam Hunemiller)"
     },
     {
       "id": "o_34",
-      "name": "Wimmer"
+      "name": "Tiffany Belekevich - tiffanyb@skogman.com"
     },
     {
       "id": "o_35",
-      "name": "Marcouiller - Mary Aronson"
+      "name": "Rent CF"
     },
     {
       "id": "o_36",
-      "name": "Weston Rose - Rose Capital Partners LLC"
+      "name": "Adam Hunemuller)"
     },
     {
       "id": "o_37",
-      "name": "Ed Behrman"
+      "name": "Aquib Ali"
     },
     {
       "id": "o_38",
-      "name": "Aaron Bernard"
+      "name": "David Barker"
     },
     {
       "id": "o_39",
-      "name": "Adam Metzker"
+      "name": "Bill Skinner"
     },
     {
       "id": "o_4",
-      "name": "Ryan Winter"
+      "name": "Mohamad Chehab (phone: (602) 687-0996 | His regional manager: Mike ; phone number: (812) 664-5449"
     },
     {
       "id": "o_40",
-      "name": "Pivot LLC | Reece Satre (reece.satre@gmail.com)"
+      "name": "Wilson"
     },
     {
       "id": "o_41",
-      "name": "Tyler Rasmussen"
+      "name": "Egge"
     },
     {
       "id": "o_42",
-      "name": "Adam Hunemuller"
+      "name": "Stanbrough Residential LLC - Jeff Stanbrough"
     },
     {
       "id": "o_43",
-      "name": "Bradley"
+      "name": "Steve Ames"
     },
     {
       "id": "o_44",
-      "name": "Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com"
+      "name": "Wasker"
     },
     {
       "id": "o_45",
-      "name": "Washington State Bank - Ryan Shields - rshields@washsb.com"
+      "name": "Dorr"
     },
     {
       "id": "o_46",
-      "name": "Dentons Davis Brown - Bob Douglas"
+      "name": "Wimmer"
     },
     {
       "id": "o_47",
-      "name": "David Elkin"
+      "name": "Marcouiller - Mary Aronson"
     },
     {
       "id": "o_48",
-      "name": "Weston Rose"
+      "name": "IowaComputerGurus"
     },
     {
       "id": "o_49",
-      "name": "Gerry Manning"
+      "name": "Inc - Mitch Sellers"
     },
     {
       "id": "o_5",
-      "name": "Teddy Mohlman"
+      "name": "Ryan Winter"
     },
     {
       "id": "o_50",
-      "name": "Jeffrey Boardman"
+      "name": "Weston Rose - Rose Capital Partners LLC"
     },
     {
       "id": "o_51",
-      "name": "Prabhjot Singh"
+      "name": "Ed Behrman"
     },
     {
       "id": "o_52",
-      "name": "N/A - Cash Purchase"
+      "name": "Aaron Bernard"
     },
     {
       "id": "o_53",
-      "name": "Bruce McCann"
+      "name": "Adam Metzker"
     },
     {
       "id": "o_54",
-      "name": "Hastings"
+      "name": "Happe Homes and/or Assigns"
     },
     {
       "id": "o_55",
-      "name": "Gartin"
+      "name": "Pivot LLC | Reece Satre (reece.satre@gmail.com)"
     },
     {
       "id": "o_56",
-      "name": "Boettger - Tim Gartin"
+      "name": "Tyler Rasmussen"
     },
     {
       "id": "o_57",
-      "name": "Learned"
+      "name": "Adam Hunemuller"
     },
     {
       "id": "o_58",
-      "name": "Associates - Chad Learned"
+      "name": "Bradley"
     },
     {
       "id": "o_59",
-      "name": "Norwalk JV22"
+      "name": "Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com"
     },
     {
       "id": "o_6",
-      "name": "Javier Baez"
+      "name": "Kyle Kruidener"
     },
     {
       "id": "o_60",
-      "name": "LLC"
+      "name": "S"
     },
     {
       "id": "o_61",
-      "name": "Jonathon Schroeder - jschroeder@fredlaw.com"
+      "name": "S Capital Group LLC"
     },
     {
       "id": "o_62",
-      "name": "Zineta"
+      "name": "Washington State Bank - Ryan Shields - rshields@washsb.com"
     },
     {
       "id": "o_63",
-      "name": "Kemal Imamovic"
+      "name": "Hyper Energy Bar LLC - Jenny Drake"
     },
     {
       "id": "o_64",
-      "name": "Wilson Law Firm - Samantha"
+      "name": "Ryan Winter and/or Assigns"
     },
     {
       "id": "o_65",
-      "name": "Ed Pagliai"
+      "name": "Dentons Davis Brown - Bob Douglas"
     },
     {
       "id": "o_66",
-      "name": "David Elkin - dave@elkin-law.com"
+      "name": "Balmanainvestment LLC - Sushil Gajmer"
     },
     {
       "id": "o_67",
-      "name": "MKibben Settlement - Michele McKibben - 515.971.5254 - michele@mckibbensettlement.com"
+      "name": "David Elkin"
     },
     {
       "id": "o_68",
-      "name": "O'Shea"
+      "name": "Weston Rose"
     },
     {
       "id": "o_69",
-      "name": "PC Hiawatha"
+      "name": "Gerry Manning"
     },
     {
       "id": "o_7",
-      "name": "J&J Family Limited Partnership"
+      "name": "Teddy Mohlman"
     },
     {
       "id": "o_70",
-      "name": "IA - 319.632.3640"
+      "name": "Chase Gochnauer"
     },
     {
       "id": "o_71",
-      "name": "Fred Anderson"
+      "name": "Jeffrey Boardman"
     },
     {
       "id": "o_72",
-      "name": "Cory French"
+      "name": "Jeff Schachtner"
     },
     {
       "id": "o_73",
-      "name": "Ian Schwickert"
+      "name": "Prabhjot Singh"
     },
     {
       "id": "o_74",
-      "name": "Alex Knutson"
+      "name": "N/A - Cash Purchase"
     },
     {
       "id": "o_75",
-      "name": "Kevin Bryan"
+      "name": "Bruce McCann"
     },
     {
       "id": "o_76",
-      "name": "Closing Coordinator: Jill Hansen - jill.hansen@amesrmx.com"
+      "name": "Hastings"
     },
     {
       "id": "o_77",
-      "name": "Matt Blickenderfer"
+      "name": "Gartin"
     },
     {
       "id": "o_78",
-      "name": "West Bank in Coralville - Ryan Murphy - 319-351-4121"
+      "name": "Boettger - Tim Gartin"
     },
     {
       "id": "o_79",
-      "name": "Matt DeBoth"
+      "name": "Fish Creek Coop Inc - Teddy Mohlman"
     },
     {
       "id": "o_8",
-      "name": "Teddy Molhman"
+      "name": "Javier Baez"
     },
     {
       "id": "o_80",
-      "name": "Kimberly Kleinhans"
+      "name": "Javier Baeza"
     },
     {
       "id": "o_81",
-      "name": "Keith Kleinhans"
+      "name": "Learned"
     },
     {
       "id": "o_82",
-      "name": "terrance@thevareco.com"
+      "name": "Associates - Chad Learned"
     },
     {
       "id": "o_83",
-      "name": "Matt Blickenderfer | Black Hawk Real Estate"
+      "name": "Daniels Asset Management LLC - Eric Daniels"
     },
     {
       "id": "o_84",
-      "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+      "name": "Norwalk JV22"
     },
     {
       "id": "o_85",
-      "name": "Samantha Murray (Wilson and Egge)\n(515) 369-2502\nsam@wilsonlawfirmpc.com\n222 NW Sunrise Drive"
+      "name": "LLC"
     },
     {
       "id": "o_86",
-      "name": "Waukee"
+      "name": "Jared Husmann and/or Assigns"
     },
     {
       "id": "o_87",
-      "name": "IA"
+      "name": "Jonathon Schroeder - jschroeder@fredlaw.com"
     },
     {
       "id": "o_88",
-      "name": "Marco Andes"
+      "name": "Tom Fawcett"
+    },
+    {
+      "id": "o_89",
+      "name": "Ken Wick"
     },
     {
       "id": "o_9",
-      "name": "Javier Bazeos"
+      "name": "J&J Family Limited Partnership"
+    },
+    {
+      "id": "o_90",
+      "name": "Zineta"
+    },
+    {
+      "id": "o_91",
+      "name": "Kemal Imamovic"
+    },
+    {
+      "id": "o_92",
+      "name": "Paul Davis"
+    },
+    {
+      "id": "o_93",
+      "name": "Grant Lewis"
+    },
+    {
+      "id": "o_94",
+      "name": "Wilson Law Firm - Samantha"
+    },
+    {
+      "id": "o_95",
+      "name": "Matt Forsum"
+    },
+    {
+      "id": "o_96",
+      "name": "Ed Pagliai"
+    },
+    {
+      "id": "o_97",
+      "name": "David Elkin - dave@elkin-law.com"
+    },
+    {
+      "id": "o_98",
+      "name": "Ian Schwickert - KSI Holdings LLC"
+    },
+    {
+      "id": "o_99",
+      "name": "MKibben Settlement - Michele McKibben - 515.971.5254 - michele@mckibbensettlement.com"
     }
   ],
   "listings": [
@@ -448,11 +612,27 @@ export const dashboardData: DashboardData = {
           {
             "id": "o_3",
             "name": "Nina Near"
+          },
+          {
+            "id": "o_4",
+            "name": "Mohamad Chehab (phone: (602) 687-0996 | His regional manager: Mike ; phone number: (812) 664-5449"
           }
         ],
         "lawyers": [
           {
-            "name": "Bradley Sloter (Noah, Smith, Sloter & Ellingson PLC ; Address is 200 North Johnson Street Charles City, IA  50616.  Phone is 641-228-4533)"
+            "name": "Bradley Sloter (Noah"
+          },
+          {
+            "name": "Smith"
+          },
+          {
+            "name": "Sloter"
+          },
+          {
+            "name": "Ellingson PLC ; Address is 200 North Johnson Street Charles City"
+          },
+          {
+            "name": "IA  50616.  Phone is 641-228-4533)"
           }
         ],
         "agents": [
@@ -483,8 +663,12 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_4",
+            "id": "o_5",
             "name": "Ryan Winter"
+          },
+          {
+            "id": "o_6",
+            "name": "Kyle Kruidener"
           }
         ],
         "lawyers": [],
@@ -514,11 +698,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_5",
+            "id": "o_7",
             "name": "Teddy Mohlman"
           },
           {
-            "id": "o_6",
+            "id": "o_8",
             "name": "Javier Baez"
           }
         ],
@@ -550,8 +734,12 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_7",
+            "id": "o_9",
             "name": "J&J Family Limited Partnership"
+          },
+          {
+            "id": "o_10",
+            "name": "Charlie's Properties LLC and/or Assigns - Bob Charleston"
           }
         ],
         "lawyers": [],
@@ -579,7 +767,12 @@ export const dashboardData: DashboardData = {
       "buyer": "Ben Latusek",
       "titleOpinion": "",
       "assoc": {
-        "owners": [],
+        "owners": [
+          {
+            "id": "o_11",
+            "name": "Ben Latusek"
+          }
+        ],
         "lawyers": [],
         "agents": [
           {
@@ -607,11 +800,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_8",
+            "id": "o_12",
             "name": "Teddy Molhman"
           },
           {
-            "id": "o_9",
+            "id": "o_13",
             "name": "Javier Bazeos"
           }
         ],
@@ -642,7 +835,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_10",
+            "id": "o_14",
             "name": "Paul Peters"
           }
         ],
@@ -673,7 +866,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_11",
+            "id": "o_15",
             "name": "Shane Isley"
           }
         ],
@@ -704,7 +897,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_12",
+            "id": "o_16",
             "name": "Bob Sweeney"
           }
         ],
@@ -735,7 +928,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_13",
+            "id": "o_17",
             "name": "Richard Hutsell"
           }
         ],
@@ -766,7 +959,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_14",
+            "id": "o_18",
             "name": "Britt Randall"
           }
         ],
@@ -797,11 +990,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_15",
+            "id": "o_19",
             "name": "Wash Iowa LLC - Nic"
           },
           {
-            "id": "o_16",
+            "id": "o_20",
             "name": "Monica Runkel"
           }
         ],
@@ -831,11 +1024,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_17",
+            "id": "o_21",
             "name": "Roberts"
           },
           {
-            "id": "o_18",
+            "id": "o_22",
             "name": "Eddy - Andy Hauber"
           }
         ],
@@ -862,12 +1055,16 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_19",
+            "id": "o_23",
             "name": "Kim"
           },
           {
-            "id": "o_20",
+            "id": "o_24",
             "name": "Jeffrey Slaymaker"
+          },
+          {
+            "id": "o_25",
+            "name": "Lindsay Miller"
           }
         ],
         "lawyers": [],
@@ -894,8 +1091,12 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_21",
+            "id": "o_26",
             "name": "O'Brien Closings - Dan O'Brien"
+          },
+          {
+            "id": "o_27",
+            "name": "Nick Lakhani"
           }
         ],
         "lawyers": [],
@@ -925,11 +1126,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_22",
+            "id": "o_28",
             "name": "Hopkins"
           },
           {
-            "id": "o_23",
+            "id": "o_29",
             "name": "Huebner - Adam"
           }
         ],
@@ -962,13 +1163,31 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_24",
+            "id": "o_30",
             "name": "River Ridge Escrow - Melissa Sabin - msabin@therrec.com"
+          },
+          {
+            "id": "o_31",
+            "name": "RentCF"
+          },
+          {
+            "id": "o_32",
+            "name": "LLC (Tyler Rasmussen"
+          },
+          {
+            "id": "o_33",
+            "name": "Adam Hunemiller)"
           }
         ],
         "lawyers": [
           {
-            "name": "Roberts & Eddy - realestate@robertseddy.com & mmcintyre@robertseddy.com"
+            "name": "Roberts"
+          },
+          {
+            "name": "Eddy - realestate@robertseddy.com"
+          },
+          {
+            "name": "mmcintyre@robertseddy.com"
           }
         ],
         "agents": [],
@@ -994,13 +1213,28 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_25",
+            "id": "o_34",
             "name": "Tiffany Belekevich - tiffanyb@skogman.com"
+          },
+          {
+            "id": "o_35",
+            "name": "Rent CF"
+          },
+          {
+            "id": "o_32",
+            "name": "LLC (Tyler Rasmussen"
+          },
+          {
+            "id": "o_36",
+            "name": "Adam Hunemuller)"
           }
         ],
         "lawyers": [
           {
-            "name": "Roberts & Eddy - realestate@roberseddy.com"
+            "name": "Roberts"
+          },
+          {
+            "name": "Eddy - realestate@roberseddy.com"
           }
         ],
         "agents": [],
@@ -1024,7 +1258,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_26",
+            "id": "o_37",
             "name": "Aquib Ali"
           }
         ],
@@ -1055,7 +1289,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_27",
+            "id": "o_38",
             "name": "David Barker"
           }
         ],
@@ -1086,7 +1320,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_28",
+            "id": "o_39",
             "name": "Bill Skinner"
           }
         ],
@@ -1120,12 +1354,16 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_29",
+            "id": "o_40",
             "name": "Wilson"
           },
           {
-            "id": "o_30",
+            "id": "o_41",
             "name": "Egge"
+          },
+          {
+            "id": "o_42",
+            "name": "Stanbrough Residential LLC - Jeff Stanbrough"
           }
         ],
         "lawyers": [
@@ -1159,7 +1397,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_31",
+            "id": "o_43",
             "name": "Steve Ames"
           }
         ],
@@ -1193,20 +1431,28 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_32",
+            "id": "o_44",
             "name": "Wasker"
           },
           {
-            "id": "o_33",
+            "id": "o_45",
             "name": "Dorr"
           },
           {
-            "id": "o_34",
+            "id": "o_46",
             "name": "Wimmer"
           },
           {
-            "id": "o_35",
+            "id": "o_47",
             "name": "Marcouiller - Mary Aronson"
+          },
+          {
+            "id": "o_48",
+            "name": "IowaComputerGurus"
+          },
+          {
+            "id": "o_49",
+            "name": "Inc - Mitch Sellers"
           }
         ],
         "lawyers": [
@@ -1240,7 +1486,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_36",
+            "id": "o_50",
             "name": "Weston Rose - Rose Capital Partners LLC"
           }
         ],
@@ -1271,7 +1517,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_37",
+            "id": "o_51",
             "name": "Ed Behrman"
           }
         ],
@@ -1302,7 +1548,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -1334,8 +1580,12 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_39",
+            "id": "o_53",
             "name": "Adam Metzker"
+          },
+          {
+            "id": "o_54",
+            "name": "Happe Homes and/or Assigns"
           }
         ],
         "lawyers": [],
@@ -1364,7 +1614,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_40",
+            "id": "o_55",
             "name": "Pivot LLC | Reece Satre (reece.satre@gmail.com)"
           }
         ],
@@ -1390,7 +1640,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -1421,7 +1671,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -1452,11 +1702,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_41",
+            "id": "o_56",
             "name": "Tyler Rasmussen"
           },
           {
-            "id": "o_42",
+            "id": "o_57",
             "name": "Adam Hunemuller"
           }
         ],
@@ -1489,12 +1739,20 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_43",
+            "id": "o_58",
             "name": "Bradley"
           },
           {
-            "id": "o_44",
+            "id": "o_59",
             "name": "Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com"
+          },
+          {
+            "id": "o_60",
+            "name": "S"
+          },
+          {
+            "id": "o_61",
+            "name": "S Capital Group LLC"
           }
         ],
         "lawyers": [
@@ -1523,7 +1781,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -1554,7 +1812,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -1587,13 +1845,23 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_45",
+            "id": "o_62",
             "name": "Washington State Bank - Ryan Shields - rshields@washsb.com"
+          },
+          {
+            "id": "o_63",
+            "name": "Hyper Energy Bar LLC - Jenny Drake"
           }
         ],
         "lawyers": [
           {
-            "name": "Whitfield & Eddy - John Fatina & Marlene Baustian"
+            "name": "Whitfield"
+          },
+          {
+            "name": "Eddy - John Fatina"
+          },
+          {
+            "name": "Marlene Baustian"
           }
         ],
         "agents": [
@@ -1622,7 +1890,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -1653,7 +1921,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -1684,7 +1952,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -1718,12 +1986,16 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_29",
+            "id": "o_40",
             "name": "Wilson"
           },
           {
-            "id": "o_30",
+            "id": "o_41",
             "name": "Egge"
+          },
+          {
+            "id": "o_64",
+            "name": "Ryan Winter and/or Assigns"
           }
         ],
         "lawyers": [
@@ -1760,8 +2032,12 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_46",
+            "id": "o_65",
             "name": "Dentons Davis Brown - Bob Douglas"
+          },
+          {
+            "id": "o_66",
+            "name": "Balmanainvestment LLC - Sushil Gajmer"
           }
         ],
         "lawyers": [
@@ -1795,7 +2071,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_47",
+            "id": "o_67",
             "name": "David Elkin"
           }
         ],
@@ -1827,12 +2103,20 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_43",
+            "id": "o_58",
             "name": "Bradley"
           },
           {
-            "id": "o_44",
+            "id": "o_59",
             "name": "Riley - Matthew Barnd - mbarnd@bradleyriley.com / Assistant Rachel Church - rchurch@bradleyriley.com"
+          },
+          {
+            "id": "o_60",
+            "name": "S"
+          },
+          {
+            "id": "o_61",
+            "name": "S Capital Group LLC"
           }
         ],
         "lawyers": [],
@@ -1857,7 +2141,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_48",
+            "id": "o_68",
             "name": "Weston Rose"
           }
         ],
@@ -1908,8 +2192,12 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_49",
+            "id": "o_69",
             "name": "Gerry Manning"
+          },
+          {
+            "id": "o_70",
+            "name": "Chase Gochnauer"
           }
         ],
         "lawyers": [],
@@ -1940,8 +2228,12 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_50",
+            "id": "o_71",
             "name": "Jeffrey Boardman"
+          },
+          {
+            "id": "o_72",
+            "name": "Jeff Schachtner"
           }
         ],
         "lawyers": [],
@@ -1971,7 +2263,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_47",
+            "id": "o_67",
             "name": "David Elkin"
           }
         ],
@@ -2002,11 +2294,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_26",
+            "id": "o_37",
             "name": "Aquib Ali"
           },
           {
-            "id": "o_51",
+            "id": "o_73",
             "name": "Prabhjot Singh"
           }
         ],
@@ -2038,13 +2330,16 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_52",
+            "id": "o_74",
             "name": "N/A - Cash Purchase"
           }
         ],
         "lawyers": [
           {
-            "name": "Wilson & Egge - Samantha"
+            "name": "Wilson"
+          },
+          {
+            "name": "Egge - Samantha"
           }
         ],
         "agents": [
@@ -2073,7 +2368,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_53",
+            "id": "o_75",
             "name": "Bruce McCann"
           }
         ],
@@ -2107,16 +2402,24 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_54",
+            "id": "o_76",
             "name": "Hastings"
           },
           {
-            "id": "o_55",
+            "id": "o_77",
             "name": "Gartin"
           },
           {
-            "id": "o_56",
+            "id": "o_78",
             "name": "Boettger - Tim Gartin"
+          },
+          {
+            "id": "o_79",
+            "name": "Fish Creek Coop Inc - Teddy Mohlman"
+          },
+          {
+            "id": "o_80",
+            "name": "Javier Baeza"
           }
         ],
         "lawyers": [
@@ -2152,12 +2455,16 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_57",
+            "id": "o_81",
             "name": "Learned"
           },
           {
-            "id": "o_58",
+            "id": "o_82",
             "name": "Associates - Chad Learned"
+          },
+          {
+            "id": "o_83",
+            "name": "Daniels Asset Management LLC - Eric Daniels"
           }
         ],
         "lawyers": [
@@ -2191,11 +2498,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_41",
+            "id": "o_56",
             "name": "Tyler Rasmussen"
           },
           {
-            "id": "o_42",
+            "id": "o_57",
             "name": "Adam Hunemuller"
           }
         ],
@@ -2226,7 +2533,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_37",
+            "id": "o_51",
             "name": "Ed Behrman"
           }
         ],
@@ -2258,12 +2565,16 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_59",
+            "id": "o_84",
             "name": "Norwalk JV22"
           },
           {
-            "id": "o_60",
+            "id": "o_85",
             "name": "LLC"
+          },
+          {
+            "id": "o_86",
+            "name": "Jared Husmann and/or Assigns"
           }
         ],
         "lawyers": [],
@@ -2293,7 +2604,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -2324,7 +2635,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -2355,7 +2666,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -2386,7 +2697,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -2420,8 +2731,16 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_61",
+            "id": "o_87",
             "name": "Jonathon Schroeder - jschroeder@fredlaw.com"
+          },
+          {
+            "id": "o_88",
+            "name": "Tom Fawcett"
+          },
+          {
+            "id": "o_89",
+            "name": "Ken Wick"
           }
         ],
         "lawyers": [
@@ -2458,17 +2777,28 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_62",
+            "id": "o_90",
             "name": "Zineta"
           },
           {
-            "id": "o_63",
+            "id": "o_91",
             "name": "Kemal Imamovic"
+          },
+          {
+            "id": "o_92",
+            "name": "Paul Davis"
+          },
+          {
+            "id": "o_93",
+            "name": "Grant Lewis"
           }
         ],
         "lawyers": [
           {
-            "name": "Chris Watkins - Raccoon Valley Bank - Closing & Dispursement"
+            "name": "Chris Watkins - Raccoon Valley Bank - Closing"
+          },
+          {
+            "name": "Dispursement"
           }
         ],
         "agents": [
@@ -2499,8 +2829,12 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_64",
+            "id": "o_94",
             "name": "Wilson Law Firm - Samantha"
+          },
+          {
+            "id": "o_95",
+            "name": "Matt Forsum"
           }
         ],
         "lawyers": [
@@ -2537,13 +2871,26 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_65",
+            "id": "o_96",
             "name": "Ed Pagliai"
+          },
+          {
+            "id": "o_5",
+            "name": "Ryan Winter"
           }
         ],
         "lawyers": [
           {
-            "name": "S - Midwest Law Group - Brett Osborn & Shawnda Behr\nB - Wilson & Egge - Bryan Loya & Samantha"
+            "name": "S - Midwest Law Group - Brett Osborn"
+          },
+          {
+            "name": "Shawnda Behr\nB - Wilson"
+          },
+          {
+            "name": "Egge - Bryan Loya"
+          },
+          {
+            "name": "Samantha"
           }
         ],
         "agents": [
@@ -2575,13 +2922,23 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_66",
+            "id": "o_97",
             "name": "David Elkin - dave@elkin-law.com"
+          },
+          {
+            "id": "o_98",
+            "name": "Ian Schwickert - KSI Holdings LLC"
           }
         ],
         "lawyers": [
           {
-            "name": "Sullivan & Ward - Kyle Kruidenier - Closing & Dispursement"
+            "name": "Sullivan"
+          },
+          {
+            "name": "Ward - Kyle Kruidenier - Closing"
+          },
+          {
+            "name": "Dispursement"
           }
         ],
         "agents": [
@@ -2613,13 +2970,24 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_67",
+            "id": "o_99",
             "name": "MKibben Settlement - Michele McKibben - 515.971.5254 - michele@mckibbensettlement.com"
+          },
+          {
+            "id": "o_100",
+            "name": "Higher Ground Investment Group LLC - Teddy Mohlman"
+          },
+          {
+            "id": "o_80",
+            "name": "Javier Baeza"
           }
         ],
         "lawyers": [
           {
-            "name": "Wilson & Egge - Samantha"
+            "name": "Wilson"
+          },
+          {
+            "name": "Egge - Samantha"
           }
         ],
         "agents": [
@@ -2648,7 +3016,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -2679,7 +3047,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -2710,7 +3078,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -2741,7 +3109,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_38",
+            "id": "o_52",
             "name": "Aaron Bernard"
           }
         ],
@@ -2774,13 +3142,23 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_45",
+            "id": "o_62",
             "name": "Washington State Bank - Ryan Shields - rshields@washsb.com"
+          },
+          {
+            "id": "o_63",
+            "name": "Hyper Energy Bar LLC - Jenny Drake"
           }
         ],
         "lawyers": [
           {
-            "name": "Whitfield & Eddy - John Fatina & Marlene Baustian"
+            "name": "Whitfield"
+          },
+          {
+            "name": "Eddy - John Fatina"
+          },
+          {
+            "name": "Marlene Baustian"
           }
         ],
         "agents": [
@@ -2812,20 +3190,24 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_68",
+            "id": "o_101",
             "name": "O'Shea"
           },
           {
-            "id": "o_68",
+            "id": "o_101",
             "name": "O'Shea"
           },
           {
-            "id": "o_69",
+            "id": "o_102",
             "name": "PC Hiawatha"
           },
           {
-            "id": "o_70",
+            "id": "o_103",
             "name": "IA - 319.632.3640"
+          },
+          {
+            "id": "o_104",
+            "name": "Alex Peterson"
           }
         ],
         "lawyers": [
@@ -2860,8 +3242,12 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_39",
+            "id": "o_53",
             "name": "Adam Metzker"
+          },
+          {
+            "id": "o_54",
+            "name": "Happe Homes and/or Assigns"
           }
         ],
         "lawyers": [],
@@ -2891,7 +3277,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_13",
+            "id": "o_17",
             "name": "Richard Hutsell"
           }
         ],
@@ -2922,7 +3308,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_71",
+            "id": "o_105",
             "name": "Fred Anderson"
           }
         ],
@@ -2953,7 +3339,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_72",
+            "id": "o_106",
             "name": "Cory French"
           }
         ],
@@ -3003,15 +3389,15 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_73",
+            "id": "o_107",
             "name": "Ian Schwickert"
           },
           {
-            "id": "o_74",
+            "id": "o_108",
             "name": "Alex Knutson"
           },
           {
-            "id": "o_75",
+            "id": "o_109",
             "name": "Kevin Bryan"
           }
         ],
@@ -3045,13 +3431,26 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_76",
+            "id": "o_110",
             "name": "Closing Coordinator: Jill Hansen - jill.hansen@amesrmx.com"
+          },
+          {
+            "id": "o_111",
+            "name": "Steve Lee (Agent: Steve Bock - steve@bockrealestate.com)"
           }
         ],
         "lawyers": [
           {
-            "name": "Brett Olson; Osborn, \nJacobs & Hartung 974 73rd St. #16 \nWest Des Moines, IA \n515-223-6000"
+            "name": "Brett Olson; Osborn"
+          },
+          {
+            "name": "Jacobs"
+          },
+          {
+            "name": "Hartung 974 73rd St. #16 \nWest Des Moines"
+          },
+          {
+            "name": "IA \n515-223-6000"
           }
         ],
         "agents": [
@@ -3083,13 +3482,23 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_77",
+            "id": "o_112",
             "name": "Matt Blickenderfer"
+          },
+          {
+            "id": "o_113",
+            "name": "Bond Shymansky - bond@skogman.com | Prospect View LLC"
           }
         ],
         "lawyers": [
           {
-            "name": "Escrow Services of Iowa, Inc. (ESI), Tiffany Belekevich | tiffanyb@skogman.com"
+            "name": "Escrow Services of Iowa"
+          },
+          {
+            "name": "Inc. (ESI)"
+          },
+          {
+            "name": "Tiffany Belekevich | tiffanyb@skogman.com"
           }
         ],
         "agents": [
@@ -3118,7 +3527,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_11",
+            "id": "o_15",
             "name": "Shane Isley"
           }
         ],
@@ -3149,7 +3558,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_26",
+            "id": "o_37",
             "name": "Aquib Ali"
           }
         ],
@@ -3180,7 +3589,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_10",
+            "id": "o_14",
             "name": "Paul Peters"
           }
         ],
@@ -3211,7 +3620,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_36",
+            "id": "o_50",
             "name": "Weston Rose - Rose Capital Partners LLC"
           }
         ],
@@ -3242,11 +3651,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_15",
+            "id": "o_19",
             "name": "Wash Iowa LLC - Nic"
           },
           {
-            "id": "o_16",
+            "id": "o_20",
             "name": "Monica Runkel"
           }
         ],
@@ -3277,7 +3686,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_37",
+            "id": "o_51",
             "name": "Ed Behrman"
           }
         ],
@@ -3308,7 +3717,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_14",
+            "id": "o_18",
             "name": "Britt Randall"
           }
         ],
@@ -3341,17 +3750,33 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_22",
+            "id": "o_28",
             "name": "Hopkins"
           },
           {
-            "id": "o_23",
+            "id": "o_29",
             "name": "Huebner - Adam"
+          },
+          {
+            "id": "o_114",
+            "name": "Misty Korthas"
           }
         ],
         "lawyers": [
           {
-            "name": "Wasker, Dorr, Wimmer and Marcouiller, P.C. out of WDM"
+            "name": "Wasker"
+          },
+          {
+            "name": "Dorr"
+          },
+          {
+            "name": "Wimmer"
+          },
+          {
+            "name": "Marcouiller"
+          },
+          {
+            "name": "P.C. out of WDM -- Dave Pulliam | Banker: Quinn.Weber@earlhambank.com"
           }
         ],
         "agents": [
@@ -3380,7 +3805,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_78",
+            "id": "o_115",
             "name": "West Bank in Coralville - Ryan Murphy - 319-351-4121"
           }
         ],
@@ -3411,7 +3836,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_79",
+            "id": "o_116",
             "name": "Matt DeBoth"
           }
         ],
@@ -3467,11 +3892,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_80",
+            "id": "o_117",
             "name": "Kimberly Kleinhans"
           },
           {
-            "id": "o_81",
+            "id": "o_118",
             "name": "Keith Kleinhans"
           }
         ],
@@ -3502,7 +3927,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_82",
+            "id": "o_119",
             "name": "terrance@thevareco.com"
           }
         ],
@@ -3533,7 +3958,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_26",
+            "id": "o_37",
             "name": "Aquib Ali"
           }
         ],
@@ -3564,7 +3989,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_10",
+            "id": "o_14",
             "name": "Paul Peters"
           }
         ],
@@ -3595,7 +4020,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_37",
+            "id": "o_51",
             "name": "Ed Behrman"
           }
         ],
@@ -3626,7 +4051,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_71",
+            "id": "o_105",
             "name": "Fred Anderson"
           }
         ],
@@ -3660,17 +4085,27 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_83",
+            "id": "o_120",
             "name": "Matt Blickenderfer | Black Hawk Real Estate"
           },
           {
-            "id": "o_84",
+            "id": "o_121",
             "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+          },
+          {
+            "id": "o_122",
+            "name": "Bond Shymansky - bond@skogman.com | Prospect View LLC - 319-930-8441 - PO Box 177 Gilbertville Ia 50634"
           }
         ],
         "lawyers": [
           {
-            "name": "Escrow Services of Iowa, Inc. (ESI), Tiffany Belekevich | tiffanyb@skogman.com"
+            "name": "Escrow Services of Iowa"
+          },
+          {
+            "name": "Inc. (ESI)"
+          },
+          {
+            "name": "Tiffany Belekevich | tiffanyb@skogman.com"
           }
         ],
         "agents": [
@@ -3699,7 +4134,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_78",
+            "id": "o_115",
             "name": "West Bank in Coralville - Ryan Murphy - 319-351-4121"
           }
         ],
@@ -3730,7 +4165,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_79",
+            "id": "o_116",
             "name": "Matt DeBoth"
           }
         ],
@@ -3762,16 +4197,24 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_85",
-            "name": "Samantha Murray (Wilson and Egge)\n(515) 369-2502\nsam@wilsonlawfirmpc.com\n222 NW Sunrise Drive"
+            "id": "o_123",
+            "name": "Samantha Murray (Wilson"
           },
           {
-            "id": "o_86",
+            "id": "o_124",
+            "name": "Egge)\n(515) 369-2502\nsam@wilsonlawfirmpc.com\n222 NW Sunrise Drive"
+          },
+          {
+            "id": "o_125",
             "name": "Waukee"
           },
           {
-            "id": "o_87",
+            "id": "o_126",
             "name": "IA"
+          },
+          {
+            "id": "o_127",
+            "name": "Durachem LLC | Gravis Alger"
           }
         ],
         "lawyers": [],
@@ -3800,7 +4243,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_88",
+            "id": "o_128",
             "name": "Marco Andes"
           }
         ],
@@ -3826,7 +4269,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_36",
+            "id": "o_50",
             "name": "Weston Rose - Rose Capital Partners LLC"
           }
         ],
@@ -3846,9 +4289,9 @@ export const dashboardData: DashboardData = {
       "id": "86ae6xexu",
       "name": "200 E. Arlington St. Waterloo, IA",
       "address": "200 E. Arlington St. Waterloo, IA",
-      "status": "lost",
+      "status": "lysted",
       "datasetYear": 2026,
-      "dateUpdated": "May 21, 2026, 3:10 AM",
+      "dateUpdated": "Jan 2, 2026, 2:05 PM",
       "createdBy": "Chloe Ting",
       "abstracting": "",
       "agent": "0",
@@ -3857,7 +4300,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_13",
+            "id": "o_17",
             "name": "Richard Hutsell"
           }
         ],
@@ -3888,7 +4331,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_11",
+            "id": "o_15",
             "name": "Shane Isley"
           }
         ],
@@ -3920,16 +4363,20 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_73",
+            "id": "o_107",
             "name": "Ian Schwickert"
           },
           {
-            "id": "o_74",
+            "id": "o_108",
             "name": "Alex Knutson"
           },
           {
-            "id": "o_75",
+            "id": "o_109",
             "name": "Kevin Bryan"
+          },
+          {
+            "id": "o_129",
+            "name": "Rashid"
           }
         ],
         "lawyers": [],
@@ -3959,7 +4406,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_14",
+            "id": "o_18",
             "name": "Britt Randall"
           }
         ],
