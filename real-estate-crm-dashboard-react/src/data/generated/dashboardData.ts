@@ -1192,8 +1192,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/wk6ozg2y8hhw0btzh2eyy/h?rlkey=73z8t96afafond1800j2k817b&st=ysb97mmd&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -2984,8 +2983,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/xim3rq97uvpfigp8o8osv/AALM7Z6-iNuKZLpW6zIbjO0?rlkey=6plnx7126hr61tfk3hty0i6r1&st=k0ob7qll&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -3097,8 +3095,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/5670tmvt2jpaxsi9md11g/AD_uZRkqS0VBHVjBmy9SRPA?rlkey=jgkfq0e2h6lrl49fiutnqlehh&st=os3f2ben&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -3248,8 +3245,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/4273bxb23ehdkjtdee6oq/AP4IaRDLjV1Di5m43fDEQbg?rlkey=678zjbc4z32139jfliaeydek1&st=vpbalzcy&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -3282,8 +3278,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/85k08btyro6hsc5rsoyo2/AJlLL6zkDdWDr7eoWeKLglg?rlkey=6d5vqrx2het0dlnylqwx3g4co&st=9wlr6pyg&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -3310,8 +3305,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/xoe9sqg4p6199eu01ftcq/AKgG407gUUwUKI3czI9gwBI?rlkey=ukhjvkbxprh3rowaco2moahb9&st=05ziw2q4&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -3383,8 +3377,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/febdx2c291c5gdoerwban/AAg2MpqDL0LrD2KMg0tR61w?rlkey=npva8hink3slcoopay6j0wi6k&st=yp2t1pgo&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
