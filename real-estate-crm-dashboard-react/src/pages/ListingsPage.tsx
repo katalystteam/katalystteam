@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useDashboardData } from '../data/useDashboardData'
 import type { Listing } from '../types'
 import { CLICKUP_STATUS_TAB_ORDER, clickUpStatusBadgeClass, normClickUpStatusKey } from '../lib/clickUpStatus'
+import { sortListings, type ListingSortKey, type SortDir } from '../lib/listingSort'
 import { ListingAssocPanel } from './partials/ListingAssocPanel'
 
 /** Year cohort: `all` or calendar year from Properties export / ClickUp list name. */
@@ -12,6 +13,20 @@ function parseYearParam(v: string | null): YearFilter {
   if (!v || v === 'all') return 'all'
   const n = Number(v)
   return Number.isFinite(n) ? n : 'all'
+}
+
+function parseSortKey(v: string | null): ListingSortKey | null {
+  if (v === 'name' || v === 'updated') return v
+  return null
+}
+
+function parseSortDir(v: string | null, key: ListingSortKey): SortDir {
+  if (v === 'asc' || v === 'desc') return v
+  return key === 'name' ? 'asc' : 'desc'
+}
+
+function sortArrow(dir: SortDir): string {
+  return dir === 'asc' ? ' ↑' : ' ↓'
 }
 
 /** Builds status pills for a year: preferred order first, then other statuses present (sorted). */
@@ -98,6 +113,8 @@ export function ListingsPage() {
   const yearFilter = parseYearParam(params.get('year'))
   const cuNorm = params.get('cu')
   const activeListingId = params.get('listing')
+  const sortKey = parseSortKey(params.get('sort'))
+  const sortDir = sortKey ? parseSortDir(params.get('dir'), sortKey) : 'asc'
 
   const yearsInData = useMemo(() => {
     const s = new Set<number>()
@@ -133,10 +150,26 @@ export function ListingsPage() {
     setParams(next, { replace: true })
   }
 
+  const setSort = (key: ListingSortKey) => {
+    const next = new URLSearchParams(params)
+    const current = parseSortKey(params.get('sort'))
+    const currentDir = current ? parseSortDir(params.get('dir'), current) : null
+    if (current === key && currentDir) {
+      next.set('sort', key)
+      next.set('dir', currentDir === 'asc' ? 'desc' : 'asc')
+    } else {
+      next.set('sort', key)
+      next.set('dir', key === 'name' ? 'asc' : 'desc')
+    }
+    setParams(next, { replace: true })
+  }
+
   const listings = useMemo(() => {
     const cuKey = cuNorm && cuNorm !== 'all' ? cuNorm : null
-    return data.listings.filter((l) => listingMatches(l, yearFilter, cuKey, q))
-  }, [data.listings, yearFilter, cuNorm, q])
+    const filtered = data.listings.filter((l) => listingMatches(l, yearFilter, cuKey, q))
+    if (!sortKey) return filtered
+    return sortListings(filtered, sortKey, sortDir)
+  }, [data.listings, yearFilter, cuNorm, q, sortKey, sortDir])
 
   const activeListing = useMemo(
     () => data.listings.find((l) => l.id === activeListingId) ?? null,
@@ -174,6 +207,33 @@ export function ListingsPage() {
                     {y}
                   </button>
                 ))}
+              </div>
+              <div
+                className="filters filters-sort"
+                role="group"
+                aria-label="Sort listings"
+                style={{
+                  marginLeft: 4,
+                  paddingLeft: 10,
+                  borderLeft: '1px solid var(--color-border-tertiary)',
+                }}
+              >
+                <button
+                  type="button"
+                  className={`filter-pill${sortKey === 'name' ? ' active' : ''}`}
+                  onClick={() => setSort('name')}
+                  aria-pressed={sortKey === 'name'}
+                >
+                  Name{sortKey === 'name' ? sortArrow(sortDir) : ''}
+                </button>
+                <button
+                  type="button"
+                  className={`filter-pill${sortKey === 'updated' ? ' active' : ''}`}
+                  onClick={() => setSort('updated')}
+                  aria-pressed={sortKey === 'updated'}
+                >
+                  Updated{sortKey === 'updated' ? sortArrow(sortDir) : ''}
+                </button>
               </div>
             </div>
 
