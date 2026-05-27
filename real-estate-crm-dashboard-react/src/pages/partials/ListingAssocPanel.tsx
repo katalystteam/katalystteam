@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import type { Listing } from '../../types'
 import { Avatar } from '../../components/Avatar'
@@ -13,6 +14,12 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
   const a = listing.assoc
   const eng = a.engagement
   const detailRows = listingDetailFields(listing)
+  const [openContactIds, setOpenContactIds] = useState<Record<string, boolean>>({})
+
+  const topContacts = useMemo(() => {
+    const arr = eng?.ghlTopContacts ?? []
+    return [...arr].sort((x, y) => (y.score ?? 0) - (x.score ?? 0)).slice(0, 10)
+  }, [eng?.ghlTopContacts])
 
   const Section = ({
     label,
@@ -165,7 +172,11 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
             <div className="assoc-item-left" style={{ flex: 1, minWidth: 0 }}>
               <div>
                 <div className="assoc-name">Engagement score</div>
-                <div className="assoc-sub">Contacts engaging with posts tied to this property</div>
+                <div className="assoc-sub">
+                  {eng?.ghlCampaigns?.length
+                    ? 'Email campaign opens + clicks (matched by property in blast HTML)'
+                    : 'Contacts engaging with posts tied to this property'}
+                </div>
               </div>
             </div>
             {formatEngagementScore(eng?.ghlScore) !== null ? (
@@ -174,11 +185,103 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
                 <span style={{ fontSize: 11, fontWeight: 500, color: 'var(--color-text-tertiary)' }}>/100</span>
               </span>
             ) : (
-              <span className="engagement-score-muted" title="Wire GHL API + tag posts by property">
+              <span className="engagement-score-muted" title="Run npm run sync:ghl-campaigns or tag contacts in GHL">
                 —
               </span>
             )}
           </div>
+          {topContacts.length ? (
+            <div style={{ marginTop: 10 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, color: 'var(--color-text-tertiary)', marginBottom: 6 }}>
+                Top contacts
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {topContacts.map((c, idx) => {
+                  const isOpen = Boolean(openContactIds[c.id])
+                  return (
+                    <button
+                      key={c.id}
+                      type="button"
+                      onClick={() => setOpenContactIds((m) => ({ ...m, [c.id]: !m[c.id] }))}
+                      style={{
+                        textAlign: 'left',
+                        padding: '8px 10px',
+                        borderRadius: 'var(--border-radius-md)',
+                        border: '1px solid var(--color-border-tertiary)',
+                        background: 'var(--color-background-primary)',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10, alignItems: 'baseline' }}>
+                        <div style={{ minWidth: 0 }}>
+                          <div style={{ fontSize: 12, fontWeight: 700, lineHeight: 1.2, wordBreak: 'break-word' }}>
+                            {idx + 1}. {c.name || 'Unknown contact'}
+                          </div>
+                          <div style={{ fontSize: 10, color: 'var(--color-text-tertiary)', marginTop: 3 }}>
+                            {c.opened} opens · {c.clicked} clicks · score {c.score}
+                          </div>
+                        </div>
+                        <div style={{ fontSize: 10, fontWeight: 600, color: 'var(--color-text-tertiary)' }}>
+                          {isOpen ? 'Hide' : 'View'}
+                        </div>
+                      </div>
+                      {isOpen ? (
+                        <div style={{ marginTop: 8, fontSize: 11, color: 'var(--color-text-secondary)' }}>
+                          {c.email ? (
+                            <div style={{ marginBottom: 4 }}>
+                              <span style={{ fontWeight: 700 }}>Email:</span> {c.email}
+                            </div>
+                          ) : null}
+                          {c.phone ? (
+                            <div style={{ marginBottom: 4 }}>
+                              <span style={{ fontWeight: 700 }}>Phone:</span> {c.phone}
+                            </div>
+                          ) : null}
+                          {!c.email && !c.phone ? (
+                            <div style={{ color: 'var(--color-text-tertiary)' }}>No contact info in export.</div>
+                          ) : null}
+                        </div>
+                      ) : null}
+                    </button>
+                  )
+                })}
+              </div>
+              <div style={{ fontSize: 10, color: 'var(--color-text-tertiary)', marginTop: 6, lineHeight: 1.35 }}>
+                Imported from GHL “Email Statistics Details” export (local-only).
+              </div>
+            </div>
+          ) : null}
+          {eng?.ghlCampaigns?.length ? (
+            <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {eng.ghlCampaigns.map((c) => (
+                <div
+                  key={c.campaignId}
+                  style={{
+                    padding: '8px 10px',
+                    borderRadius: 'var(--border-radius-md)',
+                    border: '1px solid var(--color-border-tertiary)',
+                    background: 'var(--color-background-primary)',
+                  }}
+                >
+                  <div style={{ fontSize: 12, fontWeight: 600, lineHeight: 1.35 }}>{c.name}</div>
+                  {c.subject ? (
+                    <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', marginTop: 2 }}>{c.subject}</div>
+                  ) : null}
+                  <div style={{ fontSize: 10, color: 'var(--color-text-tertiary)', marginTop: 4 }}>
+                    {c.sentAt ? `Sent ${c.sentAt}` : 'Sent'} · {c.stats.delivered} delivered
+                  </div>
+                  <div style={{ display: 'flex', gap: 12, marginTop: 6, fontSize: 11 }}>
+                    <span>
+                      <strong>{c.stats.opened}</strong> opens ({c.stats.openRate.toFixed(1)}%)
+                    </span>
+                    <span>
+                      <strong>{c.stats.clicked}</strong> clicks ({c.stats.clickRate.toFixed(1)}%)
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : null}
         </div>
         <div className="assoc-subsection" style={{ marginTop: 8 }}>
           <div className="assoc-subsection-title">From Social Media</div>

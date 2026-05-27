@@ -15,6 +15,9 @@ katalystteam/
 dist-ssr
 *.local
 
+# Generated private engagement export (contains contact PII; don't commit)
+src/data/generated/ghlContactEngagement.private.ts
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

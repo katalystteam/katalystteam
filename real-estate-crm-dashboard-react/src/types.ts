@@ -11,12 +11,44 @@ export type Owner = {
 
 export type AssocPerson = { name: string }
 
+export type GhlCampaignStats = {
+  sent: number
+  delivered: number
+  opened: number
+  clicked: number
+  openRate: number
+  clickRate: number
+}
+
+export type GhlMatchedCampaign = {
+  campaignId: string
+  bulkRequestId: string
+  name: string
+  subject: string
+  sentAt: string | null
+  stats: GhlCampaignStats
+}
+
+export type GhlContactEngagement = {
+  id: string
+  name: string
+  email?: string
+  phone?: string
+  opened: number
+  clicked: number
+  score: number
+}
+
 /** Optional per-listing engagement (wire to GHL + Meta APIs later). Scores are typically 0–100. */
 export type ListingEngagement = {
   /** GoHighLevel: contacts engaging with property-related content */
   ghlScore?: number | null
   /** Facebook / paid social interactions on property ads */
   socialScore?: number | null
+  /** Email blasts matched to this property via GHL campaign HTML */
+  ghlCampaigns?: GhlMatchedCampaign[]
+  /** Top engaging contacts (imported from GHL Email Statistics Details export). */
+  ghlTopContacts?: GhlContactEngagement[]
 }
 
 /** Listing document row: optional `url` opens the file (e.g. OM PDF from katalystteam.com). */

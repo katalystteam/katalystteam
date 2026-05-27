@@ -2,23 +2,50 @@ import { useMemo } from 'react'
 import type { DashboardData } from '../types'
 import { addressKey } from '../lib/addressKey'
 import { dashboardData } from './generated/dashboardData'
+import { ghlCampaignEngagementByListingId } from './generated/ghlCampaignEngagement'
+import { ghlContactEngagementByListingId } from './generated/ghlContactEngagement'
 import { ghlEngagementByListingId } from './generated/ghlEngagement'
 import { siteImages } from './generated/siteImages'
 import { katalystDocuments } from './generated/katalystDocuments'
 
+type PrivateGhlContactEngagementModule = {
+  ghlContactEngagementByListingId: Record<string, { contacts: unknown[] }>
+}
+
+function privateGhlContactEngagementByListingId(): Record<string, { contacts: unknown[] }> {
+  // Optional local-only file (contains contact PII); absent in Vercel builds.
+  const modules = import.meta.glob('./generated/ghlContactEngagement.private.ts', { eager: true }) as Record<
+    string,
+    PrivateGhlContactEngagementModule
+  >
+  const first = Object.values(modules)[0]
+  return (first?.ghlContactEngagementByListingId ?? {}) as Record<string, { contacts: unknown[] }>
+}
+
 function mergeGhlEngagement(data: DashboardData): DashboardData {
+  const privateMap = privateGhlContactEngagementByListingId()
   return {
     ...data,
     listings: data.listings.map((l) => {
-      const synced = ghlEngagementByListingId[l.id]
-      if (synced === undefined) return l
+      const tagSynced = ghlEngagementByListingId[l.id]
+      const campaignSynced = ghlCampaignEngagementByListingId[l.id]
+      const contactSynced = ghlContactEngagementByListingId[l.id] ?? (privateMap[l.id] as { contacts?: unknown[] } | undefined)
+      if (tagSynced === undefined && campaignSynced === undefined && contactSynced === undefined) return l
+
+      const ghlScore =
+        campaignSynced?.ghlScore ??
+        tagSynced?.ghlScore ??
+        l.assoc.engagement?.ghlScore
+
       return {
         ...l,
         assoc: {
           ...l.assoc,
           engagement: {
             ...l.assoc.engagement,
-            ghlScore: synced.ghlScore,
+            ghlScore,
+            ghlCampaigns: campaignSynced?.campaigns ?? l.assoc.engagement?.ghlCampaigns,
+            ghlTopContacts: (contactSynced?.contacts as never[] | undefined) ?? l.assoc.engagement?.ghlTopContacts,
           },
         },
       }
