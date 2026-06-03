@@ -267,31 +267,31 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_73",
-      "name": "Kimberly Kleinhans"
+      "name": "ALFAS PROPERTIES (Sandro Tadic (Sani) - apllhomes@gmail.com)"
     },
     {
       "id": "o_74",
-      "name": "Keith Kleinhans"
+      "name": "Kimberly Kleinhans"
     },
     {
       "id": "o_75",
-      "name": "terrance@thevareco.com"
+      "name": "Keith Kleinhans"
     },
     {
       "id": "o_76",
-      "name": "Andrew Howard"
+      "name": "terrance@thevareco.com"
     },
     {
       "id": "o_77",
-      "name": "Georgia Howard"
+      "name": "Andrew Howard"
     },
     {
       "id": "o_78",
-      "name": "Matt Blickenderfer | Black Hawk Real Estate"
+      "name": "Georgia Howard"
     },
     {
       "id": "o_79",
-      "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+      "name": "Matt Blickenderfer | Black Hawk Real Estate"
     },
     {
       "id": "o_8",
@@ -299,6 +299,10 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_80",
+      "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+    },
+    {
+      "id": "o_81",
       "name": "Marco Andes"
     },
     {
@@ -1192,8 +1196,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/wk6ozg2y8hhw0btzh2eyy/h?rlkey=73z8t96afafond1800j2k817b&st=ysb97mmd&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -2961,11 +2964,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_76",
+            "id": "o_77",
             "name": "Andrew Howard"
           },
           {
-            "id": "o_77",
+            "id": "o_78",
             "name": "Georgia Howard"
           }
         ],
@@ -2984,8 +2987,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/xim3rq97uvpfigp8o8osv/AALM7Z6-iNuKZLpW6zIbjO0?rlkey=6plnx7126hr61tfk3hty0i6r1&st=k0ob7qll&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -3044,7 +3046,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_80",
+            "id": "o_81",
             "name": "Marco Andes"
           }
         ],
@@ -3097,8 +3099,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/5670tmvt2jpaxsi9md11g/AD_uZRkqS0VBHVjBmy9SRPA?rlkey=jgkfq0e2h6lrl49fiutnqlehh&st=os3f2ben&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -3181,11 +3182,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_78",
+            "id": "o_79",
             "name": "Matt Blickenderfer | Black Hawk Real Estate"
           },
           {
-            "id": "o_79",
+            "id": "o_80",
             "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
           }
         ],
@@ -3248,8 +3249,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/4273bxb23ehdkjtdee6oq/AP4IaRDLjV1Di5m43fDEQbg?rlkey=678zjbc4z32139jfliaeydek1&st=vpbalzcy&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -3282,8 +3282,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/85k08btyro6hsc5rsoyo2/AJlLL6zkDdWDr7eoWeKLglg?rlkey=6d5vqrx2het0dlnylqwx3g4co&st=9wlr6pyg&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -3292,14 +3291,36 @@ export const dashboardData: DashboardData = {
       "id": "86aghgnvj",
       "name": "1137 26th St. Des Moines, IA",
       "address": "1137 26th St. Des Moines, IA",
-      "status": "lysted",
+      "status": "due diligence",
       "datasetYear": 2026,
-      "dateUpdated": "Mar 30, 2026, 10:48 PM",
+      "dateUpdated": "Jun 3, 2026, 11:01 PM",
       "createdBy": "Chloe Ting",
+      "abstracting": "American Abstract",
       "agent": "Jared Husmann",
+      "buyer": "Demetrios Bouroutis Family Trust By Demetrios Bouroutis, Trustee Christos Bouroutis",
+      "closingAttorneySeller": "Wasker Law Firm - Matt Hurn",
+      "lenderSeller": "Fidelity Bank -  Lucas Shivvers there at: lucas.shivvers@fidelity-bank.com 515.343.2271",
+      "seller": "ALFAS PROPERTIES (Sandro Tadic (Sani) - apllhomes@gmail.com)",
+      "lystingPrice": "$775,000",
+      "purchasePrice": "$750,000",
+      "closingDate": "Jul 10, 2026",
+      "commissionRate": "3%",
+      "doubleSide": "No",
+      "earnestMoney": "$10,000",
+      "exchange1031Buyer": "John Wm. Zaccone\n (The Law Offices of John Wm. Zaccone)",
+      "price": "$775,000",
       "assoc": {
-        "owners": [],
-        "lawyers": [],
+        "owners": [
+          {
+            "id": "o_73",
+            "name": "ALFAS PROPERTIES (Sandro Tadic (Sani) - apllhomes@gmail.com)"
+          }
+        ],
+        "lawyers": [
+          {
+            "name": "Wasker Law Firm - Matt Hurn"
+          }
+        ],
         "agents": [
           {
             "name": "Jared Husmann",
@@ -3310,8 +3331,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/xoe9sqg4p6199eu01ftcq/AKgG407gUUwUKI3czI9gwBI?rlkey=ukhjvkbxprh3rowaco2moahb9&st=05ziw2q4&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
@@ -3329,11 +3349,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_73",
+            "id": "o_74",
             "name": "Kimberly Kleinhans"
           },
           {
-            "id": "o_74",
+            "id": "o_75",
             "name": "Keith Kleinhans"
           }
         ],
@@ -3368,7 +3388,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_75",
+            "id": "o_76",
             "name": "terrance@thevareco.com"
           }
         ],
@@ -3383,8 +3403,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link",
-            "url": "https://www.dropbox.com/scl/fo/febdx2c291c5gdoerwban/AAg2MpqDL0LrD2KMg0tR61w?rlkey=npva8hink3slcoopay6j0wi6k&st=yp2t1pgo&dl=0"
+            "name": "Dropbox link"
           }
         ]
       }
