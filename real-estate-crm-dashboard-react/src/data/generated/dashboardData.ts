@@ -3067,12 +3067,11 @@ export const dashboardData: DashboardData = {
       "address": "2411 Welbeck Rd., Des Moines, IA",
       "status": "due diligence",
       "datasetYear": 2026,
-      "dateUpdated": "Feb 16, 2026, 11:05 PM",
+      "dateUpdated": "Jun 17, 2026, 11:36 PM",
       "createdBy": "Chloe Ting",
       "agent": "Jared Husmann",
-      "buyer": "Rashid",
       "seller": "Ian Schwickert, Alex Knutson, and Kevin Bryan",
-      "doubleSide": "Yes",
+      "doubleSide": "No",
       "assoc": {
         "owners": [
           {
@@ -3291,9 +3290,9 @@ export const dashboardData: DashboardData = {
       "id": "86aghgnvj",
       "name": "1137 26th St. Des Moines, IA",
       "address": "1137 26th St. Des Moines, IA",
-      "status": "due diligence",
+      "status": "lysted",
       "datasetYear": 2026,
-      "dateUpdated": "Jun 3, 2026, 11:01 PM",
+      "dateUpdated": "Jun 17, 2026, 10:06 PM",
       "createdBy": "Chloe Ting",
       "abstracting": "American Abstract",
       "agent": "Jared Husmann",
