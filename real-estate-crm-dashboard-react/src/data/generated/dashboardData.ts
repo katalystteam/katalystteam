@@ -267,31 +267,31 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_73",
-      "name": "ALFAS PROPERTIES (Sandro Tadic (Sani) - apllhomes@gmail.com)"
+      "name": "Bob Davis"
     },
     {
       "id": "o_74",
-      "name": "Kimberly Kleinhans"
+      "name": "ALFAS PROPERTIES (Sandro Tadic (Sani) - apllhomes@gmail.com)"
     },
     {
       "id": "o_75",
-      "name": "Keith Kleinhans"
+      "name": "Kimberly Kleinhans"
     },
     {
       "id": "o_76",
-      "name": "terrance@thevareco.com"
+      "name": "Keith Kleinhans"
     },
     {
       "id": "o_77",
-      "name": "Andrew Howard"
+      "name": "terrance@thevareco.com"
     },
     {
       "id": "o_78",
-      "name": "Georgia Howard"
+      "name": "Andrew Howard"
     },
     {
       "id": "o_79",
-      "name": "Matt Blickenderfer | Black Hawk Real Estate"
+      "name": "Georgia Howard"
     },
     {
       "id": "o_8",
@@ -299,10 +299,14 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_80",
-      "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+      "name": "Matt Blickenderfer | Black Hawk Real Estate"
     },
     {
       "id": "o_81",
+      "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+    },
+    {
+      "id": "o_82",
       "name": "Marco Andes"
     },
     {
@@ -2964,11 +2968,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_77",
+            "id": "o_78",
             "name": "Andrew Howard"
           },
           {
-            "id": "o_78",
+            "id": "o_79",
             "name": "Georgia Howard"
           }
         ],
@@ -3046,7 +3050,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_81",
+            "id": "o_82",
             "name": "Marco Andes"
           }
         ],
@@ -3181,11 +3185,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_79",
+            "id": "o_80",
             "name": "Matt Blickenderfer | Black Hawk Real Estate"
           },
           {
-            "id": "o_80",
+            "id": "o_81",
             "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
           }
         ],
@@ -3287,6 +3291,33 @@ export const dashboardData: DashboardData = {
       }
     },
     {
+      "id": "86aj7tbv5",
+      "name": "919 Greene St. Adel, IA",
+      "address": "919 Greene St. Adel, IA",
+      "status": "marketing prep",
+      "datasetYear": 2026,
+      "dateUpdated": "Jun 25, 2026, 10:10 PM",
+      "createdBy": "Chloe Ting",
+      "seller": "Bob Davis",
+      "assoc": {
+        "owners": [
+          {
+            "id": "o_73",
+            "name": "Bob Davis"
+          }
+        ],
+        "lawyers": [],
+        "agents": [],
+        "leads": [],
+        "transactions": [],
+        "documents": [
+          {
+            "name": "Dropbox link"
+          }
+        ]
+      }
+    },
+    {
       "id": "86aghgnvj",
       "name": "1137 26th St. Des Moines, IA",
       "address": "1137 26th St. Des Moines, IA",
@@ -3311,7 +3342,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_73",
+            "id": "o_74",
             "name": "ALFAS PROPERTIES (Sandro Tadic (Sani) - apllhomes@gmail.com)"
           }
         ],
@@ -3348,11 +3379,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_74",
+            "id": "o_75",
             "name": "Kimberly Kleinhans"
           },
           {
-            "id": "o_75",
+            "id": "o_76",
             "name": "Keith Kleinhans"
           }
         ],
@@ -3387,7 +3418,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_76",
+            "id": "o_77",
             "name": "terrance@thevareco.com"
           }
         ],
