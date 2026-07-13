@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import type { Listing } from '../../types'
 import { Avatar } from '../../components/Avatar'
 import { clickUpStatusBadgeClass } from '../../lib/clickUpStatus'
-import { DROPBOX_LINK_PLACEHOLDER, listingDetailFields } from '../../lib/listingDetails'
+import { DOCUMENTS_FOLDER_LABEL, isDocumentsFolderPlaceholder, listingDetailFields } from '../../lib/listingDetails'
 
 function formatEngagementScore(value: number | null | undefined): string | null {
   if (typeof value === 'number' && !Number.isNaN(value)) return String(Math.round(Math.min(100, Math.max(0, value))))
@@ -329,8 +329,8 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
           <div className="assoc-item" key={`${x.name}-${idx}`}>
             <div className="assoc-item-left" style={{ flex: 1, minWidth: 0 }}>
               <div style={{ minWidth: 0 }}>
-                {x.name === DROPBOX_LINK_PLACEHOLDER && !x.url ? (
-                  <span className="assoc-doc-link assoc-doc-placeholder">{DROPBOX_LINK_PLACEHOLDER}</span>
+                {isDocumentsFolderPlaceholder(x.name) && !x.url ? (
+                  <span className="assoc-doc-link assoc-doc-placeholder">{DOCUMENTS_FOLDER_LABEL}</span>
                 ) : x.url ? (
                   <a className="assoc-doc-link" href={x.url} target="_blank" rel="noopener noreferrer" title={x.url}>
                     {x.name}
@@ -340,7 +340,7 @@ export function ListingAssocPanel({ listing }: { listing: Listing }) {
                 )}
               </div>
             </div>
-            {x.name === DROPBOX_LINK_PLACEHOLDER && !x.url ? (
+            {isDocumentsFolderPlaceholder(x.name) && !x.url ? (
               <span style={{ fontSize: 10, color: 'var(--color-text-tertiary)' }}>Pending</span>
             ) : x.status ? (
               <span

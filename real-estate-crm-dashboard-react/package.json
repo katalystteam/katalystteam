@@ -12,6 +12,7 @@
     "extract:site-images": "tsx scripts/extract-site-images.ts",
     "sync:site-images": "npm run fetch:katalyst-html && npm run extract:site-images",
     "extract:katalyst-documents": "tsx scripts/extract-katalyst-documents.ts",
+    "extract:gdrive-documents": "tsx scripts/extract-gdrive-documents.ts",
     "sync:katalyst-documents": "npm run fetch:katalyst-html && npm run extract:katalyst-documents",
     "sync:ghl-engagement": "tsx scripts/sync-ghl-engagement.ts",
     "sync:ghl-campaigns": "tsx scripts/sync-ghl-campaigns.ts",

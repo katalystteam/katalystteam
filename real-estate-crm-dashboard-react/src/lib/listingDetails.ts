@@ -1,6 +1,14 @@
 import type { Listing } from '../types'
 
-export const DROPBOX_LINK_PLACEHOLDER = 'Dropbox link'
+/** Shown in the listing Documents panel when no Drive folder is matched yet. */
+export const DOCUMENTS_FOLDER_LABEL = 'Google Drive'
+/** Legacy label from ClickUp sync / dashboardData before Google Drive integration. */
+export const LEGACY_DOCUMENTS_FOLDER_LABEL = 'Dropbox link'
+export const DROPBOX_LINK_PLACEHOLDER = DOCUMENTS_FOLDER_LABEL
+
+export function isDocumentsFolderPlaceholder(name: string): boolean {
+  return name === DOCUMENTS_FOLDER_LABEL || name === LEGACY_DOCUMENTS_FOLDER_LABEL
+}
 
 export function listingDisplayPrice(listing: Listing): string {
   return listing.lystingPrice || listing.purchasePrice || listing.price || '—'

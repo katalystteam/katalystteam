@@ -7,6 +7,8 @@ import { ghlContactEngagementByListingId } from './generated/ghlContactEngagemen
 import { ghlEngagementByListingId } from './generated/ghlEngagement'
 import { siteImages } from './generated/siteImages'
 import { katalystDocuments } from './generated/katalystDocuments'
+import { gdriveDocuments } from './generated/gdriveDocuments'
+import { isDocumentsFolderPlaceholder, DROPBOX_LINK_PLACEHOLDER } from '../lib/listingDetails'
 
 type PrivateGhlContactEngagementModule = {
   ghlContactEngagementByListingId: Record<string, { contacts: unknown[] }>
@@ -72,6 +74,31 @@ function mergeSiteImages(data: DashboardData): DashboardData {
   }
 }
 
+function mergeGdriveDocuments(data: DashboardData): DashboardData {
+  const map = gdriveDocuments.byNormalizedAddress as Record<string, string>
+  return {
+    ...data,
+    listings: data.listings.map((l) => {
+      const folderUrl = map[addressKey(l.address)]
+      if (!folderUrl) return l
+
+      const documents = l.assoc.documents.map((d) =>
+        isDocumentsFolderPlaceholder(d.name) && !d.url
+          ? { ...d, name: DROPBOX_LINK_PLACEHOLDER, url: folderUrl }
+          : d,
+      )
+
+      return {
+        ...l,
+        assoc: {
+          ...l.assoc,
+          documents,
+        },
+      }
+    }),
+  }
+}
+
 function mergeKatalystDocuments(data: DashboardData): DashboardData {
   const map = katalystDocuments.byNormalizedAddress as Record<
     string,
@@ -115,7 +142,7 @@ export function useDashboardData(_source: DataSource = DEFAULT_SOURCE) {
   // Merge website images by normalized address (see `siteImages.ts`).
   // Per-listing `imageUrl` / `listingUrl` in `dashboardData.ts` wins if set.
   const data = useMemo(
-    () => mergeGhlEngagement(mergeKatalystDocuments(mergeSiteImages(dashboardData))),
+    () => mergeGhlEngagement(mergeKatalystDocuments(mergeGdriveDocuments(mergeSiteImages(dashboardData)))),
     [dashboardData],
   )
   return useMemo(() => ({ data, loading: false, error: null as string | null }), [data])
