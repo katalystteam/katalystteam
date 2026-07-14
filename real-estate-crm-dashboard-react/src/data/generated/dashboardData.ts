@@ -267,31 +267,31 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_73",
-      "name": "Bob Davis"
+      "name": "Sani Tadic"
     },
     {
       "id": "o_74",
-      "name": "ALFAS PROPERTIES (Sandro Tadic (Sani) - apllhomes@gmail.com)"
+      "name": "Mike Dentler"
     },
     {
       "id": "o_75",
-      "name": "Kimberly Kleinhans"
+      "name": "Bob Davis"
     },
     {
       "id": "o_76",
-      "name": "Keith Kleinhans"
+      "name": "ALFAS PROPERTIES (Sandro Tadic (Sani) - apllhomes@gmail.com)"
     },
     {
       "id": "o_77",
-      "name": "terrance@thevareco.com"
+      "name": "Kimberly Kleinhans"
     },
     {
       "id": "o_78",
-      "name": "Andrew Howard"
+      "name": "Keith Kleinhans"
     },
     {
       "id": "o_79",
-      "name": "Georgia Howard"
+      "name": "terrance@thevareco.com"
     },
     {
       "id": "o_8",
@@ -299,14 +299,22 @@ export const dashboardData: DashboardData = {
     },
     {
       "id": "o_80",
-      "name": "Matt Blickenderfer | Black Hawk Real Estate"
+      "name": "Andrew Howard"
     },
     {
       "id": "o_81",
-      "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+      "name": "Georgia Howard"
     },
     {
       "id": "o_82",
+      "name": "Matt Blickenderfer | Black Hawk Real Estate"
+    },
+    {
+      "id": "o_83",
+      "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
+    },
+    {
+      "id": "o_84",
       "name": "Marco Andes"
     },
     {
@@ -343,7 +351,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -364,7 +372,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -385,7 +393,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -435,7 +443,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -485,7 +493,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -526,7 +534,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -566,7 +574,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -598,7 +606,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -640,7 +648,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -675,7 +683,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -712,7 +720,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -751,7 +759,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -789,7 +797,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -827,7 +835,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -868,7 +876,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -907,7 +915,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -952,7 +960,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1005,7 +1013,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1059,7 +1067,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1113,7 +1121,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1163,7 +1171,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1200,7 +1208,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1234,7 +1242,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1272,7 +1280,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1338,7 +1346,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1375,7 +1383,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1434,7 +1442,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1474,7 +1482,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1510,7 +1518,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1547,7 +1555,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1592,7 +1600,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1626,7 +1634,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1663,7 +1671,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1697,7 +1705,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1740,7 +1748,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1798,7 +1806,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1833,7 +1841,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1867,7 +1875,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1924,7 +1932,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1961,7 +1969,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -1995,7 +2003,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2032,7 +2040,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2104,7 +2112,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2171,7 +2179,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2217,7 +2225,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2251,7 +2259,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2272,7 +2280,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2319,7 +2327,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2360,7 +2368,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2405,7 +2413,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2443,7 +2451,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2504,7 +2512,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2562,7 +2570,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2609,7 +2617,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2671,7 +2679,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2734,7 +2742,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2791,7 +2799,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2853,7 +2861,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2914,7 +2922,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2948,7 +2956,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -2968,11 +2976,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_78",
+            "id": "o_80",
             "name": "Andrew Howard"
           },
           {
-            "id": "o_79",
+            "id": "o_81",
             "name": "Georgia Howard"
           }
         ],
@@ -2991,7 +2999,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -3032,7 +3040,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -3050,7 +3058,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_82",
+            "id": "o_84",
             "name": "Marco Andes"
           }
         ],
@@ -3060,7 +3068,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -3102,7 +3110,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -3159,7 +3167,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -3185,11 +3193,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_80",
+            "id": "o_82",
             "name": "Matt Blickenderfer | Black Hawk Real Estate"
           },
           {
-            "id": "o_81",
+            "id": "o_83",
             "name": "LLC - 641-430-7283 - 1107 man o war way Colorado springs co 80921"
           }
         ],
@@ -3208,7 +3216,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -3252,7 +3260,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -3285,7 +3293,63 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
+          }
+        ]
+      }
+    },
+    {
+      "id": "86ajgkh4w",
+      "name": "812 Keeler St Boone, IA",
+      "address": "812 Keeler St Boone, IA",
+      "status": "marketing prep",
+      "datasetYear": 2026,
+      "dateUpdated": "Jul 13, 2026, 11:43 PM",
+      "createdBy": "Chloe Ting",
+      "seller": "Sani Tadic",
+      "assoc": {
+        "owners": [
+          {
+            "id": "o_73",
+            "name": "Sani Tadic"
+          }
+        ],
+        "lawyers": [],
+        "agents": [],
+        "leads": [],
+        "transactions": [],
+        "documents": [
+          {
+            "name": "Google Drive"
+          }
+        ]
+      }
+    },
+    {
+      "id": "86ajgkh11",
+      "name": "3274 E Euclid Ave Des Moines, IA",
+      "address": "3274 E Euclid Ave Des Moines, IA",
+      "status": "marketing prep",
+      "datasetYear": 2026,
+      "dateUpdated": "Jul 13, 2026, 11:42 PM",
+      "createdBy": "Chloe Ting",
+      "seller": "Mike Dentler",
+      "lystingPrice": "$769,000",
+      "price": "$769,000",
+      "assoc": {
+        "owners": [
+          {
+            "id": "o_74",
+            "name": "Mike Dentler"
+          }
+        ],
+        "lawyers": [],
+        "agents": [],
+        "leads": [],
+        "transactions": [],
+        "documents": [
+          {
+            "name": "Google Drive"
           }
         ]
       }
@@ -3302,7 +3366,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_73",
+            "id": "o_75",
             "name": "Bob Davis"
           }
         ],
@@ -3312,7 +3376,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -3342,7 +3406,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_74",
+            "id": "o_76",
             "name": "ALFAS PROPERTIES (Sandro Tadic (Sani) - apllhomes@gmail.com)"
           }
         ],
@@ -3361,7 +3425,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -3379,11 +3443,11 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_75",
+            "id": "o_77",
             "name": "Kimberly Kleinhans"
           },
           {
-            "id": "o_76",
+            "id": "o_78",
             "name": "Keith Kleinhans"
           }
         ],
@@ -3398,7 +3462,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
@@ -3418,7 +3482,7 @@ export const dashboardData: DashboardData = {
       "assoc": {
         "owners": [
           {
-            "id": "o_77",
+            "id": "o_79",
             "name": "terrance@thevareco.com"
           }
         ],
@@ -3433,7 +3497,7 @@ export const dashboardData: DashboardData = {
         "transactions": [],
         "documents": [
           {
-            "name": "Dropbox link"
+            "name": "Google Drive"
           }
         ]
       }
