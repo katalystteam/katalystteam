@@ -3302,9 +3302,9 @@ export const dashboardData: DashboardData = {
       "id": "86ajgkh4w",
       "name": "812 Keeler St Boone, IA",
       "address": "812 Keeler St Boone, IA",
-      "status": "marketing prep",
+      "status": "lysted",
       "datasetYear": 2026,
-      "dateUpdated": "Jul 13, 2026, 11:43 PM",
+      "dateUpdated": "Aug 3, 2026, 11:07 PM",
       "createdBy": "Chloe Ting",
       "seller": "Sani Tadic",
       "assoc": {
@@ -3329,10 +3329,11 @@ export const dashboardData: DashboardData = {
       "id": "86ajgkh11",
       "name": "3274 E Euclid Ave Des Moines, IA",
       "address": "3274 E Euclid Ave Des Moines, IA",
-      "status": "marketing prep",
+      "status": "lysted",
       "datasetYear": 2026,
-      "dateUpdated": "Jul 13, 2026, 11:42 PM",
+      "dateUpdated": "Aug 3, 2026, 11:07 PM",
       "createdBy": "Chloe Ting",
+      "agent": "Jared Husmann",
       "seller": "Mike Dentler",
       "lystingPrice": "$769,000",
       "price": "$769,000",
@@ -3344,7 +3345,12 @@ export const dashboardData: DashboardData = {
           }
         ],
         "lawyers": [],
-        "agents": [],
+        "agents": [
+          {
+            "name": "Jared Husmann",
+            "role": "Agent"
+          }
+        ],
         "leads": [],
         "transactions": [],
         "documents": [
