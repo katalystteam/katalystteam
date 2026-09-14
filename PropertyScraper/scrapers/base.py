@@ -164,12 +164,43 @@ class BaseScraper:
         self.screenshot_dir = config.get("screenshot_dir", "logs/screenshots")
 
     def new_page(self) -> Page:
+        # Fingerprint hardening: a plain headless Chromium context leaves
+        # tells (navigator.webdriver=true, no plugins, no proper
+        # Accept-Language/timezone) that basic bot-detection checks for
+        # directly. None of this touches source IP -- it cannot help
+        # against IP-reputation blocking (see README "Known limitations"),
+        # but it's legitimate and worth ruling out before assuming a
+        # result is an IP block rather than a fingerprint check.
         context = self.browser.new_context(
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                 "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
             ),
             viewport={"width": 1440, "height": 900},
+            locale="en-US",
+            timezone_id="America/Chicago",  # Iowa
+            extra_http_headers={
+                "Accept-Language": "en-US,en;q=0.9",
+                "Upgrade-Insecure-Requests": "1",
+                "Sec-Fetch-Dest": "document",
+                "Sec-Fetch-Mode": "navigate",
+                "Sec-Fetch-Site": "none",
+                "Sec-Fetch-User": "?1",
+            },
+        )
+        context.add_init_script(
+            """
+            Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+            Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3, 4, 5] });
+            Object.defineProperty(navigator, 'languages', { get: () => ['en-US', 'en'] });
+            window.chrome = window.chrome || { runtime: {} };
+            const originalQuery = window.navigator.permissions.query;
+            window.navigator.permissions.query = (parameters) => (
+                parameters.name === 'notifications'
+                    ? Promise.resolve({ state: Notification.permission })
+                    : originalQuery(parameters)
+            );
+            """
         )
         page = context.new_page()
         page.set_default_timeout(self.timeout)

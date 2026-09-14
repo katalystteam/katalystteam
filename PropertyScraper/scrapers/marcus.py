@@ -23,6 +23,15 @@ child-element selectors for them -- and treats the on-page filter UI as
 a best-effort narrowing step with a short click timeout: if it hangs or
 fails, cards are still scraped unfiltered and narrowed locally via
 looks_like_iowa()/is_multifamily() same as every other site here.
+
+A confirmed-real detail from the same diagnostic: the page URL after
+load is .../properties#pageNumber=1&stb=orderdate,DESC -- a hash-based
+client-side router, sorted newest-first. With the filter click not
+landing, one page of the nationwide "newest" feed (12 cards) won't
+reliably contain Iowa listings. This version paginates through that
+confirmed URL hash pattern (pageNumber=1..max_pages_per_site) instead
+of stopping after page 1, to actually improve the odds of a real
+Iowa hit without needing the filter UI fixed.
 """
 from __future__ import annotations
 
@@ -72,20 +81,29 @@ class MarcusScraper(BaseScraper):
         try:
             for sel in PROPERTY_TYPE_TOGGLE_SELECTORS:
                 toggle = page.query_selector(sel)
-                if toggle:
+                if not toggle:
+                    continue
+                try:
+                    toggle.scroll_into_view_if_needed(timeout=FILTER_CLICK_TIMEOUT_MS)
                     toggle.click(timeout=FILTER_CLICK_TIMEOUT_MS)
-                    page.wait_for_timeout(500)
-                    for opt_sel in MULTIFAMILY_OPTION_SELECTORS:
-                        opt = page.query_selector(opt_sel)
-                        if opt:
-                            opt.click(timeout=FILTER_CLICK_TIMEOUT_MS)
-                            page.wait_for_timeout(500)
-                            break
-                    break
+                except PlaywrightTimeoutError:
+                    # Last resort: bypass Playwright's actionability check
+                    # (visible/stable/not-covered) and dispatch the click
+                    # directly -- covers a sticky header overlapping the
+                    # toggle without actually blocking a real click.
+                    toggle.click(timeout=FILTER_CLICK_TIMEOUT_MS, force=True)
+                page.wait_for_timeout(500)
+                for opt_sel in MULTIFAMILY_OPTION_SELECTORS:
+                    opt = page.query_selector(opt_sel)
+                    if opt:
+                        opt.click(timeout=FILTER_CLICK_TIMEOUT_MS)
+                        page.wait_for_timeout(500)
+                        break
+                break
         except PlaywrightTimeoutError:
             logger.info(
-                "[%s] filter UI click was not actionable within %dms -- proceeding "
-                "with unfiltered cards, narrowed locally instead", self.SITE_NAME, FILTER_CLICK_TIMEOUT_MS
+                "[%s] filter UI click was not actionable within %dms even with force -- "
+                "proceeding with unfiltered, paginated cards instead", self.SITE_NAME, FILTER_CLICK_TIMEOUT_MS
             )
         except Exception as exc:  # noqa: BLE001
             logger.warning("[%s] could not apply search filters: %s", self.SITE_NAME, exc)
@@ -143,18 +161,40 @@ class MarcusScraper(BaseScraper):
         self._apply_filters(page)
         page.wait_for_timeout(1000)
 
-        cards = []
-        for sel in CARD_SELECTORS:
-            cards = page.query_selector_all(sel)
-            if cards:
+        all_records: List[dict] = []
+        total_candidates = 0
+        for page_num in range(1, self.max_pages + 1):
+            if page_num > 1:
+                paged_url = f"{SEARCH_URL}#pageNumber={page_num}&stb=orderdate,DESC"
+                if not safe_goto(page, paged_url, self.timeout, self.SITE_NAME):
+                    break
+                page.wait_for_timeout(2000)
+
+            cards = []
+            for sel in CARD_SELECTORS:
+                cards = page.query_selector_all(sel)
+                if cards:
+                    break
+
+            if not cards:
+                if page_num == 1:
+                    logger.warning("[%s] no property cards found with the confirmed selectors -- site markup may have changed again", self.SITE_NAME)
+                    sniff_dom(page, self.SITE_NAME)
+                else:
+                    logger.info("[%s] page %d returned no cards -- stopping pagination", self.SITE_NAME, page_num)
                 break
 
-        if not cards:
-            logger.warning("[%s] no property cards found with the confirmed selectors -- site markup may have changed again", self.SITE_NAME)
-            sniff_dom(page, self.SITE_NAME)
-            return []
+            total_candidates += len(cards)
+            page_records = [r for card in cards if (r := self._extract_card(card)) is not None]
+            all_records.extend(page_records)
+            logger.info(
+                "[%s] page %d: %d candidate cards, %d matched Iowa/multifamily",
+                self.SITE_NAME, page_num, len(cards), len(page_records),
+            )
 
-        logger.info("[%s] found %d candidate cards before Iowa/multifamily filtering", self.SITE_NAME, len(cards))
+            if all_records:
+                # Filter landed (or got lucky) -- no need to keep paginating.
+                break
 
-        records = [r for card in cards if (r := self._extract_card(card)) is not None]
-        return [r for r in records if within_last_n_days(r["date_listed"], self.config["date_range_days"])]
+        logger.info("[%s] %d total candidate cards across all pages, %d matched Iowa/multifamily", self.SITE_NAME, total_candidates, len(all_records))
+        return [r for r in all_records if within_last_n_days(r["date_listed"], self.config["date_range_days"])]

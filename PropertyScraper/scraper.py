@@ -148,7 +148,10 @@ def main() -> None:
     all_records: List[dict] = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=config.get("headless", True))
+        browser = p.chromium.launch(
+            headless=config.get("headless", True),
+            args=["--disable-blink-features=AutomationControlled"],
+        )
         try:
             if config.get("parallel"):
                 with ThreadPoolExecutor(max_workers=len(SCRAPER_CLASSES)) as executor:
