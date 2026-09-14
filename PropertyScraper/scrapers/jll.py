@@ -13,7 +13,7 @@ from typing import List
 
 from playwright.sync_api import Page
 
-from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text
+from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text, sniff_dom
 from scrapers.normalize import (
     extract_city,
     is_multifamily,
@@ -96,6 +96,7 @@ class JllScraper(BaseScraper):
                 "[%s] no investment cards found; JLL's SPA filter flow may have "
                 "changed or listings require login", self.SITE_NAME
             )
+            sniff_dom(page, self.SITE_NAME)
             return []
 
         for card in cards:

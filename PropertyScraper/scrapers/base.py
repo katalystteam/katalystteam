@@ -87,6 +87,51 @@ def diagnose_page(page: Page, site_name: str) -> None:
         logger.warning("[%s] diagnostic capture failed: %s", site_name, exc)
 
 
+_SNIFF_CANDIDATES = [
+    "article",
+    "li[class*='result' i]",
+    "[class*='card' i]",
+    "[class*='listing' i]",
+    "[class*='property' i]",
+    "[class*='property-card' i]",
+    "[class*='search-result' i]",
+    "a[href*='/listing']",
+    "a[href*='/listings/']",
+    "a[href*='/property/']",
+    "a[href*='/properties/']",
+    "a[href*='/Listing/']",
+    "[data-testid*='card' i]",
+    "[data-testid*='listing' i]",
+    "[data-testid*='property' i]",
+]
+
+
+def sniff_dom(page: Page, site_name: str) -> None:
+    """When the known card selectors find nothing, probe a broad set of
+    common listing-card patterns instead of giving up blind. Logs which
+    patterns actually match, how many, and a truncated HTML snippet of
+    the first match for each hit -- real evidence for writing correct
+    selectors on the next pass, instead of guessing again."""
+    try:
+        for selector in _SNIFF_CANDIDATES:
+            try:
+                elements = page.query_selector_all(selector)
+            except Exception:  # noqa: BLE001 - a malformed selector on this DOM shouldn't stop the sweep
+                continue
+            if not elements:
+                continue
+            try:
+                sample = elements[0].evaluate("el => el.outerHTML")[:500]
+            except Exception:  # noqa: BLE001
+                sample = "<could not read outerHTML>"
+            logger.info(
+                "[%s] sniff hit - selector=%r count=%d sample=%r",
+                site_name, selector, len(elements), sample,
+            )
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("[%s] DOM sniff failed: %s", site_name, exc)
+
+
 def safe_text(page_or_locator, selector: str) -> str:
     try:
         el = page_or_locator.query_selector(selector)
