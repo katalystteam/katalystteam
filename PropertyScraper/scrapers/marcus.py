@@ -1,25 +1,37 @@
 """Marcus & Millichap scraper: Multifamily listings, Iowa.
 
-NOTE: A prior version guessed a direct query-string search URL
-(?propertyType=Multifamily&state=Iowa) -- confirmed WRONG by a live
-diagnostic run: it bounced to an "?error=SelectedPropertyNotFound"
-page. A diagnostic run against the real properties search page
-(SEARCH_URL below) showed real, visible filter controls in the
-rendered body text: "PROPERTY TYPE", "LOCATION", "ADVISOR", "PRICE",
-"CAP RATE", "ALL FILTERS", "SAVE SEARCH". This version drives those
-controls by their visible label text (robust to class-name/framework
-changes) instead of guessing CSS classes, and falls back to
-sniff_dom() for further evidence if the result grid still comes up
-empty on the next run.
+NOTE: Two prior versions guessed at this site's structure and were both
+proven wrong by live diagnostic runs:
+  1. A guessed direct search URL (?propertyType=Multifamily&state=Iowa)
+     bounced to an error page.
+  2. Driving the filter UI by visible label text ("Property Type" /
+     "Location" toggles) hung for 30s clicking an element that was never
+     actually visible, then still found 0 cards.
+
+A DOM sniff on that second run found the REAL result markup instead:
+    <ul class="mm-gs-search-results mm-gs-properties">
+      <li propertyid="1627184" dealid="303116" propertytype="Apartments"
+          listingprice="Request For Offer" ...>
+        <div class="mm-tile" data-dealid="303116"> ... </div>
+      </li>
+      ...
+    </ul>
+with real property links like /properties/303116/cedar-gardens. This
+version scrapes that real markup directly -- reading propertytype and
+listingprice straight off the <li> attributes rather than guessing
+child-element selectors for them -- and treats the on-page filter UI as
+a best-effort narrowing step with a short click timeout: if it hangs or
+fails, cards are still scraped unfiltered and narrowed locally via
+looks_like_iowa()/is_multifamily() same as every other site here.
 """
 from __future__ import annotations
 
 import logging
-from typing import List
+from typing import List, Optional
 
-from playwright.sync_api import Page
+from playwright.sync_api import ElementHandle, Page, TimeoutError as PlaywrightTimeoutError
 
-from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text, sniff_dom
+from scrapers.base import BaseScraper, diagnose_page, new_record, safe_goto, sniff_dom
 from scrapers.normalize import (
     extract_city,
     is_multifamily,
@@ -35,27 +47,22 @@ logger = logging.getLogger("scraper")
 
 SEARCH_URL = "https://www.marcusmillichap.com/properties"
 
+# Best-effort narrowing only -- confirmed unreliable (element present but
+# not clickable), so every click below uses a short explicit timeout and
+# failure here never stops the scrape; local filtering below still applies.
+FILTER_CLICK_TIMEOUT_MS = 3000
 PROPERTY_TYPE_TOGGLE_SELECTORS = ["text=Property Type", "button:has-text('Property Type')"]
 MULTIFAMILY_OPTION_SELECTORS = ["text=Multifamily", "label:has-text('Multifamily')"]
-LOCATION_TOGGLE_SELECTORS = ["text=Location", "button:has-text('Location')"]
-LOCATION_INPUT_SELECTORS = ["input[placeholder*='city' i]", "input[placeholder*='location' i]", "input[type='search']"]
-APPLY_BUTTON_SELECTORS = ["button:has-text('Apply')", "button:has-text('Search')", "button:has-text('View Results')"]
 
-CARD_SELECTORS = [".property-card", ".listing-card", "[data-testid='property-card']", "article"]
-NAME_SELECTORS = [".property-card-title", "h3", "h4"]
-ADDRESS_SELECTORS = [".property-card-address", ".address"]
-PRICE_SELECTORS = [".property-card-price", ".price"]
-DETAIL_SELECTORS = [".property-card-details", ".details"]
-LINK_SELECTORS = ["a"]
-NEXT_BUTTON_SELECTORS = ["a[aria-label='Next']", ".pagination-next"]
+# Confirmed real via live DOM sniff (see module docstring).
+CARD_SELECTORS = ["li[propertyid]", "ul.mm-gs-search-results li", ".mm-tile"]
+LINK_SELECTOR = "a[href*='/properties/']"
+MULTIFAMILY_PROPERTY_TYPES = {"apartments", "multifamily", "apartment", "multi-family"}
 
 
-def _first_match(card, selectors: List[str]) -> str:
-    for sel in selectors:
-        text = safe_text(card, sel)
-        if text:
-            return text
-    return ""
+def _humanize_slug(href: str) -> str:
+    slug = href.rstrip("/").rsplit("/", 1)[-1]
+    return slug.replace("-", " ").title() if slug else ""
 
 
 class MarcusScraper(BaseScraper):
@@ -66,47 +73,66 @@ class MarcusScraper(BaseScraper):
             for sel in PROPERTY_TYPE_TOGGLE_SELECTORS:
                 toggle = page.query_selector(sel)
                 if toggle:
-                    toggle.click()
+                    toggle.click(timeout=FILTER_CLICK_TIMEOUT_MS)
                     page.wait_for_timeout(500)
                     for opt_sel in MULTIFAMILY_OPTION_SELECTORS:
                         opt = page.query_selector(opt_sel)
                         if opt:
-                            opt.click()
+                            opt.click(timeout=FILTER_CLICK_TIMEOUT_MS)
                             page.wait_for_timeout(500)
                             break
                     break
-
-            loc_input = None
-            for sel in LOCATION_INPUT_SELECTORS:
-                loc_input = page.query_selector(sel)
-                if loc_input:
-                    break
-            if not loc_input:
-                for sel in LOCATION_TOGGLE_SELECTORS:
-                    toggle = page.query_selector(sel)
-                    if toggle:
-                        toggle.click()
-                        page.wait_for_timeout(500)
-                        for input_sel in LOCATION_INPUT_SELECTORS:
-                            loc_input = page.query_selector(input_sel)
-                            if loc_input:
-                                break
-                        break
-            if loc_input:
-                loc_input.fill("Iowa")
-                loc_input.press("Enter")
-                page.wait_for_timeout(1500)
-            else:
-                logger.warning("[%s] no location input found after opening Location filter", self.SITE_NAME)
-
-            for sel in APPLY_BUTTON_SELECTORS:
-                apply_btn = page.query_selector(sel)
-                if apply_btn:
-                    apply_btn.click()
-                    page.wait_for_timeout(2000)
-                    break
+        except PlaywrightTimeoutError:
+            logger.info(
+                "[%s] filter UI click was not actionable within %dms -- proceeding "
+                "with unfiltered cards, narrowed locally instead", self.SITE_NAME, FILTER_CLICK_TIMEOUT_MS
+            )
         except Exception as exc:  # noqa: BLE001
             logger.warning("[%s] could not apply search filters: %s", self.SITE_NAME, exc)
+
+    def _extract_card(self, card: ElementHandle) -> Optional[dict]:
+        property_type_attr = (card.get_attribute("propertytype") or "").strip()
+        listing_price_attr = (card.get_attribute("listingprice") or "").strip()
+        link = card.query_selector(LINK_SELECTOR)
+        href = (link.get_attribute("href") or "").strip() if link else ""
+        if href and href.startswith("/"):
+            href = f"https://www.marcusmillichap.com{href}"
+
+        try:
+            card_text = card.inner_text().strip()
+        except Exception:  # noqa: BLE001
+            card_text = ""
+
+        name = _humanize_slug(href) or (card_text.splitlines()[0] if card_text else "")
+        raw_text = " | ".join(filter(None, [card_text, property_type_attr]))
+
+        if not looks_like_iowa(raw_text):
+            return None
+        if property_type_attr.lower() not in MULTIFAMILY_PROPERTY_TYPES and not is_multifamily(raw_text):
+            return None
+
+        units = normalize_units(card_text)
+        cap_rate = normalize_cap_rate(card_text)
+        if not units or not cap_rate:
+            fallback = self.ollama.extract_fields(raw_text)
+            units = units or normalize_units(fallback.get("units"))
+            cap_rate = cap_rate or normalize_cap_rate(fallback.get("cap_rate"))
+
+        return new_record(
+            source="Marcus & Millichap",
+            property_name=name,
+            address="",
+            city=extract_city(card_text),
+            state=normalize_state("IA"),
+            asking_price=normalize_price(listing_price_attr) or normalize_price(card_text),
+            units=units,
+            cap_rate=cap_rate,
+            property_type=property_type_attr or "Multifamily",
+            broker_name="",
+            broker_email="",
+            date_listed="",
+            listing_url=href,
+        )
 
     def scrape(self, page: Page) -> List[dict]:
         if not safe_goto(page, SEARCH_URL, self.timeout, self.SITE_NAME):
@@ -115,73 +141,20 @@ class MarcusScraper(BaseScraper):
         page.wait_for_timeout(3000)
         diagnose_page(page, self.SITE_NAME)
         self._apply_filters(page)
-        diagnose_page(page, self.SITE_NAME)
+        page.wait_for_timeout(1000)
 
-        records: List[dict] = []
-        for page_num in range(1, self.max_pages + 1):
-            cards = []
-            for sel in CARD_SELECTORS:
-                cards = page.query_selector_all(sel)
-                if cards:
-                    break
-
-            if not cards:
-                logger.warning(
-                    "[%s] no property cards found on page %d (search UI may require "
-                    "manual filter interaction after a redesign)", self.SITE_NAME, page_num
-                )
-                sniff_dom(page, self.SITE_NAME)
+        cards = []
+        for sel in CARD_SELECTORS:
+            cards = page.query_selector_all(sel)
+            if cards:
                 break
 
-            for card in cards:
-                name = _first_match(card, NAME_SELECTORS)
-                address = _first_match(card, ADDRESS_SELECTORS)
-                price_raw = _first_match(card, PRICE_SELECTORS)
-                detail_text = _first_match(card, DETAIL_SELECTORS)
-                href = safe_attr(card, LINK_SELECTORS[0], "href")
-                if href and href.startswith("/"):
-                    href = f"https://www.marcusmillichap.com{href}"
+        if not cards:
+            logger.warning("[%s] no property cards found with the confirmed selectors -- site markup may have changed again", self.SITE_NAME)
+            sniff_dom(page, self.SITE_NAME)
+            return []
 
-                raw_text = " | ".join(filter(None, [name, address, price_raw, detail_text]))
-                if not looks_like_iowa(raw_text):
-                    continue
-                if not is_multifamily(raw_text + " multifamily"):
-                    continue
+        logger.info("[%s] found %d candidate cards before Iowa/multifamily filtering", self.SITE_NAME, len(cards))
 
-                units = normalize_units(detail_text)
-                cap_rate = normalize_cap_rate(detail_text)
-                if not units or not cap_rate:
-                    fallback = self.ollama.extract_fields(raw_text)
-                    units = units or normalize_units(fallback.get("units"))
-                    cap_rate = cap_rate or normalize_cap_rate(fallback.get("cap_rate"))
-
-                records.append(new_record(
-                    source="Marcus & Millichap",
-                    property_name=name,
-                    address=address,
-                    city=extract_city(address),
-                    state=normalize_state("IA"),
-                    asking_price=normalize_price(price_raw),
-                    units=units,
-                    cap_rate=cap_rate,
-                    property_type="Multifamily",
-                    broker_name="",
-                    broker_email="",
-                    date_listed="",
-                    listing_url=href,
-                ))
-
-            next_btn = None
-            for sel in NEXT_BUTTON_SELECTORS:
-                next_btn = page.query_selector(sel)
-                if next_btn:
-                    break
-            if not next_btn:
-                break
-            try:
-                next_btn.click()
-                page.wait_for_timeout(2000)
-            except Exception:  # noqa: BLE001
-                break
-
+        records = [r for card in cards if (r := self._extract_card(card)) is not None]
         return [r for r in records if within_last_n_days(r["date_listed"], self.config["date_range_days"])]
