@@ -6,9 +6,10 @@
  * Tabs are named e.g. "9.14.26 Economics" (no zero-padding), one per Monday.
  *
  * Setup:
- *   cp .env.example .env.local   # add GHL_API_TOKEN, GHL_LOCATION_ID,
- *                                 # CALL_NOTES_SHEET_ID, GOOGLE_SERVICE_ACCOUNT_JSON (never commit)
- *   Share the sheet (view access) with the service account's client_email.
+ *   cp .env.example .env.local   # add GHL_API_TOKEN, GHL_LOCATION_ID, CALL_NOTES_SHEET_ID,
+ *                                 # GOOGLE_OAUTH_CLIENT_ID/SECRET/REFRESH_TOKEN (never commit)
+ *   Reads the sheet as whichever Google account authorized the refresh token — that account
+ *   already needs view access (e.g. it's the sheet owner).
  *   npm run sync:call-notes-to-ghl -- --dry-run   # preview without writing to GHL
  *   npm run sync:call-notes-to-ghl                # push notes + advance the checkpoint
  *
@@ -18,7 +19,6 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import crypto from 'node:crypto'
 import { config } from 'dotenv'
 
 config({ path: path.join(process.cwd(), '.env.local') })
@@ -48,42 +48,29 @@ function ghlHeaders(): HeadersInit {
   }
 }
 
-// --- Google service account auth (no googleapis dep — plain JWT + token exchange) ---
+// --- Google OAuth (user refresh token, not a service-account key) ---
 
 async function googleAccessToken(): Promise<string> {
-  const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON
-  if (!raw) throw new Error('Missing GOOGLE_SERVICE_ACCOUNT_JSON (service account key JSON, as a string)')
-  const key = JSON.parse(raw) as { client_email: string; private_key: string }
-
-  const header = base64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }))
-  const now = Math.floor(Date.now() / 1000)
-  const claims = base64url(
-    JSON.stringify({
-      iss: key.client_email,
-      scope: 'https://www.googleapis.com/auth/spreadsheets.readonly',
-      aud: 'https://oauth2.googleapis.com/token',
-      iat: now,
-      exp: now + 3600,
-    }),
-  )
-  const signature = crypto.sign('RSA-SHA256', Buffer.from(`${header}.${claims}`), key.private_key)
-  const assertion = `${header}.${claims}.${base64url(signature)}`
+  const clientId = process.env.GOOGLE_OAUTH_CLIENT_ID
+  const clientSecret = process.env.GOOGLE_OAUTH_CLIENT_SECRET
+  const refreshToken = process.env.GOOGLE_OAUTH_REFRESH_TOKEN
+  if (!clientId || !clientSecret || !refreshToken) {
+    throw new Error('Missing GOOGLE_OAUTH_CLIENT_ID, GOOGLE_OAUTH_CLIENT_SECRET, or GOOGLE_OAUTH_REFRESH_TOKEN')
+  }
 
   const res = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
-      grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-      assertion,
+      grant_type: 'refresh_token',
+      client_id: clientId,
+      client_secret: clientSecret,
+      refresh_token: refreshToken,
     }),
   })
-  if (!res.ok) throw new Error(`Google token exchange failed: ${res.status} ${await res.text()}`)
+  if (!res.ok) throw new Error(`Google token refresh failed: ${res.status} ${await res.text()}`)
   const data = (await res.json()) as { access_token: string }
   return data.access_token
-}
-
-function base64url(input: string | Buffer): string {
-  return Buffer.from(input).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
 }
 
 async function fetchSheetTabTitles(sheetId: string, token: string): Promise<string[]> {
