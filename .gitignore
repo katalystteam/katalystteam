@@ -1,7 +1,11 @@
 # This folder is the full Katalyst workspace (scripts, exports, site HTML, etc.).
-# GitHub only tracks the CRM dashboard — keep everything else local.
+# GitHub only tracks the CRM dashboard, the Iowa property scraper, and its
+# CI workflow — keep everything else local.
 
 /*
 !/.gitignore
 !/README.md
 !/real-estate-crm-dashboard-react/
+!/PropertyScraper/
+!/.github/
+!/.github/workflows/
