@@ -30,6 +30,8 @@ From `real-estate-crm-dashboard-react/` with `.env` configured (see `.env.exampl
 ```bash
 npm run sync:clickup          # ClickUp → dashboardData.ts
 npm run sync:ghl-engagement   # GHL email engagement
+npm run sync:call-notes-to-ghl -- --dry-run   # preview call-notes → GHL push
+npm run sync:call-notes-to-ghl                # push call notes, advance checkpoint
 ```
 
 Then commit `src/data/generated/*.ts` if you want teammates / Vercel to see the update.

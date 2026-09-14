@@ -17,6 +17,7 @@
     "sync:ghl-engagement": "tsx scripts/sync-ghl-engagement.ts",
     "sync:ghl-campaigns": "tsx scripts/sync-ghl-campaigns.ts",
     "import:ghl-email-stats": "tsx scripts/import-ghl-email-stats.ts",
+    "sync:call-notes-to-ghl": "tsx scripts/sync-call-notes-to-ghl.ts",
     "dev:webhooks": "tsx scripts/ghl-webhook-listener.ts",
     "sync:clickup": "tsx scripts/sync-clickup-transactions.ts",
     "import:clickup": "tsx scripts/import-clickup-csv.ts",
