@@ -1,14 +1,20 @@
 """CBRE Deal Flow scraper: Multifamily, Iowa.
 
-NOTE: A live diagnostic run confirmed the landing page renders a real
-filter bar (Status / Property Type / Country / Broker) and the body
-text says "Listing Engine(tm) technology provided by RCM LightBox" --
-third-party widget branding like that is a strong signal the actual
-result grid lives inside an <iframe>, not the top-level document. If
-so, no CSS selector run against `page` directly will ever find cards
-regardless of how correct it is. This version logs every frame on the
-page so the next run's log confirms or rules that out before more
-selector work happens.
+NOTE: A prior version suspected the result grid lived in an <iframe>
+(the page advertises "Listing Engine(tm) technology provided by RCM
+LightBox"). A live diagnostic run RULED THAT OUT: the page has exactly
+1 frame -- the top-level document itself. The real DOM sniff instead
+found the filter UI is a modal, triggered by:
+    <li id="rcmListFilter" data-toggle="modal" data-target="#allFiltersModal"
+        class="btn-filter btn-all-filters" title="All Filters">
+No listing-card markup was found on the closed landing page at all --
+consistent with a "deal flow" platform that shows nothing until a
+search/filter is actually applied, rather than a login wall. This
+version clicks #rcmListFilter to open that modal and re-runs
+diagnose_page()/sniff_dom() against whatever renders inside it, since
+its internal markup (the actual Property Type / Country controls) is
+still unknown -- next run's log gives real evidence instead of another
+guessed selector for the modal's contents.
 """
 from __future__ import annotations
 
@@ -29,12 +35,14 @@ from scrapers.normalize import (
 
 logger = logging.getLogger("scraper")
 
-SEARCH_INPUT_SELECTORS = ["input[type='search']", "input[placeholder*='location' i]", "input[name*='search' i]"]
-PROPERTY_TYPE_FILTER_SELECTORS = [
-    "button:has-text('Property Type')",
-    "[data-filter='property-type']",
-]
+# Confirmed real via live DOM sniff (see module docstring).
+ALL_FILTERS_TRIGGER_SELECTOR = "#rcmListFilter"
+ALL_FILTERS_MODAL_SELECTOR = "#allFiltersModal"
+
+# Contents of the opened modal are still unconfirmed -- best-effort guesses,
+# with sniff_dom() as the fallback that gathers real evidence if these miss.
 MULTIFAMILY_OPTION_SELECTORS = ["text=Multifamily", "label:has-text('Multifamily')"]
+APPLY_BUTTON_SELECTORS = ["button:has-text('Apply')", "button:has-text('Search')", "button:has-text('View Results')"]
 CARD_SELECTORS = [".deal-card", ".property-card", "[data-testid='deal-card']", "article"]
 NAME_SELECTORS = [".deal-card-title", "h3", "h4"]
 LOCATION_SELECTORS = [".deal-card-location", ".location"]
@@ -54,34 +62,47 @@ def _first_match(card, selectors: List[str]) -> str:
 class CbreScraper(BaseScraper):
     SITE_NAME = "cbre"
 
-    def _apply_filters(self, page: Page) -> None:
+    def _apply_filters(self, page: Page) -> bool:
+        """Open the confirmed "All Filters" modal and best-effort select
+        Multifamily inside it. Returns True if the modal actually opened,
+        so the caller knows whether to trust the subsequent card search or
+        treat it as still-closed (landing-page) state."""
         try:
-            search_input = None
-            for sel in SEARCH_INPUT_SELECTORS:
-                search_input = page.query_selector(sel)
-                if search_input:
-                    break
-            if search_input:
-                search_input.fill("Iowa")
-                search_input.press("Enter")
-                page.wait_for_timeout(2000)
-            else:
-                logger.warning("[%s] no location search input found on landing page", self.SITE_NAME)
+            trigger = page.query_selector(ALL_FILTERS_TRIGGER_SELECTOR)
+            if not trigger:
+                logger.warning("[%s] All Filters trigger (%s) not found -- site markup may have changed", self.SITE_NAME, ALL_FILTERS_TRIGGER_SELECTOR)
+                return False
 
-            for sel in PROPERTY_TYPE_FILTER_SELECTORS:
-                btn = page.query_selector(sel)
-                if btn:
-                    btn.click()
+            trigger.click(timeout=5000)
+            page.wait_for_timeout(1000)
+
+            modal = page.query_selector(ALL_FILTERS_MODAL_SELECTOR)
+            if not modal:
+                logger.warning("[%s] clicked %s but modal %s did not appear", self.SITE_NAME, ALL_FILTERS_TRIGGER_SELECTOR, ALL_FILTERS_MODAL_SELECTOR)
+                return False
+
+            logger.info("[%s] All Filters modal opened -- sniffing its contents", self.SITE_NAME)
+            diagnose_page(page, self.SITE_NAME)
+            sniff_dom(page, self.SITE_NAME)
+
+            for opt_sel in MULTIFAMILY_OPTION_SELECTORS:
+                opt = page.query_selector(opt_sel)
+                if opt:
+                    opt.click(timeout=3000)
                     page.wait_for_timeout(500)
-                    for opt_sel in MULTIFAMILY_OPTION_SELECTORS:
-                        opt = page.query_selector(opt_sel)
-                        if opt:
-                            opt.click()
-                            page.wait_for_timeout(500)
-                            break
                     break
+
+            for sel in APPLY_BUTTON_SELECTORS:
+                apply_btn = page.query_selector(sel)
+                if apply_btn:
+                    apply_btn.click(timeout=3000)
+                    page.wait_for_timeout(2000)
+                    break
+
+            return True
         except Exception as exc:  # noqa: BLE001
             logger.warning("[%s] could not apply search filters: %s", self.SITE_NAME, exc)
+            return False
 
     def scrape(self, page: Page) -> List[dict]:
         url = self.config["sites"]["cbre"]["url"]
@@ -91,13 +112,7 @@ class CbreScraper(BaseScraper):
         page.wait_for_timeout(2000)
         diagnose_page(page, self.SITE_NAME)
 
-        frames = page.frames
-        logger.info(
-            "[%s] page has %d frame(s): %s", self.SITE_NAME, len(frames),
-            [f.url for f in frames],
-        )
-
-        self._apply_filters(page)
+        modal_opened = self._apply_filters(page)
 
         records: List[dict] = []
         cards = []
@@ -108,9 +123,9 @@ class CbreScraper(BaseScraper):
 
         if not cards:
             logger.warning(
-                "[%s] no deal cards found on the top-level page; public deal listings "
-                "for this site are commonly gated behind a broker login, or the result "
-                "grid may be rendered inside one of the frames logged above", self.SITE_NAME
+                "[%s] no deal cards found (modal_opened=%s); either the modal's "
+                "Multifamily/Apply controls didn't match, or results require a "
+                "broker login even after filtering", self.SITE_NAME, modal_opened
             )
             sniff_dom(page, self.SITE_NAME)
             return []
