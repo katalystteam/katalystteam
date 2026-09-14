@@ -165,12 +165,22 @@ class BaseScraper:
 
     def new_page(self) -> Page:
         # Fingerprint hardening: a plain headless Chromium context leaves
-        # tells (navigator.webdriver=true, no plugins, no proper
-        # Accept-Language/timezone) that basic bot-detection checks for
-        # directly. None of this touches source IP -- it cannot help
-        # against IP-reputation blocking (see README "Known limitations"),
-        # but it's legitimate and worth ruling out before assuming a
-        # result is an IP block rather than a fingerprint check.
+        # tells (navigator.webdriver=true, no plugins) that basic
+        # bot-detection checks for directly. None of this touches source
+        # IP -- it cannot help against IP-reputation blocking (see README
+        # "Known limitations").
+        #
+        # NOTE: an earlier version of this also set extra_http_headers
+        # (Sec-Fetch-Dest/Mode/Site, Upgrade-Insecure-Requests) on every
+        # request. A live run showed CBRE and Marcus & Millichap both
+        # regressed after that change -- their pages rendered a stripped
+        # generic-nav shell instead of the fuller content seen in prior
+        # runs. Those headers apply context-wide, including the SPA's own
+        # background XHR/fetch calls; sending document-navigation headers
+        # (Sec-Fetch-Dest: document) on an API call is itself a mismatch
+        # real browsers never produce, and is exactly the kind of signal
+        # that can trigger a degraded response. Removed for that reason --
+        # locale/timezone/webdriver-masking are lower-risk and kept.
         context = self.browser.new_context(
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -179,14 +189,6 @@ class BaseScraper:
             viewport={"width": 1440, "height": 900},
             locale="en-US",
             timezone_id="America/Chicago",  # Iowa
-            extra_http_headers={
-                "Accept-Language": "en-US,en;q=0.9",
-                "Upgrade-Insecure-Requests": "1",
-                "Sec-Fetch-Dest": "document",
-                "Sec-Fetch-Mode": "navigate",
-                "Sec-Fetch-Site": "none",
-                "Sec-Fetch-User": "?1",
-            },
         )
         context.add_init_script(
             """
