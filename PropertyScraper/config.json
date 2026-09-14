@@ -30,6 +30,10 @@
     "to_addrs": []
   },
   "sites": {
+    "katalyst_tracker": {
+      "enabled": true,
+      "url": "https://katalystteam.com/current-lystings/"
+    },
     "crexi": {
       "enabled": true,
       "url": "https://www.crexi.com/search?address_value=Iowa%2C%20USA&propertyAttributes.type_tree_Multifamily=&searchType=Sales"
