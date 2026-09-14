@@ -5,7 +5,7 @@ name: Sync Call Notes → GHL
 # and commits it back so the next run picks up where this one left off.
 on:
   schedule:
-    - cron: "0 13 * * 1" # 8am America/Chicago (13:00 UTC) each Monday
+    - cron: "0 13 * * 1" # 9pm Philippine Time (UTC+8, no DST) = 13:00 UTC each Monday
   workflow_dispatch:
     inputs:
       dry_run:
