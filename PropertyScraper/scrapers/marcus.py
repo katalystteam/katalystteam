@@ -1,11 +1,16 @@
 """Marcus & Millichap scraper: Multifamily listings, Iowa.
 
-NOTE: marcusmillichap.com's public "Properties for Sale" search
-supports state and property-type query params/filters, but the exact
-UI (dropdown vs. facet checkboxes) changes with site redesigns. This
-scraper first tries a direct query-string search URL, and falls back
-to driving the on-page filter controls if that URL pattern 404s or the
-result grid is empty.
+NOTE: A prior version guessed a direct query-string search URL
+(?propertyType=Multifamily&state=Iowa) -- confirmed WRONG by a live
+diagnostic run: it bounced to an "?error=SelectedPropertyNotFound"
+page. A diagnostic run against the real properties search page
+(SEARCH_URL below) showed real, visible filter controls in the
+rendered body text: "PROPERTY TYPE", "LOCATION", "ADVISOR", "PRICE",
+"CAP RATE", "ALL FILTERS", "SAVE SEARCH". This version drives those
+controls by their visible label text (robust to class-name/framework
+changes) instead of guessing CSS classes, and falls back to
+sniff_dom() for further evidence if the result grid still comes up
+empty on the next run.
 """
 from __future__ import annotations
 
@@ -14,7 +19,7 @@ from typing import List
 
 from playwright.sync_api import Page
 
-from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text
+from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text, sniff_dom
 from scrapers.normalize import (
     extract_city,
     is_multifamily,
@@ -28,10 +33,13 @@ from scrapers.normalize import (
 
 logger = logging.getLogger("scraper")
 
-DIRECT_SEARCH_URL = (
-    "https://www.marcusmillichap.com/properties/search"
-    "?propertyType=Multifamily&state=Iowa"
-)
+SEARCH_URL = "https://www.marcusmillichap.com/properties"
+
+PROPERTY_TYPE_TOGGLE_SELECTORS = ["text=Property Type", "button:has-text('Property Type')"]
+MULTIFAMILY_OPTION_SELECTORS = ["text=Multifamily", "label:has-text('Multifamily')"]
+LOCATION_TOGGLE_SELECTORS = ["text=Location", "button:has-text('Location')"]
+LOCATION_INPUT_SELECTORS = ["input[placeholder*='city' i]", "input[placeholder*='location' i]", "input[type='search']"]
+APPLY_BUTTON_SELECTORS = ["button:has-text('Apply')", "button:has-text('Search')", "button:has-text('View Results')"]
 
 CARD_SELECTORS = [".property-card", ".listing-card", "[data-testid='property-card']", "article"]
 NAME_SELECTORS = [".property-card-title", "h3", "h4"]
@@ -53,14 +61,60 @@ def _first_match(card, selectors: List[str]) -> str:
 class MarcusScraper(BaseScraper):
     SITE_NAME = "marcus"
 
+    def _apply_filters(self, page: Page) -> None:
+        try:
+            for sel in PROPERTY_TYPE_TOGGLE_SELECTORS:
+                toggle = page.query_selector(sel)
+                if toggle:
+                    toggle.click()
+                    page.wait_for_timeout(500)
+                    for opt_sel in MULTIFAMILY_OPTION_SELECTORS:
+                        opt = page.query_selector(opt_sel)
+                        if opt:
+                            opt.click()
+                            page.wait_for_timeout(500)
+                            break
+                    break
+
+            loc_input = None
+            for sel in LOCATION_INPUT_SELECTORS:
+                loc_input = page.query_selector(sel)
+                if loc_input:
+                    break
+            if not loc_input:
+                for sel in LOCATION_TOGGLE_SELECTORS:
+                    toggle = page.query_selector(sel)
+                    if toggle:
+                        toggle.click()
+                        page.wait_for_timeout(500)
+                        for input_sel in LOCATION_INPUT_SELECTORS:
+                            loc_input = page.query_selector(input_sel)
+                            if loc_input:
+                                break
+                        break
+            if loc_input:
+                loc_input.fill("Iowa")
+                loc_input.press("Enter")
+                page.wait_for_timeout(1500)
+            else:
+                logger.warning("[%s] no location input found after opening Location filter", self.SITE_NAME)
+
+            for sel in APPLY_BUTTON_SELECTORS:
+                apply_btn = page.query_selector(sel)
+                if apply_btn:
+                    apply_btn.click()
+                    page.wait_for_timeout(2000)
+                    break
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("[%s] could not apply search filters: %s", self.SITE_NAME, exc)
+
     def scrape(self, page: Page) -> List[dict]:
-        if not safe_goto(page, DIRECT_SEARCH_URL, self.timeout, self.SITE_NAME):
-            base_url = self.config["sites"]["marcus"]["url"]
-            logger.warning("[%s] direct search URL failed, falling back to %s", self.SITE_NAME, base_url)
-            if not safe_goto(page, base_url, self.timeout, self.SITE_NAME):
-                return []
+        if not safe_goto(page, SEARCH_URL, self.timeout, self.SITE_NAME):
+            return []
 
         page.wait_for_timeout(3000)
+        diagnose_page(page, self.SITE_NAME)
+        self._apply_filters(page)
         diagnose_page(page, self.SITE_NAME)
 
         records: List[dict] = []
@@ -76,6 +130,7 @@ class MarcusScraper(BaseScraper):
                     "[%s] no property cards found on page %d (search UI may require "
                     "manual filter interaction after a redesign)", self.SITE_NAME, page_num
                 )
+                sniff_dom(page, self.SITE_NAME)
                 break
 
             for card in cards:

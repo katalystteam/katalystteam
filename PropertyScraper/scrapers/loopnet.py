@@ -12,7 +12,7 @@ from typing import List
 
 from playwright.sync_api import Page
 
-from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text
+from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text, sniff_dom
 from scrapers.normalize import (
     extract_city,
     normalize_price,
@@ -64,6 +64,7 @@ class LoopnetScraper(BaseScraper):
                     "[%s] no listing cards found on page %d (likely a bot-challenge "
                     "interstitial or a DOM change)", self.SITE_NAME, page_num
                 )
+                sniff_dom(page, self.SITE_NAME)
                 break
 
             for card in cards:

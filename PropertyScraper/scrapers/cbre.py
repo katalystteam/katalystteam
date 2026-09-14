@@ -1,11 +1,14 @@
 """CBRE Deal Flow scraper: Multifamily, Iowa.
 
-NOTE: cbredealflow.com is primarily a lead-gen/marketing front end for
-CBRE's investment sales platform; most live deal detail typically sits
-behind a broker login. This scraper attempts to (a) apply a Multifamily
-+ Iowa filter directly on the public search UI if present, and (b) fall
-back to scanning any publicly listed deal cards on the landing page.
-Both paths degrade gracefully to an empty list rather than raising.
+NOTE: A live diagnostic run confirmed the landing page renders a real
+filter bar (Status / Property Type / Country / Broker) and the body
+text says "Listing Engine(tm) technology provided by RCM LightBox" --
+third-party widget branding like that is a strong signal the actual
+result grid lives inside an <iframe>, not the top-level document. If
+so, no CSS selector run against `page` directly will ever find cards
+regardless of how correct it is. This version logs every frame on the
+page so the next run's log confirms or rules that out before more
+selector work happens.
 """
 from __future__ import annotations
 
@@ -14,7 +17,7 @@ from typing import List
 
 from playwright.sync_api import Page
 
-from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text
+from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text, sniff_dom
 from scrapers.normalize import (
     extract_city,
     is_multifamily,
@@ -87,6 +90,13 @@ class CbreScraper(BaseScraper):
 
         page.wait_for_timeout(2000)
         diagnose_page(page, self.SITE_NAME)
+
+        frames = page.frames
+        logger.info(
+            "[%s] page has %d frame(s): %s", self.SITE_NAME, len(frames),
+            [f.url for f in frames],
+        )
+
         self._apply_filters(page)
 
         records: List[dict] = []
@@ -98,9 +108,11 @@ class CbreScraper(BaseScraper):
 
         if not cards:
             logger.warning(
-                "[%s] no deal cards found; public deal listings for this site are "
-                "commonly gated behind a broker login", self.SITE_NAME
+                "[%s] no deal cards found on the top-level page; public deal listings "
+                "for this site are commonly gated behind a broker login, or the result "
+                "grid may be rendered inside one of the frames logged above", self.SITE_NAME
             )
+            sniff_dom(page, self.SITE_NAME)
             return []
 
         for card in cards:
