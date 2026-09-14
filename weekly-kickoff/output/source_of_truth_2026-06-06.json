@@ -1,0 +1,176 @@
+{
+  "report_id": "KataLYST_Market_Intelligence_Jun-06-2026",
+  "week_ending": "2026-06-06",
+  "listing_metrics": {
+    "count": 8,
+    "total_units": 260,
+    "total_volume": 13475000.0,
+    "avg_units": 52,
+    "median_units": 36,
+    "avg_vintage": 1947,
+    "avg_price_per_unit": 54083.33,
+    "avg_price_per_sf": null,
+    "by_market": {
+      "DSM": 5,
+      "Rural": 3
+    },
+    "avg_list_per_unit_by_market": {
+      "DSM": 70138,
+      "Rural": 30000
+    },
+    "unit_size_distribution": {
+      "1\u201312": 2,
+      "13\u201324": 0,
+      "25\u201349": 1,
+      "50+": 2
+    },
+    "vintage_distribution": {
+      "Pre-1960": 2,
+      "1960\u20131979": 4,
+      "1980\u20131999": 0,
+      "2000+": 0
+    }
+  },
+  "sales_metrics": {
+    "count": 0,
+    "total_units": 0,
+    "total_volume": 0.0,
+    "avg_units": 0.0,
+    "median_units": 0.0,
+    "avg_vintage": 0.0,
+    "avg_price_per_unit": null,
+    "sale_list_ratio": null,
+    "by_market": {},
+    "avg_sold_per_unit_by_market": {}
+  },
+  "submarket_scorecard": [
+    {
+      "market": "DSM",
+      "listings": 5,
+      "sales": 0,
+      "list_units": 60,
+      "sold_units": 0,
+      "avg_list_per_unit": 70138.89,
+      "avg_sold_per_unit": null
+    },
+    {
+      "market": "Rural",
+      "listings": 3,
+      "sales": 0,
+      "list_units": 200,
+      "sold_units": 0,
+      "avg_list_per_unit": 30000.0,
+      "avg_sold_per_unit": null
+    }
+  ],
+  "brokers_active": [
+    {
+      "firm": "KataLYST Team by KW Commercial",
+      "listings": 6,
+      "sales": 0,
+      "role": "Listing Only"
+    },
+    {
+      "firm": "Marcus & Millichap",
+      "listings": 2,
+      "sales": 0,
+      "role": "Listing Only"
+    }
+  ],
+  "listings": [
+    {
+      "address": "1137 26th St.",
+      "city": "Des Moines",
+      "units": 12,
+      "price": 775000.0,
+      "price_per_unit": 64583.33,
+      "price_per_sf": null,
+      "property_class": "",
+      "broker_firm": "KataLYST Team by KW Commercial",
+      "source": "KataLYST"
+    },
+    {
+      "address": "2733-2897 Boston Ave.",
+      "city": "Des Moines",
+      "units": null,
+      "price": 1750000.0,
+      "price_per_unit": null,
+      "price_per_sf": null,
+      "property_class": "",
+      "broker_firm": "KataLYST Team by KW Commercial",
+      "source": "KataLYST"
+    },
+    {
+      "address": "811 16th St.",
+      "city": "Des Moines",
+      "units": null,
+      "price": 850000.0,
+      "price_per_unit": null,
+      "price_per_sf": null,
+      "property_class": "",
+      "broker_firm": "KataLYST Team by KW Commercial",
+      "source": "KataLYST"
+    },
+    {
+      "address": "2411 Welbeck Rd.",
+      "city": "Des Moines",
+      "units": 12,
+      "price": 950000.0,
+      "price_per_unit": 79166.67,
+      "price_per_sf": null,
+      "property_class": "",
+      "broker_firm": "KataLYST Team by KW Commercial",
+      "source": "KataLYST"
+    },
+    {
+      "address": "1805 Arlington Ave.",
+      "city": "Des Moines",
+      "units": 36,
+      "price": 2400000.0,
+      "price_per_unit": 66666.67,
+      "price_per_sf": null,
+      "property_class": "",
+      "broker_firm": "KataLYST Team by KW Commercial",
+      "source": "KataLYST"
+    },
+    {
+      "address": "405 North Davis St.",
+      "city": "Anamosa",
+      "units": null,
+      "price": 750000.0,
+      "price_per_unit": null,
+      "price_per_sf": null,
+      "property_class": "",
+      "broker_firm": "KataLYST Team by KW Commercial",
+      "source": "KataLYST"
+    },
+    {
+      "address": "Skip to main content",
+      "city": "",
+      "units": 100,
+      "price": 3000000.0,
+      "price_per_unit": 30000.0,
+      "price_per_sf": null,
+      "property_class": "",
+      "broker_firm": "Marcus & Millichap",
+      "source": "MarcusMillichap"
+    },
+    {
+      "address": "Search Our Exclusive Inventory",
+      "city": "",
+      "units": 100,
+      "price": 3000000.0,
+      "price_per_unit": 30000.0,
+      "price_per_sf": null,
+      "property_class": "",
+      "broker_firm": "Marcus & Millichap",
+      "source": "MarcusMillichap"
+    }
+  ],
+  "sales": [],
+  "intelligence_highlights": {
+    "deal_to_watch": "Market Watch",
+    "largest_sale_address": null,
+    "largest_listing_address": "Skip to main content"
+  }
+}

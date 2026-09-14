@@ -1,0 +1,87 @@
+{
+  "report_id": "KataLYST_Market_Intelligence_May-28-2026",
+  "reference_pdf": "KataLYST_Market_Intelligence_May-28-2026.pdf",
+  "week_ending": "2026-05-28",
+  "listing_metrics": {
+    "count": 9,
+    "total_units": 254,
+    "total_volume": 4894999,
+    "avg_units": 28,
+    "median_units": 16,
+    "avg_vintage": 1969,
+    "avg_price_per_unit": 77774,
+    "avg_price_per_sf": 108.66,
+    "by_market": {"DSM": 4, "Rural": 3, "Waterloo": 1, "Sioux City": 1},
+    "avg_list_per_unit_by_market": {"DSM": 118750, "Rural": 65132, "Waterloo": 62083},
+    "unit_size_distribution": {"1–12": 2, "13–24": 5, "25–49": 0, "50+": 2},
+    "vintage_distribution": {"Pre-1960": 2, "1960–1979": 3, "1980–1999": 4, "2000+": 0}
+  },
+  "sales_metrics": {
+    "count": 6,
+    "total_units": 182,
+    "total_volume": 20887000,
+    "avg_units": 30,
+    "median_units": 33,
+    "avg_vintage": 1983,
+    "avg_price_per_unit": 109972,
+    "sale_list_ratio": 93.8,
+    "sale_list_ratio_note": "1 comp — 800 13th",
+    "by_market": {"DSM": 4, "Rural": 1, "Iowa City": 1},
+    "avg_sold_per_unit_by_market": {"DSM": 113152, "Rural": 58229, "Iowa City": 152174}
+  },
+  "submarket_scorecard": [
+    {"market": "DSM", "listings": 4, "sales": 4, "list_units": 63, "sold_units": 65, "avg_list_per_unit": 118750, "avg_sold_per_unit": 113152},
+    {"market": "Rural", "listings": 3, "sales": 1, "list_units": 107, "sold_units": 48, "avg_list_per_unit": 65132, "avg_sold_per_unit": 58229},
+    {"market": "Waterloo", "listings": 1, "sales": 0, "list_units": 12, "sold_units": 0, "avg_list_per_unit": 62083, "avg_sold_per_unit": null},
+    {"market": "Sioux City", "listings": 1, "sales": 0, "list_units": 72, "sold_units": 0, "avg_list_per_unit": null, "avg_sold_per_unit": null},
+    {"market": "Iowa City", "listings": 0, "sales": 1, "list_units": 0, "sold_units": 69, "avg_list_per_unit": null, "avg_sold_per_unit": 152174}
+  ],
+  "brokers_active": [
+    {"firm": "CBRE", "listings": 4, "sales": 2, "role": "Listing & Selling"},
+    {"firm": "Greysteel", "listings": 1, "sales": 1, "role": "Listing & Selling"},
+    {"firm": "Exit Realty", "listings": 2, "sales": 0, "role": "Listing Only"},
+    {"firm": "NAI Iowa Commercial Realty", "listings": 1, "sales": 0, "role": "Listing Only"},
+    {"firm": "Realty One", "listings": 1, "sales": 0, "role": "Listing Only"},
+    {"firm": "Stanbrough Realty", "listings": 0, "sales": 1, "role": "Selling Only"},
+    {"firm": "Triad Real Estate Partners", "listings": 0, "sales": 1, "role": "Selling Only"},
+    {"firm": "Remax Concepts", "listings": 0, "sales": 1, "role": "Selling Only"}
+  ],
+  "listings": [
+    {"address": "1620 Vine St.", "city": "West Des Moines", "units": 16, "price": 1900000, "price_per_unit": 118750, "price_per_sf": 125.66, "property_class": "B", "broker_firm": "NAI Iowa Commercial Realty"},
+    {"address": "626 16th St.", "city": "Ames", "units": 24, "price": null, "property_class": "C", "broker_firm": "CBRE"},
+    {"address": "212 Hayward Ave.", "city": "Ames", "units": 14, "price": null, "property_class": "B", "broker_firm": "CBRE"},
+    {"address": "519 Welch Ave.", "city": "Ames", "units": 9, "price": null, "property_class": "B", "broker_firm": "CBRE"},
+    {"address": "1015 5th Ave.", "city": "Ft. Dodge", "units": 72, "price": null, "property_class": "C", "broker_firm": "Greysteel"},
+    {"address": "1110 Doreen Ave.", "city": "Waterloo", "units": 12, "price": 745000, "price_per_unit": 62083, "price_per_sf": 69.15, "property_class": "C", "broker_firm": "Realty One"},
+    {"address": "503-507 Rosemere Ln", "city": "Maquoketa", "units": 16, "price": 1199999, "price_per_unit": 75000, "price_per_sf": 178.57, "property_class": "C", "broker_firm": "Exit Realty"},
+    {"address": "2535 Central Ave.", "city": "Dubuque", "units": 19, "price": 1050000, "price_per_unit": 55263, "price_per_sf": 61.27, "property_class": "C", "broker_firm": "Exit Realty"},
+    {"address": "2807-2811 Lincoln Way", "city": "Sioux City", "units": 72, "price": null, "property_class": "B", "broker_firm": "CBRE"}
+  ],
+  "sales": [
+    {"address": "2517 Sylvan Glen Court", "city": "Iowa City", "units": 69, "price": 10500000, "price_per_unit": 152174, "property_class": "C", "broker_firm": "Greysteel"},
+    {"address": "113 2nd St. NE", "city": "Mitchellville", "units": 8, "price": 472000, "price_per_unit": 59000, "property_class": "C", "broker_firm": "Stanbrough Realty"},
+    {"address": "6920 SW 9th St.", "city": "Des Moines", "units": 12, "price": null, "property_class": "C", "broker_firm": "CBRE"},
+    {"address": "316 Hayward Ave.", "city": "Ames", "units": 33, "price": 5900000, "price_per_unit": 178788, "property_class": "A", "broker_firm": "Triad Real Estate Partners"},
+    {"address": "611 W. Van Weis Blvd", "city": "West Burlington", "units": 48, "price": 2795000, "price_per_unit": 58229, "property_class": "B", "broker_firm": "CBRE"},
+    {"address": "800 13th St.", "city": "West Des Moines", "units": 12, "price": 1220000, "price_per_unit": 101667, "property_class": "C", "broker_firm": "Remax Concepts"}
+  ],
+  "intelligence_highlights": {
+    "largest_sale_address": "2517 Sylvan Glen Court",
+    "highest_ppu_address": "316 Hayward Ave.",
+    "lowest_ppu_address": "611 W. Van Weis Blvd",
+    "largest_listing_address": "1015 5th Ave.",
+    "deal_to_watch": "Ames University Corridor"
+  },
+  "pdf_expectations": {
+    "page_count": 6,
+    "required_sections": [
+      "NEW LISTING ACTIVITY",
+      "RECENT SALES ACTIVITY",
+      "SUBMARKET SCORECARD",
+      "NEW LISTINGS",
+      "RECENT SALES",
+      "MARKET INTELLIGENCE",
+      "BROKERS ACTIVE THIS WEEK"
+    ]
+  }
+}

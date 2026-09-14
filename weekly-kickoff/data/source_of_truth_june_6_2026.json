@@ -1,0 +1,53 @@
+{
+  "report_id": "KataLYST_Market_Intelligence_June-6-2026",
+  "reference_doc": "KataLYST_Market_Intelligence_June-6-2026.docx",
+  "week_ending": "2026-06-06",
+  "listing_metrics": {
+    "count": 1,
+    "total_units": 102,
+    "total_volume": 5900000,
+    "avg_units": 102,
+    "median_units": 102,
+    "avg_vintage": 1971,
+    "avg_price_per_unit": 57843,
+    "avg_price_per_sf": 74.35,
+    "by_market": {"DSM": 1},
+    "avg_list_per_unit_by_market": {"DSM": 57843}
+  },
+  "sales_metrics": {
+    "count": 0,
+    "total_units": 0,
+    "total_volume": 0,
+    "avg_units": 0,
+    "median_units": 0,
+    "avg_vintage": 0,
+    "avg_price_per_unit": null,
+    "sale_list_ratio": null,
+    "by_market": {}
+  },
+  "new_listings": [
+    {
+      "address": "920 Meadow Ln.",
+      "city": "Des Moines",
+      "property_name": "Valley Acres Apartments",
+      "units": 102,
+      "price": 5900000,
+      "price_per_unit": 57843,
+      "price_per_sf": 74.35,
+      "cap_rate": 7.58,
+      "property_class": "C",
+      "year_built": 1971,
+      "broker": "Cy Fox",
+      "broker_firm": "CBRE",
+      "source": "CBRE"
+    }
+  ],
+  "sales": [],
+  "intelligence_highlights": {
+    "largest_new_listing": "920 Meadow Ln.",
+    "highest_active_ppu_address": "1720 Morningside Ave.",
+    "lowest_active_ppu_address": "1311 W. 1st St.",
+    "largest_active_listing_address": "1015 5th Ave."
+  },
+  "no_sales_message": "No closings recorded this week. For most recent transaction comps, reference the May 28th, 2026 report (6 sales · 182 units · $20.9M)."
+}

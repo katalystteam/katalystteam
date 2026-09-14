@@ -1,0 +1,37 @@
+2026-06-09 23:11:43,349 [INFO] Reading from: /Users/john.angeles/Desktop/katalyst/Jared's Weekly To-Do's.xlsx
+2026-06-09 23:11:43,349 [INFO] Sheet: 6.8.26 Economics
+2026-06-09 23:11:43,349 [INFO] Dry run: False
+2026-06-09 23:11:46,820 [INFO] Extracted 8 call notes from sheet '6.8.26 Economics'
+2026-06-09 23:11:46,820 [INFO] [1/8] Processing: Chase Gochnauer
+2026-06-09 23:11:47,138 [INFO] Exact match found for 'Chase Gochnauer': contactId=qo7FWgXPhS2KKgKXNbGJ
+2026-06-09 23:11:48,200 [INFO] Note created: noteId=bxcgYkR0w4LLl7uVGf4A for contactId=qo7FWgXPhS2KKgKXNbGJ
+2026-06-09 23:11:48,705 [INFO] [2/8] Processing: Eric Fitzgerald
+2026-06-09 23:11:49,100 [INFO] Exact match found for 'Eric Fitzgerald': contactId=1p3VKwIhrtSo6Uy0KVWC
+2026-06-09 23:11:51,116 [INFO] Note created: noteId=bjF4RBR6VvPeAjA9om56 for contactId=1p3VKwIhrtSo6Uy0KVWC
+2026-06-09 23:11:51,619 [INFO] [3/8] Processing: Eric Ingvall
+2026-06-09 23:11:51,934 [INFO] Exact match found for 'Eric Ingvall': contactId=AlYNpwCDUgt9Gh6k6V1T
+2026-06-09 23:11:52,682 [INFO] Note created: noteId=z1M4sFwxaI6trrDnTAPV for contactId=AlYNpwCDUgt9Gh6k6V1T
+2026-06-09 23:11:53,187 [INFO] [4/8] Processing: Eric McCormick
+2026-06-09 23:11:53,562 [INFO] Exact match found for 'Eric McCormick': contactId=AdPJuFhxcsJsHnP89tsP
+2026-06-09 23:11:54,393 [INFO] Note created: noteId=VwwXH6suk4BOo9FyCgRJ for contactId=AdPJuFhxcsJsHnP89tsP
+2026-06-09 23:11:54,898 [INFO] [5/8] Processing: Ted Oswald
+2026-06-09 23:11:55,305 [INFO] Exact match found for 'Ted Oswald': contactId=tPPJ1M1FjSZloYuv6KK0
+2026-06-09 23:11:56,464 [INFO] Note created: noteId=7eZnh0sBfAaKP4cwrE8k for contactId=tPPJ1M1FjSZloYuv6KK0
+2026-06-09 23:11:56,964 [INFO] [6/8] Processing: Steve Eggers
+2026-06-09 23:11:57,354 [INFO] Exact match found for 'Steve Eggers': contactId=OIvf4nmg4FAt7yWFa9jY
+2026-06-09 23:11:58,243 [INFO] Note created: noteId=Y86zbis4zIGHFAhJtvTN for contactId=OIvf4nmg4FAt7yWFa9jY
+2026-06-09 23:11:58,746 [INFO] [7/8] Processing: Chris Black
+2026-06-09 23:11:59,349 [INFO] Exact match found for 'Chris Black': contactId=Teir2FRComNB2nN8eFid
+2026-06-09 23:12:00,680 [INFO] Note created: noteId=WmjPWElv7dUVIXWIv9O4 for contactId=Teir2FRComNB2nN8eFid
+2026-06-09 23:12:01,184 [INFO] [8/8] Processing: Brad Houser
+2026-06-09 23:12:01,534 [INFO] Exact match found for 'Brad Houser': contactId=lzXOFHwDDW0x4HugKD9W
+2026-06-09 23:12:03,194 [INFO] Note created: noteId=beiTLVwLTZi4mOGtpdXN for contactId=lzXOFHwDDW0x4HugKD9W
+2026-06-09 23:12:03,697 [INFO] ============================================================
+2026-06-09 23:12:03,697 [INFO] Sync Summary (6.8.26 Economics):
+2026-06-09 23:12:03,697 [INFO]   Total call notes:    8
+2026-06-09 23:12:03,697 [INFO]   Synced:              8
+2026-06-09 23:12:03,697 [INFO]   Skipped (duplicate): 0
+2026-06-09 23:12:03,697 [INFO]   Not found in GHL:    0
+2026-06-09 23:12:03,697 [INFO]   Failed:              0
+2026-06-09 23:12:03,697 [INFO] ============================================================
+2026-06-09 23:12:03,702 [INFO] Sync log written to: /Users/john.angeles/Desktop/katalyst/sync_logs/sync_log_6-8-26_20260609_231203.csv

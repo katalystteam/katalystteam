@@ -1,0 +1,1013 @@
+{
+  "report_id": "KataLYST_Market_Intelligence_May-28-2026",
+  "reference_pdf": "KataLYST_Market_Intelligence_May-28-2026.pdf",
+  "week_ending": "2026-05-28",
+  "generated_excel": "/Users/john.angeles/Desktop/katalyst/weekly-kickoff/output/weekly_kickoff_data_2026-05-28.xlsx",
+  "generated_pdf": "/Users/john.angeles/Desktop/katalyst/weekly-kickoff/output/KataLYST_Market_Intelligence_May-28-2026.pdf",
+  "summary": {
+    "total_checks": 166,
+    "passed": 166,
+    "failed": 0,
+    "pass_rate": 100.0,
+    "status": "PASS"
+  },
+  "failures": [],
+  "all_checks": [
+    {
+      "check": "listings_count",
+      "expected": 9,
+      "actual": 9,
+      "passed": true
+    },
+    {
+      "check": "listings_total_units",
+      "expected": 254,
+      "actual": 254,
+      "passed": true
+    },
+    {
+      "check": "listings_total_volume",
+      "expected": 4894999,
+      "actual": 4894999,
+      "passed": true
+    },
+    {
+      "check": "listings_avg_units",
+      "expected": 28,
+      "actual": 28,
+      "passed": true
+    },
+    {
+      "check": "listings_median_units",
+      "expected": 16,
+      "actual": 16,
+      "passed": true
+    },
+    {
+      "check": "listings_avg_vintage",
+      "expected": 1969,
+      "actual": 1968,
+      "passed": true
+    },
+    {
+      "check": "listings_avg_ppu",
+      "expected": 77774,
+      "actual": 77774.0,
+      "passed": true
+    },
+    {
+      "check": "listings_avg_ppsf",
+      "expected": 108.66,
+      "actual": 108.66,
+      "passed": true
+    },
+    {
+      "check": "listings_market_DSM",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "check": "listings_market_Rural",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "check": "listings_market_Waterloo",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "listings_market_Sioux City",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "listings_avg_ppu_market_DSM",
+      "expected": 118750,
+      "actual": 118750,
+      "passed": true
+    },
+    {
+      "check": "listings_avg_ppu_market_Rural",
+      "expected": 65132,
+      "actual": 65131,
+      "passed": true
+    },
+    {
+      "check": "listings_avg_ppu_market_Waterloo",
+      "expected": 62083,
+      "actual": 62083,
+      "passed": true
+    },
+    {
+      "check": "unit_size_1\u201312",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "check": "unit_size_13\u201324",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    },
+    {
+      "check": "unit_size_25\u201349",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "unit_size_50+",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "check": "vintage_Pre-1960",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "check": "vintage_1960\u20131979",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "check": "vintage_1980\u20131999",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "check": "vintage_2000+",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "sales_count",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "check": "sales_total_units",
+      "expected": 182,
+      "actual": 182,
+      "passed": true
+    },
+    {
+      "check": "sales_total_volume",
+      "expected": 20887000,
+      "actual": 20887000,
+      "passed": true
+    },
+    {
+      "check": "sales_avg_units",
+      "expected": 30,
+      "actual": 30,
+      "passed": true
+    },
+    {
+      "check": "sales_median_units",
+      "expected": 33,
+      "actual": 33,
+      "passed": true
+    },
+    {
+      "check": "sales_avg_vintage",
+      "expected": 1983,
+      "actual": 1983,
+      "passed": true
+    },
+    {
+      "check": "sales_avg_ppu",
+      "expected": 109972,
+      "actual": 109971.6,
+      "passed": true
+    },
+    {
+      "check": "sale_list_ratio",
+      "expected": 93.8,
+      "actual": 93.8,
+      "passed": true
+    },
+    {
+      "check": "scorecard_DSM_listings",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "check": "scorecard_DSM_sales",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "check": "scorecard_DSM_list_units",
+      "expected": 63,
+      "actual": 63,
+      "passed": true
+    },
+    {
+      "check": "scorecard_DSM_sold_units",
+      "expected": 65,
+      "actual": 65,
+      "passed": true
+    },
+    {
+      "check": "scorecard_DSM_avg_list_ppu",
+      "expected": 118750,
+      "actual": 118750.0,
+      "passed": true
+    },
+    {
+      "check": "scorecard_DSM_avg_sold_ppu",
+      "expected": 113152,
+      "actual": 113151.67,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Rural_listings",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Rural_sales",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Rural_list_units",
+      "expected": 107,
+      "actual": 107,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Rural_sold_units",
+      "expected": 48,
+      "actual": 48,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Rural_avg_list_ppu",
+      "expected": 65132,
+      "actual": 65131.5,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Rural_avg_sold_ppu",
+      "expected": 58229,
+      "actual": 58229.0,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Waterloo_listings",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Waterloo_sales",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Waterloo_list_units",
+      "expected": 12,
+      "actual": 12,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Waterloo_sold_units",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Waterloo_avg_list_ppu",
+      "expected": 62083,
+      "actual": 62083.0,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Sioux City_listings",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Sioux City_sales",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Sioux City_list_units",
+      "expected": 72,
+      "actual": 72,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Sioux City_sold_units",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Iowa City_listings",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Iowa City_sales",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Iowa City_list_units",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Iowa City_sold_units",
+      "expected": 69,
+      "actual": 69,
+      "passed": true
+    },
+    {
+      "check": "scorecard_Iowa City_avg_sold_ppu",
+      "expected": 152174,
+      "actual": 152174.0,
+      "passed": true
+    },
+    {
+      "check": "broker_CBRE_listings",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "check": "broker_CBRE_sales",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "check": "broker_CBRE_role",
+      "expected": "Listing & Selling",
+      "actual": "Listing & Selling",
+      "passed": true
+    },
+    {
+      "check": "broker_Greysteel_listings",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "broker_Greysteel_sales",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "broker_Greysteel_role",
+      "expected": "Listing & Selling",
+      "actual": "Listing & Selling",
+      "passed": true
+    },
+    {
+      "check": "broker_Exit Realty_listings",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "check": "broker_Exit Realty_sales",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "broker_Exit Realty_role",
+      "expected": "Listing Only",
+      "actual": "Listing Only",
+      "passed": true
+    },
+    {
+      "check": "broker_NAI Iowa Commercial Realty_listings",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "broker_NAI Iowa Commercial Realty_sales",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "broker_NAI Iowa Commercial Realty_role",
+      "expected": "Listing Only",
+      "actual": "Listing Only",
+      "passed": true
+    },
+    {
+      "check": "broker_Realty One_listings",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "broker_Realty One_sales",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "broker_Realty One_role",
+      "expected": "Listing Only",
+      "actual": "Listing Only",
+      "passed": true
+    },
+    {
+      "check": "broker_Stanbrough Realty_listings",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "broker_Stanbrough Realty_sales",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "broker_Stanbrough Realty_role",
+      "expected": "Selling Only",
+      "actual": "Selling Only",
+      "passed": true
+    },
+    {
+      "check": "broker_Triad Real Estate Partners_listings",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "broker_Triad Real Estate Partners_sales",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "broker_Triad Real Estate Partners_role",
+      "expected": "Selling Only",
+      "actual": "Selling Only",
+      "passed": true
+    },
+    {
+      "check": "broker_Remax Concepts_listings",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "broker_Remax Concepts_sales",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "broker_Remax Concepts_role",
+      "expected": "Selling Only",
+      "actual": "Selling Only",
+      "passed": true
+    },
+    {
+      "check": "listing_count",
+      "expected": 9,
+      "actual": 9,
+      "passed": true
+    },
+    {
+      "check": "listing_1620 vine st_units",
+      "expected": 16,
+      "actual": 16,
+      "passed": true
+    },
+    {
+      "check": "listing_1620 vine st_price",
+      "expected": 1900000,
+      "actual": 1900000,
+      "passed": true
+    },
+    {
+      "check": "listing_1620 vine st_ppu",
+      "expected": 118750,
+      "actual": 118750,
+      "passed": true
+    },
+    {
+      "check": "listing_1620 vine st_class",
+      "expected": "B",
+      "actual": "B",
+      "passed": true
+    },
+    {
+      "check": "listing_1620 vine st_broker",
+      "expected": "NAI Iowa Commercial Realty",
+      "actual": "NAI Iowa Commercial Realty",
+      "passed": true
+    },
+    {
+      "check": "listing_626 16th st_units",
+      "expected": 24,
+      "actual": 24,
+      "passed": true
+    },
+    {
+      "check": "listing_626 16th st_price",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "listing_626 16th st_ppu",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "listing_626 16th st_class",
+      "expected": "C",
+      "actual": "C",
+      "passed": true
+    },
+    {
+      "check": "listing_626 16th st_broker",
+      "expected": "CBRE",
+      "actual": "CBRE",
+      "passed": true
+    },
+    {
+      "check": "listing_212 hayward ave_units",
+      "expected": 14,
+      "actual": 14,
+      "passed": true
+    },
+    {
+      "check": "listing_212 hayward ave_price",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "listing_212 hayward ave_ppu",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "listing_212 hayward ave_class",
+      "expected": "B",
+      "actual": "B",
+      "passed": true
+    },
+    {
+      "check": "listing_212 hayward ave_broker",
+      "expected": "CBRE",
+      "actual": "CBRE",
+      "passed": true
+    },
+    {
+      "check": "listing_519 welch ave_units",
+      "expected": 9,
+      "actual": 9,
+      "passed": true
+    },
+    {
+      "check": "listing_519 welch ave_price",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "listing_519 welch ave_ppu",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "listing_519 welch ave_class",
+      "expected": "B",
+      "actual": "B",
+      "passed": true
+    },
+    {
+      "check": "listing_519 welch ave_broker",
+      "expected": "CBRE",
+      "actual": "CBRE",
+      "passed": true
+    },
+    {
+      "check": "listing_1015 5th ave_units",
+      "expected": 72,
+      "actual": 72,
+      "passed": true
+    },
+    {
+      "check": "listing_1015 5th ave_price",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "listing_1015 5th ave_ppu",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "listing_1015 5th ave_class",
+      "expected": "C",
+      "actual": "C",
+      "passed": true
+    },
+    {
+      "check": "listing_1015 5th ave_broker",
+      "expected": "Greysteel",
+      "actual": "Greysteel",
+      "passed": true
+    },
+    {
+      "check": "listing_1110 doreen ave_units",
+      "expected": 12,
+      "actual": 12,
+      "passed": true
+    },
+    {
+      "check": "listing_1110 doreen ave_price",
+      "expected": 745000,
+      "actual": 745000,
+      "passed": true
+    },
+    {
+      "check": "listing_1110 doreen ave_ppu",
+      "expected": 62083,
+      "actual": 62083,
+      "passed": true
+    },
+    {
+      "check": "listing_1110 doreen ave_class",
+      "expected": "C",
+      "actual": "C",
+      "passed": true
+    },
+    {
+      "check": "listing_1110 doreen ave_broker",
+      "expected": "Realty One",
+      "actual": "Realty One",
+      "passed": true
+    },
+    {
+      "check": "listing_503-507 rosemere ln_units",
+      "expected": 16,
+      "actual": 16,
+      "passed": true
+    },
+    {
+      "check": "listing_503-507 rosemere ln_price",
+      "expected": 1199999,
+      "actual": 1199999,
+      "passed": true
+    },
+    {
+      "check": "listing_503-507 rosemere ln_ppu",
+      "expected": 75000,
+      "actual": 75000,
+      "passed": true
+    },
+    {
+      "check": "listing_503-507 rosemere ln_class",
+      "expected": "C",
+      "actual": "C",
+      "passed": true
+    },
+    {
+      "check": "listing_503-507 rosemere ln_broker",
+      "expected": "Exit Realty",
+      "actual": "Exit Realty",
+      "passed": true
+    },
+    {
+      "check": "listing_2535 central ave_units",
+      "expected": 19,
+      "actual": 19,
+      "passed": true
+    },
+    {
+      "check": "listing_2535 central ave_price",
+      "expected": 1050000,
+      "actual": 1050000,
+      "passed": true
+    },
+    {
+      "check": "listing_2535 central ave_ppu",
+      "expected": 55263,
+      "actual": 55263,
+      "passed": true
+    },
+    {
+      "check": "listing_2535 central ave_class",
+      "expected": "C",
+      "actual": "C",
+      "passed": true
+    },
+    {
+      "check": "listing_2535 central ave_broker",
+      "expected": "Exit Realty",
+      "actual": "Exit Realty",
+      "passed": true
+    },
+    {
+      "check": "listing_2807-2811 lincoln way_units",
+      "expected": 72,
+      "actual": 72,
+      "passed": true
+    },
+    {
+      "check": "listing_2807-2811 lincoln way_price",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "listing_2807-2811 lincoln way_ppu",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "listing_2807-2811 lincoln way_class",
+      "expected": "B",
+      "actual": "B",
+      "passed": true
+    },
+    {
+      "check": "listing_2807-2811 lincoln way_broker",
+      "expected": "CBRE",
+      "actual": "CBRE",
+      "passed": true
+    },
+    {
+      "check": "sale_count",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "check": "sale_2517 sylvan glen court_units",
+      "expected": 69,
+      "actual": 69,
+      "passed": true
+    },
+    {
+      "check": "sale_2517 sylvan glen court_price",
+      "expected": 10500000,
+      "actual": 10500000,
+      "passed": true
+    },
+    {
+      "check": "sale_2517 sylvan glen court_ppu",
+      "expected": 152174,
+      "actual": 152174,
+      "passed": true
+    },
+    {
+      "check": "sale_2517 sylvan glen court_class",
+      "expected": "C",
+      "actual": "C",
+      "passed": true
+    },
+    {
+      "check": "sale_2517 sylvan glen court_broker",
+      "expected": "Greysteel",
+      "actual": "Greysteel",
+      "passed": true
+    },
+    {
+      "check": "sale_113 2nd st ne_units",
+      "expected": 8,
+      "actual": 8,
+      "passed": true
+    },
+    {
+      "check": "sale_113 2nd st ne_price",
+      "expected": 472000,
+      "actual": 472000,
+      "passed": true
+    },
+    {
+      "check": "sale_113 2nd st ne_ppu",
+      "expected": 59000,
+      "actual": 59000,
+      "passed": true
+    },
+    {
+      "check": "sale_113 2nd st ne_class",
+      "expected": "C",
+      "actual": "C",
+      "passed": true
+    },
+    {
+      "check": "sale_113 2nd st ne_broker",
+      "expected": "Stanbrough Realty",
+      "actual": "Stanbrough Realty",
+      "passed": true
+    },
+    {
+      "check": "sale_6920 sw 9th st_units",
+      "expected": 12,
+      "actual": 12,
+      "passed": true
+    },
+    {
+      "check": "sale_6920 sw 9th st_price",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "sale_6920 sw 9th st_ppu",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "check": "sale_6920 sw 9th st_class",
+      "expected": "C",
+      "actual": "C",
+      "passed": true
+    },
+    {
+      "check": "sale_6920 sw 9th st_broker",
+      "expected": "CBRE",
+      "actual": "CBRE",
+      "passed": true
+    },
+    {
+      "check": "sale_316 hayward ave_units",
+      "expected": 33,
+      "actual": 33,
+      "passed": true
+    },
+    {
+      "check": "sale_316 hayward ave_price",
+      "expected": 5900000,
+      "actual": 5900000,
+      "passed": true
+    },
+    {
+      "check": "sale_316 hayward ave_ppu",
+      "expected": 178788,
+      "actual": 178788,
+      "passed": true
+    },
+    {
+      "check": "sale_316 hayward ave_class",
+      "expected": "A",
+      "actual": "A",
+      "passed": true
+    },
+    {
+      "check": "sale_316 hayward ave_broker",
+      "expected": "Triad Real Estate Partners",
+      "actual": "Triad Real Estate Partners",
+      "passed": true
+    },
+    {
+      "check": "sale_611 w van weis blvd_units",
+      "expected": 48,
+      "actual": 48,
+      "passed": true
+    },
+    {
+      "check": "sale_611 w van weis blvd_price",
+      "expected": 2795000,
+      "actual": 2795000,
+      "passed": true
+    },
+    {
+      "check": "sale_611 w van weis blvd_ppu",
+      "expected": 58229,
+      "actual": 58229,
+      "passed": true
+    },
+    {
+      "check": "sale_611 w van weis blvd_class",
+      "expected": "B",
+      "actual": "B",
+      "passed": true
+    },
+    {
+      "check": "sale_611 w van weis blvd_broker",
+      "expected": "CBRE",
+      "actual": "CBRE",
+      "passed": true
+    },
+    {
+      "check": "sale_800 13th st_units",
+      "expected": 12,
+      "actual": 12,
+      "passed": true
+    },
+    {
+      "check": "sale_800 13th st_price",
+      "expected": 1220000,
+      "actual": 1220000,
+      "passed": true
+    },
+    {
+      "check": "sale_800 13th st_ppu",
+      "expected": 101667,
+      "actual": 101667,
+      "passed": true
+    },
+    {
+      "check": "sale_800 13th st_class",
+      "expected": "C",
+      "actual": "C",
+      "passed": true
+    },
+    {
+      "check": "sale_800 13th st_broker",
+      "expected": "Remax Concepts",
+      "actual": "Remax Concepts",
+      "passed": true
+    },
+    {
+      "check": "highlight_largest_sale",
+      "expected": "2517 Sylvan Glen Court",
+      "actual": "2517 Sylvan Glen Court",
+      "passed": true
+    },
+    {
+      "check": "highlight_highest_ppu",
+      "expected": "316 Hayward Ave.",
+      "actual": "316 Hayward Ave.",
+      "passed": true
+    },
+    {
+      "check": "highlight_lowest_ppu",
+      "expected": "611 W. Van Weis Blvd",
+      "actual": "611 W. Van Weis Blvd",
+      "passed": true
+    },
+    {
+      "check": "highlight_largest_listing",
+      "expected": "1015 5th Ave.",
+      "actual": "1015 5th Ave.",
+      "passed": true
+    },
+    {
+      "check": "deal_to_watch",
+      "expected": "Ames University Corridor",
+      "actual": "Ames University Corridor",
+      "passed": true
+    },
+    {
+      "check": "excel_exists",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "pdf_exists",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "pdf_page_count",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    }
+  ]
+}
