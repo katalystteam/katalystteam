@@ -13,7 +13,7 @@ from typing import List
 
 from playwright.sync_api import Page
 
-from scrapers.base import BaseScraper, new_record, safe_attr, safe_goto, safe_text
+from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text
 from scrapers.normalize import (
     extract_city,
     is_multifamily,
@@ -81,6 +81,7 @@ class JllScraper(BaseScraper):
             return []
 
         page.wait_for_timeout(3000)
+        diagnose_page(page, self.SITE_NAME)
         self._apply_filters(page)
 
         records: List[dict] = []
