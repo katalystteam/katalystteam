@@ -1,0 +1,3 @@
+email,ghl_contact_id,tags_to_add,lookup_status,tags_applied_status,sync_mode
+111@mchsi.com,,,dry_run,not_run,list_remove_then_state_tags
+19lep56@gmail.com,,,dry_run,not_run,list_remove_then_state_tags

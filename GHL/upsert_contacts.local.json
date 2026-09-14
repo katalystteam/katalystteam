@@ -1,0 +1,19 @@
+[
+  {"firstName": "Amir", "lastName": "Kalantari", "email": "amir@kalantarigroup.com"},
+  {"firstName": "Cassandra", "lastName": "Wilson", "email": "lisahouser2014@gmail.com"},
+  {"firstName": "Robert", "lastName": "Zessin", "email": "rzessin23@gmail.com"},
+  {"firstName": "Jason", "lastName": "Berkowitz"},
+  {"firstName": "George", "lastName": "Amaro", "email": "vmbces@yahoo.com"},
+  {"firstName": "Nikolai", "lastName": "Solow", "email": "nsolow1896@yahoo.com"},
+  {"firstName": "Manny", "lastName": "Farahani", "email": "mfarahani@aol.com"},
+  {"firstName": "Royce", "lastName": "Jr."},
+  {"firstName": "Roy", "lastName": "Ramirez", "email": "roy.ramirez@msn.com"},
+  {"firstName": "Richard E.", "lastName": "Neuman"},
+  {"firstName": "Jan", "lastName": "Mirkin"},
+  {"firstName": "Saurabh", "lastName": "Khetrapal", "email": "saurabh@techpeople.com", "phone": "(212) 671-2925"},
+  {"firstName": "Michael", "lastName": "McQuiddy", "email": "mmcquiddy@att.net", "phone": "(512) 301-1845"},
+  {"firstName": "Mary", "lastName": "Hurst", "phone": "(512) 478-4202"},
+  {"firstName": "Stephen", "lastName": "Moore", "email": "lgomes466.lg@gmail.com", "phone": "650-302-5812"},
+  {"firstName": "Hunter", "lastName": "Gordon", "email": "hunter@gbatx.com", "phone": "512-993-6135"},
+  {"firstName": "Marcia", "lastName": "Milchiker", "email": "mmilch@cox.net", "phone": "949-395-2025", "notes": "Source phone was 949-395-20252 (11 digits); normalized to 949-395-2025 — verify"}
+]

@@ -1,0 +1,395 @@
+2026-05-22 20:35:19,177 [INFO] Master tag list: 18 literals; removal superset size 142 (with prefixed variants)
+2026-05-22 20:35:19,635 [INFO] Scope=union — distinct emails: 3028
+2026-05-22 20:35:27,578 [WARNING] [7/3028] Not in GHL: 3wicllc@gmail.com
+2026-05-22 20:35:28,636 [INFO] [8/3028] Removing 1 list-matching tag(s) from aahmadi@lan-inc.com
+2026-05-22 20:35:49,598 [INFO] [25/3028] Removing 1 list-matching tag(s) from abigail@smarteggmgmt.com
+2026-05-22 20:36:31,596 [INFO] [59/3028] Removing 1 list-matching tag(s) from agardner@civil-law.com
+2026-05-22 20:36:34,385 [INFO] [60/3028] Removing 1 list-matching tag(s) from agmiller@happybank.com
+2026-05-22 20:36:59,162 [WARNING] [82/3028] Not in GHL: akram.s.elouche@gmail.com
+2026-05-22 20:37:25,552 [WARNING] [106/3028] Not in GHL: alina@samofinancial.com
+2026-05-22 20:37:43,736 [INFO] [122/3028] Removing 1 list-matching tag(s) from amanda@lakewayblinds.com
+2026-05-22 20:37:46,801 [INFO] [124/3028] Removing 1 list-matching tag(s) from amber.roberts@postnet.com
+2026-05-22 20:38:36,526 [WARNING] [168/3028] Not in GHL: ann.sullivan@spirithalloween.com
+2026-05-22 20:38:37,326 [WARNING] [169/3028] Not in GHL: anna@wilsonlawfirmpc.com
+2026-05-22 20:39:07,338 [WARNING] [197/3028] Not in GHL: armidholdings@gmail.com
+2026-05-22 20:39:47,604 [INFO] Master tag list: 18 literals; removal superset size 142 (with prefixed variants)
+2026-05-22 20:39:48,077 [INFO] Scope=union — distinct emails: 3028
+2026-05-22 20:39:54,992 [WARNING] [7/3028] Not in GHL: 3wicllc@gmail.com
+2026-05-22 20:41:21,092 [WARNING] [82/3028] Not in GHL: akram.s.elouche@gmail.com
+2026-05-22 20:41:48,812 [WARNING] [106/3028] Not in GHL: alina@samofinancial.com
+2026-05-22 20:42:57,668 [WARNING] [168/3028] Not in GHL: ann.sullivan@spirithalloween.com
+2026-05-22 20:42:58,366 [WARNING] [169/3028] Not in GHL: anna@wilsonlawfirmpc.com
+2026-05-22 20:43:28,004 [WARNING] [197/3028] Not in GHL: armidholdings@gmail.com
+2026-05-22 20:44:07,524 [WARNING] [234/3028] Not in GHL: axemandan3006@gmail.com
+2026-05-22 20:44:18,599 [INFO] [244/3028] Removing 1 list-matching tag(s) from b@brynn-creative.com
+2026-05-22 20:44:20,308 [WARNING] [245/3028] Not in GHL: baggeb@gmail.com
+2026-05-22 20:44:23,213 [WARNING] [248/3028] Not in GHL: banwart4@gmail.com
+2026-05-22 20:44:31,772 [WARNING] [256/3028] Not in GHL: barrygroh@gmail.com
+2026-05-22 20:44:48,974 [WARNING] [272/3028] Not in GHL: becky@skogman.com
+2026-05-22 20:46:27,847 [INFO] [356/3028] Removing 1 list-matching tag(s) from bode.egbelakin@gmail.com
+2026-05-22 20:46:31,561 [INFO] [358/3028] Removing 1 list-matching tag(s) from borc81@live.com
+2026-05-22 20:47:39,912 [INFO] [415/3028] Removing 1 list-matching tag(s) from bridge@comedge.co
+2026-05-22 20:48:00,763 [WARNING] [433/3028] Not in GHL: bryan@wilsonlawfirmpc.com
+2026-05-22 20:48:15,156 [WARNING] [446/3028] Not in GHL: bwilliford@finfedmem.com
+2026-05-22 20:48:20,478 [WARNING] [451/3028] Not in GHL: cal@pre-3.com
+2026-05-22 20:49:33,077 [WARNING] [516/3028] Not in GHL: charles@chedester.com
+2026-05-22 20:49:40,646 [WARNING] [523/3028] Not in GHL: chase@ownboise.com
+2026-05-22 20:50:40,454 [WARNING] [574/3028] Not in GHL: chuck@chendrickslaw.com
+2026-05-22 20:50:46,082 [WARNING] [579/3028] Not in GHL: chuckjonescpa@gmail.com
+2026-05-22 20:50:54,650 [WARNING] [587/3028] Not in GHL: claguekeith@gmail.com
+2026-05-22 20:51:08,705 [WARNING] [600/3028] Not in GHL: clinton@disciplinedequities.com
+2026-05-22 20:51:27,668 [INFO] [617/3028] Removing 1 list-matching tag(s) from cobrien@greystoneconstruction.com
+2026-05-22 20:52:00,351 [WARNING] [646/3028] Not in GHL: cpmartin05@gmail.com
+2026-05-22 20:52:17,168 [WARNING] [658/3028] Not in GHL: crenvironmental.inc@gmail.com
+2026-05-22 20:52:28,830 [WARNING] [666/3028] Not in GHL: csnyder@simonsonassoc.com
+2026-05-22 20:53:48,282 [WARNING] [737/3028] Not in GHL: david.evans@kidder.com
+2026-05-22 20:53:54,548 [WARNING] [743/3028] Not in GHL: david.theeifertgroup@gmail.com
+2026-05-22 20:54:23,644 [WARNING] [769/3028] Not in GHL: ddfullercpa@qwestoffice.net
+2026-05-22 20:54:41,267 [WARNING] [783/3028] Not in GHL: dennis.lauver@howesandjefferies.com
+2026-05-22 20:55:01,812 [WARNING] [801/3028] Not in GHL: dgellerman@thehawkeyegroup.com
+2026-05-22 20:55:18,271 [WARNING] [816/3028] Not in GHL: dickryan@remax.net
+2026-05-22 20:56:13,832 [WARNING] [866/3028] Not in GHL: drew.murray@claconnect.com
+2026-05-22 20:58:11,805 [WARNING] [935/3028] Not in GHL: elle2329@icloud.com
+2026-05-22 20:58:14,029 [INFO] [937/3028] Removing 1 list-matching tag(s) from emassa@riverwaytitle.com
+2026-05-22 20:59:15,294 [INFO] [988/3028] Removing 1 list-matching tag(s) from fcapparelli@wbm.com
+2026-05-22 20:59:18,638 [INFO] [990/3028] Removing 1 list-matching tag(s) from fege@wylieeng.com
+2026-05-22 21:01:15,438 [WARNING] [1079/3028] Not in GHL: grace@goodmorninginvestments.com
+2026-05-22 21:01:18,585 [WARNING] [1082/3028] Not in GHL: grant.wright@cbre.com
+2026-05-22 21:01:23,033 [WARNING] [1086/3028] Not in GHL: greenkeepersofiowa@mail.com
+2026-05-22 21:01:26,210 [INFO] [1089/3028] Removing 1 list-matching tag(s) from greg@dailyasbuilt.com
+2026-05-22 21:02:14,140 [INFO] [1129/3028] Removing 1 list-matching tag(s) from hank.hughes@horizon.bank
+2026-05-22 21:02:41,162 [INFO] [1149/3028] Removing 1 list-matching tag(s) from herb@herbalston.com
+2026-05-22 21:02:54,143 [INFO] [1159/3028] Removing 1 list-matching tag(s) from home@birdhome.com
+2026-05-22 21:03:27,680 [WARNING] [1187/3028] Not in GHL: info.titanpropertyinvestments@gmail.com
+2026-05-22 21:03:30,001 [WARNING] [1189/3028] Not in GHL: info@elitesignsandpromotions.com
+2026-05-22 21:04:03,678 [WARNING] [1218/3028] Not in GHL: j-morrissey@live.com
+2026-05-22 21:04:22,677 [WARNING] [1235/3028] Not in GHL: jaherzog@dmgov.org
+2026-05-22 21:04:52,728 [WARNING] [1259/3028] Not in GHL: jamesvogt@mchsi.com
+2026-05-22 21:07:16,578 [WARNING] [1381/3028] Not in GHL: jeucker@phmdcorp.com
+2026-05-22 21:07:41,296 [WARNING] [1401/3028] Not in GHL: jillkbrink@gmail.com
+2026-05-22 21:07:51,290 [WARNING] [1410/3028] Not in GHL: jjparker1326@hotmail.com
+2026-05-22 21:08:03,688 [WARNING] [1421/3028] Not in GHL: jlongenecker@longeneckerfs.com
+2026-05-22 21:08:34,101 [WARNING] [1447/3028] Not in GHL: joe@roimuse.com
+2026-05-22 21:09:07,911 [INFO] [1476/3028] Removing 1 list-matching tag(s) from john@gowestpole.com
+2026-05-22 21:09:47,840 [WARNING] [1511/3028] Not in GHL: jordan.alleva@nmrk.com
+2026-05-22 21:10:32,386 [WARNING] [1548/3028] Not in GHL: jspillman@capstone-cre.com
+2026-05-22 21:10:33,301 [WARNING] [1549/3028] Not in GHL: jtortoretti@gmail.com
+2026-05-22 21:11:02,887 [WARNING] [1575/3028] Not in GHL: jvandis@wolfconstruction.net
+2026-05-22 21:11:30,657 [WARNING] [1599/3028] Not in GHL: katherine.young@cort.com
+2026-05-22 21:11:58,923 [WARNING] [1624/3028] Not in GHL: kellerc@mac.com
+2026-05-22 21:12:23,304 [WARNING] [1646/3028] Not in GHL: kevin@petersonholistic.com
+2026-05-22 21:13:38,481 [WARNING] [1711/3028] Not in GHL: kwebstercreative@gmail.com
+2026-05-22 21:13:39,519 [INFO] [1712/3028] Removing 1 list-matching tag(s) from kyle.grimshaw@kw.com
+2026-05-22 21:14:03,918 [INFO] [1733/3028] Removing 1 list-matching tag(s) from laura.alvarado@truist.com
+2026-05-22 21:14:20,624 [INFO] [1746/3028] Removing 1 list-matching tag(s) from lcpledger@comerica.com
+2026-05-22 21:14:23,500 [WARNING] [1748/3028] Not in GHL: leahmgutknecht@gmail.com
+2026-05-22 21:14:33,220 [WARNING] [1757/3028] Not in GHL: leo@brownwinick.com
+2026-05-22 21:14:37,594 [INFO] [1761/3028] Removing 1 list-matching tag(s) from leslienevarez@security101.com
+2026-05-22 21:15:51,454 [WARNING] [1824/3028] Not in GHL: mailto:zach@zb3re.com
+2026-05-22 21:16:45,993 [INFO] [1870/3028] Removing 1 list-matching tag(s) from markrfhl@gmail.com
+2026-05-22 21:16:58,371 [INFO] [1880/3028] Removing 1 list-matching tag(s) from martin.andrada@chase.com
+2026-05-22 21:17:21,787 [WARNING] [1900/3028] Not in GHL: matt@rwmvlaw.com
+2026-05-22 21:17:56,485 [INFO] [1930/3028] Removing 1 list-matching tag(s) from mburciaga@ctot.com
+2026-05-22 21:18:34,889 [WARNING] [1963/3028] Not in GHL: methell@metrorealtymgmt.com
+2026-05-22 21:18:47,796 [WARNING] [1975/3028] Not in GHL: mharan@nbproperties.com
+2026-05-22 21:18:56,601 [WARNING] [1983/3028] Not in GHL: michael.minard@am.jll.com
+2026-05-22 21:19:21,345 [WARNING] [2005/3028] Not in GHL: midstateiowa@gmail.com
+2026-05-22 21:20:02,060 [WARNING] [2041/3028] Not in GHL: mitchburrell@comcast.net
+2026-05-22 21:20:20,771 [WARNING] [2058/3028] Not in GHL: mlstout@iowatitle.com
+2026-05-22 21:20:36,905 [INFO] [2070/3028] Removing 1 list-matching tag(s) from molly@jwcrentals.com
+2026-05-22 21:20:40,739 [WARNING] [2073/3028] Not in GHL: mononica620@aol.com
+2026-05-22 21:20:45,676 [INFO] [2077/3028] Removing 1 list-matching tag(s) from morgan.schavone@goosehead.com
+2026-05-22 21:20:54,447 [INFO] [2084/3028] Removing 1 list-matching tag(s) from mr.intensitypressurewashing@gmail.com
+2026-05-22 21:21:31,496 [WARNING] [2117/3028] Not in GHL: nanak.bronyah@gmail.com
+2026-05-22 21:22:36,722 [INFO] [2174/3028] Removing 1 list-matching tag(s) from norman.witcher@regions.com
+2026-05-22 21:22:59,839 [WARNING] [2193/3028] Not in GHL: oliviaatorres3@gmail.com
+2026-05-22 21:25:03,990 [WARNING] [2300/3028] Not in GHL: pwusaoffice@gmail.com
+2026-05-22 21:26:09,974 [WARNING] [2358/3028] Not in GHL: rebecca.privette@ushadvisors.com
+2026-05-22 21:26:27,240 [WARNING] [2373/3028] Not in GHL: rentmitchellville@gmail.com
+2026-05-22 21:27:25,897 [WARNING] [2425/3028] Not in GHL: rob.morrison@healthmarkets.com
+2026-05-22 21:27:56,749 [WARNING] [2453/3028] Not in GHL: romshekjm@yahoo.com
+2026-05-22 21:28:39,283 [WARNING] [2488/3028] Not in GHL: ryan@powderhornequity.com
+2026-05-22 21:29:01,124 [WARNING] [2507/3028] Not in GHL: sackett@brownwinick.com
+2026-05-22 21:29:35,789 [INFO] [2534/3028] Removing 1 list-matching tag(s) from sasha.mallet@regions.com
+2026-05-22 21:29:42,909 [WARNING] [2540/3028] Not in GHL: scatarinella@capreit.com
+2026-05-22 21:30:51,164 [WARNING] [2598/3028] Not in GHL: shauschilt@grahamconstruction.com
+2026-05-22 21:31:23,914 [WARNING] [2625/3028] Not in GHL: silvershark50@hotmail.com
+2026-05-22 21:31:44,680 [INFO] [2643/3028] Removing 1 list-matching tag(s) from smith.tiana@kw.com
+2026-05-22 21:32:14,629 [WARNING] [2660/3028] Not in GHL: sotaprestiege@gmail.com
+2026-05-22 21:33:56,170 [INFO] [2748/3028] Removing 1 list-matching tag(s) from taniadennis.wellness@gmail.com
+2026-05-22 21:33:59,291 [INFO] [2750/3028] Removing 1 list-matching tag(s) from tariq@junk.pro
+2026-05-22 21:34:07,814 [WARNING] [2757/3028] Not in GHL: tblong@crbt.com
+2026-05-22 21:34:44,278 [WARNING] [2791/3028] Not in GHL: therealmdwhite@gmail.com
+2026-05-22 21:35:21,195 [WARNING] [2824/3028] Not in GHL: tlubinus@gmail.com
+2026-05-22 21:35:40,229 [WARNING] [2841/3028] Not in GHL: tom-rice@uiowa.edu
+2026-05-22 21:35:42,113 [WARNING] [2843/3028] Not in GHL: tom@ccinvest.com
+2026-05-22 21:36:46,382 [WARNING] [2900/3028] Not in GHL: tsmrfixit@yahoo.com
+2026-05-22 21:37:37,327 [INFO] [2944/3028] Removing 1 list-matching tag(s) from vince@thenovaterragroup.com
+2026-05-22 21:38:25,284 [WARNING] [2984/3028] Not in GHL: williams@landmarkds.com
+2026-05-22 21:38:47,032 [WARNING] [3004/3028] Not in GHL: yorkco1@aol.com
+2026-05-22 21:38:49,928 [WARNING] [3007/3028] Not in GHL: yuanliu1@gmail.com
+2026-05-22 21:39:14,575 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers', 'iowa - Seller'] for 17 contacts — batches ok=1 fail=0
+2026-05-22 21:39:15,756 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers', 'iowa - New LYSTing', 'iowa - Seller'] for 18 contacts — batches ok=1 fail=0
+2026-05-22 21:39:17,442 [INFO] Bulk add ['texas - KWRI'] for 323 contacts — batches ok=1 fail=0
+2026-05-22 21:39:18,979 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers', 'iowa - Kickoff', 'iowa - New LYSTing', 'iowa - Seller'] for 130 contacts — batches ok=1 fail=0
+2026-05-22 21:39:20,763 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers', 'iowa - Kickoff', 'iowa - New LYSTing'] for 108 contacts — batches ok=1 fail=0
+2026-05-22 21:39:22,076 [INFO] Bulk add ['texas - 33x', 'texas - 33x Digital', 'texas - Vendor'] for 23 contacts — batches ok=1 fail=0
+2026-05-22 21:39:23,355 [INFO] Bulk add ['iowa - Kickoff'] for 73 contacts — batches ok=1 fail=0
+2026-05-22 21:39:24,340 [INFO] Bulk add ['iowa - Webinar'] for 24 contacts — batches ok=1 fail=0
+2026-05-22 21:39:26,149 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Kickoff'] for 152 contacts — batches ok=1 fail=0
+2026-05-22 21:39:34,999 [INFO] Bulk add ['iowa - KWRI'] for 1558 contacts — batches ok=4 fail=0
+2026-05-22 21:39:36,031 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Kickoff', 'iowa - New LYSTing', 'iowa - Seller'] for 21 contacts — batches ok=1 fail=0
+2026-05-22 21:39:37,134 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers', 'iowa - New LYSTing'] for 15 contacts — batches ok=1 fail=0
+2026-05-22 21:39:38,334 [INFO] Bulk add ['iowa - 33 Touch Digital'] for 39 contacts — batches ok=1 fail=0
+2026-05-22 21:39:39,462 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers', 'iowa - Kickoff', 'iowa - Seller'] for 11 contacts — batches ok=1 fail=0
+2026-05-22 21:39:40,371 [INFO] Bulk add ['texas - Kickoff'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:39:41,394 [INFO] Bulk add ['iowa - New Client'] for 4 contacts — batches ok=1 fail=0
+2026-05-22 21:39:42,798 [INFO] Bulk add ['iowa - KWC - Texas'] for 136 contacts — batches ok=1 fail=0
+2026-05-22 21:39:44,433 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Kickoff', 'iowa - New LYSTing'] for 44 contacts — batches ok=1 fail=0
+2026-05-22 21:39:45,812 [INFO] Bulk add ['texas - 33x Digital', 'texas - Vendor'] for 8 contacts — batches ok=1 fail=0
+2026-05-22 21:39:46,891 [INFO] Bulk add ['iowa - Buyers', 'iowa - Kickoff'] for 5 contacts — batches ok=1 fail=0
+2026-05-22 21:39:50,796 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers', 'iowa - Kickoff', 'iowa - New LYSTing', 'iowa - Webinar'] for 8 contacts — batches ok=1 fail=0
+2026-05-22 21:39:51,908 [INFO] Bulk add ['iowa - Buyers', 'iowa - Seller'] for 3 contacts — batches ok=1 fail=0
+2026-05-22 21:39:53,194 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers', 'iowa - Kickoff'] for 30 contacts — batches ok=1 fail=0
+2026-05-22 21:39:54,199 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - New LYSTing'] for 3 contacts — batches ok=1 fail=0
+2026-05-22 21:39:55,250 [INFO] Bulk add ['iowa - Kickoff', 'iowa - Seller'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:39:56,345 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - New LYSTing', 'iowa - Seller'] for 6 contacts — batches ok=1 fail=0
+2026-05-22 21:39:57,415 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Kickoff', 'iowa - KWRI'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:39:58,400 [INFO] Bulk add ['texas - KWRI', 'texas - Webinar'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:39:59,597 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Kickoff', 'iowa - Webinar'] for 7 contacts — batches ok=1 fail=0
+2026-05-22 21:40:00,750 [INFO] Bulk add ['iowa - Buyers', 'iowa - Kickoff', 'iowa - New LYSTing', 'iowa - Seller'] for 5 contacts — batches ok=1 fail=0
+2026-05-22 21:40:01,881 [INFO] Bulk add ['iowa - Buyers', 'iowa - Kickoff', 'iowa - Seller'] for 4 contacts — batches ok=1 fail=0
+2026-05-22 21:40:03,029 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers', 'iowa - Kickoff', 'iowa - New LYSTing', 'iowa - Seller', 'iowa - Webinar'] for 16 contacts — batches ok=1 fail=0
+2026-05-22 21:40:04,228 [INFO] Bulk add ['iowa - Buyers'] for 5 contacts — batches ok=1 fail=0
+2026-05-22 21:40:05,351 [INFO] Bulk add ['iowa - Webinar', 'iowa - New Participant'] for 12 contacts — batches ok=1 fail=0
+2026-05-22 21:40:06,394 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Kickoff', 'iowa - Seller'] for 3 contacts — batches ok=1 fail=0
+2026-05-22 21:40:07,464 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Kickoff', 'iowa - New LYSTing', 'iowa - Seller', 'iowa - Webinar'] for 3 contacts — batches ok=1 fail=0
+2026-05-22 21:40:08,610 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers'] for 14 contacts — batches ok=1 fail=0
+2026-05-22 21:40:09,656 [INFO] Bulk add ['iowa - Kickoff', 'iowa - KWRI'] for 4 contacts — batches ok=1 fail=0
+2026-05-22 21:40:10,742 [INFO] Bulk add ['iowa - Seller'] for 3 contacts — batches ok=1 fail=0
+2026-05-22 21:40:11,801 [INFO] Bulk add ['iowa - Buyers', 'iowa - New LYSTing', 'iowa - Seller'] for 3 contacts — batches ok=1 fail=0
+2026-05-22 21:40:12,906 [INFO] Bulk add ['iowa - New Client', 'iowa - New Participant'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:40:13,766 [INFO] Bulk add ['iowa - Kickoff', 'iowa - New LYSTing'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:40:15,178 [INFO] Bulk add ['texas - 33 Touch Digital', 'texas - Kickoff', 'texas - New LYSTing'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:40:15,964 [INFO] Bulk add ['iowa - Buyers', 'iowa - New LYSTing'] for 3 contacts — batches ok=1 fail=0
+2026-05-22 21:40:17,288 [INFO] Bulk add ['iowa - Buyers', 'iowa - Kickoff', 'iowa - New LYSTing'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:40:18,171 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Webinar'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:40:19,292 [INFO] Bulk add ['iowa - KWRI', 'iowa - Webinar'] for 11 contacts — batches ok=1 fail=0
+2026-05-22 21:40:22,046 [INFO] Bulk add ['iowa - New LYSTing', 'iowa - Seller'] for 3 contacts — batches ok=1 fail=0
+2026-05-22 21:40:22,983 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Kickoff', 'iowa - New LYSTing', 'iowa - Webinar'] for 4 contacts — batches ok=1 fail=0
+2026-05-22 21:40:24,077 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Buyers', 'iowa - Kickoff', 'iowa - Seller', 'iowa - Webinar'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:40:25,457 [INFO] Bulk add ['texas - 33 Touch Digital', 'texas - Kickoff'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:40:26,655 [INFO] Bulk add ['iowa - New Participant'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:40:28,056 [INFO] Bulk add ['texas - 33x Digital', 'texas - Vendor', 'texas - Realtor'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:40:29,121 [INFO] Bulk add ['iowa - 33 Touch Digital', 'iowa - Kickoff', 'iowa - New Client'] for 3 contacts — batches ok=1 fail=0
+2026-05-22 21:40:30,093 [INFO] Bulk add ['texas - 33 Touch Digital', 'texas - Buyers', 'texas - Kickoff', 'texas - New LYSTing'] for 2 contacts — batches ok=1 fail=0
+2026-05-22 21:40:30,710 [ERROR] add tags failed for 4i3jvw4q3o5PqlXLnWts: 502 Server Error: Bad Gateway for url: https://services.leadconnectorhq.com/contacts/4i3jvw4q3o5PqlXLnWts/tags
+2026-05-22 21:40:30,711 [ERROR] Response: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+
+<title> | 502: Bad gateway</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
+</head>
+<body>
+<div id="cf-wrapper">
+    <div id="cf-error-details" class="p-0">
+        <header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8">
+            <h1 class="inline-block sm:block sm:mb-2 font-light text-60 lg:text-4xl text-black-dark leading-tight mr-2">
+                <span class="inline-block">Bad gateway</span>
+                <span class="code-label">Error code 502</span>
+            </h1>
+            <div>
+                Visit <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=services.leadconnectorhq.com" target="_blank" rel="noopener noreferrer">cloudflare.com</a> for more information.
+            </div>
+            <div class="mt-3">2026-05-22 13:40:30 UTC</div>
+        </header>
+        <div class="my-8 bg-gradient-gray">
+            <div class="w-240 lg:w-full mx-auto">
+                <div class="clearfix md:px-8">
+                    <div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">You</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+  
+    Browser
+  
+  </h3>
+  
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+  
+</div>
+                    <div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&#38;utm_campaign=services.leadconnectorhq.com" target="_blank" rel="noopener noreferrer">
+    <span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    </a>
+  </div>
+  <span class="md:block w-full truncate">Manila</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+  <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=services.leadconnectorhq.com" target="_blank" rel="noopener noreferrer">
+    Cloudflare
+  </a>
+  </h3>
+  
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+  
+</div>
+                    <div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">services.leadconnectorhq.com</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+  
+    Host
+  
+  </h3>
+  
+  <span class="leading-1.3 text-2xl text-red-error">Error</span>
+  
+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-240 lg:w-full mx-auto mb-8 lg:px-8">
+            <div class="clearfix">
+                <div class="w-1/2 md:w-full float-left pr-6 md:pb-10 md:pr-0 leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What happened?</h2>
+                    <p>The web server reported a bad gateway error.</p>
+                </div>
+                <div class="w-1/2 md:w-full float-left leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What can I do?</h2>
+                    <p class="mb-6">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+    <p class="text-13">
+      <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">9ffc3babacff5bdd</strong></span>
+      <span class="cf-footer-separator sm:hidden">&bull;</span>
+      <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+        Your IP:
+        <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+        <span class="hidden" id="cf-footer-ip">163.116.223.34</span>
+        <span class="cf-footer-separator sm:hidden">&bull;</span>
+      </span>
+      <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&#38;utm_campaign=services.leadconnectorhq.com" id="brand_link" target="_blank">Cloudflare</a></span>
+      
+    </p>
+    <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+  </div><!-- /.error-footer -->
+
+    </div>
+</div>
+</body>
+</html>
+2026-05-22 21:40:31,146 [INFO] Imported contact 3wicllc@gmail.com → id=9LukWtiZ5hwlQeeYzWNY
+2026-05-22 21:40:32,014 [INFO] Imported contact akram.s.elouche@gmail.com → id=ZtJeOGgMvC4ByNgi5nfW
+2026-05-22 21:40:32,911 [INFO] Imported contact alina@samofinancial.com → id=zl9yIzUCl7ksKZRvq2uQ
+2026-05-22 21:40:33,710 [INFO] Imported contact ann.sullivan@spirithalloween.com → id=X0uALtqibRESjVdooDcD
+2026-05-22 21:40:34,516 [INFO] Imported contact anna@wilsonlawfirmpc.com → id=rCsdyDGEp5ViNJtukpeG
+2026-05-22 21:40:35,289 [INFO] Imported contact armidholdings@gmail.com → id=bJlLyVdmZWYQiNajwMKy
+2026-05-22 21:40:36,082 [INFO] Imported contact axemandan3006@gmail.com → id=owcLahITQ1uSDuzFnDEb
+2026-05-22 21:40:37,188 [INFO] Imported contact baggeb@gmail.com → id=XNbdJeha1qoDHsLgBVob
+2026-05-22 21:40:37,955 [INFO] Imported contact banwart4@gmail.com → id=iE7TmA1ZJkoE2X1nJ30Q
+2026-05-22 21:40:38,737 [INFO] Imported contact barrygroh@gmail.com → id=N2nwzhGPdFVwBnmJXXZM
+2026-05-22 21:40:39,540 [INFO] Imported contact becky@skogman.com → id=sbb315hwzQJyi1Osjloc
+2026-05-22 21:40:40,316 [INFO] Imported contact bryan@wilsonlawfirmpc.com → id=JYM8WkjAFDGfxnVD5F1y
+2026-05-22 21:40:41,136 [INFO] Imported contact bwilliford@finfedmem.com → id=Ui7eRoI7VudTe8M4b0Rr
+2026-05-22 21:40:41,954 [INFO] Imported contact cal@pre-3.com → id=nvszGWIQgRmaycYb1sXa
+2026-05-22 21:40:42,800 [INFO] Imported contact charles@chedester.com → id=psqq5pZxPBouJmPLts8u
+2026-05-22 21:40:43,588 [INFO] Imported contact chase@ownboise.com → id=cPJWLibznEUDhzZ3E32r
+2026-05-22 21:40:44,364 [INFO] Imported contact chuck@chendrickslaw.com → id=Hy6vqR8zqZHOX3X7g4rG
+2026-05-22 21:40:45,239 [INFO] Imported contact chuckjonescpa@gmail.com → id=Jn6UpXnmIANdXIX0hjnx
+2026-05-22 21:40:46,063 [INFO] Imported contact claguekeith@gmail.com → id=3BbJmJTf0aDTvYp436eQ
+2026-05-22 21:40:46,833 [INFO] Imported contact clinton@disciplinedequities.com → id=v1PmKdzuTmKv88xMQS87
+2026-05-22 21:40:47,647 [INFO] Imported contact cpmartin05@gmail.com → id=E1XK2OltgQE0q5j0JLqr
+2026-05-22 21:40:48,448 [INFO] Imported contact crenvironmental.inc@gmail.com → id=Rh721UmGIpQvNPKOc3uw
+2026-05-22 21:40:49,281 [INFO] Imported contact csnyder@simonsonassoc.com → id=hG3o7L7Dp7QmW3pL9hpK
+2026-05-22 21:40:50,072 [INFO] Imported contact david.evans@kidder.com → id=2KNqzJ3b6iKvLdMx89gr
+2026-05-22 21:40:50,922 [INFO] Imported contact david.theeifertgroup@gmail.com → id=GjTfo1zt4pPQThEVFNtf
+2026-05-22 21:40:51,709 [INFO] Imported contact ddfullercpa@qwestoffice.net → id=4Ru04NcjoxS2pG3lMDVz
+2026-05-22 21:40:52,522 [INFO] Imported contact dennis.lauver@howesandjefferies.com → id=ykEtlzGtTWgf62pvvOzt
+2026-05-22 21:40:53,308 [INFO] Imported contact dgellerman@thehawkeyegroup.com → id=CkQZXYsqRokK5seYZ3Q2
+2026-05-22 21:40:54,135 [INFO] Imported contact dickryan@remax.net → id=jnLjOwHLY3zdt9pzjy39
+2026-05-22 21:40:55,057 [INFO] Imported contact drew.murray@claconnect.com → id=2aIWsXRglKxUIYridWNn
+2026-05-22 21:40:55,917 [INFO] Imported contact elle2329@icloud.com → id=ED2okaWQRUxF2m49N9Kd
+2026-05-22 21:40:56,892 [INFO] Imported contact grace@goodmorninginvestments.com → id=4W5i3vI90jJR22puLwhf
+2026-05-22 21:40:57,708 [INFO] Imported contact grant.wright@cbre.com → id=HHfim449RMPL2qchFcdZ
+2026-05-22 21:40:58,551 [INFO] Imported contact greenkeepersofiowa@mail.com → id=ozIUerOMufD3dZjLGR4d
+2026-05-22 21:40:59,368 [INFO] Imported contact info.titanpropertyinvestments@gmail.com → id=CRlF2nUZYBjL99nQW6ow
+2026-05-22 21:41:00,150 [INFO] Imported contact info@elitesignsandpromotions.com → id=fuSKxhOxAweS2hwAL2qp
+2026-05-22 21:41:00,944 [INFO] Imported contact j-morrissey@live.com → id=2vC5MsqqqEWIAdB0uK9e
+2026-05-22 21:41:01,759 [INFO] Imported contact jaherzog@dmgov.org → id=x7Ybs7NgOZArpgbHa0rC
+2026-05-22 21:41:02,631 [INFO] Imported contact jamesvogt@mchsi.com → id=ebzg29BpWqEcUMVo41bQ
+2026-05-22 21:41:03,496 [INFO] Imported contact jeucker@phmdcorp.com → id=FqsdySmr1pmxgH2EpBS2
+2026-05-22 21:41:04,309 [INFO] Imported contact jillkbrink@gmail.com → id=vkJ6b0E2Wx3QnkM1AnE8
+2026-05-22 21:41:05,126 [INFO] Imported contact jjparker1326@hotmail.com → id=VtsvJrDFctNoejnK772C
+2026-05-22 21:41:05,958 [INFO] Imported contact jlongenecker@longeneckerfs.com → id=2hT8htQs4hRtvr9rgCvU
+2026-05-22 21:41:06,794 [INFO] Imported contact joe@roimuse.com → id=DcZY6VV8HVJKGoot1wF6
+2026-05-22 21:41:07,589 [INFO] Imported contact jordan.alleva@nmrk.com → id=GmiOl24bsUBPdFahWuk3
+2026-05-22 21:41:08,418 [INFO] Imported contact jspillman@capstone-cre.com → id=9nzZOTbLz4igfF6CiPJu
+2026-05-22 21:41:09,222 [INFO] Imported contact jtortoretti@gmail.com → id=R9aRsX87hOm7ROKD0REO
+2026-05-22 21:41:10,184 [INFO] Imported contact jvandis@wolfconstruction.net → id=lsjLr6fGlHJFYFagR0TT
+2026-05-22 21:41:11,016 [INFO] Imported contact katherine.young@cort.com → id=Zw9TmVkAn1tiMiKrx7lB
+2026-05-22 21:41:11,860 [INFO] Imported contact kellerc@mac.com → id=JBZmeNHeJhJyAxcJZ7XS
+2026-05-22 21:41:12,670 [INFO] Imported contact kevin@petersonholistic.com → id=DvnhNVS20iQ5ikYOUVdd
+2026-05-22 21:41:13,474 [INFO] Imported contact kwebstercreative@gmail.com → id=Kqsq7JJxKcg2kvAnrScf
+2026-05-22 21:41:14,298 [INFO] Imported contact leahmgutknecht@gmail.com → id=F83uUQWpbMgMU2s7wi4Z
+2026-05-22 21:41:15,101 [INFO] Imported contact leo@brownwinick.com → id=LhiZa73qoOQDqGSwJtDs
+2026-05-22 21:41:15,787 [ERROR] Create contact failed for mailto:zach@zb3re.com: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/
+2026-05-22 21:41:15,787 [ERROR] Response: {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"6b3e202b-d1ad-4718-b1c8-fbb6eadb7e98"}
+2026-05-22 21:41:16,584 [INFO] Imported contact matt@rwmvlaw.com → id=J0WzNKlbcPZ2K80QpFXL
+2026-05-22 21:41:17,495 [INFO] Imported contact methell@metrorealtymgmt.com → id=zH7KbWyDMdhZwRd0JlQy
+2026-05-22 21:41:18,316 [INFO] Imported contact mharan@nbproperties.com → id=VoEsNPBwRKj5SWRrPhbx
+2026-05-22 21:41:19,162 [INFO] Imported contact michael.minard@am.jll.com → id=MJQKApBsHxlgn6hh5dQs
+2026-05-22 21:41:19,980 [INFO] Imported contact midstateiowa@gmail.com → id=oWqjqT0xvWBStkuhrJzf
+2026-05-22 21:41:20,826 [INFO] Imported contact mitchburrell@comcast.net → id=dM560R1LO1LLwbkZfpVq
+2026-05-22 21:41:21,643 [INFO] Imported contact mlstout@iowatitle.com → id=Zo2CzRpcS68zc1ayKoPX
+2026-05-22 21:41:22,458 [INFO] Imported contact mononica620@aol.com → id=ILVy8iJzZNRRptZo2zCB
+2026-05-22 21:41:23,573 [INFO] Imported contact nanak.bronyah@gmail.com → id=drSkJAZQLdLKig6DqBeG
+2026-05-22 21:41:24,384 [INFO] Imported contact oliviaatorres3@gmail.com → id=4lpfQNyiJF2AqQBGvjf9
+2026-05-22 21:41:25,202 [INFO] Imported contact pwusaoffice@gmail.com → id=HlyCXX5jUTrZZE56MyI5
+2026-05-22 21:41:26,174 [INFO] Imported contact rebecca.privette@ushadvisors.com → id=nb0vj37cmnlEszC3NU32
+2026-05-22 21:41:26,968 [INFO] Imported contact rentmitchellville@gmail.com → id=a9KMOYGiotv9GXrpXVbF
+2026-05-22 21:41:27,774 [INFO] Imported contact rob.morrison@healthmarkets.com → id=pE3GUCUOdKgbKImFT18F
+2026-05-22 21:41:28,557 [INFO] Imported contact romshekjm@yahoo.com → id=WJWKLJz6gbV1q2Pb4YYP
+2026-05-22 21:41:29,332 [INFO] Imported contact ryan@powderhornequity.com → id=UzTRmdnMhnMH9FUEe5k6
+2026-05-22 21:41:30,138 [INFO] Imported contact sackett@brownwinick.com → id=kol23jZZ6w6WdtiOBQlG
+2026-05-22 21:41:31,021 [INFO] Imported contact scatarinella@capreit.com → id=i56s2bs8Q8BDfiLUKL52
+2026-05-22 21:41:31,843 [INFO] Imported contact shauschilt@grahamconstruction.com → id=J69nuP50A8kZCysUrEj4
+2026-05-22 21:41:32,716 [INFO] Imported contact silvershark50@hotmail.com → id=tgf4sPU5fXGSVySOJzRf
+2026-05-22 21:41:33,563 [INFO] Imported contact sotaprestiege@gmail.com → id=t2IjNfm5Jq5zfE3DvhLB
+2026-05-22 21:41:34,410 [INFO] Imported contact tblong@crbt.com → id=9jUGYJBASEIldH12KuEU
+2026-05-22 21:41:35,234 [INFO] Imported contact therealmdwhite@gmail.com → id=ivsBI7u0Qmdq1y2XzDbp
+2026-05-22 21:41:36,061 [INFO] Imported contact tlubinus@gmail.com → id=av4ltm504cuwtwpXeHpN
+2026-05-22 21:41:36,859 [INFO] Imported contact tom-rice@uiowa.edu → id=TksetoBr2KOrCO8cjWdh
+2026-05-22 21:41:37,643 [INFO] Imported contact tom@ccinvest.com → id=5WVdhkK2Q6VR0vHWrTlz
+2026-05-22 21:41:38,599 [INFO] Imported contact tsmrfixit@yahoo.com → id=Rx2bIKrgCrY2AZmTn6N6
+2026-05-22 21:41:39,387 [INFO] Imported contact williams@landmarkds.com → id=XGMTIK1BJQlfDDvGl0XZ
+2026-05-22 21:41:40,196 [INFO] Imported contact yorkco1@aol.com → id=TjwdCW7tQu1EeXzjRAzO
+2026-05-22 21:41:40,987 [INFO] Imported contact yuanliu1@gmail.com → id=14lRzRAMBMMnLgfKRs32
+2026-05-22 21:41:41,366 [INFO] Wrote /Users/john.angeles/Desktop/katalyst/all_ghl_contacts.csv (2943 rows)
+2026-05-22 21:41:41,366 [INFO] Wrote /Users/john.angeles/Desktop/katalyst/non_ghl.csv (85 rows)
+2026-05-22 21:41:41,378 [INFO] Wrote sync report: /Users/john.angeles/Desktop/katalyst/GHL/tag_sync_report_20260522_203948.csv (3028 rows)
+2026-05-22 21:41:41,379 [INFO] Done. Split outputs in /Users/john.angeles/Desktop/katalyst | sync report: /Users/john.angeles/Desktop/katalyst/GHL/tag_sync_report_20260522_203948.csv | bulk-add batch failures: 1 | import failures: 1
