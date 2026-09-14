@@ -12,7 +12,7 @@ from typing import List
 
 from playwright.sync_api import Page
 
-from scrapers.base import BaseScraper, new_record, safe_attr, safe_goto, safe_text
+from scrapers.base import BaseScraper, diagnose_page, new_record, safe_attr, safe_goto, safe_text
 from scrapers.normalize import (
     extract_city,
     normalize_price,
@@ -49,6 +49,7 @@ class LoopnetScraper(BaseScraper):
             return []
 
         page.wait_for_timeout(3000)
+        diagnose_page(page, self.SITE_NAME)
 
         records: List[dict] = []
         for page_num in range(1, self.max_pages + 1):

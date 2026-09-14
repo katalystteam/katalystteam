@@ -60,6 +60,33 @@ def safe_goto(page: Page, url: str, timeout: int, site_name: str) -> bool:
         return False
 
 
+_BLOCK_INDICATORS = [
+    "captcha", "cloudflare", "access denied", "are you a human",
+    "px-captcha", "attention required", "verify you are a human",
+    "request blocked", "unusual traffic", "please enable javascript",
+]
+
+
+def diagnose_page(page: Page, site_name: str) -> None:
+    """Log what the page actually rendered -- title, final URL, whether a
+    bot-block/CAPTCHA page is showing, and a short body-text snippet. This
+    is the primary debugging signal when a site returns 0 cards: it tells
+    us whether we hit a real (but differently-structured) results page or
+    a block/interstitial, without needing a screenshot."""
+    try:
+        title = page.title()
+        url = page.url
+        body_text = page.inner_text("body")[:400].replace("\n", " ").strip()
+        lower_combined = (title + " " + body_text).lower()
+        hits = [kw for kw in _BLOCK_INDICATORS if kw in lower_combined]
+        logger.info(
+            "[%s] diagnostic - url=%s title=%r block_indicators=%s body_snippet=%r",
+            site_name, url, title, hits or "none", body_text,
+        )
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("[%s] diagnostic capture failed: %s", site_name, exc)
+
+
 def safe_text(page_or_locator, selector: str) -> str:
     try:
         el = page_or_locator.query_selector(selector)
