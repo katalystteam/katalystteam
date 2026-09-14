@@ -1,19 +1,20 @@
 # Iowa Multifamily Property Aggregator
 
-Scrapes Iowa multifamily listings from KataLYST's own Current LYSTings
-page, plus Crexi, LoopNet, CBRE Deal Flow, Marcus & Millichap, and JLL
-Investor Center, normalizes the data, and exports one deduplicated
-CSV: `output/properties.csv`.
+Scrapes Iowa multifamily listings from Crexi, LoopNet, CBRE Deal Flow,
+Marcus & Millichap, and JLL Investor Center — strictly these 5 sites,
+per the project spec — normalizes the data, and exports one
+deduplicated CSV: `output/properties.csv`.
 
-**Read this first: only one of those six sources is confirmed
-reliable.** `katalyst_tracker` scrapes `katalystteam.com/current-lystings/`
-— the team's own site, so there's no bot-protection wall to defeat.
-The other five are external marketplaces, and real evidence (both this
-project's own CI runs and a captured `--scrape` run from a separate,
-related local pipeline in this same repo, `weekly-kickoff/`) shows they
-are unreliable: Crexi/LoopNet/JLL are hard-blocked at the network edge
-(Akamai), and CBRE/Marcus & Millichap require driving JS-heavy filter
-UI that's still only partially working. See "Known limitations" below.
+**Read this first: live runs against these 5 sites currently return 0
+rows.** This isn't a hypothetical caveat — it's what every CI run in
+this project's history has shown: Crexi's `/search` URL redirects to
+the bare homepage before the app loads; LoopNet and JLL Investor
+Center return an explicit Akamai "Access Denied" edge block; CBRE Deal
+Flow's real filter UI is a modal (`#rcmListFilter` → `#allFiltersModal`)
+whose Property Type/State dropdowns aren't correctly driven yet; Marcus
+& Millichap's card scraping is mechanically correct but its location
+filter click isn't landing, so it pulls an unfiltered nationwide feed.
+See "Known limitations" below for the exact evidence per site.
 
 ## Run it with one click (no install required)
 
@@ -130,7 +131,6 @@ PropertyScraper/
 
 ## Known limitations (read before filing a bug)
 
-- **`katalyst_tracker` is the confirmed-reliable source.** It scrapes `katalystteam.com/current-lystings/` — no bot protection, since it's the team's own site. If this one starts returning 0 rows, the page's HTML structure has likely changed (it depends on `"Multifamily for Sale"` section markers and specific `Sale Price:` / `Cap Rate:` label text) — check `logs/scraper.log`'s diagnostic output first.
 - **Crexi, LoopNet, JLL Investor Center are hard-blocked, not a selector problem.** Live CI runs show LoopNet and JLL return an explicit Akamai "Access Denied" page, and Crexi's `/search` URL redirects all the way back to the bare homepage. No amount of selector tweaking fixes this — it would take residential-proxy/bot-evasion infrastructure, a materially different (and riskier) tool. Not implemented here; ask before going down that path.
 - **CBRE Deal Flow and Marcus & Millichap have real but only partially-driven filter UI.** CBRE's results live behind an "All Filters" modal (`#rcmListFilter` → `#allFiltersModal`) with State/Property Type dropdowns not yet correctly driven. Marcus & Millichap's real card markup (`ul.mm-gs-search-results > li[propertyid]`) is scraped correctly, but the location filter click isn't landing, so it pulls an unfiltered nationwide feed that may not include Iowa on a given page. Both are logged in detail via `sniff_dom()` in `scraper.log` — read that before guessing at new selectors.
 - Selectors are best-effort based on each site's structure at time of writing. Real-estate marketplaces change their DOM frequently — expect to re-inspect and update `CARD_SELECTORS` / etc. in the relevant `scrapers/<site>.py` if a site returns 0 listings.

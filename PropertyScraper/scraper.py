@@ -22,7 +22,6 @@ from playwright.sync_api import sync_playwright
 from scrapers.cbre import CbreScraper
 from scrapers.crexi import CrexiScraper
 from scrapers.jll import JllScraper
-from scrapers.katalyst_tracker import KatalystTrackerScraper
 from scrapers.loopnet import LoopnetScraper
 from scrapers.marcus import MarcusScraper
 from scrapers.normalize import CSV_COLUMNS
@@ -33,13 +32,8 @@ CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
 LOG_DIR = os.path.join(BASE_DIR, "logs")
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 
-# katalyst_tracker is listed first: it's the one confirmed-reliable source
-# (the team's own site, no bot-protection wall) -- see its module docstring
-# for the evidence. The other five are external marketplaces that have
-# each been individually confirmed unreliable or hard-blocked; see
-# PropertyScraper/README.md.
+# Strictly the 5 sites named in the project spec -- no other sources.
 SCRAPER_CLASSES = {
-    "katalyst_tracker": KatalystTrackerScraper,
     "crexi": CrexiScraper,
     "loopnet": LoopnetScraper,
     "cbre": CbreScraper,
