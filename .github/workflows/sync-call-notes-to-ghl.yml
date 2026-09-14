@@ -1,0 +1,63 @@
+name: Sync Call Notes → GHL
+
+# Every Monday, reads the previous week's tab of Jared's Weekly To-Do's sheet
+# and pushes call notes to matching GHL contacts. Advances the checkpoint file
+# and commits it back so the next run picks up where this one left off.
+on:
+  schedule:
+    - cron: "0 13 * * 1" # 8am America/Chicago (13:00 UTC) each Monday
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Preview only, don't push notes or advance the checkpoint"
+        type: boolean
+        default: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: real-estate-crm-dashboard-react
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: real-estate-crm-dashboard-react/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run call-notes sync
+        env:
+          GHL_API_TOKEN: ${{ secrets.GHL_API_TOKEN }}
+          GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}
+          CALL_NOTES_SHEET_ID: ${{ secrets.CALL_NOTES_SHEET_ID }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            npm run sync:call-notes-to-ghl -- --dry-run
+          else
+            npm run sync:call-notes-to-ghl
+          fi
+
+      - name: Commit advanced checkpoint
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- scripts/.ghl-call-notes-checkpoint.json; then
+            git add scripts/.ghl-call-notes-checkpoint.json
+            git commit -m "Advance GHL call-notes sync checkpoint"
+            git push
+          else
+            echo "Checkpoint unchanged, nothing to commit."
+          fi
