@@ -9,12 +9,17 @@ found the filter UI is a modal, triggered by:
         class="btn-filter btn-all-filters" title="All Filters">
 No listing-card markup was found on the closed landing page at all --
 consistent with a "deal flow" platform that shows nothing until a
-search/filter is actually applied, rather than a login wall. This
-version clicks #rcmListFilter to open that modal and re-runs
-diagnose_page()/sniff_dom() against whatever renders inside it, since
-its internal markup (the actual Property Type / Country controls) is
-still unknown -- next run's log gives real evidence instead of another
-guessed selector for the modal's contents.
+search/filter is actually applied, rather than a login wall.
+
+The modal's page-size control reads "Page Size 5 10 25 50 100 All" --
+that enumerated-options pattern (plus the site otherwise looking like
+a classic ASP.NET/webforms property, matching RCM LightBox's typical
+stack) strongly suggests its Property Type/State/Country fields are
+real HTML <select> elements, not JS-only custom widgets. This version
+opens the modal, probes every <select> inside it and logs each one's
+name/id and full option list (real evidence, not a guess), then
+best-effort calls select_option() on whichever <select> has a
+"Multifamily" option and whichever has an "Iowa"/"IA" option.
 """
 from __future__ import annotations
 
@@ -39,10 +44,13 @@ logger = logging.getLogger("scraper")
 ALL_FILTERS_TRIGGER_SELECTOR = "#rcmListFilter"
 ALL_FILTERS_MODAL_SELECTOR = "#allFiltersModal"
 
-# Contents of the opened modal are still unconfirmed -- best-effort guesses,
-# with sniff_dom() as the fallback that gathers real evidence if these miss.
-MULTIFAMILY_OPTION_SELECTORS = ["text=Multifamily", "label:has-text('Multifamily')"]
-APPLY_BUTTON_SELECTORS = ["button:has-text('Apply')", "button:has-text('Search')", "button:has-text('View Results')"]
+MODAL_SELECT_SCOPE = f"{ALL_FILTERS_MODAL_SELECTOR} select"
+APPLY_BUTTON_SELECTORS = [
+    f"{ALL_FILTERS_MODAL_SELECTOR} button:has-text('Apply')",
+    f"{ALL_FILTERS_MODAL_SELECTOR} button:has-text('Search')",
+    f"{ALL_FILTERS_MODAL_SELECTOR} button:has-text('Filter')",
+    f"{ALL_FILTERS_MODAL_SELECTOR} button:has-text('View Results')",
+]
 CARD_SELECTORS = [".deal-card", ".property-card", "[data-testid='deal-card']", "article"]
 NAME_SELECTORS = [".deal-card-title", "h3", "h4"]
 LOCATION_SELECTORS = [".deal-card-location", ".location"]
@@ -62,11 +70,49 @@ def _first_match(card, selectors: List[str]) -> str:
 class CbreScraper(BaseScraper):
     SITE_NAME = "cbre"
 
+    def _select_by_option_match(self, page: Page, keywords: List[str]) -> bool:
+        """Find the first <select> inside the modal that has an option
+        whose text matches one of `keywords` (case-insensitive), and
+        select it. Returns True on success."""
+        selects = page.query_selector_all(MODAL_SELECT_SCOPE)
+        for sel_el in selects:
+            try:
+                option_texts = [
+                    (opt.text_content() or "").strip()
+                    for opt in sel_el.query_selector_all("option")
+                ]
+            except Exception:  # noqa: BLE001
+                continue
+            for keyword in keywords:
+                match = next((t for t in option_texts if t.lower() == keyword.lower()), None)
+                if match:
+                    try:
+                        sel_el.select_option(label=match, timeout=3000)
+                        name_or_id = sel_el.get_attribute("name") or sel_el.get_attribute("id") or "?"
+                        logger.info("[%s] selected %r on <select %s>", self.SITE_NAME, match, name_or_id)
+                        return True
+                    except Exception as exc:  # noqa: BLE001
+                        logger.info("[%s] select_option(%r) failed: %s", self.SITE_NAME, match, exc)
+        return False
+
+    def _probe_modal_selects(self, page: Page) -> None:
+        """Real evidence, not a guess: log every <select>'s name/id and
+        full option list inside the opened modal."""
+        selects = page.query_selector_all(MODAL_SELECT_SCOPE)
+        logger.info("[%s] modal contains %d <select> element(s)", self.SITE_NAME, len(selects))
+        for sel_el in selects:
+            try:
+                name_or_id = sel_el.get_attribute("name") or sel_el.get_attribute("id") or "?"
+                option_texts = [(opt.text_content() or "").strip() for opt in sel_el.query_selector_all("option")]
+                logger.info("[%s] <select %s> options=%s", self.SITE_NAME, name_or_id, option_texts[:20])
+            except Exception as exc:  # noqa: BLE001
+                logger.info("[%s] could not read a modal <select>: %s", self.SITE_NAME, exc)
+
     def _apply_filters(self, page: Page) -> bool:
-        """Open the confirmed "All Filters" modal and best-effort select
-        Multifamily inside it. Returns True if the modal actually opened,
-        so the caller knows whether to trust the subsequent card search or
-        treat it as still-closed (landing-page) state."""
+        """Open the confirmed "All Filters" modal, probe its real <select>
+        elements, and best-effort select Multifamily + Iowa. Returns True
+        if the modal actually opened, so the caller knows whether to trust
+        the subsequent card search or treat it as still-closed state."""
         try:
             trigger = page.query_selector(ALL_FILTERS_TRIGGER_SELECTOR)
             if not trigger:
@@ -81,22 +127,23 @@ class CbreScraper(BaseScraper):
                 logger.warning("[%s] clicked %s but modal %s did not appear", self.SITE_NAME, ALL_FILTERS_TRIGGER_SELECTOR, ALL_FILTERS_MODAL_SELECTOR)
                 return False
 
-            logger.info("[%s] All Filters modal opened -- sniffing its contents", self.SITE_NAME)
-            diagnose_page(page, self.SITE_NAME)
-            sniff_dom(page, self.SITE_NAME)
+            logger.info("[%s] All Filters modal opened -- probing its <select> fields", self.SITE_NAME)
+            self._probe_modal_selects(page)
 
-            for opt_sel in MULTIFAMILY_OPTION_SELECTORS:
-                opt = page.query_selector(opt_sel)
-                if opt:
-                    opt.click(timeout=3000)
-                    page.wait_for_timeout(500)
-                    break
+            property_type_set = self._select_by_option_match(page, ["Multifamily", "Multi-Family", "Apartment", "Apartments"])
+            state_set = self._select_by_option_match(page, ["Iowa", "IA"])
+            logger.info("[%s] filter selection result: property_type_set=%s state_set=%s", self.SITE_NAME, property_type_set, state_set)
+
+            if not (property_type_set or state_set):
+                # <select>-based approach didn't match anything real --
+                # fall back to the generic sniff for further evidence.
+                sniff_dom(page, self.SITE_NAME)
 
             for sel in APPLY_BUTTON_SELECTORS:
                 apply_btn = page.query_selector(sel)
                 if apply_btn:
                     apply_btn.click(timeout=3000)
-                    page.wait_for_timeout(2000)
+                    page.wait_for_timeout(2500)
                     break
 
             return True
