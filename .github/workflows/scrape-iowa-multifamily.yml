@@ -1,0 +1,64 @@
+name: Iowa Multifamily Property Aggregator
+
+# The "1-click" run: open the Actions tab, pick this workflow, click
+# "Run workflow". No local install needed. Runs on a hosted GitHub
+# runner (CPU-only, no local Ollama daemon), so the Ollama LLM fallback
+# in scrapers/ollama_helper.py is disabled here and the run relies on
+# deterministic parsing only (see PropertyScraper/README.md).
+on:
+  workflow_dispatch:
+    inputs:
+      headless:
+        description: "Run Chromium headless"
+        type: boolean
+        default: true
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: PropertyScraper
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: PropertyScraper/requirements.txt
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright Chromium
+        run: playwright install --with-deps chromium
+
+      - name: Run scraper
+        env:
+          SCRAPER_DISABLE_OLLAMA: "1"
+          SCRAPER_HEADLESS: ${{ inputs.headless }}
+        run: python scraper.py
+
+      - name: Upload properties.csv
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: properties-csv-${{ github.run_number }}
+          path: PropertyScraper/output/properties.csv
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scraper-logs-${{ github.run_number }}
+          path: |
+            PropertyScraper/logs/scraper.log
+            PropertyScraper/logs/screenshots/
+          if-no-files-found: ignore
+          retention-days: 30

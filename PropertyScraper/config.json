@@ -1,0 +1,54 @@
+{
+  "property_type": "Multifamily",
+  "state": "Iowa",
+  "state_abbr": "IA",
+  "date_range_days": 7,
+  "headless": true,
+  "retry_count": 3,
+  "timeout": 30000,
+  "max_pages_per_site": 5,
+  "screenshot_on_failure": true,
+  "screenshot_dir": "logs/screenshots",
+  "parallel": false,
+  "ollama": {
+    "enabled": true,
+    "host": "http://localhost:11434",
+    "model": "qwen3:8b",
+    "use_as_fallback_only": true,
+    "request_timeout": 60
+  },
+  "output": {
+    "csv_path": "output/properties.csv"
+  },
+  "email_report": {
+    "enabled": false,
+    "smtp_host": "",
+    "smtp_port": 587,
+    "username": "",
+    "password": "",
+    "from_addr": "",
+    "to_addrs": []
+  },
+  "sites": {
+    "crexi": {
+      "enabled": true,
+      "url": "https://www.crexi.com/search?address_value=Iowa%2C%20USA&propertyAttributes.type_tree_Multifamily=&searchType=Sales"
+    },
+    "loopnet": {
+      "enabled": true,
+      "url": "https://www.loopnet.com/search/apartment-buildings/ia/for-sale/?sk=13e6c00ee3fce6dd22fa15993b7cf4d4"
+    },
+    "cbre": {
+      "enabled": true,
+      "url": "https://www.cbredealflow.com/"
+    },
+    "marcus": {
+      "enabled": true,
+      "url": "https://www.marcusmillichap.com/"
+    },
+    "jll": {
+      "enabled": true,
+      "url": "https://invest.jll.com/us/en"
+    }
+  }
+}
