@@ -1,0 +1,50 @@
+name: Sync Dashboard ← ClickUp
+
+# Every Wednesday, pulls property tasks from ClickUp and regenerates the
+# dashboard data file. Commits and pushes the refreshed data if anything
+# changed.
+on:
+  schedule:
+    - cron: "0 12 * * 3" # 7am EST (UTC-5) each Wednesday
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: real-estate-crm-dashboard-react
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: real-estate-crm-dashboard-react/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ClickUp sync
+        env:
+          CLICKUP_API_KEY: ${{ secrets.CLICKUP_API_KEY }}
+          CLICKUP_SPACE_ID: ${{ secrets.CLICKUP_SPACE_ID }}
+        run: npm run sync:clickup
+
+      - name: Commit and push refreshed listings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- src/data/generated/; then
+            git add src/data/generated/
+            git commit -m "Refresh listings from ClickUp"
+            git push
+          else
+            echo "Nothing changed, nothing to commit."
+          fi
