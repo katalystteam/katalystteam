@@ -17,7 +17,6 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    environment: Production
     defaults:
       run:
         working-directory: real-estate-crm-dashboard-react
