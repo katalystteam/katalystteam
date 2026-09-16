@@ -1,0 +1,554 @@
+[
+  {
+    "tab": "1.5.26 Economics",
+    "name": "Ben Latusek",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:47:41.394Z"
+  },
+  {
+    "tab": "1.5.26 Economics",
+    "name": "Eric MCormick",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:47:46.543Z"
+  },
+  {
+    "tab": "1.5.26 Economics",
+    "name": "Matt Deboth",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:47:48.006Z"
+  },
+  {
+    "tab": "1.5.26 Economics",
+    "name": "Keith Kleinhans 281-777-7177",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:47:48.119Z"
+  },
+  {
+    "tab": "1.26.26 Economics",
+    "name": "Brian Smith",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:47:50.306Z"
+  },
+  {
+    "tab": "1.26.26 Economics",
+    "name": "Peter Nixon",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:47:52.099Z"
+  },
+  {
+    "tab": "1.26.26 Economics",
+    "name": "Joe Bryant",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:47:53.406Z"
+  },
+  {
+    "tab": "2.2.26 Economics",
+    "name": "Craig Anfinson",
+    "candidateCount": 1,
+    "loggedAt": "2026-09-16T15:47:53.528Z"
+  },
+  {
+    "tab": "2.2.26 Economics",
+    "name": "Prakash Pradhan",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:47:57.511Z"
+  },
+  {
+    "tab": "2.9.26 Economics",
+    "name": "Clint Miller",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:47:59.335Z"
+  },
+  {
+    "tab": "2.9.26 Economics",
+    "name": "Ted Oswald",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:47:59.609Z"
+  },
+  {
+    "tab": "2.9.26 Economics",
+    "name": "Matt Deboth",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:47:59.711Z"
+  },
+  {
+    "tab": "2.9.26 Economics",
+    "name": "Dan Blome",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:47:59.842Z"
+  },
+  {
+    "tab": "2.9.26 Economics",
+    "name": "Craig Anfinson",
+    "candidateCount": 1,
+    "loggedAt": "2026-09-16T15:47:59.967Z"
+  },
+  {
+    "tab": "2.16.26 Economics",
+    "name": "Matt DeBoth",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:01.750Z"
+  },
+  {
+    "tab": "2.16.26 Economics",
+    "name": "Roger Langpaul",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:48:02.728Z"
+  },
+  {
+    "tab": "2.16.26 Economics",
+    "name": "Ryan Winter",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:03.017Z"
+  },
+  {
+    "tab": "2.16.26 Economics",
+    "name": "Teddy Mohlman",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:48:03.142Z"
+  },
+  {
+    "tab": "2.16.26 Economics",
+    "name": "Austin Davis",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:48:03.959Z"
+  },
+  {
+    "tab": "2.16.26 Economics",
+    "name": "Danny Hegan",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:10.554Z"
+  },
+  {
+    "tab": "2.16.26 Economics",
+    "name": "Craig Anfinson",
+    "candidateCount": 1,
+    "loggedAt": "2026-09-16T15:48:11.283Z"
+  },
+  {
+    "tab": "2.16.26 Economics",
+    "name": "Brad Vander Lindend",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:12.183Z"
+  },
+  {
+    "tab": "2.23.26 Economics",
+    "name": "Charles Wheeler Sr",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:14.422Z"
+  },
+  {
+    "tab": "3.2.26 Economics",
+    "name": "Weston Rose",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:48:19.296Z"
+  },
+  {
+    "tab": "3.2.26 Economics",
+    "name": "Guy Varble",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:22.187Z"
+  },
+  {
+    "tab": "3.2.26 Economics",
+    "name": "Zack Stoll",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:23.832Z"
+  },
+  {
+    "tab": "3.2.26 Economics",
+    "name": "Matt Deboth",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:23.964Z"
+  },
+  {
+    "tab": "3.9.26 Economics",
+    "name": "Aquib Ali",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:48:28.492Z"
+  },
+  {
+    "tab": "3.9.26 Economics",
+    "name": "Jon Engelman",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:48:32.943Z"
+  },
+  {
+    "tab": "3.16.26 Economics",
+    "name": "Ryan Galloway",
+    "candidateCount": 1,
+    "loggedAt": "2026-09-16T15:48:39.229Z"
+  },
+  {
+    "tab": "3.16.26 Economics",
+    "name": "Dan Blome",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:42.792Z"
+  },
+  {
+    "tab": "3.23.26 Economics",
+    "name": "todd borcherding - 641.430.5429 - borc81@live.com",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:51.416Z"
+  },
+  {
+    "tab": "3.30.26 Economics",
+    "name": "Matt DeBoth",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:51.858Z"
+  },
+  {
+    "tab": "3.30.26 Economics",
+    "name": "Ryan Winter",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:52.522Z"
+  },
+  {
+    "tab": "3.30.26 Economics",
+    "name": "Ted Oswald",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:54.111Z"
+  },
+  {
+    "tab": "3.30.26 Economics",
+    "name": "Rick Makohoniuk",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:54.238Z"
+  },
+  {
+    "tab": "3.30.26 Economics",
+    "name": "Joseph Weldon",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:48:54.943Z"
+  },
+  {
+    "tab": "3.30.26 Economics",
+    "name": "Brian Ridge (319) 777-2284",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:55.745Z"
+  },
+  {
+    "tab": "3.30.26 Economics",
+    "name": "Ron Lappy",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:48:55.892Z"
+  },
+  {
+    "tab": "4.6.26 Economics",
+    "name": "Ben Latusek",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:48:56.337Z"
+  },
+  {
+    "tab": "4.6.26 Economics",
+    "name": "Joseph Weldon",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:02.735Z"
+  },
+  {
+    "tab": "4.6.26 Economics",
+    "name": "Akinbode Egbelakin (317) 728-2981 bode.egbelakin@gmail.com",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:02.847Z"
+  },
+  {
+    "tab": "4.6.26 Economics",
+    "name": "Walter Peterson 319.243.5829 info.titanpropertyinvestments@gmail.com",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:02.974Z"
+  },
+  {
+    "tab": "4.6.26 Economics",
+    "name": "Peter Jacques",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:03.381Z"
+  },
+  {
+    "tab": "4.13.26 Economics",
+    "name": "Weston Rose",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:04.568Z"
+  },
+  {
+    "tab": "4.13.26 Economics",
+    "name": "John Story jkinvestments787@gmail.com 402-469-7262",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:05.192Z"
+  },
+  {
+    "tab": "4.13.26 Economics",
+    "name": "Jamie Arens (605) 857-0790 silvershark50@hotmail.com",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:05.308Z"
+  },
+  {
+    "tab": "4.20.26 Economics",
+    "name": "Aquib Ali",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:06.660Z"
+  },
+  {
+    "tab": "4.20.26 Economics",
+    "name": "Brian Smith",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:07.293Z"
+  },
+  {
+    "tab": "4.20.26 Economics",
+    "name": "Austin Davis",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:08.687Z"
+  },
+  {
+    "tab": "4.20.26 Economics",
+    "name": "Weston Rose",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:12.708Z"
+  },
+  {
+    "tab": "4.27.26 Economics",
+    "name": "Prakash Pradhan",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:14.891Z"
+  },
+  {
+    "tab": "4.27.26 Economics",
+    "name": "Charles Wheeler Sr",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:15.377Z"
+  },
+  {
+    "tab": "4.27.26 Economics",
+    "name": "Dak Johnson (507) 402-3053 dakjohnson23@gmail.com",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:18.148Z"
+  },
+  {
+    "tab": "4.27.26 Economics",
+    "name": "Jeff Schatner",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:18.281Z"
+  },
+  {
+    "tab": "5.4.26 Economics",
+    "name": "Tedd Mohlman",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:21.075Z"
+  },
+  {
+    "tab": "5.11.26 Economics",
+    "name": "Ian Schwickert",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:22.303Z"
+  },
+  {
+    "tab": "5.11.26 Economics",
+    "name": "Jason Smith",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:22.574Z"
+  },
+  {
+    "tab": "5.18.26 Economics",
+    "name": "Teddy Mohlman",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:26.078Z"
+  },
+  {
+    "tab": "5.18.26 Economics",
+    "name": "Ben Latusek",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:27.965Z"
+  },
+  {
+    "tab": "5.18.26 Economics",
+    "name": "Jon Engelman",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:28.095Z"
+  },
+  {
+    "tab": "5.18.26 Economics",
+    "name": "Ryan Galloway",
+    "candidateCount": 1,
+    "loggedAt": "2026-09-16T15:49:31.231Z"
+  },
+  {
+    "tab": "6.1.26 Economics",
+    "name": "Aquib Ali",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:37.462Z"
+  },
+  {
+    "tab": "6.8.26 Economics",
+    "name": "Ted Oswald",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:41.426Z"
+  },
+  {
+    "tab": "6.15.26 Economics",
+    "name": "Ken Wick",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:45.024Z"
+  },
+  {
+    "tab": "6.15.26 Economics",
+    "name": "Troy Hansen",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:47.237Z"
+  },
+  {
+    "tab": "6.15.26 Economics",
+    "name": "Arnold Forget",
+    "candidateCount": 3,
+    "loggedAt": "2026-09-16T15:49:48.851Z"
+  },
+  {
+    "tab": "6.15.26 Economics",
+    "name": "Dan Blome",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:49.861Z"
+  },
+  {
+    "tab": "6.15.26 Economics",
+    "name": "Ryan Winter",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:50.266Z"
+  },
+  {
+    "tab": "6.15.26 Economics",
+    "name": "Levi Franzen",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:50.710Z"
+  },
+  {
+    "tab": "6.15.26 Economics",
+    "name": "Carly Edwards",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:51.540Z"
+  },
+  {
+    "tab": "6.22.26 Economics",
+    "name": "Matt DeBoth",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:52.111Z"
+  },
+  {
+    "tab": "6.22.26 Economics",
+    "name": "Ryan Winter",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:49:52.707Z"
+  },
+  {
+    "tab": "6.22.26 Economics",
+    "name": "Teddy Mohlman",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:52.831Z"
+  },
+  {
+    "tab": "6.22.26 Economics",
+    "name": "Arnold Forget",
+    "candidateCount": 3,
+    "loggedAt": "2026-09-16T15:49:57.179Z"
+  },
+  {
+    "tab": "6.29.26 Economics",
+    "name": "Ben Latusek",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:49:57.930Z"
+  },
+  {
+    "tab": "6.29.26 Economics",
+    "name": "Craig Anfinson",
+    "candidateCount": 1,
+    "loggedAt": "2026-09-16T15:49:59.314Z"
+  },
+  {
+    "tab": "6.29.26 Economics",
+    "name": "Levi Franzen",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:50:00.266Z"
+  },
+  {
+    "tab": "6.29.26 Economics",
+    "name": "Clint Miller",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:50:00.612Z"
+  },
+  {
+    "tab": "6.29.26 Economics",
+    "name": "John Livingston",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:50:00.879Z"
+  },
+  {
+    "tab": "7.13.26 Economics",
+    "name": "Caleb Fritzler",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:50:02.726Z"
+  },
+  {
+    "tab": "8.3.26 Economics",
+    "name": "Matt DeBoth",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:50:13.635Z"
+  },
+  {
+    "tab": "8.3.26 Economics",
+    "name": "Teddy Mohlman",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:50:15.065Z"
+  },
+  {
+    "tab": "8.3.26 Economics",
+    "name": "Jeff Schatner",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:50:16.687Z"
+  },
+  {
+    "tab": "8.3.26 Economics",
+    "name": "Aquib Ali",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:50:17.456Z"
+  },
+  {
+    "tab": "8.10.26 Economics",
+    "name": "Ben Latusek",
+    "candidateCount": 2,
+    "loggedAt": "2026-09-16T15:50:17.989Z"
+  },
+  {
+    "tab": "8.10.26 Economics",
+    "name": "Ted Oswald",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:50:18.196Z"
+  },
+  {
+    "tab": "8.10.26 Economics",
+    "name": "Brad Baumler",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:50:20.114Z"
+  },
+  {
+    "tab": "8.24.26 Economics",
+    "name": "Brian Smith",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:50:21.738Z"
+  },
+  {
+    "tab": "8.31.26 Economics",
+    "name": "Peter Nixon",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:50:24.262Z"
+  },
+  {
+    "tab": "8.31.26 Economics",
+    "name": "Prakash Pradhan",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:50:25.654Z"
+  },
+  {
+    "tab": "8.31.26 Economics",
+    "name": "Charles Wheeler Sr",
+    "candidateCount": 0,
+    "loggedAt": "2026-09-16T15:50:27.732Z"
+  }
+]
