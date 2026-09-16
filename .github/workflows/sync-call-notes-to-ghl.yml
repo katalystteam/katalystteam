@@ -51,15 +51,15 @@ jobs:
             npm run sync:call-notes-to-ghl
           fi
 
-      - name: Commit advanced checkpoint
+      - name: Commit advanced checkpoint and unmatched log
         if: ${{ inputs.dry_run != true }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- scripts/.ghl-call-notes-checkpoint.json; then
-            git add scripts/.ghl-call-notes-checkpoint.json
+          if ! git diff --quiet -- scripts/.ghl-call-notes-checkpoint.json scripts/.ghl-call-notes-unmatched.json; then
+            git add scripts/.ghl-call-notes-checkpoint.json scripts/.ghl-call-notes-unmatched.json
             git commit -m "Advance GHL call-notes sync checkpoint"
             git push
           else
-            echo "Checkpoint unchanged, nothing to commit."
+            echo "Nothing changed, nothing to commit."
           fi

@@ -19,7 +19,11 @@
  *
  * Checkpoint: scripts/.ghl-call-notes-checkpoint.json — the last fully-synced tab.
  * Rows whose name can't be matched with high confidence to exactly one GHL contact are
- * skipped and reported, never pushed on a guess.
+ * skipped, never pushed on a guess, and logged to scripts/.ghl-call-notes-unmatched.json
+ * (accumulates across runs; entries aren't removed automatically — fix the contact in GHL
+ * or the name in the sheet, then re-check that file by hand).
+ * Before pushing, each contact's existing notes are checked for one already tagged with
+ * that tab, so re-running over an already-synced week never creates a duplicate note.
  */
 import fs from 'node:fs'
 import path from 'node:path'
@@ -32,6 +36,7 @@ config({ path: path.join(process.cwd(), '..', '.env.local') })
 const GHL_BASE_URL = process.env.GHL_BASE_URL ?? 'https://services.leadconnectorhq.com'
 const GHL_API_VERSION = '2021-07-28'
 const CHECKPOINT_PATH = path.join(process.cwd(), 'scripts', '.ghl-call-notes-checkpoint.json')
+const UNMATCHED_LOG_PATH = path.join(process.cwd(), 'scripts', '.ghl-call-notes-unmatched.json')
 const DRY_RUN = process.argv.includes('--dry-run')
 
 type SheetRow = string[]
@@ -44,6 +49,8 @@ type CallNoteRow = {
 }
 
 type Checkpoint = { lastSyncedTab: string; lastSyncedAt: string }
+
+type UnmatchedEntry = { tab: string; name: string; candidateCount: number; loggedAt: string }
 
 function ghlHeaders(): HeadersInit {
   return {
@@ -179,6 +186,19 @@ async function pushGhlNote(contactId: string, body: string): Promise<void> {
   if (!res.ok) throw new Error(`GHL create note ${res.status}: ${await res.text()}`)
 }
 
+/** Tab names (the "[tab] ..." prefix this script writes) already noted on a contact. */
+async function fetchExistingNoteTabs(contactId: string): Promise<Set<string>> {
+  const res = await fetch(`${GHL_BASE_URL}/contacts/${contactId}/notes`, { headers: ghlHeaders() })
+  if (!res.ok) throw new Error(`GHL list notes ${res.status}: ${await res.text()}`)
+  const data = (await res.json()) as { notes?: { body?: string }[] }
+  const tabs = new Set<string>()
+  for (const note of data.notes ?? []) {
+    const m = (note.body ?? '').match(/^\[([^\]]+)\]/)
+    if (m) tabs.add(m[1])
+  }
+  return tabs
+}
+
 // --- Checkpoint ---
 
 function loadCheckpoint(): Checkpoint {
@@ -191,6 +211,20 @@ function loadCheckpoint(): Checkpoint {
 function saveCheckpoint(tab: string) {
   const data: Checkpoint = { lastSyncedTab: tab, lastSyncedAt: new Date().toISOString() }
   fs.writeFileSync(CHECKPOINT_PATH, JSON.stringify(data, null, 2) + '\n', 'utf8')
+}
+
+// --- Unmatched-name log (accumulates across runs, committed alongside the checkpoint) ---
+
+function loadUnmatchedLog(): UnmatchedEntry[] {
+  if (!fs.existsSync(UNMATCHED_LOG_PATH)) return []
+  return JSON.parse(fs.readFileSync(UNMATCHED_LOG_PATH, 'utf8')) as UnmatchedEntry[]
+}
+
+function appendUnmatchedLog(newEntries: UnmatchedEntry[]) {
+  if (newEntries.length === 0) return
+  const existing = loadUnmatchedLog()
+  const merged = [...existing, ...newEntries]
+  fs.writeFileSync(UNMATCHED_LOG_PATH, JSON.stringify(merged, null, 2) + '\n', 'utf8')
 }
 
 // --- Main ---
@@ -229,7 +263,10 @@ async function main() {
 
   let pushed = 0
   let skippedNoMatch = 0
+  let skippedDuplicate = 0
   let latestSyncedTab = checkpoint.lastSyncedTab
+  const unmatchedEntries: UnmatchedEntry[] = []
+  const existingNoteTabsByContact = new Map<string, Set<string>>()
 
   for (const { title } of pending) {
     const rows = workbookTabValues(workbook, title)
@@ -242,6 +279,23 @@ async function main() {
       if (!match) {
         skippedNoMatch++
         console.log(`  SKIP (no confident GHL match): "${row.name}" — ${candidates.length} candidate(s)`)
+        unmatchedEntries.push({
+          tab: title,
+          name: row.name,
+          candidateCount: candidates.length,
+          loggedAt: new Date().toISOString(),
+        })
+        continue
+      }
+
+      let existingTabs = existingNoteTabsByContact.get(match.id)
+      if (!existingTabs) {
+        existingTabs = await fetchExistingNoteTabs(match.id)
+        existingNoteTabsByContact.set(match.id, existingTabs)
+      }
+      if (existingTabs.has(title)) {
+        skippedDuplicate++
+        console.log(`  SKIP (already has a note for ${title}): ${match.name} (${match.id})`)
         continue
       }
 
@@ -250,6 +304,7 @@ async function main() {
         console.log(`  DRY-RUN would push note to ${match.name} (${match.id}): ${noteBody}`)
       } else {
         await pushGhlNote(match.id, noteBody)
+        existingTabs.add(title)
         console.log(`  pushed note to ${match.name} (${match.id})`)
       }
       pushed++
@@ -258,13 +313,19 @@ async function main() {
     if (!DRY_RUN) latestSyncedTab = title
   }
 
-  console.log(`\nDone. ${pushed} note(s) ${DRY_RUN ? 'would be pushed' : 'pushed'}, ${skippedNoMatch} skipped (no confident match).`)
+  console.log(
+    `\nDone. ${pushed} note(s) ${DRY_RUN ? 'would be pushed' : 'pushed'}, ${skippedNoMatch} skipped (no confident match), ${skippedDuplicate} skipped (already noted).`,
+  )
 
   if (!DRY_RUN) {
     saveCheckpoint(latestSyncedTab)
+    appendUnmatchedLog(unmatchedEntries)
     console.log(`Checkpoint advanced to "${latestSyncedTab}".`)
+    if (unmatchedEntries.length > 0) {
+      console.log(`Logged ${unmatchedEntries.length} unmatched name(s) to ${path.basename(UNMATCHED_LOG_PATH)}.`)
+    }
   } else {
-    console.log('Dry run — checkpoint not advanced.')
+    console.log('Dry run — checkpoint and unmatched log not written.')
   }
 }
 
