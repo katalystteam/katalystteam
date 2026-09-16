@@ -1,15 +1,19 @@
 /**
  * Reads the "Want to Meet With / Research" block (Name / Called / Notes-Tasks / RealNex Notes)
- * from each new weekly tab of Jared's "Weekly To-Do's" Google Sheet and pushes a GHL note
+ * from each new weekly tab of Jared's "Weekly To-Do's" workbook and pushes a GHL note
  * for every row where Called=TRUE and Notes/Tasks has text, matched to a GHL contact by name.
+ *
+ * The workbook is a real .xlsx file stored in Google Drive (not a native Google Sheet), so
+ * this downloads the raw file via the Drive API and parses it locally with `xlsx` — the
+ * Sheets API can't read Office-format files at all, even though Drive's UI can preview them.
  *
  * Tabs are named e.g. "9.14.26 Economics" (no zero-padding), one per Monday.
  *
  * Setup:
  *   cp .env.example .env.local   # add GHL_API_TOKEN, GHL_LOCATION_ID, CALL_NOTES_SHEET_ID,
  *                                 # GOOGLE_OAUTH_CLIENT_ID/SECRET/REFRESH_TOKEN (never commit)
- *   Reads the sheet as whichever Google account authorized the refresh token — that account
- *   already needs view access (e.g. it's the sheet owner).
+ *   The OAuth refresh token needs the drive.readonly scope (not just spreadsheets.readonly),
+ *   authorized as whichever Google account already has view access to the file.
  *   npm run sync:call-notes-to-ghl -- --dry-run   # preview without writing to GHL
  *   npm run sync:call-notes-to-ghl                # push notes + advance the checkpoint
  *
@@ -20,6 +24,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { config } from 'dotenv'
+import * as XLSX from 'xlsx'
 
 config({ path: path.join(process.cwd(), '.env.local') })
 config({ path: path.join(process.cwd(), '..', '.env.local') })
@@ -73,23 +78,22 @@ async function googleAccessToken(): Promise<string> {
   return data.access_token
 }
 
-async function fetchSheetTabTitles(sheetId: string, token: string): Promise<string[]> {
-  const res = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}?fields=sheets.properties.title`, {
+// --- Workbook download (Drive API raw bytes, not the Sheets API) ---
+
+async function downloadWorkbook(fileId: string, token: string): Promise<XLSX.WorkBook> {
+  const res = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`, {
     headers: { Authorization: `Bearer ${token}` },
   })
-  if (!res.ok) throw new Error(`Sheets API (list tabs) ${res.status}: ${await res.text()}`)
-  const data = (await res.json()) as { sheets?: { properties?: { title?: string } }[] }
-  return (data.sheets ?? []).map((s) => s.properties?.title ?? '').filter(Boolean)
+  if (!res.ok) throw new Error(`Drive API (download) ${res.status}: ${await res.text()}`)
+  const buf = Buffer.from(await res.arrayBuffer())
+  return XLSX.read(buf, { type: 'buffer' })
 }
 
-async function fetchTabValues(sheetId: string, tab: string, token: string): Promise<SheetRow[]> {
-  const range = encodeURIComponent(`'${tab}'`)
-  const res = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}`, {
-    headers: { Authorization: `Bearer ${token}` },
-  })
-  if (!res.ok) throw new Error(`Sheets API (values ${tab}) ${res.status}: ${await res.text()}`)
-  const data = (await res.json()) as { values?: SheetRow[] }
-  return data.values ?? []
+function workbookTabValues(workbook: XLSX.WorkBook, tab: string): SheetRow[] {
+  const sheet = workbook.Sheets[tab]
+  if (!sheet) return []
+  const rows = XLSX.utils.sheet_to_json<unknown[]>(sheet, { header: 1, raw: false, defval: '' })
+  return rows.map((row) => row.map((cell) => (cell == null ? '' : String(cell))))
 }
 
 // --- Tab naming: "M.D.YY Economics" (no zero-padding), one per Monday ---
@@ -210,9 +214,9 @@ async function main() {
   startOfThisWeek.setHours(0, 0, 0, 0)
 
   const token = await googleAccessToken()
-  const titles = await fetchSheetTabTitles(sheetId, token)
+  const workbook = await downloadWorkbook(sheetId, token)
 
-  const pending = titles
+  const pending = workbook.SheetNames
     .map((title) => ({ title, date: parseTabDate(title) }))
     .filter((t): t is { title: string; date: Date } => t.date != null)
     .filter((t) => t.date > lastSyncedDate && t.date < startOfThisWeek)
@@ -228,7 +232,7 @@ async function main() {
   let latestSyncedTab = checkpoint.lastSyncedTab
 
   for (const { title } of pending) {
-    const rows = await fetchTabValues(sheetId, title, token)
+    const rows = workbookTabValues(workbook, title)
     const callNotes = extractCallNoteRows(title, rows).filter((r) => r.called && r.notesTasks)
     console.log(`\n${title}: ${callNotes.length} called row(s) with notes`)
 
