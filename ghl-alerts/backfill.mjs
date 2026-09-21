@@ -57,12 +57,17 @@ async function main(env = process.env) {
   if (!['inspect','diagnose','post'].includes(mode)) throw new Error('Invalid backfill mode');
   const client = new GhlClient(env.GHL_API_TOKEN, env.GHL_LOCATION_ID);
   const args = { repo: env.GITHUB_REPOSITORY, token: env.GITHUB_TOKEN, key: env.ALERT_STATE_KEY, locationId: env.GHL_LOCATION_ID };
-  const store = new GithubState({ ...args, namespace: 'email-backfill-2026-06' });
+  // Separate checkpoint for the concise August replay. The June checkpoint is
+  // immutable and remains available as the audit record of the first backfill.
+  const store = new GithubState({ ...args, namespace: 'email-backfill-2026-08-concise-v2' });
   let state = await store.load();
-  const start = Date.parse('2026-06-01T00:00:00+08:00');
+  const start = Date.parse('2026-08-01T00:00:00+08:00');
+  // Include earlier outbound messages only as reply-classification context.
+  // prepareBackfill still emits alerts strictly from August 1 onward.
+  const scanStart = Date.parse('2026-06-01T00:00:00+08:00');
   const end = state?.until || Date.now();
-  const emails = await loadHistoricalEmails(client, start, end);
-  const inbound = emails.filter(m => m.direction === 'inbound');
+  const emails = await loadHistoricalEmails(client, scanStart, end);
+  const inbound = emails.filter(m => m.direction === 'inbound' && Date.parse(m.dateAdded) >= start);
   console.log(JSON.stringify({ emails: emails.length, inbound: inbound.length, people: new Set(inbound.map(m => m.contactId)).size,
     directReplyReferences: inbound.filter(m => m.replyToMessageId).length,
     nestedEmailIds: inbound.filter(m => m.meta?.email?.email?.messageIds?.length || m.meta?.email?.messageIds?.length).length,

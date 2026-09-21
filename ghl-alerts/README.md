@@ -45,7 +45,7 @@ The service does not accept public incoming webhooks and requires no Slack CLI o
 
 ## Historical email backfill
 
-The manual **GHL historical email replies** workflow scans email from June 1, 2026
+The manual **GHL historical email replies** workflow currently posts concise email replies from August 1, 2026
 (Asia/Singapore midnight). `inspect` reports counts without posting; `post` sends
 up to 300 historical reply alerts per run and can be rerun to resume. The first
 posting run fixes the end timestamp in a separate encrypted checkpoint. It does
