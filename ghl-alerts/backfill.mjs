@@ -5,6 +5,11 @@ import { GithubState } from './github-state.mjs';
 import { normalize, deliver } from './core.mjs';
 
 const digest = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
+const safeFailure = (error, phase) => ({
+  phase,
+  category: error?.name === 'GhlHttpError' ? 'ghl_http' : error?.name === 'AbortError' ? 'timeout' : 'internal',
+  ...(Number.isInteger(error?.status) ? { status: error.status } : {}),
+});
 export function prepareBackfill(emails, contacts, locationId, since, until) {
   const names = new Map(contacts.map(c => [c.id, c.name || [c.firstName, c.lastName].filter(Boolean).join(' ') || c.email || c.id]));
   const outbound = new Map();
@@ -35,7 +40,7 @@ export function prepareBackfill(emails, contacts, locationId, since, until) {
 
 async function main(env = process.env) {
   const mode = env.BACKFILL_MODE || 'inspect';
-  if (!['inspect','post'].includes(mode)) throw new Error('Invalid backfill mode');
+  if (!['inspect','diagnose','post'].includes(mode)) throw new Error('Invalid backfill mode');
   const client = new GhlClient(env.GHL_API_TOKEN, env.GHL_LOCATION_ID);
   const args = { repo: env.GITHUB_REPOSITORY, token: env.GITHUB_TOKEN, key: env.ALERT_STATE_KEY, locationId: env.GHL_LOCATION_ID };
   const store = new GithubState({ ...args, namespace: 'email-backfill-2026-06' });
@@ -51,9 +56,16 @@ async function main(env = process.env) {
   // Try the email endpoint for reply references, subjects and complete bodies.
   // A missing email object is not evidence of a reply; conversation ordering is
   // the fallback and is described explicitly in the Slack alert.
-  let enriched = 0;
+  let enriched = 0; const detailFailures = {}; let detailIdsMissing = 0;
   for (const m of inbound) {
-    const ids = m.meta?.email?.email?.messageIds || m.meta?.email?.messageIds || [m.id];
+    // The export message ID is not accepted by the email-detail endpoint. Only
+    // use the email-specific IDs GHL supplies in metadata; export data remains
+    // sufficient for conversation-order reply classification when absent.
+    let ids = m.meta?.email?.email?.messageIds || m.meta?.email?.messageIds || [];
+    // Diagnostic mode reproduces the former invalid fallback without posting.
+    // It records only status categories, never IDs, bodies, paths, or headers.
+    if (!ids.length && mode === 'diagnose') ids = [m.id];
+    if (!ids.length) { detailIdsMissing++; continue; }
     for (const id of ids) {
       try {
         const email = await client.get(`/conversations/messages/email/${encodeURIComponent(id)}`);
@@ -64,7 +76,9 @@ async function main(env = process.env) {
           enriched++;
         }
       } catch (e) {
-        if (!String(e.message).endsWith('returned 404')) throw new Error('Email detail lookup failed; no alerts posted');
+        const failure = safeFailure(e, 'email_detail');
+        const code = `${failure.category}:${failure.status || 'none'}`;
+        detailFailures[code] = (detailFailures[code] || 0) + 1;
       }
     }
   }
@@ -75,7 +89,7 @@ async function main(env = process.env) {
   if (state.version !== 1 || state.since !== start) throw new Error('Invalid historical checkpoint');
   for (const a of alerts) if (live?.seen?.[a.messageHash]) state.skippedLive[a.key] = true;
   const pending = alerts.filter(a => !state.sent[a.key] && !state.skippedLive[a.key]);
-  console.log(JSON.stringify({ mode, enriched, qualifyingReplies: alerts.length, unlinkedInbound: unlinked,
+  console.log(JSON.stringify({ mode, enriched, detailIdsMissing, detailFailures, qualifyingReplies: alerts.length, unlinkedInbound: unlinked,
     alreadyPosted: Object.keys(state.sent).length, skippedLive: Object.keys(state.skippedLive).length, pending: pending.length,
     since: new Date(start).toISOString(), until: new Date(end).toISOString() }));
   if (mode !== 'post') return;
@@ -93,5 +107,9 @@ async function main(env = process.env) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  main().catch(() => { console.error('Historical backfill failed; encrypted checkpoint retained. No secret-bearing error details logged.'); process.exitCode = 1; });
+  main().catch(error => {
+    console.error(JSON.stringify({ event: 'historical_backfill_failed', ...safeFailure(error, 'backfill') }));
+    console.error('Historical backfill failed; encrypted checkpoint retained. No secret-bearing error details logged.');
+    process.exitCode = 1;
+  });
 }

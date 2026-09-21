@@ -37,3 +37,15 @@ test('backfill checkpoint uses a separate encrypted file and context', async () 
   assert.equal(await backfill.load(), null);
   await assert.rejects(live.load(), /refusing to reset/);
 });
+
+test('GHL HTTP failures expose only a safe status and category', async () => {
+  const client = new GhlClient('secret-token', 'location', async () =>
+    new Response('sensitive provider response', { status: 422 }));
+  await assert.rejects(client.get('/private/path'), error => {
+    assert.equal(error.name, 'GhlHttpError');
+    assert.equal(error.status, 422);
+    assert.equal(error.message, 'GHL request failed (422)');
+    assert.doesNotMatch(error.message, /secret-token|private\/path|sensitive/);
+    return true;
+  });
+});

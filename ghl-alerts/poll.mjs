@@ -25,7 +25,10 @@ export class GhlClient {
         if (delay > 30_000) throw new Error('GHL requested a long retry; next scheduled run will retry');
         await pause(delay); continue;
       }
-      throw new Error(`GHL ${path} returned ${response.status}`); // no response bodies or tokens in logs
+      const error = new Error(`GHL request failed (${response.status})`); // no paths, bodies, or tokens in logs
+      error.name = 'GhlHttpError';
+      error.status = response.status;
+      throw error;
     }
   }
   async contacts() {

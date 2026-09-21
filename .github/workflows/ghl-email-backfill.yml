@@ -5,7 +5,7 @@ on:
       mode:
         description: 'inspect reports counts; post sends historical email replies'
         type: choice
-        options: [inspect, post]
+        options: [inspect, diagnose, post]
         default: inspect
 concurrency:
   group: ghl-activity-alerts
@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Inspect historical emails
+      - name: Process historical email replies
         env:
           GHL_API_TOKEN: ${{ secrets.GHL_SECRET_KEY }}
           GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}
