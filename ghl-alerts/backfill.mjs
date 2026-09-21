@@ -15,7 +15,16 @@ export async function loadHistoricalEmails(client, start, end, log = console.log
   const windowMs = 7 * 86_400_000;
   for (let from = start, window = 1; from <= end; window++) {
     const to = Math.min(end, from + windowMs - 1);
-    const batch = await client.messages(from, to, ['Email']);
+    let batch;
+    for (let attempt = 0; attempt < 4; attempt++) {
+      try { batch = await client.messages(from, to, ['Email']); break; }
+      catch (error) {
+        if (error?.name !== 'GhlHttpError' || error.status !== 401 || attempt === 3) throw error;
+        const delay = 15_000 * (attempt + 1);
+        log(JSON.stringify({ event: 'historical_export_retry', window, status: 401, retryInSeconds: delay / 1000 }));
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
     for (const message of batch) emails.set(message.id, message);
     log(JSON.stringify({ event: 'historical_export_progress', window,
       from: new Date(from).toISOString(), to: new Date(to).toISOString(), records: batch.length,
