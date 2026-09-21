@@ -60,10 +60,10 @@ export class GhlClient {
     }
     throw new Error('Opportunity scan exceeded 50,000 records; checkpoint unchanged');
   }
-  async messages(since, until) {
+  async messages(since, until, channels = ['Email', undefined]) {
     const result = new Map();
     // Omitting channel excludes email. Both exports are required.
-    for (const channel of ['Email', undefined]) {
+    for (const channel of channels) {
       let cursor; const cursors = new Set();
       for (let page = 0; page < 500; page++) {
         const data = await this.get('/conversations/messages/export', {

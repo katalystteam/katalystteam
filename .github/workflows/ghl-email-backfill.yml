@@ -1,0 +1,27 @@
+name: GHL historical email replies
+on:
+  workflow_dispatch:
+concurrency:
+  group: ghl-activity-alerts
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Inspect historical emails
+        env:
+          GHL_API_TOKEN: ${{ secrets.GHL_SECRET_KEY }}
+          GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          ALERT_STATE_KEY: ${{ secrets.ALERT_STATE_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node ghl-alerts/backfill.mjs
