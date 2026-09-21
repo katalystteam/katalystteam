@@ -101,7 +101,8 @@ export class GhlClient {
           if (m.locationId && m.locationId !== this.locationId) throw new Error('Unexpected message location');
           const date = Date.parse(m.dateAdded);
           if (!Number.isFinite(date)) throw new Error('Message date missing');
-          if (date >= since && date <= until) result.set(m.id, { ...m, messageType: m.messageType || channel || 'Activity' });
+          if (date >= since && date <= until) result.set(m.id, { ...m, messageType: m.messageType || channel || 'Activity',
+            emailChannel: channel === 'Email' });
         }
         if (!data.nextCursor) break;
         if (page === 499) throw new Error('Message pagination incomplete');
@@ -115,7 +116,7 @@ export class GhlClient {
 const emailPattern = /[A-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?(?:\.[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?)+/gi;
 export function analyzeEmailChange(message, currentEmail = '') {
   if (message?.direction !== 'inbound') return { reason: 'not_inbound' };
-  if (String(message.messageType).toLowerCase() !== 'email') return { reason: 'not_email' };
+  if (!message.emailChannel && String(message.messageType).toLowerCase() !== 'email') return { reason: 'not_email' };
   const body = cleanMessage(message.body, 2400);
   const intent = /\b(?:new|updated|current|preferred|different)\s+e-?mail(?:\s+address)?\b|\b(?:update|change|replace)\s+(?:my|our|the)?\s*e-?mail|\bupdate\s+(?:your|the)\s+(?:records|contact info)/i;
   if (!intent.test(body)) return { reason: 'no_intent' };

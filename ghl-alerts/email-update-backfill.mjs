@@ -30,7 +30,7 @@ export async function runEmailUpdateBackfill(env = process.env) {
   if (mode === 'apply' && !env.SLACK_BOT_TOKEN?.startsWith('xoxb-')) throw new Error('Missing SLACK_BOT_TOKEN');
   const start = Date.parse('2026-06-01T00:00:00+08:00');
   const args = { repo: env.GITHUB_REPOSITORY, token: env.GITHUB_TOKEN, key: env.ALERT_STATE_KEY, locationId: env.GHL_LOCATION_ID };
-  const store = new GithubState({ ...args, namespace: 'email-contact-update-backfill-2026-06-v2' });
+  const store = new GithubState({ ...args, namespace: 'email-contact-update-backfill-2026-06-v3' });
   let state = await store.load();
   const end = state?.until || Date.now();
   const client = new GhlClient(env.GHL_API_TOKEN, env.GHL_LOCATION_ID);

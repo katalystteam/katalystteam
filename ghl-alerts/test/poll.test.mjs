@@ -22,6 +22,7 @@ test('new-email detection requires clear intent and exactly one replacement addr
   assert.equal(detectEmailChange({ ...base, body: 'Please send this to person@example.com' }, 'old@example.com'), null);
   assert.equal(detectEmailChange({ ...base, body: 'My new email is new@example.com' }, 'new@example.com'), null);
   assert.equal(analyzeEmailChange({ ...base, body: 'No email change here' }).reason, 'no_intent');
+  assert.equal(detectEmailChange({ direction: 'inbound', messageType: 'legacy', emailChannel: true, body: 'My new email is fresh@example.com' }), 'fresh@example.com');
 });
 
 test('email automation updates only the matching contact and skips address conflicts', async () => {
