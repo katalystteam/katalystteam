@@ -29,7 +29,7 @@ export async function runEmailUpdateBackfill(env = process.env) {
   if (mode === 'apply' && !env.SLACK_BOT_TOKEN?.startsWith('xoxb-')) throw new Error('Missing SLACK_BOT_TOKEN');
   const start = Date.parse('2026-03-01T00:00:00+08:00');
   const args = { repo: env.GITHUB_REPOSITORY, token: env.GITHUB_TOKEN, key: env.ALERT_STATE_KEY, locationId: env.GHL_LOCATION_ID };
-  const store = new GithubState({ ...args, namespace: 'email-contact-update-backfill-2026-03-v1' });
+  const store = new GithubState({ ...args, namespace: 'email-contact-update-backfill-2026-03-v2' });
   let state = await store.load();
   const end = state?.until || Date.now();
   const client = new GhlClient(env.GHL_API_TOKEN, env.GHL_LOCATION_ID);
@@ -64,7 +64,7 @@ export async function runEmailUpdateBackfill(env = process.env) {
    }
   };
   for (let from = start, window = 1; from <= end; window++) {
-    const to = Math.min(end, from + 7 * 86_400_000 - 1);
+    const to = Math.min(end, from + 3 * 86_400_000 - 1);
     let messages;
     for (let attempt = 0; attempt < 4; attempt++) {
       try { messages = await client.messages(from, to, ['Email']); break; }
@@ -99,7 +99,9 @@ export async function runEmailUpdateBackfill(env = process.env) {
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   runEmailUpdateBackfill().catch(error => {
     const status = Number.isInteger(error?.status) ? { status: error.status } : {};
-    console.error(JSON.stringify({ event: 'email_update_backfill_failed', category: error?.name === 'GhlHttpError' ? 'ghl_http' : 'internal', ...status }));
+    const known = ['Message pagination incomplete', 'Invalid message export response', 'Message date missing', 'Message ID missing'];
+    const code = known.includes(error?.message) ? error.message.toLowerCase().replaceAll(' ', '_') : 'internal';
+    console.error(JSON.stringify({ event: 'email_update_backfill_failed', category: error?.name === 'GhlHttpError' ? 'ghl_http' : 'internal', code, ...status }));
     process.exitCode = 1;
   });
 }
