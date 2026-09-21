@@ -113,15 +113,19 @@ export class GhlClient {
 }
 
 const emailPattern = /[A-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?(?:\.[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?)+/gi;
-export function detectEmailChange(message, currentEmail = '') {
-  if (message?.direction !== 'inbound' || String(message.messageType).toLowerCase() !== 'email') return null;
+export function analyzeEmailChange(message, currentEmail = '') {
+  if (message?.direction !== 'inbound') return { reason: 'not_inbound' };
+  if (String(message.messageType).toLowerCase() !== 'email') return { reason: 'not_email' };
   const body = cleanMessage(message.body, 2400);
   const intent = /\b(?:new|updated|current|preferred|different)\s+e-?mail(?:\s+address)?\b|\b(?:update|change|replace)\s+(?:my|our|the)?\s*e-?mail|\bupdate\s+(?:your|the)\s+(?:records|contact info)/i;
-  if (!intent.test(body)) return null;
+  if (!intent.test(body)) return { reason: 'no_intent' };
   const existing = String(currentEmail).trim().toLowerCase();
   const candidates = [...new Set((body.match(emailPattern) || []).map(value => value.toLowerCase().replace(/[.,;:!?]+$/, '')))]
     .filter(value => value !== existing);
-  return candidates.length === 1 ? candidates[0] : null;
+  return candidates.length === 1 ? { email: candidates[0], reason: 'eligible' } : { reason: candidates.length ? 'ambiguous_addresses' : 'no_replacement_address' };
+}
+export function detectEmailChange(message, currentEmail = '') {
+  return analyzeEmailChange(message, currentEmail).email || null;
 }
 
 export async function applyEmailChanges(client, contacts, messages, previous, { write = true } = {}) {

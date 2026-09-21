@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { cleanMessage, deliver } from './core.mjs';
 import { GithubState } from './github-state.mjs';
-import { detectEmailChange, GhlClient } from './poll.mjs';
+import { analyzeEmailChange, GhlClient } from './poll.mjs';
 import { loadHistoricalEmails } from './backfill.mjs';
 
 const hash = value => createHash('sha256').update(String(value)).digest('hex');
@@ -30,7 +30,7 @@ export async function runEmailUpdateBackfill(env = process.env) {
   if (mode === 'apply' && !env.SLACK_BOT_TOKEN?.startsWith('xoxb-')) throw new Error('Missing SLACK_BOT_TOKEN');
   const start = Date.parse('2026-06-01T00:00:00+08:00');
   const args = { repo: env.GITHUB_REPOSITORY, token: env.GITHUB_TOKEN, key: env.ALERT_STATE_KEY, locationId: env.GHL_LOCATION_ID };
-  const store = new GithubState({ ...args, namespace: 'email-contact-update-backfill-2026-06' });
+  const store = new GithubState({ ...args, namespace: 'email-contact-update-backfill-2026-06-v2' });
   let state = await store.load();
   const end = state?.until || Date.now();
   const client = new GhlClient(env.GHL_API_TOKEN, env.GHL_LOCATION_ID);
@@ -40,13 +40,15 @@ export async function runEmailUpdateBackfill(env = process.env) {
   const owners = new Map(contacts.filter(contact => contact.email).map(contact => [contact.email.toLowerCase(), contact.id]));
   state ||= { version: 1, since: start, until: end, processed: {}, updates: [], conflicts: 0, summaryIndex: 0 };
   validate(state, start);
-  let detected = 0; let updated = 0; let conflicts = 0;
+  let detected = 0; let updated = 0; let conflicts = 0; const eligibility = {};
   for (const message of emails) {
     if (message.direction !== 'inbound' || Date.parse(message.dateAdded) < start) continue;
     const id = hash(message.id);
     if (state.processed[id]) continue;
     const contact = byId.get(message.contactId);
-    const email = contact && detectEmailChange(message, contact.email);
+    const analysis = contact ? analyzeEmailChange(message, contact.email) : { reason: 'contact_missing' };
+    eligibility[analysis.reason] = (eligibility[analysis.reason] || 0) + 1;
+    const email = analysis.email;
     if (!email) { state.processed[id] = 'not_eligible'; continue; }
     detected++;
     const owner = owners.get(email);
@@ -61,7 +63,7 @@ export async function runEmailUpdateBackfill(env = process.env) {
     state.updates.push({ name: nameOf(contact), email, occurredAt: message.dateAdded });
     await store.save(state); updated++;
   }
-  console.log(JSON.stringify({ mode, emails: emails.length, contacts: contacts.length, detected, updated,
+  console.log(JSON.stringify({ mode, emails: emails.length, contacts: contacts.length, detected, updated, eligibility,
     conflicts, alreadyProcessed: Object.keys(state.processed).length, totalUpdated: state.updates.length,
     totalConflicts: state.conflicts, since: new Date(start).toISOString(), until: new Date(end).toISOString() }));
   if (mode !== 'apply') return;

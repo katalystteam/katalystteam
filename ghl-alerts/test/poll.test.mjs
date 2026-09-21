@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { randomBytes } from 'node:crypto';
 import { encryptState, decryptState, GithubState } from '../github-state.mjs';
-import { applyEmailChanges, detectEmailChange, GhlClient, planPoll, sendPending } from '../poll.mjs';
+import { analyzeEmailChange, applyEmailChanges, detectEmailChange, GhlClient, planPoll, sendPending } from '../poll.mjs';
 import { cleanMessage, deliver, slackMessage } from '../core.mjs';
 
 const epoch = Date.parse('2026-09-21T00:00:00Z');
@@ -21,6 +21,7 @@ test('new-email detection requires clear intent and exactly one replacement addr
   assert.equal(detectEmailChange({ ...base, body: 'You can copy a@example.com and b@example.com' }, 'old@example.com'), null);
   assert.equal(detectEmailChange({ ...base, body: 'Please send this to person@example.com' }, 'old@example.com'), null);
   assert.equal(detectEmailChange({ ...base, body: 'My new email is new@example.com' }, 'new@example.com'), null);
+  assert.equal(analyzeEmailChange({ ...base, body: 'No email change here' }).reason, 'no_intent');
 });
 
 test('email automation updates only the matching contact and skips address conflicts', async () => {
