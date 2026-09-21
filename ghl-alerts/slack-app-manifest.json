@@ -1,0 +1,10 @@
+{
+  "display_information": {
+    "name": "Katalyst GHL Alerts",
+    "description": "GHL activity notifications for the Katalyst team",
+    "background_color": "#16324f"
+  },
+  "features": { "bot_user": { "display_name": "GHL Alerts", "always_online": false } },
+  "oauth_config": { "scopes": { "bot": ["chat:write"] } },
+  "settings": { "org_deploy_enabled": false, "socket_mode_enabled": false, "token_rotation_enabled": false }
+}
