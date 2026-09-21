@@ -28,9 +28,9 @@ export async function runEmailUpdateBackfill(env = process.env) {
     if (!env[key]) throw new Error(`Missing ${key}`);
   }
   if (mode === 'apply' && !env.SLACK_BOT_TOKEN?.startsWith('xoxb-')) throw new Error('Missing SLACK_BOT_TOKEN');
-  const start = Date.parse('2026-06-01T00:00:00+08:00');
+  const start = Date.parse('2026-03-01T00:00:00+08:00');
   const args = { repo: env.GITHUB_REPOSITORY, token: env.GITHUB_TOKEN, key: env.ALERT_STATE_KEY, locationId: env.GHL_LOCATION_ID };
-  const store = new GithubState({ ...args, namespace: 'email-contact-update-backfill-2026-06-v3' });
+  const store = new GithubState({ ...args, namespace: 'email-contact-update-backfill-2026-03-v1' });
   let state = await store.load();
   const end = state?.until || Date.now();
   const client = new GhlClient(env.GHL_API_TOKEN, env.GHL_LOCATION_ID);
@@ -71,7 +71,7 @@ export async function runEmailUpdateBackfill(env = process.env) {
   while (state.summaryIndex < chunks.length) {
     const index = state.summaryIndex;
     const result = await deliver({ type: 'ContactEmailUpdateBackfill', occurredAt: new Date(end).toISOString(),
-      title: `Contact email updates: June 2026 onward (${index + 1}/${chunks.length})`, description: chunks[index] }, env.SLACK_BOT_TOKEN);
+      title: `Contact email updates: March 2026 onward (${index + 1}/${chunks.length})`, description: chunks[index] }, env.SLACK_BOT_TOKEN);
     if (!result.ok) throw new Error(`Slack email-update list delivery failed: ${result.code}`);
     state.summaryIndex++;
     await store.save(state);
