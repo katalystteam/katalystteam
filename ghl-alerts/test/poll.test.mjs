@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { randomBytes } from 'node:crypto';
 import { encryptState, decryptState, GithubState } from '../github-state.mjs';
-import { GhlClient, planPoll, sendPending } from '../poll.mjs';
+import { applyEmailChanges, detectEmailChange, GhlClient, planPoll, sendPending } from '../poll.mjs';
 import { cleanMessage, deliver, slackMessage } from '../core.mjs';
 
 const epoch = Date.parse('2026-09-21T00:00:00Z');
@@ -13,6 +13,33 @@ const baseline = () => planPoll(null, sample(), 'loc', epoch);
 test('email previews remove HTML and quoted history and stay concise', () => {
   const preview = cleanMessage('<div>Hello<br>Interested.</div><blockquote>Old reply</blockquote>', 50);
   assert.equal(preview, 'Hello\nInterested.');
+});
+
+test('new-email detection requires clear intent and exactly one replacement address', () => {
+  const base = { direction: 'inbound', messageType: 'Email' };
+  assert.equal(detectEmailChange({ ...base, body: 'Please update your records. My new email is New.Person@example.com' }, 'old@example.com'), 'new.person@example.com');
+  assert.equal(detectEmailChange({ ...base, body: 'You can copy a@example.com and b@example.com' }, 'old@example.com'), null);
+  assert.equal(detectEmailChange({ ...base, body: 'Please send this to person@example.com' }, 'old@example.com'), null);
+  assert.equal(detectEmailChange({ ...base, body: 'My new email is new@example.com' }, 'new@example.com'), null);
+});
+
+test('email automation updates only the matching contact and skips address conflicts', async () => {
+  const contacts = [{ id: 'c1', email: 'old@example.com' }, { id: 'c2', email: 'taken@example.com' }];
+  const messages = [
+    { id: 'm1', contactId: 'c1', direction: 'inbound', messageType: 'Email', dateAdded: new Date(epoch + 1).toISOString(), body: 'My new email address is fresh@example.com' },
+  ];
+  const updates = [];
+  const stats = await applyEmailChanges({ updateContactEmail: async (...args) => updates.push(args) }, contacts, messages,
+    { baselineAt: epoch, seen: {} });
+  assert.deepEqual(updates, [['c1', 'fresh@example.com']]);
+  assert.deepEqual(stats, { detected: 1, updated: 1, conflicts: 0 });
+  assert.equal(contacts[0].email, 'fresh@example.com');
+  assert.match(messages[0].automationNote, /updated/);
+
+  const conflict = [{ id: 'm2', contactId: 'c1', direction: 'inbound', messageType: 'Email', dateAdded: new Date(epoch + 2).toISOString(), body: 'Please change my email to taken@example.com' }];
+  const conflictStats = await applyEmailChanges({ updateContactEmail: async () => assert.fail('must not update') }, contacts, conflict,
+    { baselineAt: epoch, seen: {} });
+  assert.deepEqual(conflictStats, { detected: 1, updated: 0, conflicts: 1 });
 });
 
 test('baseline does not flood Slack with old records or messages', () => {

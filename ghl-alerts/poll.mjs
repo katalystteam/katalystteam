@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
-import { normalize, deliver } from './core.mjs';
+import { cleanMessage, normalize, deliver } from './core.mjs';
 import { GithubState } from './github-state.mjs';
 
 const pause = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -30,6 +30,24 @@ export class GhlClient {
       error.status = response.status;
       throw error;
     }
+  }
+  async updateContactEmail(contactId, email) {
+    if (!/^[A-Za-z0-9_-]+$/.test(contactId || '')) throw new Error('Invalid contact ID');
+    const response = await this.fetcher(`https://services.leadconnectorhq.com/contacts/${contactId}`, {
+      method: 'PUT', redirect: 'error', signal: AbortSignal.timeout(30_000),
+      headers: { Authorization: `Bearer ${this.token}`, Version: '2021-07-28', Accept: 'application/json',
+        'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    if (!response.ok) {
+      const error = new Error(`GHL contact update failed (${response.status})`);
+      error.name = 'GhlHttpError'; error.status = response.status; throw error;
+    }
+    const data = await response.json();
+    if (data.succeeded === false || (data.contact && data.contact.email?.toLowerCase() !== email.toLowerCase())) {
+      throw new Error('GHL did not confirm the contact email update');
+    }
+    return data;
   }
   async contacts() {
     const result = []; const seen = new Set(); let cursor;
@@ -94,6 +112,47 @@ export class GhlClient {
   }
 }
 
+const emailPattern = /[A-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?(?:\.[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?)+/gi;
+export function detectEmailChange(message, currentEmail = '') {
+  if (message?.direction !== 'inbound' || String(message.messageType).toLowerCase() !== 'email') return null;
+  const body = cleanMessage(message.body, 2400);
+  const intent = /\b(?:new|updated|current|preferred|different)\s+e-?mail(?:\s+address)?\b|\b(?:update|change|replace)\s+(?:my|our|the)?\s*e-?mail|\bupdate\s+(?:your|the)\s+(?:records|contact info)/i;
+  if (!intent.test(body)) return null;
+  const existing = String(currentEmail).trim().toLowerCase();
+  const candidates = [...new Set((body.match(emailPattern) || []).map(value => value.toLowerCase().replace(/[.,;:!?]+$/, '')))]
+    .filter(value => value !== existing);
+  return candidates.length === 1 ? candidates[0] : null;
+}
+
+export async function applyEmailChanges(client, contacts, messages, previous, { write = true } = {}) {
+  const byId = new Map(contacts.map(contact => [contact.id, contact]));
+  const owners = new Map(contacts.filter(contact => contact.email).map(contact => [contact.email.toLowerCase(), contact.id]));
+  const stats = { detected: 0, updated: 0, conflicts: 0 };
+  if (!previous) return stats;
+  for (const message of messages) {
+    const messageHash = hash(message.id);
+    if (Date.parse(message.dateAdded) < previous.baselineAt || previous.seen?.[messageHash]) continue;
+    const contact = byId.get(message.contactId);
+    if (!contact) continue;
+    const email = detectEmailChange(message, contact.email);
+    if (!email) continue;
+    stats.detected++;
+    const owner = owners.get(email);
+    if (owner && owner !== contact.id) {
+      stats.conflicts++;
+      message.automationNote = 'Contact email was not changed because that address already belongs to another contact.';
+      continue;
+    }
+    if (write) {
+      await client.updateContactEmail(contact.id, email);
+      owners.delete(String(contact.email || '').toLowerCase()); owners.set(email, contact.id);
+      contact.email = email; contact._automatedEmailUpdate = true; stats.updated++;
+      message.automationNote = `Contact email updated to ${email}.`;
+    } else message.automationNote = `Dry run: contact email would be updated to ${email}.`;
+  }
+  return stats;
+}
+
 const fields = {
   contacts: ['firstName','lastName','name','email','phone','companyName','address1','city','state','postalCode','country','tags','dnd','dndSettings','assignedTo','customFields','source','type'],
   opportunities: ['name','pipelineId','pipelineStageId','status','assignedTo','monetaryValue','contactId','customFields'],
@@ -116,6 +175,7 @@ export function planPoll(previous, { contacts, opportunities, messages }, locati
         const id = hash(record.id), before = previous[kind]?.[id], after = current[kind][id];
         const changed = before ? Object.keys(after).filter(k => before[k] !== after[k]) : [];
         if (before && changed.length === 0) continue;
+        if (record._automatedEmailUpdate && changed.length === 1 && changed[0] === 'email') continue;
         const type = kind === 'contacts' ? before ? 'ContactUpdate' : 'ContactCreate'
           : !before ? 'OpportunityCreate' : changed.includes('pipelineStageId') || changed.includes('pipelineId') ? 'OpportunityStageUpdate'
             : changed.includes('status') ? 'OpportunityStatusUpdate' : 'OpportunityUpdate';
@@ -133,6 +193,7 @@ export function planPoll(previous, { contacts, opportunities, messages }, locati
       const alert = normalize({ ...message, type, locationId,
         name: names.get(message.contactId) || message.contactId || message.id,
         webhookId: `message:${message.id}`, timestamp: message.dateAdded });
+      if (message.automationNote) alert.description += `\n${message.automationNote}`;
       if (type === 'ConversationActivity' && message.body) alert.description = String(message.body).slice(0, 2500);
       append(alert); next.seen[key] = until;
     }
@@ -188,9 +249,10 @@ async function main(env = process.env) {
   const contacts = await client.contacts();
   const opportunities = await client.opportunities();
   const messages = await client.messages(since, until);
+  const emailAutomation = await applyEmailChanges(client, contacts, messages, previous, { write: mode === 'poll' });
   const next = planPoll(previous, { contacts, opportunities, messages }, env.GHL_LOCATION_ID, until);
   console.log(JSON.stringify({ mode, baseline: !previous, contacts: contacts.length, opportunities: opportunities.length,
-    messagesScanned: messages.length, pendingAlerts: next.outbox.length }));
+    messagesScanned: messages.length, pendingAlerts: next.outbox.length, emailAutomation }));
   if (mode === 'dry-run') { console.log('Dry run: no messages sent and no checkpoint saved'); return; }
   await store.save(next); // snapshot and outbox become durable before the first Slack send
   const sent = await sendPending(next, store, env.SLACK_BOT_TOKEN);

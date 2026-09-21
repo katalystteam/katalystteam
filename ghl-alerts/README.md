@@ -75,3 +75,7 @@ Tests cover baseline suppression, change detection, repeat-message suppression, 
 - GHL contacts: https://marketplace.gohighlevel.com/docs/2021-07-28/ghl/contacts/get-contacts/
 - GHL opportunities: https://marketplace.gohighlevel.com/docs/2021-07-28/ghl/opportunities/search-opportunity/
 - GitHub scheduling: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule
+
+## Automatic contact email updates
+
+During each live poll, an inbound email can update its matching GHL contact when the message clearly refers to a new or changed email address and contains exactly one replacement address. The automation skips ambiguous messages and addresses already owned by another contact. It records a successful update in the same Slack reply alert. A failed GHL update stops the poll before its checkpoint advances, so the next run safely retries it.

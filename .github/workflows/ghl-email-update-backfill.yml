@@ -1,0 +1,34 @@
+name: GHL contact email update backfill
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'inspect reports only; apply updates contacts and posts the private Slack list'
+        type: choice
+        options: [inspect, apply]
+        default: inspect
+concurrency:
+  group: ghl-activity-alerts
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Update contact emails from historical replies
+        env:
+          GHL_API_TOKEN: ${{ secrets.GHL_SECRET_KEY }}
+          GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          ALERT_STATE_KEY: ${{ secrets.ALERT_STATE_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+          EMAIL_UPDATE_BACKFILL_MODE: ${{ inputs.mode || 'inspect' }}
+        run: node ghl-alerts/email-update-backfill.mjs
