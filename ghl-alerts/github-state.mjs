@@ -23,11 +23,16 @@ export function decryptState(value, secret, context) {
 
 // Durable encrypted state on a dedicated branch, never on the code branch.
 export class GithubState {
-  constructor({ repo, token, key, locationId, fetcher = fetch }) {
+  constructor({ repo, token, key, locationId, namespace, fetcher = fetch }) {
     if (!/^[\w.-]+\/[\w.-]+$/.test(repo || '')) throw new Error('Invalid repository');
     this.repo = repo; this.token = token; this.key = key; this.fetcher = fetcher;
     this.context = `${repo}:${locationId}:ghl-alerts-v1`;
     this.branch = 'ghl-alert-state'; this.path = 'checkpoint.enc.json'; this.sha = null;
+    if (namespace) {
+      if (!/^[a-z0-9-]+$/.test(namespace)) throw new Error('Invalid checkpoint namespace');
+      this.path = `${namespace}.enc.json`; this.context += `:${namespace}`;
+      this.allowNewFile = true;
+    }
   }
   async request(path, method = 'GET', body) {
     const response = await this.fetcher(`https://api.github.com/repos/${this.repo}${path}`, {
@@ -45,6 +50,7 @@ export class GithubState {
     this.exists = !!branch;
     if (!branch) return null;
     const file = await this.request(`/contents/${this.path}?ref=${this.branch}`);
+    if (!file && this.allowNewFile) return null;
     if (!file?.content || !file.sha) throw new Error('Checkpoint missing on state branch; refusing to reset the baseline');
     this.sha = file.sha;
     return decryptState(Buffer.from(file.content, 'base64').toString('utf8'), this.key, this.context);

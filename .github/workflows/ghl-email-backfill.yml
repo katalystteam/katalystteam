@@ -1,6 +1,12 @@
 name: GHL historical email replies
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'inspect reports counts; post sends historical email replies'
+        type: choice
+        options: [inspect, post]
+        default: inspect
 concurrency:
   group: ghl-activity-alerts
   cancel-in-progress: false
@@ -24,4 +30,5 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           ALERT_STATE_KEY: ${{ secrets.ALERT_STATE_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
+          BACKFILL_MODE: ${{ inputs.mode || 'inspect' }}
         run: node ghl-alerts/backfill.mjs

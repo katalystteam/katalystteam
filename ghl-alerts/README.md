@@ -43,6 +43,23 @@ The service does not accept public incoming webhooks and requires no Slack CLI o
 
 ## Verification
 
+## Historical email backfill
+
+The manual **GHL historical email replies** workflow scans email from June 1, 2026
+(Asia/Singapore midnight). `inspect` reports counts without posting; `post` sends
+up to 300 historical reply alerts per run and can be rerun to resume. The first
+posting run fixes the end timestamp in a separate encrypted checkpoint. It does
+not rewind the live polling baseline. Previously queued live messages are skipped.
+
+Alerts use an explicit reply reference when available, or describe an inbound
+email following an earlier outbound email in the same conversation. Inbound
+emails without either link are counted but not posted as proven replies. The
+backfill does not assert that every original email was automated. Sent IDs are
+stored separately; a lost Slack response/checkpoint failure still has the same
+at-least-once delivery limitation as live polling.
+
+## Verification
+
 Node 24, no runtime dependencies:
 
 ```sh
