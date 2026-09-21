@@ -15,10 +15,9 @@ test('backfill posts only inbound replies in range with historical labels and or
   ];
   const result = prepareBackfill(messages, [{ id: 'c', firstName: 'Alex' }], 'loc', start, end);
   assert.equal(result.alerts.length, 2); assert.equal(result.unlinked, 1);
-  assert.match(result.alerts[0].title, /Historical.*Alex/);
-  assert.match(result.alerts[0].description, /2026-06-02/);
+  assert.equal(result.alerts[0].title, 'Email reply: Alex');
   assert.match(result.alerts[0].description, /Interested/);
-  assert.match(result.alerts[1].description, /GHL identifies this/);
+  assert.equal(result.alerts[0].type, 'HistoricalEmailReply');
 });
 test('a stable scroll cursor can return new pages until an empty terminal page', async () => {
   let calls = 0;

@@ -9,6 +9,18 @@ const string = (v) => typeof v === 'string' ? v.trim() : '';
 const clip = (s, n) => [...s].length > n ? [...s].slice(0, n - 1).join('') + '…' : s;
 const words = (s) => s.replace(/([a-z])([A-Z])/g, '$1 $2');
 const object = (v) => v && typeof v === 'object' && !Array.isArray(v);
+export function cleanMessage(value, limit = 420) {
+  let text = string(value);
+  if (!text) return '';
+  text = text.replace(/<blockquote\b[\s\S]*$/i, '')
+    .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<br\s*\/?\s*>|<\/p\s*>|<\/div\s*>/gi, '\n')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>').replace(/&quot;/gi, '"').replace(/&#39;/gi, "'")
+    .replace(/\r/g, '').replace(/[ \t]+/g, ' ').replace(/\n\s*\n+/g, '\n').trim();
+  return clip(text, limit);
+}
 
 export function validSignature(raw, signature, key = GHL_PUBLIC_KEY) {
   try {
@@ -42,15 +54,12 @@ export function normalize(event) {
   let description = `${title} event received for ${name}.`;
   if (type === 'InboundMessage' || type === 'OutboundMessage') {
     const channel = string(data.messageType) || string(data.messageTypeString) || 'conversation';
-    title = type === 'InboundMessage' ? `New ${channel} message` : `${channel} message sent`;
-    // Incoming email alone does not prove attribution to an automated campaign.
-    description = `${name}: ${title.toLowerCase()}.`;
+    const inboundEmail = type === 'InboundMessage' && channel.toLowerCase() === 'email';
+    title = inboundEmail ? 'Email reply' : type === 'InboundMessage' ? `New ${channel} message` : `${channel} message sent`;
+    description = inboundEmail && string(data.subject) ? `Subject: ${cleanMessage(data.subject, 140)}` : '';
     if (string(data.body)) {
-      const body = string(data.contentType).includes('html')
-        ? string(data.body).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ')
-        : string(data.body);
-      description += `\nMessage: ${clip(body, 1800)}`;
-    } else description += '\nNo message text was included in this event.';
+      description += `${description ? '\n' : ''}${cleanMessage(data.body)}`;
+    } else description += `${description ? '\n' : ''}No message preview available.`;
   } else if (type === 'OpportunityStageUpdate') {
     title = 'Pipeline stage changed';
     description = `${name} moved to stage ${string(data.pipelineStageName) || string(data.pipelineStageId) || '(not supplied)'}`
@@ -85,7 +94,10 @@ function canonical(value) {
 }
 
 export function slackMessage(alert) {
-  const context = `GHL event: ${alert.type}${alert.occurredAt ? ` | ${alert.occurredAt}` : ''}`;
+  const date = alert.occurredAt && Number.isFinite(Date.parse(alert.occurredAt))
+    ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Singapore' }).format(new Date(alert.occurredAt))
+    : '';
+  const context = `GHL${alert.type === 'HistoricalEmailReply' ? ' historical' : ''}${date ? ` • ${date} SGT` : ''}`;
   return {
     channel: CHANNEL,
     text: `${alert.title}\n${alert.description}\n${context}`.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;'),

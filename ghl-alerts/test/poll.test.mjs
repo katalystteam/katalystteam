@@ -3,12 +3,17 @@ import assert from 'node:assert/strict';
 import { randomBytes } from 'node:crypto';
 import { encryptState, decryptState, GithubState } from '../github-state.mjs';
 import { GhlClient, planPoll, sendPending } from '../poll.mjs';
-import { deliver, slackMessage } from '../core.mjs';
+import { cleanMessage, deliver, slackMessage } from '../core.mjs';
 
 const epoch = Date.parse('2026-09-21T00:00:00Z');
 const sample = () => ({ contacts: [{ id: 'c1', firstName: 'Alex', tags: ['buyer','active'] }],
   opportunities: [{ id: 'o1', name: 'Buyer', pipelineStageId: 's1', status: 'open' }], messages: [] });
 const baseline = () => planPoll(null, sample(), 'loc', epoch);
+
+test('email previews remove HTML and quoted history and stay concise', () => {
+  const preview = cleanMessage('<div>Hello<br>Interested.</div><blockquote>Old reply</blockquote>', 50);
+  assert.equal(preview, 'Hello\nInterested.');
+});
 
 test('baseline does not flood Slack with old records or messages', () => {
   const input = sample(); input.messages = [{ id: 'old', body: 'old reply', dateAdded: new Date(epoch - 1).toISOString() }];

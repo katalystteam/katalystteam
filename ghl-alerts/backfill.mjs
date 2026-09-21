@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { GhlClient } from './poll.mjs';
 import { GithubState } from './github-state.mjs';
-import { normalize, deliver } from './core.mjs';
+import { cleanMessage, normalize, deliver } from './core.mjs';
 
 const digest = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const safeFailure = (error, phase) => ({
@@ -36,15 +36,15 @@ export function prepareBackfill(emails, contacts, locationId, since, until) {
     if (m.direction === 'outbound') { if (thread) outbound.set(thread, m); continue; }
     if (m.direction !== 'inbound' || Date.parse(m.dateAdded) < since || Date.parse(m.dateAdded) > until) continue;
     const parent = thread && outbound.get(thread);
-    const explicitReply = !!m.replyToMessageId;
-    if (!explicitReply && !parent) { unlinked++; continue; }
+    if (!m.replyToMessageId && !parent) { unlinked++; continue; }
     const alert = normalize({ ...m, type: 'InboundMessage', locationId,
       name: names.get(m.contactId) || m.from || m.contactId || 'Unknown contact',
       messageType: 'Email', webhookId: `message:${m.id}`, timestamp: m.dateAdded });
-    alert.title = [...`[Historical] Email reply ? ${names.get(m.contactId) || m.from || m.contactId || 'Unknown contact'}`].slice(0,150).join('');
-    alert.description = `Received: ${m.dateAdded}\n${m.subject ? `Subject: ${m.subject}\n` : ''}`
-      + (explicitReply ? 'GHL identifies this as an email reply.\n' : 'Inbound email after an earlier outbound email in the same conversation.\n')
-      + alert.description;
+    alert.type = 'HistoricalEmailReply';
+    alert.title = [...`Email reply: ${names.get(m.contactId) || m.from || m.contactId || 'Unknown contact'}`].slice(0,150).join('');
+    const subject = cleanMessage(m.subject, 140);
+    const preview = cleanMessage(m.body, 420);
+    alert.description = `${subject ? `Subject: ${subject}\n` : ''}${preview || 'No message preview available.'}`;
     alert.description = [...alert.description].slice(0,2800).join('');
     alert.messageHash = digest(m.id);
     alerts.push(alert);
