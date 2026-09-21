@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { GhlClient } from '../poll.mjs';
 import { GithubState } from '../github-state.mjs';
-import { prepareBackfill } from '../backfill.mjs';
+import { loadHistoricalEmails, prepareBackfill } from '../backfill.mjs';
 
 test('backfill posts only inbound replies in range with historical labels and original dates', () => {
   const start = Date.parse('2026-06-01'), end = Date.parse('2026-09-22');
@@ -48,4 +48,19 @@ test('GHL HTTP failures expose only a safe status and category', async () => {
     assert.doesNotMatch(error.message, /secret-token|private\/path|sensitive/);
     return true;
   });
+});
+
+test('historical export uses bounded windows and deduplicates boundary records', async () => {
+  const calls = [];
+  const client = { messages: async (from, to) => {
+    calls.push([from, to]);
+    return [{ id: 'same', dateAdded: new Date(from).toISOString() },
+      { id: `item-${calls.length}`, dateAdded: new Date(to).toISOString() }];
+  } };
+  const start = Date.parse('2026-06-01T00:00:00Z');
+  const end = start + 15 * 86_400_000;
+  const result = await loadHistoricalEmails(client, start, end, () => {});
+  assert.equal(calls.length, 3);
+  assert.ok(calls.every(([from, to]) => to - from < 7 * 86_400_000));
+  assert.equal(result.length, 4);
 });

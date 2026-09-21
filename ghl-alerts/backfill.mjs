@@ -10,6 +10,20 @@ const safeFailure = (error, phase) => ({
   category: error?.name === 'GhlHttpError' ? 'ghl_http' : error?.name === 'AbortError' ? 'timeout' : 'internal',
   ...(Number.isInteger(error?.status) ? { status: error.status } : {}),
 });
+export async function loadHistoricalEmails(client, start, end, log = console.log) {
+  const emails = new Map();
+  const windowMs = 7 * 86_400_000;
+  for (let from = start, window = 1; from <= end; window++) {
+    const to = Math.min(end, from + windowMs - 1);
+    const batch = await client.messages(from, to, ['Email']);
+    for (const message of batch) emails.set(message.id, message);
+    log(JSON.stringify({ event: 'historical_export_progress', window,
+      from: new Date(from).toISOString(), to: new Date(to).toISOString(), records: batch.length,
+      recordsTotal: emails.size }));
+    from = to + 1;
+  }
+  return [...emails.values()].sort((a,b) => Date.parse(a.dateAdded) - Date.parse(b.dateAdded));
+}
 export function prepareBackfill(emails, contacts, locationId, since, until) {
   const names = new Map(contacts.map(c => [c.id, c.name || [c.firstName, c.lastName].filter(Boolean).join(' ') || c.email || c.id]));
   const outbound = new Map();
@@ -47,7 +61,7 @@ async function main(env = process.env) {
   let state = await store.load();
   const start = Date.parse('2026-06-01T00:00:00+08:00');
   const end = state?.until || Date.now();
-  const emails = await client.messages(start, end, ['Email']);
+  const emails = await loadHistoricalEmails(client, start, end);
   const inbound = emails.filter(m => m.direction === 'inbound');
   console.log(JSON.stringify({ emails: emails.length, inbound: inbound.length, people: new Set(inbound.map(m => m.contactId)).size,
     directReplyReferences: inbound.filter(m => m.replyToMessageId).length,
