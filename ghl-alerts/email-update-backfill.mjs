@@ -3,7 +3,6 @@ import { pathToFileURL } from 'node:url';
 import { cleanMessage, deliver } from './core.mjs';
 import { GithubState } from './github-state.mjs';
 import { analyzeEmailChange, GhlClient } from './poll.mjs';
-import { loadHistoricalEmails } from './backfill.mjs';
 
 const hash = value => createHash('sha256').update(String(value)).digest('hex');
 const nameOf = contact => cleanMessage(contact.name || [contact.firstName, contact.lastName].filter(Boolean).join(' ') || contact.id, 100);
@@ -34,14 +33,14 @@ export async function runEmailUpdateBackfill(env = process.env) {
   let state = await store.load();
   const end = state?.until || Date.now();
   const client = new GhlClient(env.GHL_API_TOKEN, env.GHL_LOCATION_ID);
-  const emails = await loadHistoricalEmails(client, start, end);
   const contacts = await client.contacts();
   const byId = new Map(contacts.map(contact => [contact.id, contact]));
   const owners = new Map(contacts.filter(contact => contact.email).map(contact => [contact.email.toLowerCase(), contact.id]));
   state ||= { version: 1, since: start, until: end, processed: {}, updates: [], conflicts: 0, summaryIndex: 0 };
   validate(state, start);
-  let detected = 0; let updated = 0; let conflicts = 0; const eligibility = {};
-  for (const message of emails) {
+  let exported = 0; let detected = 0; let updated = 0; let conflicts = 0; const eligibility = {};
+  const processMessages = async (messages) => {
+   for (const message of messages) {
     if (message.direction !== 'inbound' || Date.parse(message.dateAdded) < start) continue;
     const id = hash(message.id);
     if (state.processed[id]) continue;
@@ -62,8 +61,26 @@ export async function runEmailUpdateBackfill(env = process.env) {
     state.processed[id] = 'updated';
     state.updates.push({ name: nameOf(contact), email, occurredAt: message.dateAdded });
     await store.save(state); updated++;
+   }
+  };
+  for (let from = start, window = 1; from <= end; window++) {
+    const to = Math.min(end, from + 7 * 86_400_000 - 1);
+    let messages;
+    for (let attempt = 0; attempt < 4; attempt++) {
+      try { messages = await client.messages(from, to, ['Email']); break; }
+      catch (error) {
+        if (error?.name !== 'GhlHttpError' || error.status !== 401 || attempt === 3) throw error;
+        const delay = 15_000 * (attempt + 1);
+        console.log(JSON.stringify({ event: 'historical_export_retry', window, status: 401, retryInSeconds: delay / 1000 }));
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
+    exported += messages.length;
+    await processMessages(messages);
+    console.log(JSON.stringify({ event: 'email_update_export_progress', window, records: messages.length, recordsTotal: exported }));
+    from = to + 1;
   }
-  console.log(JSON.stringify({ mode, emails: emails.length, contacts: contacts.length, detected, updated, eligibility,
+  console.log(JSON.stringify({ mode, emails: exported, contacts: contacts.length, detected, updated, eligibility,
     conflicts, alreadyProcessed: Object.keys(state.processed).length, totalUpdated: state.updates.length,
     totalConflicts: state.conflicts, since: new Date(start).toISOString(), until: new Date(end).toISOString() }));
   if (mode !== 'apply') return;
