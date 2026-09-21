@@ -78,7 +78,7 @@ test('message export explicitly requests email as well as other channels and fol
 test('repeating/incomplete API pagination fails without advancing checkpoint', async () => {
   const client = new GhlClient('token', 'loc', async () => Response.json({ contacts: Array.from({ length: 100 }, (_,i) => ({ id: String(i), dateAdded: '2026-01-01' })) }));
   await assert.rejects(client.contacts(), /pagination repeated/);
-  const messages = new GhlClient('token', 'loc', async () => Response.json({ messages: [], nextCursor: 'same' }));
+  const messages = new GhlClient('token', 'loc', async () => Response.json({ messages: [{ id: 'same', dateAdded: new Date(epoch).toISOString() }], nextCursor: 'same' }));
   await assert.rejects(messages.messages(epoch, epoch + 1000), /pagination incomplete/);
 });
 test('existing state branch with missing checkpoint fails closed', async () => {

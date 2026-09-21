@@ -64,13 +64,17 @@ export class GhlClient {
     const result = new Map();
     // Omitting channel excludes email. Both exports are required.
     for (const channel of channels) {
-      let cursor; const cursors = new Set();
+      let cursor; const pages = new Set();
       for (let page = 0; page < 500; page++) {
         const data = await this.get('/conversations/messages/export', {
           locationId: this.locationId, channel, startDate: new Date(since).toISOString(),
           endDate: new Date(until).toISOString(), sortBy: 'createdAt', sortOrder: 'asc', limit: 500, cursor,
         });
         if (!Array.isArray(data.messages)) throw new Error('Invalid message export response');
+        if (data.messages.length === 0) break;
+        const pageKey = hash(data.messages.map(m => m.id));
+        if (pages.has(pageKey)) throw new Error('Message pagination incomplete');
+        pages.add(pageKey);
         for (const m of data.messages) {
           if (!m.id) throw new Error('Message ID missing');
           if (m.locationId && m.locationId !== this.locationId) throw new Error('Unexpected message location');
@@ -79,8 +83,8 @@ export class GhlClient {
           if (date >= since && date <= until) result.set(m.id, { ...m, messageType: m.messageType || channel || 'Activity' });
         }
         if (!data.nextCursor) break;
-        if (cursors.has(data.nextCursor) || page === 499) throw new Error('Message pagination incomplete');
-        cursors.add(data.nextCursor); cursor = data.nextCursor;
+        if (page === 499) throw new Error('Message pagination incomplete');
+        cursor = data.nextCursor;
       }
     }
     return [...result.values()].sort((a,b) => Date.parse(a.dateAdded) - Date.parse(b.dateAdded));
