@@ -128,3 +128,18 @@ test('Slack destination is fixed, mentions escaped, API failures detected', asyn
   assert.equal((await deliver(a, 'token', async () => new Response('', { status: 429, headers: { 'retry-after': '10' } }))).retryMs, 10000);
   assert.equal((await deliver(a, 'token', async () => Response.json({ ok: false, error: 'invalid_auth' }))).permanent, true);
 });
+
+test('bulk activity collapses into a summary while keeping inbound replies', () => {
+  const input = sample();
+  input.messages = Array.from({ length: 1800 }, (_, i) => ({ id: `b${i}`, contactId: 'c1',
+    direction: i % 30 === 0 ? 'inbound' : 'outbound', messageType: 'Email', body: 'Hi', dateAdded: new Date(epoch + 1 + i).toISOString() }));
+  const next = planPoll(baseline(), input, 'loc', epoch + 300000);
+  assert.equal(next.outbox.length, 51);
+  assert.equal(next.outbox.filter(a => a.type === 'InboundMessage').length, 50);
+  const summary = next.outbox.at(-1);
+  assert.equal(summary.type, 'ActivityBurstSummary');
+  assert.match(summary.title, /1750 events/);
+  assert.match(summary.description, /1740 × Outbound Message\n10 × Inbound Message/);
+  assert.equal(Object.keys(next.seen).length, 1800);
+  assert.equal(planPoll(next, input, 'loc', epoch + 600000).outbox.length, 51);
+});
