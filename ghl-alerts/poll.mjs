@@ -166,6 +166,25 @@ export function snapshot(records, kind) {
   return Object.fromEntries(records.map(r => [hash(r.id), Object.fromEntries(fields[kind].map(k => [k, canonical(r[k] ?? null)]))]));
 }
 
+// Bulk sends and mass edits can produce thousands of alerts in one scan, which
+// overflows the checkpoint size limit and floods Slack. Above the threshold,
+// keep inbound replies individually (bounded) and summarize everything else.
+export const BURST_THRESHOLD = 100, BURST_INBOUND_KEEP = 50;
+export function collapseBurst(alerts, locationId, until) {
+  if (alerts.length <= BURST_THRESHOLD) return alerts;
+  const kept = alerts.filter(a => a.type === 'InboundMessage').slice(0, BURST_INBOUND_KEEP);
+  const keptKeys = new Set(kept.map(a => a.key));
+  const counts = {};
+  for (const a of alerts) if (!keptKeys.has(a.key)) counts[a.type] = (counts[a.type] || 0) + 1;
+  const total = alerts.length - kept.length;
+  const summary = normalize({ type: 'ActivityBurstSummary', locationId, name: 'GHL',
+    webhookId: `burst:${until}`, timestamp: new Date(until).toISOString() });
+  summary.title = `High activity — ${total} events summarized`;
+  summary.description = `${Object.entries(counts).sort((a,b) => b[1] - a[1]).map(([t,n]) => `${n} × ${t.replace(/([a-z])([A-Z])/g, '$1 $2')}`).join('\n')}`
+    + `\nThis usually means a bulk send or mass update. Individual alerts were not posted; review activity in GHL.`;
+  return [...kept, summary];
+}
+
 export function planPoll(previous, { contacts, opportunities, messages }, locationId, until) {
   const next = previous ? structuredClone(previous) : {
     version: 1, location: hash(locationId), baselineAt: until, seen: {}, outbox: [],
@@ -174,7 +193,8 @@ export function planPoll(previous, { contacts, opportunities, messages }, locati
   const current = { contacts: snapshot(contacts, 'contacts'), opportunities: snapshot(opportunities, 'opportunities') };
   if (previous) {
     const queued = new Set(next.outbox.map(a => a.key));
-    const append = (alert) => { if (!queued.has(alert.key)) { queued.add(alert.key); next.outbox.push(alert); } };
+    const fresh = [];
+    const append = (alert) => { if (!queued.has(alert.key)) { queued.add(alert.key); fresh.push(alert); } };
     for (const kind of ['contacts', 'opportunities']) {
       for (const record of kind === 'contacts' ? contacts : opportunities) {
         const id = hash(record.id), before = previous[kind]?.[id], after = current[kind][id];
@@ -202,6 +222,7 @@ export function planPoll(previous, { contacts, opportunities, messages }, locati
       if (type === 'ConversationActivity' && message.body) alert.description = String(message.body).slice(0, 2500);
       append(alert); next.seen[key] = until;
     }
+    next.outbox.push(...collapseBurst(fresh, locationId, until));
   }
   // Keep unseen/missing records in the fingerprint snapshot. Absence in a scan
   // is not reliable evidence of deletion, and later reappearance is not creation.

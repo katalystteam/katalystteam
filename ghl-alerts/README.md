@@ -37,7 +37,7 @@ Each complete scan saves its snapshot and pending outbox before sending. Each ac
 
 Messages are rescanned with a 24-hour overlap to tolerate delayed indexing; IDs are retained for seven days to suppress duplicate alerts. After downtime, the window starts from the previous successful checkpoint, not simply the most recent five minutes. First-run historical messages are intentionally suppressed.
 
-Delivery is at least once: a lost Slack response or checkpoint-write failure after a successful send can produce a duplicate on retry. Changes represented both in snapshots and GHL activity messages may produce separate alerts. Historical ciphertext remains in Git history; protect the encryption key. Checkpoints larger than 900 KB fail before sending because the GitHub Contents API is used for state. For large accounts, a dedicated durable store is preferable.
+Delivery is at least once: a lost Slack response or checkpoint-write failure after a successful send can produce a duplicate on retry. Changes represented both in snapshots and GHL activity messages may produce separate alerts. Historical ciphertext remains in Git history; protect the encryption key. Checkpoints larger than 900 KB fail before sending because the GitHub Contents API is used for state. To keep the outbox bounded, a scan producing more than 100 new alerts (bulk sends, mass edits) posts up to 50 inbound replies individually plus one summary alert with counts by type; the rest are marked seen and not posted. For large accounts, a dedicated durable store is preferable.
 
 The service does not accept public incoming webhooks and requires no Slack CLI or support-agent template. The supplied Slack app manifest requests only `chat:write`.
 
